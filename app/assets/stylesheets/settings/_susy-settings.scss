@@ -1,0 +1,25 @@
+$susy: (
+  flow: ltr,
+  math: fluid,
+  output: float,
+  gutter-position: after,
+  container: auto,
+  container-position: center,
+  columns: 12,
+  gutters: 28px/72px,
+  column-width: 72px,
+  global-box-sizing: content-box,
+  last-flow: to,
+  use-custom: (
+    background-image: true,
+    background-options: false,
+    box-sizing: true,
+    clearfix: false,
+    rem: true,
+  )
+);
+
+$phone: max-width 480px;
+$tablet: min-width 768px;
+$pc: min-width 992px;
+$desktop: min-width 900px;

@@ -1,0 +1,124 @@
+.overlay{
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.090);
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+.sidebar{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow: scroll;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  padding: 50px 48px;
+  transform: translateX(-100%);
+  transition: transform 375ms cubic-bezier(0.0, 0.0, 0.2, 1);
+;
+  @include breakpoint($tablet){
+    width: 445px;
+  }
+}
+
+.sidebar.open {
+  transform: translateX(0);
+  transition: transform 375ms cubic-bezier(0.4, 0.0, 1, 1);;
+}
+
+.sidebar__nav{
+  font-family: $neuz;
+}
+.sidebar__nav__logo{
+  font-family: $lato;
+  font-size: 34px;
+  font-weight: bold;
+  margin-bottom: 60px;
+  @include clearfix();
+  .logo{
+    float: left;
+    color: $base-blue;
+  }
+  .close{
+    float: right;
+    cursor: pointer;
+    font-weight: 300;
+    width: 22px;
+    height: 22px;
+    position: relative;
+    top: 16px;
+  }
+}
+.sidebar__nav{
+  font-family: $neuz;
+  ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li{
+      clear: both;
+      a{
+        display: block;
+        font-size: 26px;
+         color: #535353;
+         font-weight: 300;
+         padding-bottom: 30px;
+      }
+    }
+    li.has--submenu>a::after {
+        float: right;
+        border-style: solid;
+        border-width: 0.07em 0.07em 0 0;
+        content: '';
+        display: inline-block;
+        height: 0.45em;
+        position: relative;
+        top: 0.45em;
+        transform: rotate(135deg);
+        vertical-align: top;
+        width: 0.45em;
+        transition: transform 0.3s;
+        color: #9e9e9e;
+    }
+    li.has--submenu.open>a::after{
+        transform: rotate(-45deg);
+        transition: transform 0.3s;
+        top: 0.65em;
+    }
+  }
+}
+ul.sidebar__info{
+  border-top: solid 2px #2f73e4;
+  margin: 0px 0 50px;
+  padding-top: 30px;
+  li{
+    a{
+      font-size: 22px !important;
+      color: #9e9e9e !important;
+      font-weight: 300;
+    }
+  }
+}
+.sidebar__social{
+  li{
+    display: inline-block;
+    a{
+      margin-right: 25px;
+    }
+  }
+}
+
+ul.submenu {
+    padding-left: 38px;
+    display: none;
+}
+
+ul.submenu li a {
+    font-size: 22px;
+    padding-bottom: 25px;
+    color: #9e9e9e;
+}

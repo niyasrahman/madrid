@@ -1,0 +1,523 @@
+img{
+  max-width: 100%;
+  display: block;
+  width: 100%;
+}
+.hero__slider{
+  @include container;
+  @include breakpoint($pc){
+    margin-top: 40px;
+  }
+}
+.row{
+  @include clearfix();
+  clear: both;
+}
+.slide__image{
+  img{
+    max-width: 100%;
+  }
+  @include breakpoint($tablet){
+    @include span(first 6);
+  }
+}
+
+.hero__slider__slides  {
+  @include breakpoint($pc){
+    height: 430px;
+  }
+  .slide__content{
+    @include span(12);
+    @include breakpoint($tablet){
+      @include span(last 6);
+    }
+    @include breakpoint($pc){
+      padding: 40px 32px 40px 0;
+    }
+  }
+}
+.slide__author{
+  @include clearfix();
+  margin-top: 20px;
+}
+.slide__author__avatar{
+  float: left;
+  width: 54px;
+  margin-right: 15px;
+  img{
+    max-width: 100%;
+  }
+}
+.slide__author__content{
+  float: left;
+  font-family: $neuz;
+  p{
+    font-size: 16px;
+    text-align: left;
+    color: $color8;
+    font-weight: 100;
+  }
+  h3{
+    font-size: 14px;
+    font-weight: 100;
+  }
+  @include breakpoint($pc){
+    h3{
+      font-size: 18px;
+    }
+    p{
+      font-size: 14px !important;
+      font-weight: 300;
+      color: $color8;
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+
+.rango{
+  @include container;
+  margin-top: 50px;
+  padding: 0 15px;
+  @include breakpoint($tablet){
+    padding: 0 20px;
+    margin-top: 68px;
+  }
+  @include breakpoint($pc){
+    margin-bottom: 40px;
+  }
+  &__first{
+    @include span(12);
+    margin-bottom: 35px;
+    @include breakpoint($tablet){
+      @include span(first 6);
+    }
+    @include breakpoint($pc){
+      @include span(first 4);
+    }
+  }
+  &__middle{
+    @include breakpoint($tablet){
+      @include span(last 6);
+    }
+    @include breakpoint($pc){
+      @include span(4 at 5 of 12);
+    }
+  }
+  &__last{
+    &__first{
+      display: none;
+      @include breakpoint($pc){
+        display: block;
+      }
+    }
+    &__second{
+      background: $base-blue;
+      padding: 34px 36px;
+      margin: 30px 0;
+      h2{
+        color: $white;
+        font-size: 20px;
+        line-height: 1.4;
+        text-align: center;
+        font-weight: 300;
+      }
+      img{
+        width: 32px;
+        display: block;
+        margin: 0 auto 10px;
+      }
+      @include breakpoint($pc){
+        img{
+          width: 32px;
+          display: block;
+          margin: 0 auto 10px;
+        }
+      }
+    }
+    @include breakpoint($tablet){
+      display: none;
+    }
+    @include breakpoint($pc){
+      @include span(last 4);
+      display: block;
+    }
+  }
+}
+
+
+
+
+.three-col__section{
+  padding: 0 15px;
+  @include container;
+  @include breakpoint($tablet){
+    padding: 0 20px;
+  }
+  &__first{
+    position: relative;
+    height: 511px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    @include breakpoint($tablet){
+      @include span(first 6);
+      height: 577px;
+    }
+    @include breakpoint($pc){
+      @include span(first 4);
+      height: 610px;
+      margin-bottom: 0;
+    }
+    &__content{
+      position: absolute;
+      bottom: -7px;
+      left:0;
+      color: $white;
+      padding: 0 20px 20px;
+      box-shadow: inset 0 -196px 177px -72px #000000;
+      h2{
+        font-size: 34px;
+        line-height: 1.18;
+        @include breakpoint($tablet){
+          font-size: 32px;
+        }
+      }
+      .author--title{
+        color: $white;
+        margin-top: 24px;
+      }
+    }
+  }
+  &__middle{
+    @include breakpoint($tablet){
+      @include span(last 6);
+    }
+    @include breakpoint($pc){
+      @include span(4 at 5 of 12);
+    }
+    &__card{
+      margin-bottom: 30px;
+    }
+  }
+  &__last{
+    @include breakpoint($tablet){
+      .card--no--bg{
+        border-bottom: 1px solid #d8d8d8;
+        padding:21px 16px 15px;
+        width: 50%;
+        display: inline-block;
+        margin-right: -3px;
+        &:first-child{
+          padding-top: 21px;
+        }
+        &:last-child{
+          padding-bottom: 15px;
+          border-bottom: 1px solid #d8d8d8;
+        }
+        @include breakpoint($tablet){
+          padding: 15px 0;
+        }
+      }
+    }
+    @include breakpoint($pc){
+      @include span(last 4);
+      .card--no--bg{
+        display: block;
+        width: 100%;
+        margin-right: 0;
+        padding: 20px 0;
+        &:first-child{
+          padding-top: 0px;
+        }
+        &:last-child{
+          padding-bottom: 0px;
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}
+.section__head__title{
+  margin-bottom: 20px;
+  @include breakpoint($pc){
+    margin-bottom: 30px;
+  }
+}
+
+
+
+.two-col{
+  @include container;
+  margin-top: 30px;
+  padding: 0 15px;
+  img{
+    max-width: 100%;
+  }
+  @include breakpoint($pc){
+    margin-top: 50px;
+  }
+  &__first{
+    @include breakpoint($tablet){
+      @include span(first 6);
+    }
+    &__card{
+      clear: both;
+      overflow: hidden;
+      margin-bottom: 30px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+      &__img{
+        width: 50%;
+      }
+      &__content{
+        float: right;
+        width: 50%;
+        padding: 9px 10px;
+      }
+    }
+  }
+  &__last{
+    @include span(12);
+    margin-top: 20px;
+    @include breakpoint($tablet){
+      @include span(last 6);
+      margin: 0;
+      .section--content{
+        h2{
+          font-size: 18px;
+        }
+      }
+    }
+    @include breakpoint($pc){
+      .section--content{
+        padding: 30px;
+        h2{
+          font-size: 26px;
+        }
+        p{
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+.two-col__title{
+  margin-bottom: 30px;
+}
+
+.grid{
+  margin-top: 30px;
+  padding: 0 15px;
+  @include breakpoint($pc){
+    @include container;
+  }
+  &__title{
+    margin-bottom: 24px;
+  }
+  &__first{
+    position: relative;
+    margin-bottom: 30px;
+    @include breakpoint($tablet){
+      @include span(first 8);
+    }
+    &__feature{
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    &__content{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      color: $white;
+      padding: 0 22px 15px;
+      box-shadow: inset 0 -114px 177px -79px #000;
+      .author--title{
+        color: $white;
+      }
+      h3{
+        font-size: 22px;
+        line-height: 1.36;
+        margin-bottom: 15px;
+        @include breakpoint($pc){
+          font-size: 34px;
+          line-height: 1.29;
+          margin-bottom: 17px;
+        }
+      }
+      @include breakpoint($pc){
+        padding: 30px;
+      }
+    }
+    img{
+      max-width: 100%;
+    }
+  }
+  &__last{
+    margin-bottom: 30px;
+    @include breakpoint($tablet){
+      @include span(last 4);
+    }
+  }
+}
+.sub--section{
+  background: rgba(0,0,0,0.5);
+  color: $white;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 6px 14px;
+}
+.section__card--image{
+  margin-bottom: 23px;
+}
+.grid__section__one{
+  @include breakpoint($tablet){
+    @include span(first 4);
+  }
+}
+.grid__section__middle{
+  @include breakpoint($tablet){
+    @include span(4 at 5 of 12);
+  }
+}
+.grid__section__last{
+  @include breakpoint($tablet){
+    @include span(last 4);
+  }
+}
+.recent__stories{
+  background: $white;
+  padding: 30px 15px;
+  @include breakpoint($tablet){
+    background: none;
+  }
+  @include breakpoint($pc){
+    background: $white;
+  }
+}
+.recent__stories__content{
+  @include container;
+  &__title{
+    h2{
+      font-size: 34px;
+      text-transform: capitalize;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+  }
+  &__card{
+    margin-bottom: 30px;
+    @include clearfix();
+    @include breakpoint($pc){
+      @include  span(first 9);
+    }
+    &:last-child{
+      margin-bottom: 0;
+    }
+    &__img{
+      width: 50%;
+      float: left;
+    }
+    &__content{
+      padding: 0 10px 12px;
+      width: 50%;
+      float: left;
+      h4{
+        font-size: 12px;
+        line-height: normal;
+        font-weight: 400;
+        color: $dark-gray;
+        margin:8px 0;
+        @include breakpoint($tablet){
+          font-size: 22px;
+          line-height: 1.6;
+          margin-bottom: 32px;
+        }
+        @include breakpoint($pc){
+          line-height: 1.27;
+          margin: 15px 0 30px;
+        }
+      }
+      @include breakpoint($pc){
+        padding-left: 30px;
+      }
+    }
+  }
+}
+.author--submission{
+  font-size: 11px;
+  font-weight: 300;
+  color: $color9;
+  @include breakpoint($pc){
+    font-size: 14px;
+  }
+}
+.footer{
+  @include full;
+  background: #212121;
+  padding: 40px 0;
+  text-align: center;
+  @include breakpoint($tablet){
+    text-align: left;
+    padding: 40px 0 44px;
+  }
+  &__content{
+    @include container;
+    &__first{
+      display: none;
+      @include breakpoint($pc){
+        display: block;
+        @include span(first 1);
+      }
+    }
+
+    &__last{
+      color: $white;
+      text-transform: capitalize;
+      text-align: center;
+      @include breakpoint($pc){
+        @include span(last 4);
+        text-align: right;
+      }
+      ul{
+        list-style-type: none;
+        margin-bottom: 30px;
+        text-align: center;
+        li{
+          display: inline-block;
+          a{
+            display: block;
+            font-size: 16px;
+          }
+          a::after {
+            content: "|";
+            float: right;
+            padding-left: 4px;
+            @include breakpoint($pc) {
+              content: "";
+            }
+          }
+        }
+        li:last-of-type a::after {
+          content: "";
+        }
+      }
+    }
+  }
+}
+
+.slick-next {
+  margin-right: 0px;
+  @include breakpoint($pc) {
+    margin-right: 20px;
+  }
+}
+
+.slick-prev {
+  margin-left: 0px;
+  @include breakpoint($pc) {
+    margin-left: 20px;
+  }
+}

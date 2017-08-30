@@ -1,0 +1,71 @@
+@import "~susy/sass/susy";
+
+.rango{
+  @include container;
+  margin-top: 50px;
+  padding: 0 15px;
+  @include breakpoint($tablet){
+    padding: 0 20px;
+    margin-top: 68px;
+  }
+  @include breakpoint($pc){
+    margin-bottom: 40px;
+  }
+  &__first{
+    @include span(12);
+    margin-bottom: 35px;
+    @include breakpoint($tablet){
+      @include span(first 6);
+    }
+    @include breakpoint($pc){
+      @include span(first 4);
+    }
+  }
+  &__middle{
+    @include breakpoint($tablet){
+      @include span(last 6);
+    }
+    @include breakpoint($pc){
+      @include span(4 at 5 of 12);
+    }
+  }
+  &__last{
+    &__first{
+      display: none;
+      @include breakpoint($pc){
+        display: block;
+      }
+    }
+    &__second{
+      background: $base-blue;
+      padding: 34px 36px;
+      margin: 30px 0;
+      h2{
+        color: $white;
+        font-size: 20px;
+        line-height: 1.4;
+        text-align: center;
+        font-weight: 300;
+      }
+      img{
+        width: 32px;
+        display: block;
+        margin: 0 auto 10px;
+      }
+      @include breakpoint($pc){
+        img{
+          width: 32px;
+          display: block;
+          margin: 0 auto 10px;
+        }
+      }
+    }
+    @include breakpoint($tablet){
+      display: none;
+    }
+    @include breakpoint($pc){
+      @include span(last 4);
+      display: block;
+    }
+  }
+}
