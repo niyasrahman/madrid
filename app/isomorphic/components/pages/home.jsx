@@ -1,12 +1,13 @@
 const React = require("react");
 
 const { StoryGrid } = require("../story-grid.jsx");
+const { TwoColOneAd } = require("../layout/TwoColOneAd.jsx");
 
 class HomePage extends React.Component {
+
   render() {
     return <div>
-      <h1>Home</h1>
-      <StoryGrid stories={this.props.data.stories} />
+      <TwoColOneAd stories={this.props.data.stories} />
     </div>;
   }
 }
