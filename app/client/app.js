@@ -1,4 +1,4 @@
-import css from '../../app/assets/stylesheets/app.scss';
+import css from '../../app/assets/stylesheets/application.scss';
 
 import { createQtStore } from 'quintype-toddy-libs/store/create-store';
 import { history, navigateToPage, getRouteData } from 'quintype-toddy-libs/client/start';
