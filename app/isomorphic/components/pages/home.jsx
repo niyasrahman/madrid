@@ -5,6 +5,8 @@ const { TwoColOneAd } = require("../layout/TwoColOneAd.jsx");
 
 class HomePage extends React.Component {
 
+  
+
   render() {
     return <div>
       <TwoColOneAd stories={this.props.data.stories} />

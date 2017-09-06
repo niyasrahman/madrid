@@ -1,23 +1,5 @@
 @import "images";
 
-*,
-*:after,
-*:before {
-    box-sizing: border-box;
-}
-
-html {
-    font-family: sans-serif;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-}
-
-body {
-    margin: 0;
-    font-family: 'Cardo', serif;
-    background: #eee url('../images/pw_maze_white.png');
-}
-
 img {
     max-width: 100%;
 }
