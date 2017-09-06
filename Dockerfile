@@ -16,7 +16,6 @@ USER app
 WORKDIR /app
 
 RUN git log -n1 --pretty="Commit Date: %aD%nBuild Date: `date --rfc-2822`%n%h %an%n%s%n" > public/round-table.txt && \
-    rm -rf node_modules \
     npm install yarn && \
     ./node_modules/.bin/yarn
 

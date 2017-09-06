@@ -49,7 +49,7 @@ module.exports = {
         { test: /\.jsx?$/, exclude: /node_modules/, use: BABEL_PRESET },
         { test: /\.jsx?$/, include: /node_modules\/quintype-toddy-libs/, use: BABEL_PRESET },
         {
-          test: /\.(css|sass|scss)$/,
+          test: /\.(sass|scss)$/,
           loader: config.sassLoader
         },
         {
