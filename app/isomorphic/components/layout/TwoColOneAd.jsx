@@ -5,7 +5,7 @@ function TwoColOneAd(props) {
     <div className="rango">
       <div className="rango__first bg--shadow bg--white">
         <div className="rango__first__img">
-          <img src="{{assetPath('rango-hero.png')}}" alt="" />
+          <img src="" alt="" />
         </div>
         <div className="section--card--1">
           <div className="section--title--small section--business">Business</div>
