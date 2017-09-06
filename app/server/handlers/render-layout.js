@@ -5,6 +5,7 @@ exports.renderLayout = function renderLayout(res, params){
   res.render("pages/layout", _.extend({
     assetPath: assetPath,
     content: "",
-    title: "Madrid"
+    title: "Madrid",
+    metadata : []
   }, params))
 }
