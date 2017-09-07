@@ -4,7 +4,7 @@ const { Link } = require("quintype-toddy-libs/components/link");
 const { ResponsiveImage } = require("quintype-toddy-libs/components/responsive-image");
 
 function StoryCard(props) {
-  return <Link href={"/" + props.story.slug} className="story-card">
+  return !props.story ? null : <Link href={"/" + props.story.slug} className="story-card">
       <div className="rango__first bg--shadow bg--white">
         <div className="rango__first__img">
           <figure className="story-card-image qt-image-16x9">

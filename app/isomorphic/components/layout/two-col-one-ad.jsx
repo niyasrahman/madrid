@@ -1,8 +1,8 @@
 const React = require("react");
 
-const { StoryCard } = require("../basic/StoryCard.jsx")
-const { StoryList } = require("../basic/StoryList.jsx")
-const { NewsletterSub } = require("../basic/NewsletterSub.jsx")
+const { StoryCard } = require("../basic/story-card.jsx")
+const { StoryList } = require("../basic/story-list.jsx")
+const { NewsletterSub } = require("../basic/newsletter-sub.jsx")
 
 function TwoColOneAd(props) {
   return (
