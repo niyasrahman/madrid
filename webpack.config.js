@@ -53,7 +53,7 @@ module.exports = {
           loader: config.sassLoader
         },
         {
-          test: /\.(jpe?g|gif|png|svg|woff|ttf|wav|mp3)$/,
+          test: /\.(jpe?g|gif|png|svg|woff|ttf|eot|wav|mp3)$/,
           loader: "file-loader",
           query: {
             context: './app/assets',

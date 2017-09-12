@@ -19,7 +19,9 @@
     "quintype-seo-node": "^0.1.6",
     "quintype-toddy-libs": "^0.2.9",
     "react": "^15.6.1",
+    "react-slick": "^0.15.4",
     "sleep-promise": "^2.0.0",
+    "slick-carousel": "^1.7.1",
     "superagent": "^3.5.2",
     "superagent-promise": "^1.1.0",
     "susy": "^2.2.12"
