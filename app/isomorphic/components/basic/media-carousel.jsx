@@ -30,12 +30,10 @@ function MediaCarouselElement(props) {
   return !props.story ? null : <Link href={"/" + props.story.slug} className="hero__slider__slides">
       <div className="slide">
         <div className="slide__image">
-          <figure className="story-card-image qt-image-16x9">
             <ResponsiveImage slug={props.story["hero-image-s3-key"]} metadata={props.story["hero-image-metadata"]}
-              aspectRatio={[16,9]}
+              aspectRatio={[1,1]}
               defaultWidth={480} widths={[250,480,640]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 23%"
               imgParams={{auto:['format', 'compress']}}/>
-          </figure>
         </div>
         <div className="slide__content slide--card">
           <div className="slide__section section--title--small section--science">Science</div>

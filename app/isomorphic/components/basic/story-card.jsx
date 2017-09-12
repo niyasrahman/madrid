@@ -9,7 +9,7 @@ function StoryCard(props) {
         <div className="rango__first__img">
           <figure className="story-card-image qt-image-16x9">
             <ResponsiveImage slug={props.story["hero-image-s3-key"]} metadata={props.story["hero-image-metadata"]}
-              aspectRatio={[16,9]}
+              aspectRatio={[4,3]}
               defaultWidth={480} widths={[250,480,640]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 23%"
               imgParams={{auto:['format', 'compress']}}/>
           </figure>
