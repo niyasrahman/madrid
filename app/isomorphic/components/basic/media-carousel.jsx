@@ -1,5 +1,8 @@
 const React = require("react");
+// TODO: Remove .default from requiring modules. (Issue with ES6 modules/babel-loader)
 const Slider = require("react-slick").default;
+const TimeAgo = require('react-timeago').default;
+
 
 const { Link } = require("quintype-toddy-libs/components/link");
 const { ResponsiveImage } = require("quintype-toddy-libs/components/responsive-image");
@@ -44,7 +47,7 @@ function MediaCarouselElement(props) {
             </div>
             <div className="slide__author__content">
               <h3>{props.story['author-name']}</h3>
-              <p>{props.story['first-published-at']}</p>
+              <p><TimeAgo date={props.story['first-published-at']} /></p>
             </div>
           </div>
         </div>
