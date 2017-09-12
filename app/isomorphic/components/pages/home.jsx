@@ -6,10 +6,11 @@ const { TwoColOneAd } = require("../layout/two-col-one-ad.jsx");
 class HomePage extends React.Component {
 
 
-
   render() {
     return <div>
-      <TwoColOneAd stories={this.props.data.stories} />
+      {this.props.data.collections.map((collection) =>
+        <TwoColOneAd collection={collection} key={collection.id}/>
+      )}
     </div>;
   }
 }

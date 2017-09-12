@@ -12,7 +12,7 @@ function StoryList(props) {
 
 function StoryListItem(props) {
   return (
-    <Link href={"/" + props.story.slug} className="section-card--2">
+    !props.story ? null : <Link href={"/" + props.story.slug} className="section-card--2">
       {/* other classes: section--health-fit, section--science...  */}
       <div className="section--title--small section--travel">
         {props.story.sections[0].name}
