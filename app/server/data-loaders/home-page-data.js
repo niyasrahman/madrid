@@ -9,7 +9,7 @@ exports.loadHomePageData = function loadHomePageData() {
       return makeBulkRequest(placeholderCollectionSlugs);
     })
     .then(allCollections => {
-      return {'homeCollection': _.sortBy(allCollections.results, allCollections.parentCollection)};
+      return {'homeCollections': _.sortBy(allCollections.results, allCollections.parentCollection)};
     });
 }
 

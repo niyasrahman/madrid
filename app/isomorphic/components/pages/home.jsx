@@ -16,8 +16,10 @@ function getTemplate(designTemplate){
 class HomePage extends React.Component {
 
   render() {
-    console.log(this.props.data.homeCollection)
     return <div>
+      {this.props.data.homeCollections.map((collection) =>
+        <TwoColOneAd stories={collection.items} key={collection.id}/>
+      )}
     </div>;
   }
 }
