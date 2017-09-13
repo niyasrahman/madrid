@@ -5,6 +5,7 @@ img{
 }
 .hero__slider{
   @include container;
+  margin-bottom: 50px;
   @include breakpoint($pc){
     margin-top: 40px;
   }

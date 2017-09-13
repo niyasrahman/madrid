@@ -12,6 +12,7 @@ function MediaCarousel(props) {
       dots: true,
       infinite: true,
       speed: 500,
+      arrows: false,
       slidesToShow: 1,
       slidesToScroll: 1
     };
@@ -19,14 +20,14 @@ function MediaCarousel(props) {
       <Slider {...settings}>
         {props.stories.map((story) =>
           <div key={story.id}>
-            <MediaCarouselElement story={story}/>
+            <MediaCarouselItem story={story}/>
           </div>
         )}
       </Slider>
     </div>
 }
 
-function MediaCarouselElement(props) {
+function MediaCarouselItem(props) {
   return !props.story ? null : <Link href={"/" + props.story.slug} className="hero__slider__slides">
       <div className="slide">
         <div className="slide__image">

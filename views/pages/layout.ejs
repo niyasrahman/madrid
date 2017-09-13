@@ -27,24 +27,22 @@
   </head>
 
   <body>
-    <div class="container">
-      <div id="header-container">
-        <nav id="main-navigation">
-          <ul class="main-navigation">
-            <li><a href="#hide-navigation" class="toggle"><span></span></a></li>
-            <li><a href="/">Home</a></li>
-            <li><a href="/politics">Politics</a></li>
-            <li><a href="/culture/2016/04/07/5-Times-Joey-was-more-thoughtful-than-his-other-friends">Story</a></li>
-          </ul>
-        </nav>
-      </div>
-      <header>
-        <a class="toggle" href="#main-navigation" title="menu"><span></span></a>
-        <h1 class="title"><%= title %></h1>
-        <%# <div id='breaking-news-container'></div>%>
-      </header>
-      <div id="container"><%- content %></div>
+    <div id="header-container">
+      <nav id="main-navigation">
+        <ul class="main-navigation">
+          <li><a href="#hide-navigation" class="toggle"><span></span></a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/politics">Politics</a></li>
+          <li><a href="/culture/2016/04/07/5-Times-Joey-was-more-thoughtful-than-his-other-friends">Story</a></li>
+        </ul>
+      </nav>
     </div>
+    <header>
+      <a class="toggle" href="#main-navigation" title="menu"><span></span></a>
+      <h1 class="title"><%= title %></h1>
+      <%# <div id='breaking-news-container'></div>%>
+    </header>
+    <div id="container"><%- content %></div>
     <script type="text/javascript" src="<%= assetPath("app.js") %>" async></script>
    </body>
 </html>
