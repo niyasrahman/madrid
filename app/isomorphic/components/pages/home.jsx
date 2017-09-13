@@ -7,11 +7,13 @@ const { FullscreenSimpleSlider } = require("../layout/fullscreen-simple-slider.j
 
 
 const templates = {
-  'wh-block-featured': TwoColOneAd
+  'featured-stories': FullscreenMediaCarousel,
+  'main-stories': TwoColOneAd,
+  'must-read': FullscreenSimpleSlider
 }
 
 function getTemplate(designTemplate){
-  return templates[designTemplate];
+  return templates[designTemplate] ? templates[designTemplate] : TwoColOneAd;
 }
 
 
@@ -19,12 +21,11 @@ class HomePage extends React.Component {
 
   render() {
     return <div>
-      <FullscreenMediaCarousel stories={this.props.data.homeCollections[0].items}/>
-      <TwoColOneAd stories={this.props.data.homeCollections[1].items}/>
-      <FullscreenSimpleSlider stories={this.props.data.homeCollections[2].items}/>
-      {this.props.data.homeCollections.map((collection) =>
-        <TwoColOneAd stories={collection.items} key={collection.id}/>
-      )}
+      {this.props.data.homeCollections.map((collection, index) => {
+        if (collection) {
+            return React.createElement(getTemplate(collection.slug), {stories: collection.items})
+        }
+      })}
     </div>;
   }
 }
