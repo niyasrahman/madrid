@@ -38,7 +38,7 @@ function MediaCarouselElement(props) {
         <div className="slide__content slide--card">
           <div className="slide__section section--title--small section--science">Science</div>
           <h2>{props.story.headline}</h2>
-          <p>{props.story.summary}</p>
+          <p>{props.story.subheadline}</p>
           <div className="slide__author">
             <div className="slide__author__avatar">
               <img src="{{ assetPath('author-avatar.png') }}" alt="" />

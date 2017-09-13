@@ -17,7 +17,7 @@ function StoryCard(props) {
         <div className="section--card--1">
           <div className="section--title--small section--business">{props.story.sections[0].name}</div>
           <h2>{props.story.headline}</h2>
-          <p>{props.story.summary}</p>
+          <p>{props.story.subheadline}</p>
           <div className="author--title">
             {props.story['author-name']}
           </div>
