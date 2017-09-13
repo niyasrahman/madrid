@@ -12,6 +12,9 @@ if(cluster.isMaster) {
   });
 } else {
   require('node-jsx').install();
+  require('asset-require-hook')({
+    extensions: ['png', 'jpg', 'jpeg', 'svg', 'gif']
+  })
   var startApp = require("./app/server/server.js");
   startApp().catch(function() {
     var sleep = require("sleep-promise");

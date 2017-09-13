@@ -41,7 +41,8 @@ function MediaCarouselElement(props) {
           <p>{props.story.subheadline}</p>
           <div className="slide__author">
             <div className="slide__author__avatar">
-              <img src="{{ assetPath('author-avatar.png') }}" alt="" />
+              {/* TODO: Get author avatar. Need to fetch each author details seperately*/}
+              <img src="" alt="" />
             </div>
             <div className="slide__author__content">
               <h3>{props.story['author-name']}</h3>
