@@ -57,7 +57,7 @@ typings/
 # dotenv environment variables file
 .env
 
-/public/toddy
+/public/ace
 /webpack-assets.json
 /asset-manifest.json
 /package-lock.json
