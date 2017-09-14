@@ -1,5 +1,5 @@
 _ = require("lodash");
-const {Story, client} = require("quintype-toddy-libs/server/api-client");
+const {client} = require("quintype-toddy-libs/server/api-client");
 
 exports.loadHomePageData = function loadHomePageData() {
   let placeholderCollectionSlugs = [];

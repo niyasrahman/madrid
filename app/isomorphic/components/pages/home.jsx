@@ -23,7 +23,7 @@ class HomePage extends React.Component {
     return <div>
       {this.props.data.homeCollections.map((collection, index) => {
         if (collection) {
-            return React.createElement(getTemplate(collection.slug), {stories: collection.items})
+            return React.createElement(getTemplate(collection.slug), {stories: collection.items, key: index})
         }
       })}
     </div>;

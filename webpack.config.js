@@ -36,6 +36,7 @@ const config = process.env.NODE_ENV == 'production' ? {
 
 module.exports = {
     entry: {
+      fetchPolyFill: 'whatwg-fetch',
       app: "./app/client/app.js",
       serviceWorkerHelper: "./app/client/serviceWorkerHelper.sjs"
     },
