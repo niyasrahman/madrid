@@ -17,7 +17,7 @@ function StoryListItem(props) {
       <div className="section--title--small section--travel">
         {props.story.sections[0].name}
       </div>
-      <h2>{props.story.headline}</h2>
+      <h2 dangerouslySetInnerHTML={ {__html: props.story.headline }} />
       <div className="author--title author--small">
         {props.story['author-name']}
       </div>

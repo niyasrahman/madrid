@@ -16,8 +16,8 @@ function StoryCard(props) {
         </div>
         <div className="section--card--1">
           <div className="section--title--small section--business">{props.story.sections[0].name}</div>
-          <h2>{props.story.headline}</h2>
-          <p>{props.story.subheadline}</p>
+          <h2 dangerouslySetInnerHTML={ {__html: props.story.headline }} />
+          <p dangerouslySetInnerHTML={ {__html: props.story.subheadline }} />
           <div className="author--title">
             {props.story['author-name']}
           </div>
