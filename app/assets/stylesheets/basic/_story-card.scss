@@ -1,0 +1,11 @@
+.story-card {
+  @include span(12);
+  margin-bottom: 35px;
+  @include breakpoint($tablet){
+    @include span(first 6);
+  }
+  @include breakpoint($pc){
+    @include span(first 4);
+  }
+  
+}

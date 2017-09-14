@@ -4,12 +4,14 @@ const { StoryGrid } = require("../story-grid.jsx");
 const { TwoColOneAd } = require("../layout/two-col-one-ad.jsx");
 const { FullscreenMediaCarousel } = require("../layout/fullscreen-media-carousel.jsx");
 const { FullscreenSimpleSlider } = require("../layout/fullscreen-simple-slider.jsx");
+const { ThreeCol } = require("../layout/three-col.jsx");
 
 
 const templates = {
   'featured-stories': FullscreenMediaCarousel,
   'main-stories': TwoColOneAd,
-  'must-read': FullscreenSimpleSlider
+  'must-read': FullscreenSimpleSlider,
+  'politics': ThreeCol
 }
 
 function getTemplate(designTemplate){
@@ -23,7 +25,7 @@ class HomePage extends React.Component {
     return <div>
       {this.props.data.homeCollections.map((collection, index) => {
         if (collection) {
-            return React.createElement(getTemplate(collection.slug), {stories: collection.items, key: index})
+            return React.createElement(getTemplate(collection.slug), {stories: collection.items, key: index});
         }
       })}
     </div>;
