@@ -1,11 +1,14 @@
-.story-card {
+.col-4 {
   @include span(12);
   margin-bottom: 35px;
   @include breakpoint($tablet){
-    @include span(first 6);
+    @include span(6);
   }
   @include breakpoint($pc){
-    @include span(first 4);
+    @include span(4);
+    &:last-child {
+      @include span(last 4);
+    }
   }
-  
+
 }

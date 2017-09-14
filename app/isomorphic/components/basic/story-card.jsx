@@ -7,7 +7,7 @@ function StoryCard(props) {
   return !props.story ? null : <Link href={"/" + props.story.slug}>
       {props.type === 'imageBackground' ?
         <StoryCardBgImage story={props.story} /> :
-        <StoryCardSimple story={props.story} />}
+        <StoryCardSimple story={props.story} config={props.config}/>}
     </Link>;
 }
 
@@ -37,7 +37,9 @@ function StoryCardSimple(props) {
         </figure>
       </div>
       <div className="section--card--1">
-        <div className="section--title--small section--business">{props.story.sections[0].name}</div>
+        { props.config.section && <div className="section--title--small section--business">
+          {props.story.sections[0].name}
+        </div> }
         <h2 dangerouslySetInnerHTML={ {__html: props.story.headline }} />
         <p dangerouslySetInnerHTML={ {__html: props.story.subheadline }} />
         <div className="author--title">
