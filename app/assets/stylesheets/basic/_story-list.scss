@@ -1,0 +1,16 @@
+.story-list {
+  a {
+    display: block;
+    padding: 15px 0 10px 0;
+    border-bottom: 1px solid #d8d8d8;
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+  h2 {
+    font-weight: 600;
+  }
+  &__section-name {
+    margin-bottom: 5px;
+  }
+}

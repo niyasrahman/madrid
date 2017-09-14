@@ -5,17 +5,27 @@ const { StoryList } = require("../basic/story-list.jsx")
 const { NewsletterSub } = require("../basic/newsletter-sub.jsx")
 
 function TwoColOneAd(props) {
-  var storyCardConfig = {
+  const storyCardConfig = {
     section: true,
-    subheadline: true
+    subheadline: true,
+    image: true
+  }
+  const storyListConfig = {
+    section: true
   }
   return (
     <div className="two-col-one-ad">
       <div className="col-4">
-        <StoryCard story={props.stories[0].story} config={storyCardConfig}></StoryCard>
+        <StoryCard
+          story={props.stories[0].story}
+          config={storyCardConfig}>
+        </StoryCard>
       </div>
       <div className="col-4">
-        <StoryList stories={[props.stories[1].story, props.stories[2].story, props.stories[3].story]}></StoryList>
+        <StoryList
+          stories={[props.stories[1].story, props.stories[2].story, props.stories[3].story]}
+          config={storyListConfig}>
+        </StoryList>
       </div>
       <div className="col-4">
         <NewsletterSub></NewsletterSub>

@@ -1,6 +1,5 @@
 .col-4 {
   @include span(12);
-  margin-bottom: 35px;
   @include breakpoint($tablet){
     @include span(6);
   }
@@ -10,5 +9,8 @@
       @include span(last 4);
     }
   }
+}
 
+.story-card {
+  margin-bottom: 35px;
 }

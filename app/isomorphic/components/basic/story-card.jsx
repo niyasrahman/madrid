@@ -27,7 +27,11 @@ function StoryCardBgImage(props) {
 }
 
 function StoryCardSimple(props) {
+  // We can customize this component by passing down a config
+  // We can enable Image, Subheadline and Section name if the config values are true.
+  // By default we'll hide all.
   return <div className="story-card bg--shadow bg--white">
+      { props.config && props.config.image &&
       <div className="story-card__img">
         <figure className="story-card-image qt-image-16x9">
           <ResponsiveImage slug={props.story["hero-image-s3-key"]} metadata={props.story["hero-image-metadata"]}
@@ -35,13 +39,13 @@ function StoryCardSimple(props) {
             defaultWidth={480} widths={[250,480,640]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 23%"
             imgParams={{auto:['format', 'compress']}}/>
         </figure>
-      </div>
+      </div> }
       <div className="section--card--1">
-        { props.config.section && <div className="section--title--small section--business">
+        { props.config && props.config.section && <div className="section--title--small section--business">
           {props.story.sections[0].name}
         </div> }
         <h2 dangerouslySetInnerHTML={ {__html: props.story.headline }} />
-        <p dangerouslySetInnerHTML={ {__html: props.story.subheadline }} />
+        { props.config && props.config.subheadline && <p dangerouslySetInnerHTML={ {__html: props.story.subheadline }} /> }
         <div className="author--title">
           {props.story['author-name']}
         </div>
