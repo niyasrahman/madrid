@@ -15,7 +15,7 @@ const templates = {
 }
 
 function getTemplate(designTemplate){
-  return templates[designTemplate] ? templates[designTemplate] : TwoColOneAd;
+  return templates[designTemplate] ? templates[designTemplate] : ThreeCol;
 }
 
 
@@ -25,7 +25,7 @@ class HomePage extends React.Component {
     return <div>
       {this.props.data.homeCollections.map((collection, index) => {
         if (collection) {
-            return React.createElement(getTemplate(collection.slug), {stories: collection.items, key: index});
+            return React.createElement(getTemplate(collection.slug), {stories: collection.items, key: index, collectionName: collection.name});
         }
       })}
     </div>;

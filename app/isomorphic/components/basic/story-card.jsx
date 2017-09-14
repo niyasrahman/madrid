@@ -20,8 +20,8 @@ function StoryCardBgImage(props) {
         imgParams={{auto:['format', 'compress']}}/>
     </figure>
     <div className="three-col__first__content">
-      <h2>Lin-Manuel Miranda says Donald Trump is spreading ‘a virulent strain of a virus’</h2>
-      <div className="author--title">Jonnathan Doe</div>
+      <h2 dangerouslySetInnerHTML={ {__html: props.story.headline }} />
+      <div className="author--title">{props.story['author-name']}</div>
     </div>
   </div>
 }

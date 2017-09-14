@@ -10,7 +10,7 @@ function ThreeCol(props) {
   return (
     <div className="three-col">
       <div className="section__head__title">
-        <h2 className="section--title--large section--three-col--large">Politics</h2>
+        <h2 className="section--title--large section--three-col--large">{props.collectionName}</h2>
       </div>
       <div className="col-4">
         <StoryCard story={props.stories[0].story} type="imageBackground"/>
@@ -21,7 +21,7 @@ function ThreeCol(props) {
       </div>
       <div className="three-col__last">
         <StoryList
-          stories={[props.stories[1].story, props.stories[2].story, props.stories[3].story]}>
+          stories={[props.stories[1].story, props.stories[2].story, props.stories[3].story, props.stories[4].story]}>
         </StoryList>
       </div>
     </div>
