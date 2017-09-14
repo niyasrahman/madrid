@@ -6,7 +6,7 @@ const { NewsletterSub } = require("../basic/newsletter-sub.jsx")
 
 function TwoColOneAd(props) {
   return (
-    <div className="rango">
+    <div className="two-col-one-ad">
       <StoryCard story={props.stories[0].story}></StoryCard>
       <StoryList stories={[props.stories[1].story, props.stories[2].story, props.stories[3].story]}></StoryList>
       <NewsletterSub></NewsletterSub>

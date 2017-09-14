@@ -3,7 +3,7 @@ const React = require("react");
 const { Link } = require("quintype-toddy-libs/components/link");
 
 function StoryList(props) {
-  return !props.stories ? null :  <div className="rango__middle no--bg">
+  return !props.stories ? null :  <div className="two-col-one-ad__middle no--bg">
     {props.stories.map((story, index) =>
         <StoryListItem story={story} key={index}></StoryListItem>
     )}

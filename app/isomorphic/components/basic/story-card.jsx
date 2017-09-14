@@ -5,8 +5,8 @@ const { ResponsiveImage } = require("quintype-toddy-libs/components/responsive-i
 
 function StoryCard(props) {
   return !props.story ? null : <Link href={"/" + props.story.slug} className="story-card">
-      <div className="rango__first bg--shadow bg--white">
-        <div className="rango__first__img">
+      <div className="two-col-one-ad__first bg--shadow bg--white">
+        <div className="two-col-one-ad__first__img">
           <figure className="story-card-image qt-image-16x9">
             <ResponsiveImage slug={props.story["hero-image-s3-key"]} metadata={props.story["hero-image-metadata"]}
               aspectRatio={[4,3]}
