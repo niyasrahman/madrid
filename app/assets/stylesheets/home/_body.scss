@@ -82,69 +82,6 @@ img{
   }
 }
 
-
-
-.two-col{
-  @include container;
-  margin-top: 30px;
-  padding: 0 15px;
-  img{
-    max-width: 100%;
-  }
-  @include breakpoint($pc){
-    margin-top: 50px;
-  }
-  &__first{
-    @include breakpoint($tablet){
-      @include span(first 6);
-    }
-    &__card{
-      clear: both;
-      overflow: hidden;
-      margin-bottom: 30px;
-      &:last-child{
-        margin-bottom: 0;
-      }
-      &__img{
-        width: 50%;
-      }
-      &__content{
-        float: right;
-        width: 50%;
-        padding: 9px 10px;
-      }
-    }
-  }
-  &__last{
-    @include span(12);
-    margin-top: 20px;
-    @include breakpoint($tablet){
-      @include span(last 6);
-      margin: 0;
-      .section--content{
-        h2{
-          font-size: 18px;
-        }
-      }
-    }
-    @include breakpoint($pc){
-      .section--content{
-        padding: 30px;
-        h2{
-          font-size: 26px;
-        }
-        p{
-          font-size: 18px;
-        }
-      }
-    }
-  }
-}
-
-.two-col__title{
-  margin-bottom: 30px;
-}
-
 .grid{
   margin-top: 30px;
   padding: 0 15px;

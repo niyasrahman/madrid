@@ -6,6 +6,7 @@ const { FullscreenMediaCarousel } = require("../layout/fullscreen-media-carousel
 const { FullscreenSimpleSlider } = require("../layout/fullscreen-simple-slider.jsx");
 const { FullscreenLinearGallerySlider } = require("../layout/fullscreen-linear-gallery-slider.jsx");
 const { ThreeCol } = require("../layout/three-col.jsx");
+const { TwoCol } = require("../layout/two-col.jsx");
 
 
 const templates = {
@@ -13,7 +14,8 @@ const templates = {
   'main-stories': TwoColOneAd,
   'must-read': FullscreenSimpleSlider,
   'politics': ThreeCol,
-  'film': FullscreenLinearGallerySlider
+  'film': FullscreenLinearGallerySlider,
+  'other': TwoCol
 }
 
 function getTemplate(designTemplate){
