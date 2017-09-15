@@ -4,8 +4,11 @@ const { Link } = require("quintype-toddy-libs/components/link");
 
 function StoryList(props) {
   return !props.stories ? null :  <div className="story-list">
-    {props.stories.map((story, index) =>
-        <StoryListItem story={story} key={index} config={props.config}></StoryListItem>
+    {props.stories.map((story, index) => {
+        {/* This `story` objects includes `id`, `type` and actual `story` object. We only
+        need actual story object.*/}
+        return <StoryListItem story={story.story} key={index} config={props.config}></StoryListItem>
+      }
     )}
   </div>
 }

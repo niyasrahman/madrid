@@ -17,13 +17,13 @@ function TwoColOneAd(props) {
     <div className="two-col-one-ad">
       <div className="col-4">
         <StoryCard
-          story={props.stories[0].story}
+          story={props.stories[0]}
           config={storyCardConfig}>
         </StoryCard>
       </div>
       <div className="col-4">
         <StoryList
-          stories={[props.stories[1].story, props.stories[2].story, props.stories[3].story]}
+          stories={[props.stories[1], props.stories[2], props.stories[3]]}
           config={storyListConfig}>
         </StoryList>
       </div>

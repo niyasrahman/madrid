@@ -13,15 +13,15 @@ function ThreeCol(props) {
         <h2 className="section--title--large section--three-col--large">{props.collectionName}</h2>
       </div>
       <div className="col-4">
-        <StoryCard story={props.stories[0].story} type="imageBackground"/>
+        <StoryCard story={props.stories[0]} type="imageBackground"/>
       </div>
       <div className="col-4">
-        <StoryCard story={props.stories[1].story} config={secondColFirstCardConfig}/>
-        <StoryCard story={props.stories[2].story}/>
+        <StoryCard story={props.stories[1]} config={secondColFirstCardConfig}/>
+        <StoryCard story={props.stories[2]}/>
       </div>
       <div className="three-col__last">
         <StoryList
-          stories={[props.stories[1].story, props.stories[2].story, props.stories[3].story, props.stories[4].story]}>
+          stories={[props.stories[1], props.stories[2], props.stories[3], props.stories[4]]}>
         </StoryList>
       </div>
     </div>

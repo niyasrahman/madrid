@@ -4,6 +4,7 @@
   @include container;
   @include breakpoint($tablet){
     padding: 0 20px;
+    margin-bottom: 30px;
   }
   &__first{
     position: relative;
