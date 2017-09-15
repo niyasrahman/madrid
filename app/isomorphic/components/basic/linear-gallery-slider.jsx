@@ -35,11 +35,11 @@ function LinearGallerySlider(props) {
       </div>
       <div className="video__slider">
         <Slider {...settings}>
-          {props.stories.map((story) =>
-            <div key={story.id} className="video__slider__content">
-              {/* This `story` objects includes `id`, `type` and actual `story` object. We only
+          {props.stories.map((storyObj) =>
+            <div key={storyObj.id} className="video__slider__content">
+              {/* This `storyObj` objects includes `id`, `type` and actual `story` object. We only
                 need actual story object.*/}
-              <SliderItem story={story.story} />
+              <SliderItem story={storyObj.story} />
             </div>
           )}
         </Slider>

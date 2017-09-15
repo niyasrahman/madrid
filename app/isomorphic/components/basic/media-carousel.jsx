@@ -15,11 +15,12 @@ function MediaCarousel(props) {
       slidesToShow: 1,
       slidesToScroll: 1
     };
+  const limit = props.limit ? parseInt(props.limit) : 5;
   return !props.stories ? null : <div className="hero__slider bg--white bg--shadow">
       <Slider {...settings}>
-        {props.stories.map((story) =>
-          <div key={story.id}>
-            <MediaCarouselItem story={story}/>
+        {props.stories.slice(0, limit).map((storyObj) =>
+          <div key={storyObj.id}>
+            <MediaCarouselItem story={storyObj.story}/>
           </div>
         )}
       </Slider>

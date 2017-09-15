@@ -22,11 +22,11 @@ function SimpleSlider(props) {
     };
   return !props.stories ? null : <div className="must__reads">
       <Slider {...settings}>
-        {props.stories.map((story) =>
-          <div key={story.id} className="must__reads__slider">
-            {/* This `story` objects includes `id`, `type` and actual `story` object. We only
+        {props.stories.map((storyObj) =>
+          <div key={storyObj.id} className="must__reads__slider">
+            {/* This `storyObj` object includes `id`, `type` and actual `story` object. We only
               need actual story object.*/}
-            <SliderItem story={story.story} />
+            <SliderItem story={storyObj.story} />
           </div>
         )}
       </Slider>

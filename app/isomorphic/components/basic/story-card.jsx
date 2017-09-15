@@ -4,7 +4,7 @@ const { Link } = require("quintype-toddy-libs/components/link");
 const { ResponsiveImage } = require("quintype-toddy-libs/components/responsive-image");
 
 function StoryCard(props) {
-  {/* This `props.story` objects includes `id`, `type` and actual `story` object. We only
+  {/* This `props.story` object includes `id`, `type` and actual `story` object. We only
     need actual story object.*/}
   const storyObj = props.story.story;
   return !storyObj ? null : <Link href={"/" + storyObj.slug}>
