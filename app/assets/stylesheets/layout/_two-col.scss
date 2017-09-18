@@ -1,13 +1,9 @@
 
 .two-col{
   @include container;
-  margin-top: 30px;
   padding: 0 15px;
   img{
     max-width: 100%;
-  }
-  @include breakpoint($pc){
-    margin-top: 50px;
   }
   &__first{
     @include breakpoint($tablet){
