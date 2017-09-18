@@ -6,7 +6,7 @@ const { ResponsiveImage } = require("quintype-toddy-libs/components/responsive-i
 function StoryCard(props) {
   {/* This `props.story` object includes `id`, `type` and actual `story` object. We only
     need actual story object.*/}
-  const storyObj = props.story.story;
+  const storyObj = props.story ? props.story.story : null;
   return !storyObj ? null : <Link href={"/" + storyObj.slug}>
       {props.type === 'imageBackground' ?
         <StoryCardBgImage story={storyObj} /> :
