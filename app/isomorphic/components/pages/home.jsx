@@ -7,6 +7,8 @@ const { FullscreenSimpleSlider } = require("../layout/fullscreen-simple-slider.j
 const { FullscreenLinearGallerySlider } = require("../layout/fullscreen-linear-gallery-slider.jsx");
 const { ThreeCol } = require("../layout/three-col.jsx");
 const { TwoCol } = require("../layout/two-col.jsx");
+const { LShapeOneWidget } = require("../layout/l-shape-one-widget.jsx");
+
 
 
 const templates = {
@@ -15,7 +17,8 @@ const templates = {
   'must-read': FullscreenSimpleSlider,
   'politics': ThreeCol,
   'film': FullscreenLinearGallerySlider,
-  'other': TwoCol
+  'other': TwoCol,
+  'lifestyle': LShapeOneWidget
 }
 
 function getTemplate(designTemplate){

@@ -6,19 +6,19 @@ const { ResponsiveImage } = require("quintype-toddy-libs/components/responsive-i
 function StoryCard(props) {
   {/* This `props.story` object includes `id`, `type` and actual `story` object. We only
     need actual story object.*/}
-  const storyObj = props.story.story;
+  const storyObj = props.story ? props.story.story : null;
   return !storyObj ? null : <Link href={"/" + storyObj.slug}>
       {props.type === 'imageBackground' ?
-        <StoryCardBgImage story={storyObj} /> :
+        <StoryCardBgImage story={storyObj} aspectRatio={props.config ? props.config.imageAspectRatio : null}/> :
         <StoryCardSimple story={storyObj} config={props.config}/>}
     </Link>;
 }
 
 function StoryCardBgImage(props) {
-  return <div className="three-col__first">
+  return <div className="three-col__first story-card">
     <figure className="story-card-image qt-image-2x3">
       <ResponsiveImage slug={props.story["hero-image-s3-key"]} metadata={props.story["hero-image-metadata"]}
-        aspectRatio={[2,3]}
+        aspectRatio={props.aspectRatio ? props.aspectRatio : '[4:3]'}
         defaultWidth={480} widths={[250,480,640]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 23%"
         imgParams={{auto:['format', 'compress']}}/>
     </figure>

@@ -7,7 +7,7 @@ function StoryList(props) {
     {props.stories.map((storyObj) => {
         {/* This `storyObj` object includes `id`, `type` and actual `story` object. We only
         need actual story object.*/}
-        return <StoryListItem story={storyObj.story} key={storyObj.id} config={props.config}></StoryListItem>
+        return storyObj && <StoryListItem story={storyObj.story} key={storyObj.id} config={props.config}></StoryListItem>
       }
     )}
   </div>

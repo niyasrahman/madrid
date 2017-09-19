@@ -5,7 +5,8 @@ const { StoryList } = require("../basic/story-list.jsx")
 
 function ThreeCol(props) {
   const secondColFirstCardConfig = {
-    image: true
+    image: true,
+    imageAspectRatio: [2,3]
   };
   return (
     <div className="three-col">
@@ -13,7 +14,7 @@ function ThreeCol(props) {
         <h2 className="section--title--large section--three-col--large">{props.collectionName}</h2>
       </div>
       <div className="col-4">
-        <StoryCard story={props.stories[0]} type="imageBackground"/>
+        <StoryCard story={props.stories[0]} type="imageBackground" config={secondColFirstCardConfig}/>
       </div>
       <div className="col-4">
         <StoryCard story={props.stories[1]} config={secondColFirstCardConfig}/>
