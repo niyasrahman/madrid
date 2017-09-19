@@ -1,0 +1,69 @@
+.blank-story {
+  &--content {
+    position: relative;
+    width: 95%;
+    margin: -50px auto 20px;
+    background-color: $white;
+    padding: 15px;
+    z-index: 100;
+  }
+  .story {
+    &-header {
+      display: block;
+      margin-bottom: 15px;
+      border-bottom: solid 1px $lighest-gray;
+    }
+    &-section {
+      font-size: 16px;
+      letter-spacing: 1.5px;
+      text-align: left;
+      font-family: "NeuzeitGro-Bol",$neuz;
+      text-transform: uppercase;
+    }
+    &-headline {
+      font-family: "NeuzeitGro-Bol",$neuz;
+      font-size: 28px;
+      line-height: 1.21;
+      margin: 10px 0;
+      color: $color8;
+    }
+    &-summary {
+      font-family: $lora;
+      font-size: 16px;
+      font-style: italic;
+      line-height: 1.5;
+      text-align: left;
+      color: $color5;
+    }
+    &-byline {
+      display: block;
+      overflow: auto;
+    }
+    &-image-author {
+      width: 50px;
+      height: 50px;
+      overflow: hidden;
+      float: left;
+      margin: 15px 15px 15px 0;
+    }
+    &-author-image {
+      object-fit: contain;
+    }
+    &-byline_author_time {
+      display: inline-block;
+      float: left;
+      margin: 15px 0 0;
+      font-family: 'NeuzeitGro-Reg', $neuz;
+      color: $color6;
+      font-weight: 300;
+      text-transform: capitalize;
+    }
+    &-author {
+      font-size: 14px;
+      font-weight: 300;
+    }
+    &-published_date {
+      font-size: 12px;
+    }
+  }
+}
