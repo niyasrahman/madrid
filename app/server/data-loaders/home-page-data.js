@@ -1,7 +1,8 @@
 _ = require("lodash");
 const {client} = require("quintype-toddy-libs/server/api-client");
+const {getNavigationMenuArray} = require("./menu-data");
 
-exports.loadHomePageData = function loadHomePageData() {
+exports.loadHomePageData = function loadHomePageData(config) {
   let placeholderCollectionSlugs = [];
   return client.getCollectionBySlug('home', {})
     .then(homeCollection => {
@@ -9,7 +10,10 @@ exports.loadHomePageData = function loadHomePageData() {
       return makeBulkRequest(placeholderCollectionSlugs);
     })
     .then(allCollections => {
-      return {'homeCollections': _.sortBy(allCollections.results, allCollections.parentCollection)};
+      const structuredMenu = getNavigationMenuArray(config.layout.menu);
+      return {'homeCollections': _.sortBy(allCollections.results, allCollections.parentCollection),
+              'navigationMenu': structuredMenu
+             };
     });
 }
 

@@ -46,6 +46,7 @@ body {
   @include full;
   padding: 17.5px 15px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+  float: none;
   @include breakpoint($tablet) {
     padding: 17.5px 20px;
   }
