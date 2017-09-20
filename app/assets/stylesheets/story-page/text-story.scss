@@ -1,11 +1,17 @@
 .blank-story {
   &--content {
     position: relative;
-    width: 95%;
+    width: 90vw;
+    max-width: 992px;
     margin: -50px auto 20px;
     background-color: $white;
     padding: 15px;
-    z-index: 100;
+    z-index: 10;
+  }
+  &-hero-image.qt-image-16x9 {
+    @include breakpoint($tablet) {
+      padding-top: 33%;
+    }
   }
   .story {
     &-header {
@@ -19,6 +25,14 @@
       text-align: left;
       font-family: "NeuzeitGro-Bol",$neuz;
       text-transform: uppercase;
+      @include breakpoint($tablet) {
+        font-size: 12px;
+        letter-spacing: 1.1px;
+      }
+      @include breakpoint($pc) {
+        font-size: 18px;
+        letter-spacing: 1.6px;
+      }
     }
     &-headline {
       font-family: "NeuzeitGro-Bol",$neuz;
@@ -26,6 +40,14 @@
       line-height: 1.21;
       margin: 10px 0;
       color: $color8;
+      @include breakpoint($tablet) {
+        font-size: 26px;
+        line-height: 1.15;
+      }
+      @include breakpoint($pc) {
+        font-size: 44px;
+        list-height: 1.14;
+      }
     }
     &-summary {
       font-family: $lora;
@@ -34,21 +56,28 @@
       line-height: 1.5;
       text-align: left;
       color: $color5;
+      @include breakpoint($tablet) {
+        font-size: 12px;
+      }
+      @include breakpoint($pc) {
+        font-size: 20px;
+        line-height: 1.4;
+      }
     }
     &-byline {
       display: block;
       overflow: auto;
     }
-    &-image-author {
-      width: 50px;
-      height: 50px;
-      overflow: hidden;
-      float: left;
-      margin: 15px 15px 15px 0;
-    }
-    &-author-image {
-      object-fit: contain;
-    }
+    // &-image-author {
+    //   width: 50px;
+    //   height: 50px;
+    //   overflow: hidden;
+    //   float: left;
+    //   margin: 15px 15px 15px 0;
+    // }
+    // &-author-image {
+    //   object-fit: contain;
+    // }
     &-byline_author_time {
       display: inline-block;
       float: left;
@@ -61,9 +90,38 @@
     &-author {
       font-size: 14px;
       font-weight: 300;
+      @include breakpoint($tablet) {
+        font-size: 12px;
+      }
+      @include breakpoint($pc) {
+        font-size: 18px;
+      }
     }
     &-published_date {
       font-size: 12px;
+      @include breakpoint($tablet) {
+        font-size: 10px;
+      }
+      @include breakpoint($pc) {
+        font-size: 14px;
+      }
+    }
+    &-tag {
+      display: inline-block;
+      font-family: HelveticaNeue;
+      font-size: 12px;
+      text-align: center;
+      color: $color3;
+      border-radius: 77px;
+      border: solid 1px $color3;
+      margin: 20px 10px 10px 0;
+      padding: 2px 10px;
+      @include breakpoint($tablet) {
+        font-size: 10px;
+      }
+      @include breakpoint($pc) {
+        font-size: 16px;
+      }
     }
   }
 }
