@@ -13,7 +13,7 @@ class NavigationComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOffcanvasOpen: true
+      isOffcanvasOpen: false
     }
   }
   openSidemenu = () => {
