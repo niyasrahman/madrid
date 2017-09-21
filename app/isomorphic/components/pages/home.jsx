@@ -9,6 +9,7 @@ const { FullscreenLinearGallerySlider } = require("../layout/fullscreen-linear-g
 const { ThreeCol } = require("../layout/three-col.jsx");
 const { TwoCol } = require("../layout/two-col.jsx");
 const { LShapeOneWidget } = require("../layout/l-shape-one-widget.jsx");
+const { FullscreenMediaList } = require("../layout/fullscreen-media-list.jsx");
 
 class HomePage extends React.Component {
 
@@ -25,7 +26,8 @@ class HomePage extends React.Component {
       'politics': ThreeCol,
       'film': FullscreenLinearGallerySlider,
       'other': TwoCol,
-      'lifestyle': LShapeOneWidget
+      'lifestyle': LShapeOneWidget,
+      'recent-stories': FullscreenMediaList
     }
 
     function getTemplate(designTemplate){
@@ -42,7 +44,7 @@ class HomePage extends React.Component {
           }
           return React.createElement(
             getTemplate(collection.slug),
-            {stories: collection.items, key: collection.id, collectionName: collection.name, config: config}
+            {stories: collection.items, key: collection.id, config: config}
           );
         }
       })}

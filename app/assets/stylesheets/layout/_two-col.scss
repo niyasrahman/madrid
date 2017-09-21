@@ -25,6 +25,13 @@
         float: right;
         width: 50%;
         padding: 9px 10px;
+        &--enlarged {
+          padding-left: 25px;
+          padding-top: 0;
+        }
+      }
+      &__title--enlarged {
+        margin-bottom: 40px;
       }
     }
   }

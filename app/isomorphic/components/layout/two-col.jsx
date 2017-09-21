@@ -4,6 +4,7 @@ const { Link } = require("quintype-toddy-libs/components/link");
 const { ResponsiveImage } = require("quintype-toddy-libs/components/responsive-image");
 
 const { StoryCard } = require("../basic/story-card.jsx")
+const { MediaObject } = require("../basic/media-object.jsx")
 
 function TwoCol(props) {
   const storyCardConfig = {
@@ -25,23 +26,6 @@ function TwoCol(props) {
       </div>
     </div>
   )
-}
-
-function MediaObject({story}) {
-  return story && <Link href={"/" + story.slug} className="two-col__first__card bg--white bg--shadow">
-    <div className="two-col__first__card__img align--left">
-      <ResponsiveImage slug={story["hero-image-s3-key"]} metadata={story["hero-image-metadata"]}
-        aspectRatio={[4,3]}
-        defaultWidth={480} widths={[250,480,640]}
-        imgParams={{auto:['format', 'compress']}}/>
-    </div>
-    <div className="two-col__first__card__content section--content-3">
-      <h2 dangerouslySetInnerHTML={ {__html: story.headline }} />
-      <div className="author--small">
-        {story['author-name']}
-      </div>
-    </div>
-  </Link>
 }
 
 

@@ -54,7 +54,7 @@ class MediaCarouselItem extends React.Component {
                 imgParams={{auto:['format', 'compress']}}/>
           </div>
           <div className="slide__content slide--card">
-            <div className="slide__section section--title--small section--science">Science</div>
+            <div className="slide__section section--title--small section--science">{this.state.story.sections[0]['display-name']}</div>
             <h2>{this.state.story.headline}</h2>
             <p>{this.state.story.subheadline}</p>
             <div className="slide__author">

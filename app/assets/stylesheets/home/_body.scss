@@ -36,6 +36,12 @@ img{
     }
   }
 }
+.col-9 {
+  @include span(12);
+  @include breakpoint($pc){
+    @include span(9);
+  }
+}
 .slide__image{
   img{
     max-width: 100%;
@@ -204,6 +210,9 @@ img{
   }
   @include breakpoint($pc){
     background: $white;
+  }
+  &__object {
+    padding: 15px 0;
   }
 }
 .recent__stories__content{
