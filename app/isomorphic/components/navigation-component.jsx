@@ -15,8 +15,9 @@ class NavigationComponent extends React.Component {
     this.state = {
       isOffcanvasOpen: false
     }
+    this.openSidemenu = this.openSidemenu.bind(this);
   }
-  openSidemenu = () => {
+  openSidemenu() {
     this.setState({
       isOffcanvasOpen: true
     })
@@ -61,13 +62,14 @@ class OffCanvasMenu extends React.Component {
     this.state = {
       isOpen: props.isOffcanvasOpen
     }
+    this.closeMenu = this.closeMenu.bind(this);
   }
   componentWillReceiveProps(newProps) {
     this.props.OffCanvasMenu !== newProps.isOffcanvasOpen && this.setState({
       isOpen: newProps.isOffcanvasOpen
     })
   }
-  closeMenu = () => {
+  closeMenu() {
     this.setState({
       isOpen: false
     })
@@ -143,8 +145,9 @@ class SideMenuItem extends React.Component {
     this.state = {
       openDownMenu: false
     }
+    this.toggleSideMenuParent = this.toggleSideMenuParent.bind(this);
   }
-  toggleSideMenuParent = () => {
+  toggleSideMenuParent() {
     this.setState(function(prevState, props){
       return {
         openDownMenu: !prevState.openDownMenu

@@ -36,7 +36,14 @@ class HomePage extends React.Component {
       <NavigationComponent {...navbarConfig}/>
       {this.props.data.homeCollections.map((collection, index) => {
         if (collection) {
-            return React.createElement(getTemplate(collection.slug), {stories: collection.items, key: index, collectionName: collection.name});
+          const config = {
+            collectionName: collection.name,
+            collectionSlug: collection.slug
+          }
+          return React.createElement(
+            getTemplate(collection.slug),
+            {stories: collection.items, key: collection.id, collectionName: collection.name, config: config}
+          );
         }
       })}
     </div>;

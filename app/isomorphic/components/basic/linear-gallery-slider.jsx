@@ -31,7 +31,7 @@ function LinearGallerySlider(props) {
     };
   return !props.stories ? null : <div className="videos">
       <div className="video__title">
-        <h2 className="section--title section--video--large">{props.collectionName}</h2>
+        <h2 className="section--title section--video--large">{props.config.collectionName}</h2>
       </div>
       <div className="video__slider">
         <Slider {...settings}>

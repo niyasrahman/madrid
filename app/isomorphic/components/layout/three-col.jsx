@@ -11,7 +11,7 @@ function ThreeCol(props) {
   return (
     <div className="three-col">
       <div className="section__head__title">
-        <h2 className="section--title--large section--three-col--large">{props.collectionName}</h2>
+        <h2 className="section--title--large section--three-col--large">{props.config.collectionName}</h2>
       </div>
       <div className="col-4">
         <StoryCard story={props.stories[0]} type="imageBackground" config={secondColFirstCardConfig}/>

@@ -1,7 +1,10 @@
 const React = require("react");
+const { Link } = require("quintype-toddy-libs/components/link");
 
 const { StoryCard } = require("../basic/story-card.jsx")
 const { NewsletterSub } = require("../basic/newsletter-sub.jsx")
+
+const ArrowImg = require('../../../assets/icons/readmore_arrow.svg');
 
 function LShapeOneWidget(props) {
   const primarStoryCardConfig = {
@@ -16,7 +19,7 @@ function LShapeOneWidget(props) {
   return (
     <div className="grid">
       <div className="grid__title">
-        <h2 className="section--title--large section--grid--large">Entertainment</h2>
+        <h2 className="section--title--large section--grid--large">{props.config.collectionName}</h2>
       </div>
       <div className="col-8">
         <StoryCard story={props.stories[0]} config={primarStoryCardConfig} type="imageBackground"/>
@@ -36,6 +39,10 @@ function LShapeOneWidget(props) {
           </div>
         })}
       </div>
+      <Link href={props.config.collectionSlug} className="grid__read-more">
+        Read more
+        <img src={ArrowImg} alt="Arrow"/>
+      </Link>
     </div>
   )
 

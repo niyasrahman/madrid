@@ -158,6 +158,18 @@ img{
       @include span(last 4);
     }
   }
+  &__read-more {
+    float: right;
+    clear: both;
+    img {
+      width: 40px;
+      height: 25px;
+      height: auto;
+      float: right;
+      padding: 6px 0;
+      padding-left: 10px;
+    }
+  }
 }
 .sub--section{
   background: rgba(0,0,0,0.5);
