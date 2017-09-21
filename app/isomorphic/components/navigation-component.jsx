@@ -94,9 +94,9 @@ class OffCanvasMenu extends React.Component {
             })}
           </ul>
           <ul className="sidebar__info">
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="#">Contact</a></li>
+            {this.props.links.map((item) => {
+                return <li><a href={item.url}>{item.content}</a></li>
+            })}
           </ul>
           <ul className="sidebar__social">
             <li><a href="#"><img src={FacebookImg} alt="Facebook"/></a></li>

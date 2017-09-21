@@ -10,13 +10,30 @@ const { ThreeCol } = require("../layout/three-col.jsx");
 const { TwoCol } = require("../layout/two-col.jsx");
 const { LShapeOneWidget } = require("../layout/l-shape-one-widget.jsx");
 const { FullscreenMediaList } = require("../layout/fullscreen-media-list.jsx");
+const { Footer } = require('../layout/footer.jsx')
 
 class HomePage extends React.Component {
 
   render() {
+    const staticLinks = [
+      {
+        content: 'About us',
+        url: '/about'
+      },
+      {
+        content: 'Privacy Policy',
+        url: '/privacy'
+      },
+      {
+        content: 'Terms & Conditions',
+        url: '/terms'
+      }
+    ]
+
     const navbarConfig = {
       title: 'Madrid',
-      menu: this.props.data.navigationMenu
+      menu: this.props.data.navigationMenu,
+      links: staticLinks
     };
 
     const templates = {
@@ -48,6 +65,7 @@ class HomePage extends React.Component {
           );
         }
       })}
+      <Footer links={staticLinks}/>
     </div>;
   }
 }
