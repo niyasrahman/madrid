@@ -11,7 +11,10 @@ exports.loadHomePageData = function loadHomePageData(config) {
     })
     .then(allCollections => {
       const structuredMenu = getNavigationMenuArray(config.layout.menu);
-      return {'homeCollections': _.sortBy(allCollections.results, allCollections.parentCollection),
+      const structuredCollections = allCollections.placeholderCollectionSlugs.map((collectionSlug) => {
+      	return allCollections.results[collectionSlug];
+      })
+      return {'homeCollections': structuredCollections,
               'navigationMenu': structuredMenu
              };
     });
@@ -35,6 +38,6 @@ function makeBulkRequest(slugs) {
   var requestPayload = createCollectionBulkRequest(_.flatten(slugs));
   return client.getInBulk({requests: requestPayload})
   .then(bulkResponse => {
-    return {'results': bulkResponse.results};
+    return {'results': bulkResponse.results, placeholderCollectionSlugs: slugs};
   })
 }

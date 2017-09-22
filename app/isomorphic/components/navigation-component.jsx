@@ -94,8 +94,8 @@ class OffCanvasMenu extends React.Component {
             })}
           </ul>
           <ul className="sidebar__info">
-            {this.props.links.map((item) => {
-                return <li><a href={item.url}>{item.content}</a></li>
+            {this.props.links.map((item, index) => {
+                return <li key={index}><a href={item.url}>{item.content}</a></li>
             })}
           </ul>
           <ul className="sidebar__social">

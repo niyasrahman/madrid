@@ -9,8 +9,8 @@ function Footer(props) {
       </div>
       <div className="footer__content__last">
         <ul className="align--right">
-          {props.links.map((item) => {
-            return <li><a href={item.url}>{item.content}</a></li>
+          {props.links.map((item, index) => {
+            return <li key={index}><a href={item.url}>{item.content}</a></li>
           })}
         </ul>
         <div className="copy--right align--right">
