@@ -1,3 +1,5 @@
+@import "story-page/related-stories";
+
 .blank-story {
   &--content {
     position: relative;
@@ -7,6 +9,9 @@
     background-color: $white;
     padding: 15px;
     z-index: 10;
+    @include breakpoint($pc){
+      padding: 30px 20% 50px 50px;
+    }
   }
   &-hero-image.qt-image-16x9 {
     @include breakpoint($tablet) {

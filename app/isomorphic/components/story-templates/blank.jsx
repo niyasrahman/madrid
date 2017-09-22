@@ -3,8 +3,9 @@ const React = require("react");
 const { Link } = require("quintype-toddy-libs/components/link");
 const { ResponsiveImage } = require("quintype-toddy-libs/components/responsive-image");
 const { StoryElement } = require("quintype-toddy-libs/components/story-element");
-const { StoryHeaderCard } = require("./story-header-card.jsx");
-const { StoryTags } = require("./story-tags.jsx");
+const { StoryHeaderCard } = require("../story-page-components/story-header-card.jsx");
+const { StoryTags } = require("../story-page-components/story-tags.jsx");
+const { RelatedStories } = require("../story-page-components/related-stories.jsx");
 
 function StoryCard(props){
   return <div>
@@ -31,6 +32,7 @@ function BlankStoryTemplate(props) {
 function BlankStory(props) {
   return <div className="story-grid">
     <BlankStoryTemplate story={props.story}></BlankStoryTemplate>
+    <RelatedStories stories = {props.relatedStories}></RelatedStories>
   </div>;
 }
 
