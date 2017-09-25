@@ -7,7 +7,7 @@ function StoryHeaderCard(props) {
           <a className="story-section" href={"/" + props.story.sections[0]['slug']}>
             {props.story.sections[0]['display-name'].length > 0 && props.story.sections[0]['display-name'] }
           </a>
-          <h3 className="story-headline">{props.story.headline}</h3>
+          <h3 className="story-headline" dangerouslySetInnerHTML={ {__html: props.story.headline }} />
            <p className="story-summary">{props.story.subheadline}</p>
            <div className="story-byline">
               { /* <figure className="story-image-author"><img src="" alt={props.story['author-name']} className="story-author-image"/></figure> */}

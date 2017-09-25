@@ -9,7 +9,7 @@ const classNames = require('classnames');
 function MediaObject({story, config}) {
   config = config || {};
   return story &&
-    <Link href={"/" + story.slug}
+    <Link href={"/" + (story.parentCollection ? story.generatedSlug : story.slug)}
       className={classNames('two-col__first__card', {'bg--white': !config.noBackground, 'bg--shadow': !config.noBackground})}>
       <div className="two-col__first__card__img align--left">
         <ResponsiveImage slug={story["hero-image-s3-key"]} metadata={story["hero-image-metadata"]}

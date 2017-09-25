@@ -9,6 +9,9 @@ img{
   @include breakpoint($pc){
     margin-top: 40px;
   }
+  .slide {
+    overflow: auto;
+  }
 }
 .row{
   @include clearfix();

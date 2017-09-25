@@ -45,7 +45,7 @@ class MediaCarouselItem extends React.Component {
       }.bind(this))
   }
   render() {
-    return !this.state.story ? null : <Link href={"/" + this.state.story.slug} className="hero__slider__slides">
+    return !this.state.story ? null : <Link href={"/" + (this.state.story.parentCollection ? this.state.story.generatedSlug : this.state.story.slug)} className="hero__slider__slides">
         <div className="slide">
           <div className="slide__image">
               <ResponsiveImage slug={this.state.story["hero-image-s3-key"]} metadata={this.state.story["hero-image-metadata"]}
@@ -55,8 +55,8 @@ class MediaCarouselItem extends React.Component {
           </div>
           <div className="slide__content slide--card">
             <div className="slide__section section--title--small section--science">{this.state.story.sections[0]['display-name']}</div>
-            <h2>{this.state.story.headline}</h2>
-            <p>{this.state.story.subheadline}</p>
+            <h2 dangerouslySetInnerHTML={ {__html: this.state.story.headline }} />
+            <p dangerouslySetInnerHTML={ {__html: this.state.story.subheadline }} />
             <div className="slide__author">
               <div className="slide__author__avatar">
                 <img src={this.state.story['author-image']} alt="author-image" />

@@ -7,7 +7,7 @@ function StoryCard(props) {
   {/* This `props.story` object includes `id`, `type` and actual `story` object. We only
     need actual story object.*/}
   const storyObj = props.story ? props.story.story : null;
-  return !storyObj ? null : <Link href={"/" + storyObj.slug}>
+  return !storyObj ? null : <Link href={"/" + (storyObj.parentCollection ? storyObj.generatedSlug : storyObj.slug) }>
       {props.type === 'imageBackground' ?
         <StoryCardBgImage story={storyObj} aspectRatio={props.config ? props.config.imageAspectRatio : null}/> :
         <StoryCardSimple story={storyObj} config={props.config}/>}

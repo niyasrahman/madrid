@@ -15,7 +15,7 @@ function StoryList(props) {
 
 function StoryListItem(props) {
   return (
-    !props.story ? null : <Link href={"/" + props.story.slug} className="section-card--2">
+    !props.story ? null : <Link href={"/" + (props.story.parentCollection ? props.story.generatedSlug : props.story.slug) } className="section-card--2">
       {
         props.config && props.config.section &&
         <div className="section--title--small section--travel story-list__section-name">

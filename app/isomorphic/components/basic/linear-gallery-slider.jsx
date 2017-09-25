@@ -49,7 +49,7 @@ function LinearGallerySlider(props) {
 
 function SliderItem(props) {
   return (
-    <Link href={"/" + props.story.slug}>
+    <Link href={"/" + (props.story.parentCollection ? props.story.generatedSlug : props.story.slug) }>
       <figure className="story-card-image qt-image-2x3">
         <ResponsiveImage slug={props.story["hero-image-s3-key"]} metadata={props.story["hero-image-metadata"]}
           aspectRatio={[4,3]}
@@ -57,7 +57,7 @@ function SliderItem(props) {
           imgParams={{auto:['format', 'compress']}}
           className=""/>
       </figure>
-      <p>{props.story.headline}</p>
+      <p dangerouslySetInnerHTML={ {__html: props.story.headline }} />
     </Link>
   )
 }

@@ -40,7 +40,7 @@ function SliderItem(props) {
       <div className="slide__content">
         <p>Must Reads</p>
         <h2>{props.story.headline}</h2>
-        <Link href={"/" + props.story.slug} className="slide__more button button--link" >
+        <Link href={"/" + props.story.parentCollection ? props.story.generatedSlug : props.story.slug} className="slide__more button button--link" >
           read story
         </Link>
       </div>

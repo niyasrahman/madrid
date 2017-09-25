@@ -11,13 +11,28 @@ exports.loadHomePageData = function loadHomePageData(config) {
     })
     .then(allCollections => {
       const structuredMenu = getNavigationMenuArray(config.layout.menu);
+      allCollections.processedResults = addParentSlugInStorySlugs(allCollections.results, config);
       const structuredCollections = allCollections.placeholderCollectionSlugs.map((collectionSlug) => {
-      	return allCollections.results[collectionSlug];
+      	return allCollections.processedResults[collectionSlug];
       })
       return {'homeCollections': structuredCollections,
               'navigationMenu': structuredMenu
              };
     });
+}
+
+function addParentSlugInStorySlugs(data, config) {
+  _(data).forEach((collection)=>{
+    collection.items.forEach(({story})=>{
+      let parentCollectionId = story.sections[0]['parent-id'];
+      let parentCollection = _.find(config.sections, function(collection) { return collection.id === parentCollectionId; });
+      if(parentCollection) {
+        story.generatedSlug = parentCollection.slug + '/' + story.slug;
+        story.parentCollection = parentCollection;
+      }
+    })
+  })
+  return data;
 }
 
 function childCollectionSlugsFromCollection(collection) {
