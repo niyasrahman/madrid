@@ -8,8 +8,11 @@ const classNames = require('classnames');
 
 function MediaObject({story, config}) {
   config = config || {};
+  const sectionColor = {
+    borderBottomColor: story['section-color']
+  }
   return story &&
-    <Link href={"/" + (story.parentCollection ? story.generatedSlug : story.slug)}
+    <Link href={"/" + (story['parent-collection'] ? story['generated-slug'] : story.slug)}
       className={classNames('two-col__first__card', {'bg--white': !config.noBackground, 'bg--shadow': !config.noBackground})}>
       <div className="two-col__first__card__img align--left">
         <ResponsiveImage slug={story["hero-image-s3-key"]} metadata={story["hero-image-metadata"]}
@@ -18,7 +21,7 @@ function MediaObject({story, config}) {
           imgParams={{auto:['format', 'compress']}}/>
       </div>
       <div className={classNames('two-col__first__card__content section--content-3', {'two-col__first__card__content--enlarged': config.enlarged})}>
-        <div className="section--title--small section--travel">
+        <div className="section--title--small section--travel" style={sectionColor}>
           {story.sections[0]['display-name']}
         </div>
         <h2 className={classNames({'two-col__first__card__title--enlarged': config.enlarged})}

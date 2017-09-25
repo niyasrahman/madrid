@@ -1,5 +1,6 @@
 _ = require("lodash");
 const {client} = require("quintype-toddy-libs/server/api-client");
+// TODO: menu should be a common Component. now accessing this from every pages. (home, story etc)
 const {getNavigationMenuArray} = require("./menu-data");
 
 exports.loadHomePageData = function loadHomePageData(config) {
@@ -11,7 +12,7 @@ exports.loadHomePageData = function loadHomePageData(config) {
     })
     .then(allCollections => {
       const structuredMenu = getNavigationMenuArray(config.layout.menu);
-      allCollections.processedResults = addParentSlugInStorySlugs(allCollections.results, config);
+      allCollections.processedResults = addParentSlugInStorySlugs(allCollections.results, config, config.layout.menu);
       const structuredCollections = allCollections.placeholderCollectionSlugs.map((collectionSlug) => {
       	return allCollections.processedResults[collectionSlug];
       })
@@ -21,15 +22,21 @@ exports.loadHomePageData = function loadHomePageData(config) {
     });
 }
 
-function addParentSlugInStorySlugs(data, config) {
+function addParentSlugInStorySlugs(data, config, menu) {
   _(data).forEach((collection)=>{
+    const collectionMenuObject = _.find(menu, function(menuCollectionItem) { return menuCollectionItem['section-slug'] === collection.slug; });
+    // Setting the collection color which can be changed from platform settings. Fallback to one color if no
+    // menu color is set.
+    collection.color = collectionMenuObject ? collectionMenuObject.data.color : '#6093f2';
     collection.items.forEach(({story})=>{
-      let parentCollectionId = story.sections[0]['parent-id'];
-      let parentCollection = _.find(config.sections, function(collection) { return collection.id === parentCollectionId; });
+      const parentCollectionId = story.sections[0]['parent-id'];
+      const parentCollection = _.find(config.sections, function(collection) { return collection.id === parentCollectionId; });
       if(parentCollection) {
-        story.generatedSlug = parentCollection.slug + '/' + story.slug;
-        story.parentCollection = parentCollection;
+        story['generated-slug'] = parentCollection.slug + '/' + story.slug;
+        story['parent-collection'] = parentCollection;
       }
+      const menuObject = _.find(menu, function(menuItem) { return menuItem['section-slug'] === story.sections[0].slug; });
+      story['section-color'] = menuObject ? menuObject.data.color : '#6093f2';
     })
   })
   return data;

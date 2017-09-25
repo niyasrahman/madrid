@@ -7,7 +7,7 @@ function StoryCard(props) {
   {/* This `props.story` object includes `id`, `type` and actual `story` object. We only
     need actual story object.*/}
   const storyObj = props.story ? props.story.story : null;
-  return !storyObj ? null : <Link href={"/" + (storyObj.parentCollection ? storyObj.generatedSlug : storyObj.slug) }>
+  return !storyObj ? null : <Link href={"/" + (storyObj['parent-collection'] ? storyObj['generated-slug'] : storyObj.slug) }>
       {props.type === 'imageBackground' ?
         <StoryCardBgImage story={storyObj} aspectRatio={props.config ? props.config.imageAspectRatio : null}/> :
         <StoryCardSimple story={storyObj} config={props.config}/>}
@@ -30,6 +30,9 @@ function StoryCardBgImage(props) {
 }
 
 function StoryCardSimple(props) {
+  const sectionColor = {
+    borderBottom: 'solid 2px ' + props.story['section-color']
+  }
   // We can customize this component by passing down a config
   // We can enable Image, Subheadline and Section name if the config values are true.
   // By default we'll hide all.
@@ -44,7 +47,7 @@ function StoryCardSimple(props) {
         </figure>
       </div> }
       <div className="section--card--1">
-        { props.config && props.config.section && <div className="section--title--small section--business">
+        { props.config && props.config.section && <div className="section--title--small" style={sectionColor}>
           {props.story.sections[0].name}
         </div> }
         <h2 dangerouslySetInnerHTML={ {__html: props.story.headline }} />

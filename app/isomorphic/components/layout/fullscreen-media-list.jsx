@@ -10,10 +10,13 @@ function FullscreenMediaList(props) {
     storyTime: true,
     aspectRatio: [5,3]
   }
+  const sectionColor = {
+    borderBottomColor: props.config.collectionColor
+  }
   return <div className="recent__stories">
     <div className="recent__stories__content">
       <div className="recent__stories__content__title">
-        <h2 className="section--title section--recent--large section--title--large">{props.config.collectionName}</h2>
+        <h2 className="section--title section--recent--large section--title--large" style={sectionColor}>{props.config.collectionName}</h2>
       </div>
       {props.stories.slice(0,5).map(storyObj =>
         <div className="col-9 recent__stories__object" key={storyObj.id}>

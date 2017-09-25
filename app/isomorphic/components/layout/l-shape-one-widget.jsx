@@ -16,10 +16,13 @@ function LShapeOneWidget(props) {
   const storyListConfig = {
     image: true
   }
+  const sectionColor = {
+    borderBottomColor: props.config.collectionColor
+  }
   return (
     <div className="grid">
       <div className="grid__title">
-        <h2 className="section--title--large section--grid--large">{props.config.collectionName}</h2>
+        <h2 className="section--title--large section--grid--large" style={sectionColor}>{props.config.collectionName}</h2>
       </div>
       <div className="col-8">
         <StoryCard story={props.stories[0]} config={primarStoryCardConfig} type="imageBackground"/>

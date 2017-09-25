@@ -57,7 +57,8 @@ class HomePage extends React.Component {
         if (collection) {
           const config = {
             collectionName: collection.name,
-            collectionSlug: collection.slug
+            collectionSlug: collection.slug,
+            collectionColor: collection.color
           }
           return React.createElement(
             getTemplate(collection.slug),

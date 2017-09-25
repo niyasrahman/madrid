@@ -14,11 +14,14 @@ function StoryList(props) {
 }
 
 function StoryListItem(props) {
+  const sectionColor = {
+    borderBottom: 'solid 2px ' + props.story['section-color']
+  }
   return (
-    !props.story ? null : <Link href={"/" + (props.story.parentCollection ? props.story.generatedSlug : props.story.slug) } className="section-card--2">
+    !props.story ? null : <Link href={"/" + (props.story['parent-collection'] ? props.story['generated-slug'] : props.story.slug) } className="section-card--2">
       {
         props.config && props.config.section &&
-        <div className="section--title--small section--travel story-list__section-name">
+        <div className="section--title--small story-list__section-name" style={sectionColor}>
           {props.story.sections[0].name}
         </div>
       }
