@@ -17,12 +17,12 @@ function LShapeOneWidget(props) {
     image: true
   }
   const sectionColor = {
-    borderBottomColor: props.config.collectionColor
+    borderBottomColor: props.config['collection-color']
   }
   return (
     <div className="grid">
       <div className="grid__title">
-        <h2 className="section--title--large section--grid--large" style={sectionColor}>{props.config.collectionName}</h2>
+        <h2 className="section--title--large section--grid--large" style={sectionColor}>{props.config['collection-name']}</h2>
       </div>
       <div className="col-8">
         <StoryCard story={props.stories[0]} config={primarStoryCardConfig} type="imageBackground"/>
@@ -42,7 +42,7 @@ function LShapeOneWidget(props) {
           </div>
         })}
       </div>
-      <Link href={props.config.collectionSlug} className="grid__read-more">
+      <Link href={props.config['collection-slug']} className="grid__read-more">
         Read more
         <img src={ArrowImg} alt="Arrow"/>
       </Link>

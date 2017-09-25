@@ -56,9 +56,9 @@ class HomePage extends React.Component {
       {this.props.data.homeCollections.map((collection, index) => {
         if (collection) {
           const config = {
-            collectionName: collection.name,
-            collectionSlug: collection.slug,
-            collectionColor: collection.color
+            'collection-name': collection.name,
+            'collection-slug': collection.slug,
+            'collection-color': collection.color
           }
           return React.createElement(
             getTemplate(collection.slug),

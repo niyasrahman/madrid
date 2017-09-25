@@ -12,12 +12,12 @@ function TwoCol(props) {
     image: true
   }
   const sectionColor = {
-    borderBottomColor: props.config.collectionColor
+    borderBottomColor: props.config['collection-color']
   }
   return (
     <div className="two-col">
       <div className="two-col__title">
-        <h2 className="section--title--large section--health-fit--large" style={sectionColor}>{props.config.collectionName}</h2>
+        <h2 className="section--title--large section--health-fit--large" style={sectionColor}>{props.config['collection-name']}</h2>
       </div>
       <div className="two-col__first">
         {props.stories.slice(0,3).map(storyObj =>
