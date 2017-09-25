@@ -9,6 +9,7 @@
     background-color: $white;
     padding: 15px;
     z-index: 10;
+    min-height: 1000px;
     @include breakpoint($pc){
       padding: 30px 20% 50px 50px;
     }

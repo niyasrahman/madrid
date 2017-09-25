@@ -1,6 +1,8 @@
 const {Story, client} = require("quintype-toddy-libs/server/api-client");
+const {getNavigationMenuArray} = require("./menu-data");
 
-exports.loadStoryPageData = function loadStoryPageData(params){
+
+exports.loadStoryPageData = function loadStoryPageData(params, config){
   let stories = {};
   return Story.getStoryBySlug(client, params.storySlug)
     .then(story => {
@@ -8,8 +10,10 @@ exports.loadStoryPageData = function loadStoryPageData(params){
       return getRelatedStory(story);
     })
     .then(relatedStories => {
+      const structuredMenu = getNavigationMenuArray(config.layout.menu);
       return{'story': stories,
-              relatedStories
+              relatedStories,
+              'navigationMenu': structuredMenu
             };
     });
 }
