@@ -7,6 +7,7 @@ const FacebookImg = require('../../assets/icons/facebook.svg');
 const LinkedinImg = require('../../assets/icons/linkedin.svg');
 const TwitterImg = require('../../assets/icons/twitter.svg');
 const GoogleImg = require('../../assets/icons/google.svg');
+// TODO: Change anchor tag to Link Component
 
 
 class NavigationComponent extends React.Component {
