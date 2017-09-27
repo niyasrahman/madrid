@@ -244,6 +244,27 @@
         }
       }
     }
+    &-element-text-quote {
+      blockquote {
+        font-family: $lora;
+        font-size: 16px;
+        font-style: italic;
+        color: $color5;
+        @include breakpoint($tablet) {
+          font-size: 20px;
+          margin-bottom: 20px;
+          margin-left: 45px;
+          margin-right: 45px;
+        }
+        @include breakpoint($pc) {
+          font-size: 26px;
+        }
+      }
+      .attribution {
+        // TODO: Hiding quote attribution since there is no design yet.
+        display: none;
+      }
+    }
     &-element-text-summary {
       // TODO: Do hide/show button on summary element
       background: $color10;
