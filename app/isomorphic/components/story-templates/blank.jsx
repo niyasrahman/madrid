@@ -14,7 +14,7 @@ function StoryCard(props){
 }
 
 function BlankStoryTemplate(props) {
-  return <div className="blank-story">
+  return <article className="blank-story">
       <figure className="blank-story-hero-image qt-image-16x9">
         <ResponsiveImage slug={props.story["hero-image-s3-key"]} metadata={props.story["hero-image-metadata"]}
           aspectRatio={[16,9]}
@@ -29,7 +29,7 @@ function BlankStoryTemplate(props) {
           <RelatedStories stories = {props.relatedStories}></RelatedStories>
         </div>
       </div>
-    </div>;
+    </article>;
 }
 
 function BlankStory(props) {

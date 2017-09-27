@@ -139,8 +139,17 @@
       p, li {
         font-family: $lora;
         font-size: 20px;
-        margin-bottom: 30px;
         color: $color4;
+      }
+      p {
+        margin-bottom: 15px;
+        &:last-child {
+          margin-bottom: 25px;
+        }
+      }
+      li {
+        margin-bottom: 10px;
+        margin-left: 30px;
       }
       h2, h3 {
         font-family: $neuz;
@@ -151,6 +160,11 @@
       }
       h3 {
         font-size: 28px;
+      }
+    }
+    &-element-image {
+      figure {
+        margin: 0 0 30px;
       }
     }
   }
