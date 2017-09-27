@@ -3,15 +3,17 @@ const {getNavigationMenuArray} = require("./menu-data");
 
 
 exports.loadStoryPageData = function loadStoryPageData(params, config){
-  let stories = {};
+  let story = {};
   return Story.getStoryBySlug(client, params.storySlug)
-    .then(story => {
-      stories = story.asJson();
-      return getRelatedStory(story);
+    .then(storyResponse => {
+      story = storyResponse.asJson();
+      const menuObject = _.find(config.layout.menu, function(menuItem) { return menuItem['section-slug'] === story.sections[0].slug; });
+      story['section-color'] = menuObject ? menuObject.data.color : '#6093f2';
+      return getRelatedStory(storyResponse);
     })
     .then(relatedStories => {
       const structuredMenu = getNavigationMenuArray(config.layout.menu);
-      return{'story': stories,
+      return{'story': story,
               relatedStories,
               'navigationMenu': structuredMenu
             };

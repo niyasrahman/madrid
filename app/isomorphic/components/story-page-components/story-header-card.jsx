@@ -3,8 +3,11 @@ const TimeAgo = require('react-timeago').default;
 
 
 function StoryHeaderCard(props) {
+  const sectionColor = {
+    borderBottomColor: props.story['section-color']
+  }
   return <div className="story-header">
-          <a className="story-section" href={"/" + props.story.sections[0]['slug']}>
+          <a className="story-section" href={"/" + props.story.sections[0]['slug']} style={sectionColor}>
             {props.story.sections[0]['display-name'].length > 0 && props.story.sections[0]['display-name'] }
           </a>
           <h3 className="story-headline" dangerouslySetInnerHTML={ {__html: props.story.headline }} />
