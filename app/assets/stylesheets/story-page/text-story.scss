@@ -156,15 +156,92 @@
         font-weight: 600;
       }
       h2 {
-        font-size: 36px;
+        font-size: 24px;
+        @include breakpoint($tablet) {
+          font-size: 30px;
+        }
+        @include breakpoint($pc) {
+          font-size: 36px;
+        }
       }
       h3 {
-        font-size: 28px;
+        font-size: 20px;
+        @include breakpoint($tablet) {
+          font-size: 24px;
+        }
+        @include breakpoint($pc) {
+          font-size: 28px;
+        }
       }
     }
     &-element-image {
       figure {
-        margin: 0 0 30px;
+        margin: 0 0 20px;
+      }
+      figcaption {
+        font-family: $lora;
+        font-size: 8px;
+        font-style: italic;
+        color: $color5;
+        margin-top: 5px;
+        @include breakpoint($tablet) {
+          font-size: 10px;
+        }
+        @include breakpoint($pc) {
+          font-size: 14px;
+        }
+      }
+    }
+    &-element-text-blurb {
+      blockquote {
+        font-family: $lora;
+        font-size: 16px;
+        font-style: italic;
+        @include breakpoint($tablet) {
+          font-size: 20px;
+          margin-bottom: 10px;
+        }
+        @include breakpoint($pc) {
+          font-size: 26px;
+          margin: 0 0 20px;
+        }
+      }
+    }
+    &-element-text-bigfact {
+      padding: 20px 15px;
+      border-top: 1px solid $lighest-gray;
+      border-bottom: 1px solid $lighest-gray;
+      text-align: center;
+      @include breakpoint($tablet) {
+        margin-bottom: 10px;
+      }
+      @include breakpoint($pc) {
+        margin-bottom: 20px;
+      }
+      .bigfact-title {
+        font-family: $neuz;
+        font-weight: 600;
+        font-size: 30px;
+        color: $dark-gray;
+        @include breakpoint($tablet) {
+          font-size: 36px;
+        }
+        @include breakpoint($pc) {
+          font-size: 44px;
+        }
+      }
+      .bigfact-description {
+        font-family: $lora;
+        font-size: 16px;
+        font-style: italic;
+        color: $color4;
+        @include breakpoint($tablet) {
+          font-size: 20px;
+          margin-bottom: 10px;
+        }
+        @include breakpoint($pc) {
+          font-size: 26px;
+        }
       }
     }
   }
