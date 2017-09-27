@@ -244,5 +244,28 @@
         }
       }
     }
+    &-element-text-summary {
+      // TODO: Do hide/show button on summary element
+      background: $color10;
+      padding: 20px 40px 15px;
+      position: relative;
+      margin-top: 90px;
+      margin-bottom: 20px;
+      &:after {
+        position: absolute;
+        top: -70px;
+        left: 0;
+        right: 0;
+        color: $white;
+        content: 'Summary';
+        padding: 15px 40px;
+        font-size: 25px;
+        font-family: $neuz;
+        background: $base-blue;
+      }
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 }
