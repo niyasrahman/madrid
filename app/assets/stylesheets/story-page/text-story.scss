@@ -1,17 +1,19 @@
 @import "story-page/related-stories";
 
 .blank-story {
-  &--content {
+  &--wrapper {
+    @include container;
     position: relative;
-    width: 90vw;
-    max-width: 992px;
-    margin: -50px auto 20px;
+    padding-right: 185px;
+  }
+  &--content {
+    margin: -70px auto 20px;
     background-color: $white;
     padding: 15px;
     z-index: 10;
     min-height: 1000px;
     @include breakpoint($pc){
-      padding: 30px 20% 50px 50px;
+      padding: 30px 220px 55px 55px;
     }
   }
   &-hero-image.qt-image-16x9 {
@@ -47,6 +49,7 @@
       font-size: 28px;
       line-height: 1.21;
       margin: 10px 0;
+      font-weight: 600;
       color: $color8;
       @include breakpoint($tablet) {
         font-size: 26px;
@@ -75,6 +78,7 @@
     &-byline {
       display: block;
       overflow: auto;
+      margin-bottom: 20px;
     }
     // &-image-author {
     //   width: 50px;
@@ -129,6 +133,24 @@
       }
       @include breakpoint($pc) {
         font-size: 16px;
+      }
+    }
+    &-element-text {
+      p, li {
+        font-family: $lora;
+        font-size: 20px;
+        margin-bottom: 30px;
+        color: $color4;
+      }
+      h2, h3 {
+        font-family: $neuz;
+        font-weight: 600;
+      }
+      h2 {
+        font-size: 36px;
+      }
+      h3 {
+        font-size: 28px;
       }
     }
   }

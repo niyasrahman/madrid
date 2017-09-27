@@ -3,11 +3,11 @@
   background-color: $white;
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.1);
   @include breakpoint($tablet) {
-    display: inline-block;
-    @include span(last 3 of 12);
+    display: block;
+    width: 370px;
     position: absolute;
-    top: 70%;
-    right: 6%;
+    top: 100px;
+    right: 0;
     z-index: 10;
   }
   &-heading {
@@ -41,4 +41,3 @@
 .related_stories-story-card:last-of-type {
   border-bottom: 0;
 }
-

@@ -21,18 +21,20 @@ function BlankStoryTemplate(props) {
           defaultWidth={480} widths={[250,480,640]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 23%"
           imgParams={{auto:['format', 'compress']}}/>
       </figure>
-      <div className="blank-story--content">
-        <StoryHeaderCard story={props.story}/>
-        {props.story.cards.map((card, index) => <StoryCard key={index} card={card} story={props.story}/>)}
-        <StoryTags tags={props.story.tags} />
+      <div className="blank-story--wrapper">
+        <div className="blank-story--content">
+          <StoryHeaderCard story={props.story}/>
+          {props.story.cards.map((card, index) => <StoryCard key={index} card={card} story={props.story}/>)}
+          <StoryTags tags={props.story.tags} />
+          <RelatedStories stories = {props.relatedStories}></RelatedStories>
+        </div>
       </div>
     </div>;
 }
 
 function BlankStory(props) {
   return <div className="story-grid">
-    <BlankStoryTemplate story={props.story}></BlankStoryTemplate>
-    <RelatedStories stories = {props.relatedStories}></RelatedStories>
+    <BlankStoryTemplate {...props}></BlankStoryTemplate>
   </div>;
 }
 

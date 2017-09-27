@@ -2,13 +2,13 @@ const _ = require("lodash");
 const React = require("react");
 const { ResponsiveImage } = require("quintype-toddy-libs/components/responsive-image");
 
-function StoryCard(props){
+function RelatedStoryCard(props){
   if(props.showImage){
     classname = 'story-title story-title-bold';
   } else {
     classname = 'story-title';
   }
-  return <div className="related_stories-story-card">
+  return !props.story ? null : <div className="related_stories-story-card">
     <a href={"/" + props.story.slug} >
       {
         props.showImage && <figure className="story-card-image">
@@ -29,8 +29,8 @@ function StoryCard(props){
 function RelatedStories(props) {
   return <div className="related_stories">
     <h4 className="related_stories-heading"> Related Stories </h4>
-    <StoryCard story={_.head(props.stories)} showImage={true} key={_.head(props.stories).id}/>
-    {_.drop(props.stories).map((story, index) => <StoryCard key={index} story={story} showImage={false} />)}
+    <RelatedStoryCard story={_.head(props.stories)} showImage={true}/>
+    {_.drop(props.stories).map((story, index) => <RelatedStoryCard key={index} story={story} showImage={false} />)}
   </div>
 }
 
