@@ -29,7 +29,7 @@ class StoryPage extends React.Component {
     };
     return (<div>
         <NavigationComponent {...navbarConfig}/>
-        <BlankStory story={this.props.data.story} relatedStories={this.props.data.relatedStories['related-stories']}/>;
+        <BlankStory story={this.props.data.story} relatedStories={this.props.data.relatedStories['related-stories']}/>
         <Footer links={staticLinks}/>
       </div>
     )

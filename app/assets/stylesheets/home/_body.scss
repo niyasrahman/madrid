@@ -283,7 +283,7 @@ img{
   text-align: center;
   @include breakpoint($tablet){
     text-align: left;
-    padding: 40px 0 44px;
+    padding: 40px 15px 44px;
   }
   &__content{
     @include container;
@@ -300,13 +300,16 @@ img{
       text-transform: capitalize;
       text-align: center;
       @include breakpoint($pc){
-        @include span(last 4);
+        @include span(last 5);
         text-align: right;
       }
       ul{
         list-style-type: none;
         margin-bottom: 30px;
         text-align: center;
+        @include breakpoint($pc){
+          float: right;
+        }
         li{
           display: inline-block;
           padding-left: 10px;
@@ -325,6 +328,11 @@ img{
         }
         li:last-of-type a::after {
           content: "";
+        }
+      }
+      .copy--right {
+        @include breakpoint($pc){
+          float: right;
         }
       }
     }

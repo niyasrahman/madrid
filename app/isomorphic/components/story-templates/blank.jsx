@@ -46,13 +46,13 @@ function BlankStoryTemplate(props) {
           <RelatedStories stories = {props.relatedStories}></RelatedStories>
         </div>
       </div>
-    </article>;
+    </article>
 }
 
 function BlankStory(props) {
   return <div className="story-grid">
     <BlankStoryTemplate {...props}></BlankStoryTemplate>
-  </div>;
+  </div>
 }
 
 exports.BlankStory = BlankStory;

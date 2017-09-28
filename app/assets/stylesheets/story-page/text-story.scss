@@ -4,7 +4,10 @@
   &--wrapper {
     @include container;
     position: relative;
-    padding-right: 185px;
+    padding: 10px;
+    @include breakpoint($pc){
+      padding-right: 185px;
+    }
   }
   &--content {
     margin: -70px auto 20px;
@@ -138,7 +141,10 @@
     &-element-text {
       p, li {
         font-family: $lora;
-        font-size: 20px;
+        font-size: 16px;
+        @include breakpoint($tablet) {
+          font-style: 20px;
+        }
         color: $color4;
       }
       p {
@@ -180,13 +186,10 @@
       }
       figcaption {
         font-family: $lora;
-        font-size: 8px;
+        font-size: 12px;
         font-style: italic;
         color: $color5;
         margin-top: 5px;
-        @include breakpoint($tablet) {
-          font-size: 10px;
-        }
         @include breakpoint($pc) {
           font-size: 14px;
         }
@@ -198,24 +201,21 @@
         font-family: $lora;
         font-size: 16px;
         font-style: italic;
+        margin: 0 0 20px;
         @include breakpoint($tablet) {
           font-size: 20px;
-          margin-bottom: 10px;
         }
         @include breakpoint($pc) {
           font-size: 26px;
-          margin: 0 0 20px;
         }
       }
     }
     &-element-text-bigfact {
-      padding: 20px 15px;
+      padding: 15px 15px 20px;
       border-top: 1px solid $lighest-gray;
       border-bottom: 1px solid $lighest-gray;
       text-align: center;
-      @include breakpoint($tablet) {
-        margin-bottom: 10px;
-      }
+      margin-bottom: 10px;
       @include breakpoint($pc) {
         margin-bottom: 20px;
       }
@@ -247,11 +247,13 @@
     }
     &-element-text-quote, &-element-text-blockquote {
       overflow: auto;
+      margin-bottom: 15px;
       blockquote {
         font-family: $lora;
         font-size: 16px;
         font-style: italic;
         color: $color5;
+        margin: 0 15px;
         @include breakpoint($tablet) {
           font-size: 20px;
           margin: 0 45px 15px;
@@ -279,19 +281,17 @@
       position: relative;
       padding: 5px;
       img {
-        width: 14px;
+        width: 26px;
         height: auto;
         position: absolute;
         left: 0;
         top: 0;
-        @include breakpoint($tablet) {
-          width: 26px;
-        }
         @include breakpoint($pc) {
           width: 36px;
         }
       }
       blockquote {
+        margin: 0 15px 15px 30px;
         @include breakpoint($tablet) {
           margin: 0 45px 15px 55px;
         }
@@ -307,29 +307,39 @@
       header {
         color: $white;
         content: 'Summary';
-        padding: 15px 40px;
-        font-size: 25px;
+        font-size: 20px;
         font-family: $neuz;
         background: $base-blue;
-        padding: 20px 40px 15px;
+        padding: 5px 15px;
         overflow: auto;
+        @include breakpoint($tablet) {
+          padding: 20px 40px 15px;
+          font-size: 26px;
+        }
         img {
           float: right;
-          width: 30px;
+          width: 20px;
           height: auto;
           padding: 10px 0;
+          margin-right: 5px;
           cursor: pointer;
           transform: rotate3d(1, 0, 0, 180deg);
           transition: transform .5s;
+          @include breakpoint($tablet) {
+            width: 30px;
+          }
           &.is-closed {
             transform: rotate3d(1, 0, 0, 0deg);
           }
         }
       }
       .story-element-text-summary__content {
-        padding: 20px 40px 15px;
+        padding: 15px;
         transition: height .6s, padding .5s;
         overflow: hidden;
+        @include breakpoint($tablet) {
+          padding: 20px 40px 15px;
+        }
         &.is-closed {
           // overwrite inline height style to animate toggling
           height: 0 !important;
@@ -339,6 +349,13 @@
       }
       p:last-child {
         margin-bottom: 0;
+      }
+    }
+    &-element-youtube-video, &-element-jsembed, &-element-soundcloud-audio {
+      text-align: center;
+      iframe, twitterwidget {
+        margin: auto;
+        max-width: 100%;
       }
     }
   }

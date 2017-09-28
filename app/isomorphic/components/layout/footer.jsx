@@ -8,12 +8,12 @@ function Footer(props) {
         <img src={Logo} alt="Logo"/>
       </div>
       <div className="footer__content__last">
-        <ul className="align--right">
+        <ul>
           {props.links.map((item, index) => {
             return <li key={index}><a href={item.url}>{item.content}</a></li>
           })}
         </ul>
-        <div className="copy--right align--right">
+        <div className="copy--right">
           <div>copyright 2016</div>
           <strong>Powered by quintype</strong>
         </div>
