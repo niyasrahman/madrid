@@ -244,7 +244,8 @@
         }
       }
     }
-    &-element-text-quote {
+    &-element-text-quote, &-element-text-blockquote {
+      overflow: auto;
       blockquote {
         font-family: $lora;
         font-size: 16px;
@@ -252,17 +253,35 @@
         color: $color5;
         @include breakpoint($tablet) {
           font-size: 20px;
-          margin-bottom: 20px;
-          margin-left: 45px;
-          margin-right: 45px;
+          margin: 0 45px 15px;
         }
         @include breakpoint($pc) {
           font-size: 26px;
         }
       }
       .attribution {
-        // TODO: Hiding quote attribution since there is no design yet.
-        display: none;
+        float: right;
+        font-family: $neuz;
+        font-style: italic;
+        color: $color4;
+        @include breakpoint($tablet) {
+          font-size: 18px;
+        }
+      }
+      @include breakpoint($tablet) {
+        margin-bottom: 20px;
+      }
+      @include breakpoint($pc) {
+      }
+    }
+    &-element-text-blockquote {
+      blockquote {
+        @include breakpoint($tablet) {
+          margin: 0 45px 15px 55px;
+        }
+        @include breakpoint($pc) {
+          font-size: 26px;
+        }
       }
     }
     &-element-text-summary {
