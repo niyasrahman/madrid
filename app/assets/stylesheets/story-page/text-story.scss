@@ -275,7 +275,22 @@
       @include breakpoint($pc) {
       }
     }
-    &-element-text-blockquote {
+    &-element-text-blockquote__wrapper {
+      position: relative;
+      padding: 5px;
+      img {
+        width: 14px;
+        height: auto;
+        position: absolute;
+        left: 0;
+        top: 0;
+        @include breakpoint($tablet) {
+          width: 26px;
+        }
+        @include breakpoint($pc) {
+          width: 36px;
+        }
+      }
       blockquote {
         @include breakpoint($tablet) {
           margin: 0 45px 15px 55px;

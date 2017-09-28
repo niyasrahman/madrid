@@ -7,6 +7,7 @@ const { StoryHeaderCard } = require("../story-page-components/story-header-card.
 const { StoryTags } = require("../story-page-components/story-tags.jsx");
 const { RelatedStories } = require("../story-page-components/related-stories.jsx");
 const { SummaryElement} = require("../basic/summary-element.jsx")
+const { BlockquoteElement} = require("../basic/blockquote-element.jsx")
 
 function StoryCard(props){
   return <div>
@@ -15,6 +16,11 @@ function StoryCard(props){
         case 'summary':
           return <div>
             <SummaryElement element={element} key={index} story={props.story}></SummaryElement>
+          </div>
+          break;
+        case 'blockquote':
+          return <div>
+            <BlockquoteElement element={element} key={index} story={props.story}></BlockquoteElement>
           </div>
           break;
         default:
