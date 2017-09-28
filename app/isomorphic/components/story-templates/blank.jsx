@@ -6,10 +6,21 @@ const { StoryElement } = require("quintype-toddy-libs/components/story-element")
 const { StoryHeaderCard } = require("../story-page-components/story-header-card.jsx");
 const { StoryTags } = require("../story-page-components/story-tags.jsx");
 const { RelatedStories } = require("../story-page-components/related-stories.jsx");
+const { SummaryElement} = require("../basic/summary-element.jsx")
 
 function StoryCard(props){
   return <div>
-    {props.card['story-elements'].map((element, index) => <StoryElement element={element} key={index} story={props.story}></StoryElement>)}
+    {props.card['story-elements'].map((element, index) => {
+      switch (element.subtype) {
+        case 'summary':
+          return <div>
+            <SummaryElement element={element} key={index} story={props.story}></SummaryElement>
+          </div>
+          break;
+        default:
+          return <StoryElement element={element} key={index} story={props.story}></StoryElement>
+      }
+    })}
   </div>
 }
 

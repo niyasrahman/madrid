@@ -193,6 +193,7 @@
       }
     }
     &-element-text-blurb {
+      color: $color4;
       blockquote {
         font-family: $lora;
         font-size: 16px;
@@ -284,24 +285,42 @@
         }
       }
     }
-    &-element-text-summary {
-      // TODO: Do hide/show button on summary element
+    &-element-text-summary__wrapper {
       background: $color10;
-      padding: 20px 40px 15px;
       position: relative;
-      margin-top: 90px;
       margin-bottom: 20px;
-      &:after {
-        position: absolute;
-        top: -70px;
-        left: 0;
-        right: 0;
+      header {
         color: $white;
         content: 'Summary';
         padding: 15px 40px;
         font-size: 25px;
         font-family: $neuz;
         background: $base-blue;
+        padding: 20px 40px 15px;
+        overflow: auto;
+        img {
+          float: right;
+          width: 30px;
+          height: auto;
+          padding: 10px 0;
+          cursor: pointer;
+          transform: rotate3d(1, 0, 0, 180deg);
+          transition: transform .5s;
+          &.is-closed {
+            transform: rotate3d(1, 0, 0, 0deg);
+          }
+        }
+      }
+      .story-element-text-summary__content {
+        padding: 20px 40px 15px;
+        transition: height .6s, padding .5s;
+        overflow: hidden;
+        &.is-closed {
+          // overwrite inline height style to animate toggling
+          height: 0 !important;
+          padding-top: 0;
+          padding-bottom: 0;
+        }
       }
       p:last-child {
         margin-bottom: 0;
