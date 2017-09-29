@@ -44,7 +44,7 @@ function NavBar(props) {
                     <MenuItem item={item} key={index}/>
                   )
                 }
-                return <li key={index} className="nav-item"><a href={item['section-slug']}>{item.title}</a></li>
+                return <li key={index} className="nav-item"><a href={ '/'+ item['section-slug']}>{item.title}</a></li>
               })}
             </ul>
           </nav>
@@ -91,12 +91,12 @@ class OffCanvasMenu extends React.Component {
                   <SideMenuItem item={item} key={index}/>
                 )
               }
-              return <li key={index}><a href={item['section-slug']}>{item.title}</a></li>
+              return <li key={index}><a href={ '/'+ item['section-slug']}>{item.title}</a></li>
             })}
           </ul>
           <ul className="sidebar__info">
             {this.props.links.map((item, index) => {
-                return <li key={index}><a href={item.url}>{item.content}</a></li>
+                return <li key={index}><a href={ '/'+ item.url}>{item.content}</a></li>
             })}
           </ul>
           <ul className="sidebar__social">
@@ -137,7 +137,7 @@ function MenuItem(props) {
 }
 
 function SubmenuItem(props) {
-  return <li><a href={props.item['section-slug']}>{props.item.title}</a></li>
+  return <li><a href={ '/'+ props.item['section-slug']}>{props.item.title}</a></li>
 }
 
 class SideMenuItem extends React.Component {
