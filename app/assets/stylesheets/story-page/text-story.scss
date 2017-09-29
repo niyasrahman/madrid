@@ -300,6 +300,15 @@
         }
       }
     }
+    &-element-text-q-and-a {
+      font-family: $lora;
+      .question p {
+        font-weight: 600;
+      }
+      .answer p {
+        font-style: italic;
+      }
+    }
     &-element-text-summary__wrapper {
       background: $color10;
       position: relative;
