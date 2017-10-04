@@ -7,8 +7,8 @@ const FacebookImg = require('../../assets/icons/facebook.svg');
 const LinkedinImg = require('../../assets/icons/linkedin.svg');
 const TwitterImg = require('../../assets/icons/twitter.svg');
 const GoogleImg = require('../../assets/icons/google.svg');
-// TODO: Change anchor tag to Link Component
 
+const { Link } = require("quintype-toddy-libs/components/link");
 
 class NavigationComponent extends React.Component {
   constructor(props) {
@@ -44,7 +44,9 @@ function NavBar(props) {
                     <MenuItem item={item} key={index}/>
                   )
                 }
-                return <li key={index} className="nav-item"><a href={ '/'+ item['section-slug']}>{item.title}</a></li>
+                return <li key={index} className="nav-item">
+                  <Link href={ '/'+ item['section-slug']}>{item.title}</Link>
+                </li>
               })}
             </ul>
           </nav>
@@ -91,12 +93,16 @@ class OffCanvasMenu extends React.Component {
                   <SideMenuItem item={item} key={index}/>
                 )
               }
-              return <li key={index}><a href={ '/'+ item['section-slug']}>{item.title}</a></li>
+              return <li key={index}>
+                <Link href={ '/'+ item['section-slug']}>{item.title}</Link>
+              </li>
             })}
           </ul>
           <ul className="sidebar__info">
             {this.props.links.map((item, index) => {
-                return <li key={index}><a href={ '/'+ item.url}>{item.content}</a></li>
+                return <li key={index}>
+                  <Link href={ '/'+ item.url}>{item.content}</Link>
+                </li>
             })}
           </ul>
           <ul className="sidebar__social">
@@ -117,7 +123,7 @@ function AppLogo(props) {
       <span className="menu-open"></span>
     </div>
     <div className="header__first__logo">
-      <a href="/">{props.title}</a>
+      <Link href="/">{props.title}</Link>
     </div>
   </div>
 }
@@ -127,7 +133,7 @@ function MenuItem(props) {
     'borderColor': props.item.color
   }
   return <li className="nav-item has--child">
-    <a href="#">{props.item.title}</a>
+    <span>{props.item.title}</span>
     <ul style={listStyle}>
       {props.item.children.map((child, index)=> {
         return <SubmenuItem item={child} key={child['section-slug']}/>
@@ -137,7 +143,7 @@ function MenuItem(props) {
 }
 
 function SubmenuItem(props) {
-  return <li><a href={ '/'+ props.item['section-slug']}>{props.item.title}</a></li>
+  return <li><Link href={ '/'+ props.item['section-slug']}>{props.item.title}</Link></li>
 }
 
 class SideMenuItem extends React.Component {
@@ -158,7 +164,7 @@ class SideMenuItem extends React.Component {
   render() {
     return <li className={classNames('has--submenu', {'open': this.state.openDownMenu})}
         onClick={this.toggleSideMenuParent}>
-      <a href="#">{this.props.item.title}</a>
+      <span>{this.props.item.title}</span>
       <ul className={classNames('submenu', {'submenu--show': this.state.openDownMenu})}>
         {this.props.item.children.map((child, index) => {
           return <SubmenuItem item={child} key={child['section-slug']}/>
