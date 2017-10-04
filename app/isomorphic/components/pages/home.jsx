@@ -30,9 +30,10 @@ class HomePage extends React.Component {
       }
     ]
 
+    // Showing the first 5 menu items only to keep up with design.
     const navbarConfig = {
       title: 'Madrid',
-      menu: this.props.data.navigationMenu,
+      menu: this.props.data.navigationMenu.splice(0,5),
       links: staticLinks
     };
 

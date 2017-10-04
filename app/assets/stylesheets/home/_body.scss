@@ -50,7 +50,9 @@ img{
     max-width: 100%;
   }
   @include breakpoint($tablet){
-    @include span(first 6);
+    float: left;
+    margin-right: 0;
+    width: 50%;
   }
 }
 
@@ -64,7 +66,7 @@ img{
       @include span(last 6);
     }
     @include breakpoint($pc){
-      padding: 40px 32px 40px 0;
+      padding: 40px 15px 40px 20px;
     }
   }
 }

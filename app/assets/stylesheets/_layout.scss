@@ -170,6 +170,7 @@ body {
   nav{
     font-family: $neuz;
     margin-top: 15px;
+    min-height: 50px;
     ul{
       list-style-type: none;
       margin: 0;
@@ -180,7 +181,7 @@ body {
           display: block;
           text-decoration: none;
           color: $light-gray;
-          font-size: 18px;
+          font-size: 16px;
           letter-spacing: 2px;
           font-weight: 400;
           padding-bottom: 25px;
@@ -202,7 +203,7 @@ body {
             display: none;
             opacity: 0;
             width: 255px;
-            padding: 30px 20px;
+            padding: 30px 20px 10px;
             position: absolute;
             top: 0;
             left: 0;
@@ -222,13 +223,16 @@ body {
                   padding-top: 0;
                 }
               }
+              &:last-child a{
+                border-bottom: none;
+              }
             }
           }
           &:hover, &:focus{
             ul{
               display: block;
               opacity: 1;
-              top: 54px;
+              top: 51px;
               background: $white;
               z-index: 3;
               li{

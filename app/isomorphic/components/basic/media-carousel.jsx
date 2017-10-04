@@ -52,7 +52,7 @@ class MediaCarouselItem extends React.Component {
         <div className="slide">
           <div className="slide__image">
               <ResponsiveImage slug={this.state.story["hero-image-s3-key"]} metadata={this.state.story["hero-image-metadata"]}
-                aspectRatio={[1,1]}
+                aspectRatio={[4,3]}
                 defaultWidth={480} widths={[250,480,640]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 23%"
                 imgParams={{auto:['format', 'compress']}}/>
           </div>
