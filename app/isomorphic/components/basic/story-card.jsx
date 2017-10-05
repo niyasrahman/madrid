@@ -19,7 +19,7 @@ function StoryCardBgImage(props) {
     <figure className="story-card-image qt-image-2x3">
       <ResponsiveImage slug={props.story["hero-image-s3-key"]} metadata={props.story["hero-image-metadata"]}
         aspectRatio={props.aspectRatio ? props.aspectRatio : '[4:3]'}
-        defaultWidth={480} widths={[250,480,640]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 23%"
+        defaultWidth={480}
         imgParams={{auto:['format', 'compress']}}/>
     </figure>
     <div className="three-col__first__content">
