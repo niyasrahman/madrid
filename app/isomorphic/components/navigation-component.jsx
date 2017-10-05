@@ -143,7 +143,11 @@ function MenuItem(props) {
 }
 
 function SubmenuItem(props) {
-  return <li><Link href={ '/'+ props.item['section-slug']}>{props.item.title}</Link></li>
+  return <li>
+    <Link href={ props.item['parent-slug'] ? '/' + props.item['parent-slug']  + '/' + props.item['section-slug'] :  '/' + props.item['section-slug'] }>
+      {props.item.title}
+    </Link>
+  </li>
 }
 
 class SideMenuItem extends React.Component {
