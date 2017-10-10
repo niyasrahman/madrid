@@ -22,11 +22,9 @@ function SimpleSlider(props) {
     };
   return !props.stories ? null : <div className="must__reads">
       <Slider {...settings}>
-        {props.stories.map((storyObj) =>
-          <div key={storyObj.id} className="must__reads__slider">
-            {/* This `storyObj` object includes `id`, `type` and actual `story` object. We only
-              need actual story object.*/}
-            <SliderItem story={storyObj.story} />
+        {props.stories.map((item) =>
+          <div key={item.id} className="must__reads__slider">
+            <SliderItem item={item} />
           </div>
         )}
       </Slider>
@@ -34,13 +32,17 @@ function SimpleSlider(props) {
 }
 
 function SliderItem(props) {
+  {/* The `story` can be an item from items of a collection or a story itself.
+   assigning it accordinlgy.*/}
+  const story = props.item.type === 'story' && props.item.story ? props.item.story : props.item;
+
   return (
     <div className="must__reads__slide">
       <img src={backgroundImage} alt="" />
       <div className="slide__content">
         <p>Must Reads</p>
-        <h2>{props.story.headline}</h2>
-        <Link href={"/" + (props.story['parent-collection'] ? props.story['generated-slug'] : props.story.slug) } className="slide__more button button--link" >
+        <h2>{story.headline}</h2>
+        <Link href={"/" + (story['parent-collection'] ? story['generated-slug'] : story.slug) } className="slide__more button button--link" >
           read story
         </Link>
       </div>
