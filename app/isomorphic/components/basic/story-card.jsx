@@ -30,7 +30,7 @@ function StoryCardBgImage(props) {
     </figure>
     <div className="story-card__content story-card__content--over-image">
       <h2 dangerouslySetInnerHTML={ {__html: props.story.headline }} />
-      <Author author={author}> </Author>
+      <Author author={author} />
     </div>
   </div>
 }
@@ -60,7 +60,7 @@ function StoryCardSimple(props) {
         }
         <h2 dangerouslySetInnerHTML={ {__html: props.story.headline }} />
         { props.config && props.config.subheadline && <p dangerouslySetInnerHTML={ {__html: props.story.subheadline }} /> }
-        <Author author={author}> </Author>
+        <Author author={author} />
       </div>
     </div>
 }
