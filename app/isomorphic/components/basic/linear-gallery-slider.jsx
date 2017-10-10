@@ -51,7 +51,7 @@ function SliderItem(props) {
   const story = props.item.type === 'story' && props.item.story ? props.item.story : props.item;
   return (
     <Link href={"/" + (story['parent-collection'] ? story['generated-slug'] : story.slug) }>
-      <figure className="story-card-image qt-image-2x3">
+      <figure className="qt-image-2x3">
         <ResponsiveImage slug={story["hero-image-s3-key"]} metadata={story["hero-image-metadata"]}
           aspectRatio={[4,3]}
           defaultWidth={320} widths={[250,480,640]}

@@ -6,38 +6,6 @@
     padding: 0 20px;
     margin-bottom: 30px;
   }
-  &__first{
-    position: relative;
-    height: auto;
-    overflow: hidden;
-    figure:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background: linear-gradient(to top, transparentize($black, 0.3), transparent 50%, transparent);
-    }
-    &__content{
-      position: absolute;
-      bottom: 0;
-      left:0;
-      color: $white;
-      padding: 0 20px 20px;
-      h2{
-        font-size: 34px;
-        line-height: 1.18;
-        @include breakpoint($tablet){
-          font-size: 32px;
-        }
-      }
-      .author--title{
-        color: $white;
-        margin-top: 24px;
-      }
-    }
-  }
   &__middle{
     @include breakpoint($tablet){
       @include span(last 6);
