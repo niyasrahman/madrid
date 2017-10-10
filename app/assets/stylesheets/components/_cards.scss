@@ -317,62 +317,6 @@
     letter-spacing: 1.3px;
   }
 }
-.section--title--small--xs{
-  font-size: 11px;
-  letter-spacing: normal;
-  color: $black;
-  font-weight: 600;
-  display: inline-block;
-  text-transform: uppercase;
-  @include breakpoint($tablet){
-    font-size: 12px;
-  }
-  @include breakpoint($pc){
-    font-size: 14px;
-  }
-}
-.section--science{
-    border-bottom: solid 2px #edd30d;
-}
-.section--travel{
-    border-bottom: solid 2px #60bcf2;
-}
-.section--business{
-    border-bottom: solid 2px #f26c60;
-}
-.section--three-col{
-    border-bottom: solid 2px #6093f2;
-}
-.section--recent{
-    border-bottom: solid 2px #2f73e4;
-}
-.section--grid{
-    border-bottom: solid 2px #49c6dd;
-}
-.section--health-fit{
-    border-bottom: solid 2px #f260a4;
-}
-.section--science--large{
-    border-bottom: solid 4px #edd30d;
-}
-.section--travel--large{
-    border-bottom: solid 4px #60bcf2;
-}
-.section--business--large{
-    border-bottom: solid 4px #f26c60;
-}
-.section--three-col--large{
-    border-bottom: solid 4px #6093f2;
-}
-.section--recent--large{
-    border-bottom: solid 4px #2f73e4;
-}
-.section--grid--large{
-    border-bottom: solid 4px #49c6dd;
-}
-.section--health-fit--large{
-    border-bottom: solid 4px #f260a4;
-}
 .section--video--large{
     border-bottom: solid 4px #fff;
     display: inline-block;
@@ -436,33 +380,6 @@
       line-height: 1.57;
       margin-bottom: 27px;
     }
-  }
-}
-
-
-.author--title--large{
-  @include breakpoint($pc){
-    font-size: 24px;
-    color: $color6;
-    margin-top: 20px;
-  }
-}
-
-.author--title{
-  font-weight: 300;
-  color: $color6;
-  font-size: 16px;
-}
-.author--title--xs{
-  @extend .author--title;
-  font-size: 12px;
-  @include breakpoint($tablet){
-    font-size: 14px;
-  }
-  @include breakpoint($pc){
-    font-size: 18px;
-    font-weight: 300;
-    color: $color6;
   }
 }
 

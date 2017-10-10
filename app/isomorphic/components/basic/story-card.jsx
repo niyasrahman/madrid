@@ -4,7 +4,7 @@ const { Link } = require("quintype-toddy-libs/components/link");
 const { ResponsiveImage } = require("quintype-toddy-libs/components/responsive-image");
 
 const { Author } = require("./author.jsx");
-
+const { SectionName } = require("./section-name.jsx");
 
 function StoryCard(props) {
   // The `props.story` can be an item from items of a collection or a story itself.
@@ -54,9 +54,7 @@ function StoryCardSimple(props) {
         </figure> }
       <div className="story-card__content">
         { props.config && props.config.section &&
-          <div className="story-card__section-name" style={sectionColor}>
-            {props.story.sections[0].name}
-          </div>
+          <SectionName sectionColor={sectionColor} name={props.story.sections[0].name}/>
         }
         <h2 dangerouslySetInnerHTML={ {__html: props.story.headline }} />
         { props.config && props.config.subheadline && <p dangerouslySetInnerHTML={ {__html: props.story.subheadline }} /> }

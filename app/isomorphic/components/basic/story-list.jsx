@@ -3,6 +3,7 @@ const React = require("react");
 const { Link } = require("quintype-toddy-libs/components/link");
 
 const { Author } = require("./author.jsx");
+const { SectionName } = require("./section-name.jsx");
 
 function StoryList(props) {
   return !props.stories ? null :  <div className="story-list">
@@ -26,9 +27,7 @@ function StoryListItem(props) {
     !props.story ? null : <Link href={"/" + (props.story['parent-collection'] ? props.story['generated-slug'] : props.story.slug) }>
       {
         props.config && props.config.section &&
-        <div className="story-list__section-name" style={sectionColor}>
-          {props.story.sections[0].name}
-        </div>
+        <SectionName sectionColor={sectionColor} name={props.story.sections[0].name}/>
       }
       <h2 dangerouslySetInnerHTML={ {__html: props.story.headline }} />
       <Author author={author}/>
