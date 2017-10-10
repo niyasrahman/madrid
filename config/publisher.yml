@@ -1,2 +1,2 @@
 asset_host: http://localhost:8080
-sketches_host: http://ace.staging.quintype.io
+sketches_host: https://ace.staging.quintype.io
