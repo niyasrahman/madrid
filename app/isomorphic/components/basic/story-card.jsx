@@ -4,25 +4,25 @@ const { Link } = require("quintype-toddy-libs/components/link");
 const { ResponsiveImage } = require("quintype-toddy-libs/components/responsive-image");
 
 function StoryCard(props) {
-  {/* This `props.story` object includes `id`, `type` and actual `story` object. We only
-    need actual story object.*/}
-  const storyObj = props.story ? props.story.story : null;
-  return !storyObj ? null : <Link href={"/" + (storyObj['parent-collection'] ? storyObj['generated-slug'] : storyObj.slug) }>
+  // The `props.story` can be an item from items of a collection or a story itself.
+  // assigning it accordinlgy.
+  const story = props.story.type === 'story' && props.story.story ? props.story.story : props.story;
+  return !story ? null : <Link href={"/" + (story['parent-collection'] ? story['generated-slug'] : story.slug) }>
       {props.type === 'imageBackground' ?
-        <StoryCardBgImage story={storyObj} aspectRatio={props.config ? props.config.imageAspectRatio : null}/> :
-        <StoryCardSimple story={storyObj} config={props.config}/>}
+        <StoryCardBgImage story={story} aspectRatio={props.config ? props.config.imageAspectRatio : null}/> :
+        <StoryCardSimple story={story} config={props.config}/>}
     </Link>;
 }
 
 function StoryCardBgImage(props) {
-  return <div className="three-col__first story-card">
-    <figure className="story-card-image qt-image-2x3">
+  return <div className="story-card">
+    <figure className="story-card__image story-card__image--cover">
       <ResponsiveImage slug={props.story["hero-image-s3-key"]} metadata={props.story["hero-image-metadata"]}
         aspectRatio={props.aspectRatio ? props.aspectRatio : '[4:3]'}
         defaultWidth={480}
         imgParams={{auto:['format', 'compress']}}/>
     </figure>
-    <div className="three-col__first__content">
+    <div className="story-card__content story-card__content--over-image">
       <h2 dangerouslySetInnerHTML={ {__html: props.story.headline }} />
       <div className="author--title">{props.story['author-name']}</div>
     </div>
@@ -36,20 +36,19 @@ function StoryCardSimple(props) {
   // We can customize this component by passing down a config
   // We can enable Image, Subheadline and Section name if the config values are true.
   // By default we'll hide all.
-  return <div className="story-card bg--shadow bg--white">
+  return <div className="story-card story-card--simple">
       { props.config && props.config.image &&
-      <div className="story-card__img">
-        <figure className="story-card-image qt-image-16x9">
+        <figure className="story-card__image story-card__image--16x9">
           <ResponsiveImage slug={props.story["hero-image-s3-key"]} metadata={props.story["hero-image-metadata"]}
             aspectRatio={[4,3]}
-            defaultWidth={480} widths={[250,480,640]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 23%"
             imgParams={{auto:['format', 'compress']}}/>
-        </figure>
-      </div> }
-      <div className="section--card--1">
-        { props.config && props.config.section && <div className="section--title--small" style={sectionColor}>
-          {props.story.sections[0].name}
-        </div> }
+        </figure> }
+      <div className="story-card__content">
+        { props.config && props.config.section &&
+          <div className="story-card__section-name" style={sectionColor}>
+            {props.story.sections[0].name}
+          </div>
+        }
         <h2 dangerouslySetInnerHTML={ {__html: props.story.headline }} />
         { props.config && props.config.subheadline && <p dangerouslySetInnerHTML={ {__html: props.story.subheadline }} /> }
         <div className="author--title">
