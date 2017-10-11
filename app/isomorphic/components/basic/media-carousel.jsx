@@ -1,10 +1,11 @@
 const React = require("react");
 const Slider = require("react-slick").default;
-const TimeAgo = require('react-timeago').default;
 require('whatwg-fetch');
 
 const { Link } = require("quintype-toddy-libs/components/link");
 const { ResponsiveImage } = require("quintype-toddy-libs/components/responsive-image");
+
+const { Author } = require("./author.jsx");
 
 function MediaCarousel(props) {
   const settings = {
@@ -60,15 +61,10 @@ class MediaCarouselItem extends React.Component {
             <div className="slide__section section--title--small" style={sectionColor}>{this.state.story.sections[0]['display-name']}</div>
             <h2 dangerouslySetInnerHTML={ {__html: this.state.story.headline }} />
             <p dangerouslySetInnerHTML={ {__html: this.state.story.subheadline }} />
-            <div className="slide__author">
-              <div className="slide__author__avatar">
-                <img src={this.state.story['author-image']} alt="author-image" />
-              </div>
-              <div className="slide__author__content">
-                <h3>{this.state.story['author-name']}</h3>
-                <p><TimeAgo date={this.state.story['first-published-at']} /></p>
-              </div>
-            </div>
+            <Author author={{
+                "name": this.state.story['author-name'],
+                "image": this.state.story['author-image'],
+                "date": this.state.story['first-published-at']}} />
           </div>
         </div>
       </Link>
