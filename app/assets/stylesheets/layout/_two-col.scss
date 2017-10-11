@@ -6,33 +6,11 @@
   img{
     max-width: 100%;
   }
-  &__first{
+  &__media-list {
+    @include container;
+    margin-bottom: 30px;
     @include breakpoint($tablet){
       @include span(first 6);
-    }
-    &__card{
-      clear: both;
-      overflow: hidden;
-      margin-bottom: 30px;
-      display: block;
-      &:last-child{
-        margin-bottom: 0;
-      }
-      &__img{
-        width: 50%;
-      }
-      &__content{
-        float: right;
-        width: 50%;
-        padding: 9px 10px;
-        &--enlarged {
-          padding-left: 25px;
-          padding-top: 0;
-        }
-      }
-      &__title--enlarged {
-        margin-bottom: 40px;
-      }
     }
   }
   &__last{

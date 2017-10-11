@@ -1,0 +1,31 @@
+.media{
+  clear: both;
+  overflow: hidden;
+  margin-bottom: 30px;
+  display: block;
+  &:last-child{
+    margin-bottom: 0;
+  }
+  &--bg-white {
+    background: $white;
+  }
+  &--with-shadow {
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  }
+  &__img{
+    width: 46%;
+    float: left;
+  }
+  &__content{
+    float: right;
+    width: 54%;
+    padding: 9px 10px;
+    &--enlarged {
+      padding-left: 25px;
+      padding-top: 0;
+    }
+  }
+  &__title--enlarged {
+    margin-bottom: 40px;
+  }
+}

@@ -298,6 +298,7 @@
   text-align: left;
   color: $black;
   display: inline-block;
+  border-bottom: solid 4px;
   @include breakpoint($pc){
     font-size: 34px;
   }

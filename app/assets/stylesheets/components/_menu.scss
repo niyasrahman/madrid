@@ -82,7 +82,7 @@
         height: 0.45em;
         position: relative;
         top: 0.45em;
-        transform: rotateX(180deg);
+        transform: rotateZ(135deg);
         will-change: transform;
         vertical-align: top;
         width: 0.45em;
@@ -90,8 +90,8 @@
         color: #9e9e9e;
     }
     li.has--submenu.open>a::after, li.has--submenu.open>span::after{
-        transform: rotateX(0deg);
-        top: 0.65em;
+      transform: rotateZ(315deg);
+      top: 0.65em;
     }
   }
 }

@@ -1,6 +1,6 @@
 const React = require("react");
 
-const { MediaObject } = require("../basic/media-object.jsx")
+const { MediaObject } = require("../basic/media-object-list.jsx")
 
 function FullscreenMediaList(props) {
   const config = {

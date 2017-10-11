@@ -36,7 +36,7 @@ function StoryCardBgImage(props) {
 }
 
 function StoryCardSimple(props) {
-  const sectionColor = {
+  const sectionBorder = {
     borderBottom: 'solid 2px ' + props.story['section-color']
   }
   const author = {
@@ -54,7 +54,7 @@ function StoryCardSimple(props) {
         </figure> }
       <div className="story-card__content">
         { props.config && props.config.section &&
-          <SectionName sectionColor={sectionColor} name={props.story.sections[0].name}/>
+          <SectionName sectionBorder={sectionBorder} name={props.story.sections[0].name}/>
         }
         <h2 dangerouslySetInnerHTML={ {__html: props.story.headline }} />
         { props.config && props.config.subheadline && <p dangerouslySetInnerHTML={ {__html: props.story.subheadline }} /> }

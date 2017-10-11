@@ -7,7 +7,7 @@
   text-transform: uppercase;
   @include breakpoint($tablet){
     font-size: 12px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
   @include breakpoint($pc){
     font-size: 14px;

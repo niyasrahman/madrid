@@ -7,7 +7,7 @@ function Author(props) {
       <img src={props.author.image} alt="author-image" />
     </div>}
     <div className="author__content">
-      <h3>{props.author.name}</h3>
+      <h3 className="author__name">{props.author.name}</h3>
       {props.author.date && <p>Posted <TimeAgo date={props.author.date} /></p>}
     </div>
   </div>
