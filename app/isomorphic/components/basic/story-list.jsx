@@ -36,3 +36,4 @@ function StoryListItem(props) {
 }
 
 exports.StoryList = StoryList;
+exports.StoryListItem = StoryListItem;
