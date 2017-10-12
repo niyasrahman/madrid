@@ -16,17 +16,19 @@ function ThreeCol(props) {
       <div className="section__head__title">
         <h2 className="section--title--large section--three-col--large" style={sectionColor}>{props.config['collection-name']}</h2>
       </div>
-      <div className="col-4">
-        <StoryCard story={props.stories[0]} type="imageBackground" config={secondColFirstCardConfig}/>
-      </div>
-      <div className="col-4">
-        <StoryCard story={props.stories[1]} config={secondColFirstCardConfig}/>
-        <StoryCard story={props.stories[2]}/>
-      </div>
-      <div className="three-col__last">
-        <StoryList
-          stories={[props.stories[1], props.stories[2], props.stories[3], props.stories[4]]}>
-        </StoryList>
+      <div>
+        <div className="col-4">
+          <StoryCard story={props.stories[0]} type="imageBackground" config={secondColFirstCardConfig}/>
+        </div>
+        <div className="col-4">
+          <StoryCard story={props.stories[1]} config={secondColFirstCardConfig}/>
+          <StoryCard story={props.stories[2]}/>
+        </div>
+        <div className="three-col__last">
+          <StoryList
+            stories={[props.stories[1], props.stories[2], props.stories[3], props.stories[4]]}>
+          </StoryList>
+        </div>
       </div>
     </div>
   )

@@ -3,16 +3,6 @@ img{
   display: block;
   width: 100%;
 }
-.hero__slider{
-  @include container;
-  margin-bottom: 50px;
-  @include breakpoint($pc){
-    margin-top: 40px;
-  }
-  .slide {
-    overflow: auto;
-  }
-}
 .row{
   @include clearfix();
   clear: both;
@@ -21,6 +11,9 @@ img{
   @include span(12);
   @include breakpoint($tablet){
     @include span(6);
+    &:nth-of-type(2n) {
+      margin-right: 0;
+    }
   }
   @include breakpoint($pc){
     @include span(4);
@@ -43,31 +36,6 @@ img{
   @include span(12);
   @include breakpoint($pc){
     @include span(9);
-  }
-}
-.slide__image{
-  img{
-    max-width: 100%;
-  }
-  @include breakpoint($tablet){
-    float: left;
-    margin-right: 0;
-    width: 50%;
-  }
-}
-
-.hero__slider__slides  {
-  @include breakpoint($pc){
-    height: 430px;
-  }
-  .slide__content{
-    @include span(12);
-    @include breakpoint($tablet){
-      @include span(last 6);
-    }
-    @include breakpoint($pc){
-      padding: 40px 15px 40px 20px;
-    }
   }
 }
 
@@ -186,12 +154,17 @@ img{
 }
 .recent__stories__content{
   @include container;
+  @include breakpoint($tablet){
+    padding: 0 15px;
+  }
   &__title{
     h2{
-      font-size: 34px;
       text-transform: capitalize;
       font-weight: 600;
-      margin-bottom: 30px;
+      margin-bottom: 10px;
+      @include breakpoint($tablet){
+        margin-bottom: 30px;
+      }
     }
   }
   &__card{
@@ -252,6 +225,7 @@ img{
   }
   &__content{
     @include container;
+    padding: 0 15px;
     &__first{
       display: none;
       @include breakpoint($pc){

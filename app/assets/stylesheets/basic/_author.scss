@@ -1,37 +1,39 @@
-.author{
+.author {
   @include clearfix();
 }
-.author__avatar{
+
+.author__avatar {
   float: left;
   width: 54px;
   margin-right: 15px;
-  img{
+
+  img {
     max-width: 100%;
   }
 }
-.author__content{
+
+.author__content {
   float: left;
   font-family: $neuz;
-  p {
-    font-size: 16px;
+
+  .author__published-date time,
+  p.author__published-date {
+    font-size: 10px;
     font-family: $neuz;
     text-align: left;
     color: $color9;
-    font-weight: 100;
-  }
-  h3 {
-    font-size: 14px;
     font-weight: 300;
-  }
-  @include breakpoint($pc){
-    h3{
-      font-size: 16px;
-    }
-    p{
-      font-size: 14px;
-      font-weight: 300;
-      color: $color8;
+    @include breakpoint($tablet) {
       margin-bottom: 0;
+      font-size: 14px;
+    }
+  }
+
+  h3 {
+    font-size: 12px;
+    font-weight: 300;
+    @include breakpoint($tablet) {
+      font-size: 16px;
     }
   }
 }

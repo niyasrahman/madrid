@@ -3,7 +3,6 @@
   padding: 0 15px;
   @include container;
   @include breakpoint($tablet){
-    padding: 0 20px;
     margin-bottom: 30px;
   }
   &__middle{

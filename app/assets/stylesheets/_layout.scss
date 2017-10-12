@@ -54,6 +54,9 @@ body {
     padding: 17.5px 20px 0;
   }
 }
+.navbar {
+  margin-bottom: 30px;
+}
 .loading{
   background: #fff;
   height: 100%;
@@ -105,6 +108,7 @@ body {
 }
 .header__container{
   @include container(1170px);
+  padding: 0 15px;
 }
 .header__first{
   width: 20%;

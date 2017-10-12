@@ -13,16 +13,41 @@
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
   }
   &__img{
-    width: 46%;
+    width: 37%;
     float: left;
+    @include breakpoint($tablet) {
+      width: 46%;
+    }
   }
   &__content{
     float: right;
-    width: 54%;
+    width: 63%;
     padding: 9px 10px;
+    @include breakpoint($tablet) {
+      width: 54%;
+    }
+    h2 {
+      font-size: 16px;
+      @include breakpoint($tablet) {
+        font-size: 22px;
+      }
+    }
     &--enlarged {
-      padding-left: 25px;
       padding-top: 0;
+      padding-left: 10px;
+      div {
+        font-size: 11px;
+      }
+      h2 {
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+      @include breakpoint($tablet) {
+        padding-left: 25px;
+        h2 {
+          font-size: 16px;
+        }
+      }
     }
   }
   &__title--enlarged {

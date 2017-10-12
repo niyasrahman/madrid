@@ -27,7 +27,7 @@ function StoryListItem(props) {
     !props.story ? null : <Link href={"/" + (props.story['parent-collection'] ? props.story['generated-slug'] : props.story.slug) }>
       {
         props.config && props.config.section &&
-        <SectionName sectionBorder={sectionBorder} name={props.story.sections[0].name}/>
+        <SectionName sectionBorder={sectionBorder} name={props.story.sections[0]['display-name']}/>
       }
       <h2 dangerouslySetInnerHTML={ {__html: props.story.headline }} />
       <Author author={author}/>
