@@ -3,7 +3,7 @@ const React = require("react");
 const { NavigationComponent } = require("../navigation-component.jsx");
 const { StoryGrid } = require("../story-grid.jsx");
 const { TwoColOneAd } = require("../layout/two-col-one-ad.jsx");
-const { FullscreenMediaCarousel } = require("../layout/fullscreen-media-carousel.jsx");
+const { FullscreenCarousel } = require("../layout/fullscreen-carousel.jsx");
 const { FullscreenSimpleSlider } = require("../layout/fullscreen-simple-slider.jsx");
 const { FullscreenLinearGallerySlider } = require("../layout/fullscreen-linear-gallery-slider.jsx");
 const { ThreeCol } = require("../layout/three-col.jsx");
@@ -38,7 +38,7 @@ class HomePage extends React.Component {
     };
 
     const templates = {
-      'featured-stories': FullscreenMediaCarousel,
+      'featured-stories': FullscreenCarousel,
       'main-stories': TwoColOneAd,
       'must-read': FullscreenSimpleSlider,
       'politics': ThreeCol,

@@ -7,7 +7,7 @@ const { ResponsiveImage } = require("quintype-toddy-libs/components/responsive-i
 
 const { Author } = require("./author.jsx");
 
-function MediaCarousel(props) {
+function Carousel(props) {
   const settings = {
       dots: true,
       infinite: true,
@@ -21,14 +21,14 @@ function MediaCarousel(props) {
       <Slider {...settings}>
         {props.stories.slice(0, limit).map((storyObj) =>
           <div key={storyObj.id}>
-            <MediaCarouselItem story={storyObj.story}/>
+            <CarouselItem story={storyObj.story}/>
           </div>
         )}
       </Slider>
     </div>
 }
 
-class MediaCarouselItem extends React.Component {
+class CarouselItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = props;
@@ -71,4 +71,4 @@ class MediaCarouselItem extends React.Component {
   }
 }
 
-exports.MediaCarousel = MediaCarousel;
+exports.Carousel = Carousel;
