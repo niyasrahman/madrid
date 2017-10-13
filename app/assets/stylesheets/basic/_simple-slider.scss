@@ -1,25 +1,26 @@
-.must__reads{
+.simple-slider{
   width: 100%;
   margin-bottom: 30px;
   overflow: hidden;
-  img{
-    width: 100%;
-    max-width: 100%;
-    height: 380px;
-    filter: grayscale(50%) blur(4px);
-    opacity: 0.7;
-  }
   @include breakpoint($pc){
     margin-bottom: 50px;
   }
-}
-// TODO: rename must-read slider class name from .slide-* to something more specific
-.must__reads__slider{
-  .must__reads__slide {
+  .simple-slider__item {
     position: relative;
-    background-color: transparentize($light-blue, 0.4);
+    background-color: #0065a7;
+    figure {
+      margin: 0;
+    }
+    img{
+      width: 100%;
+      max-width: 100%;
+      height: 380px;
+      filter: grayscale(50%) blur(1px);
+      opacity: 0.7;
+    }
+
   }
-  .slide__content{
+  &__content{
     position: absolute;
     top: 50%;
     left: 0;
@@ -52,8 +53,20 @@
   .slide__more{
     display: table;
     margin: 54px auto 0;
+  }
+  &__link{
+    display: block;
+    margin: auto;
+    margin-top: 55px;
+    background: none;
+    border: 3px solid $white;
+    font-size: 16px;
+    letter-spacing: 2.2px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 100px;
+    color: $white;
     @include breakpoint($pc){
-      margin-top: 54px;
       font-size: 17.5px;
       letter-spacing: 2.4px;
       padding: 12px 30px;
