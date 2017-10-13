@@ -42,7 +42,7 @@ function LShapeOneWidget(props) {
           </div>
         })}
       </div>
-      <Link href={props.config['collection-slug']} className="grid__read-more">
+      <Link href={'/' + props.config['collection-slug']} className="grid__read-more">
         Read more
         <img src={ArrowImg} alt="Arrow"/>
       </Link>
