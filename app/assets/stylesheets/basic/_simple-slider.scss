@@ -7,7 +7,7 @@
   }
   .simple-slider__item {
     position: relative;
-    background-color: #0065a7;
+    background-color: darken($base-blue, 30%);
     figure {
       margin: 0;
     }
