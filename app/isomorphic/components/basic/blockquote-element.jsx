@@ -2,7 +2,6 @@ const React = require("react");
 const { StoryElement } = require("quintype-toddy-libs/components/story-element");
 
 const blockquoteImg = require("../../../assets/icons/blockquote.svg");
-const classNames = require('classnames');
 
 class BlockquoteElement extends React.Component {
   constructor(props) {

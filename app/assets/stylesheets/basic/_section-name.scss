@@ -11,6 +11,17 @@
   }
   @include breakpoint($pc){
     font-size: 14px;
-    letter-spacing: 1.3px;
+  }
+  &--large {
+    text-transform: capitalize;
+    font-size: 26px;
+    @include breakpoint($tablet){
+      font-size: 28px;
+      margin-bottom: 0;
+    }
+    @include breakpoint($pc){
+      font-size: 34px;
+      margin-bottom: 0;
+    }
   }
 }

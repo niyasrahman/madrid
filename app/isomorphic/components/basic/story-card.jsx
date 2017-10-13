@@ -9,7 +9,7 @@ const { SectionName } = require("./section-name.jsx");
 function StoryCard(props) {
   // The `props.story` can be an item from items of a collection or a story itself.
   // assigning it accordinlgy.
-  const story = props.story.type === 'story' && props.story.story ? props.story.story : props.story;
+  const story = props.story && props.story.type === 'story' && props.story.story ? props.story.story : props.story;
   return !story ? null : <Link href={"/" + (story['parent-collection'] ? story['generated-slug'] : story.slug) }>
       {props.type === 'imageBackground' ?
         <StoryCardBgImage story={story} aspectRatio={props.config ? props.config.imageAspectRatio : null}/> :
@@ -36,7 +36,7 @@ function StoryCardBgImage(props) {
 }
 
 function StoryCardSimple(props) {
-  const sectionBorder = {
+  const inlineStyle = {
     borderBottom: 'solid 2px ' + props.story['section-color']
   }
   const author = {
@@ -54,7 +54,7 @@ function StoryCardSimple(props) {
         </figure> }
       <div className="story-card__content">
         { props.config && props.config.section &&
-          <SectionName sectionBorder={sectionBorder} name={props.story.sections[0]['display-name']}/>
+          <SectionName inlineStyle={inlineStyle} name={props.story.sections[0]['display-name']}/>
         }
         <h2 dangerouslySetInnerHTML={ {__html: props.story.headline }} />
         { props.config && props.config.subheadline && <p dangerouslySetInnerHTML={ {__html: props.story.subheadline }} /> }

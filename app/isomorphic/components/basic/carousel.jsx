@@ -57,7 +57,7 @@ class CarouselItem extends React.Component {
 }
 
 function Slide(props) {
-  const sectionBorder = {
+  const inlineStyle = {
     borderBottom: 'solid 2px ' + props.story['section-color']
   }
   return <div className="carousel-slide">
@@ -68,7 +68,7 @@ function Slide(props) {
           imgParams={{auto:['format', 'compress']}}/>
     </div>
     <div className="carousel-slide__content">
-      <SectionName sectionBorder={sectionBorder} name={props.story.sections[0]['display-name']} />
+      <SectionName inlineStyle={inlineStyle} name={props.story.sections[0]['display-name']} />
       <h2 dangerouslySetInnerHTML={ {__html: props.story.headline }} />
       {/* Remove extra charecters if content is so big */}
       <p dangerouslySetInnerHTML={ {__html: props.story.subheadline.length > 105 ? props.story.subheadline.substr(0, 100).concat('...') : props.story.subheadline }} />

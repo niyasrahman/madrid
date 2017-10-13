@@ -10,7 +10,7 @@ const { SectionName } = require("./section-name.jsx");
 
 function MediaObject({story, config}) {
   config = config || {};
-  const sectionBorder = {
+  const inlineStyle = {
     borderBottom: 'solid 2px ' + story['section-color']
   }
   const author = {
@@ -27,7 +27,7 @@ function MediaObject({story, config}) {
           imgParams={{auto:['format', 'compress']}}/>
       </div>
       <div className={classNames('media__content', {'media__content--enlarged': config.enlarged})}>
-        { config.section && <SectionName sectionBorder={sectionBorder} name={story.sections[0]['display-name']}/>}
+        { config.section && <SectionName inlineStyle={inlineStyle} name={story.sections[0]['display-name']}/>}
         <h2 className={classNames({'media__title--enlarged': config.enlarged})}
           dangerouslySetInnerHTML={ {__html: story.headline }} />
         <Author author={author}/>
