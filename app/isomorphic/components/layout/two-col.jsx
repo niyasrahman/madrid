@@ -15,7 +15,7 @@ function TwoCol(props) {
     borderBottomColor: props.config['collection-color']
   }
   return (
-    <div className="two-col">
+    <div className="two-col component-wrapper">
       <div className="two-col__title">
         <h2 className="section--title--large section--health-fit--large" style={sectionColor}>{props.config['collection-name']}</h2>
       </div>

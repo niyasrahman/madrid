@@ -14,7 +14,7 @@ function TwoColOneAd(props) {
     section: true
   }
   return (
-    <div className="two-col-one-ad">
+    <div className="two-col-one-ad component-wrapper">
       <div className="col-4">
         <StoryCard
           story={props.stories[0]}

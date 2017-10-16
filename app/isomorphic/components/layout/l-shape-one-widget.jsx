@@ -20,14 +20,14 @@ function LShapeOneWidget(props) {
     borderBottomColor: props.config['collection-color']
   }
   return (
-    <div className="grid">
-      <div className="grid__title">
-        <h2 className="section--title--large section--grid--large" style={sectionColor}>{props.config['collection-name']}</h2>
+    <div className="l-shape-grid component-wrapper">
+      <div className="l-shape-grid__title">
+        <h2 className="section--title--large" style={sectionColor}>{props.config['collection-name']}</h2>
       </div>
       <div className="col-8">
         <StoryCard story={props.stories[0]} config={primarStoryCardConfig} type="imageBackground"/>
       </div>
-      <div className="grid__last">
+      <div className="l-shape-grid__last">
         <div data-polltype-embed-id='391'
           data-polltype-embed-width="100%"
           data-polltype-embed-height="480px">
@@ -42,7 +42,7 @@ function LShapeOneWidget(props) {
           </div>
         })}
       </div>
-      <Link href={'/' + props.config['collection-slug']} className="grid__read-more">
+      <Link href={'/' + props.config['collection-slug']} className="l-shape-grid__read-more">
         Read more
         <img src={ArrowImg} alt="Arrow"/>
       </Link>

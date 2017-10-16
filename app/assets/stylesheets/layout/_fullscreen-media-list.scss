@@ -1,0 +1,68 @@
+.fullscreen-media-list{
+  background: $white;
+  padding: 15px;
+  margin-bottom: 30px;
+  @include breakpoint($tablet){
+    background: none;
+  }
+  @include breakpoint($pc){
+    background: $white;
+  }
+  &__object {
+    padding: 15px 0;
+  }
+}
+.fullscreen-media-list__content{
+  @include container;
+  @include breakpoint($tablet){
+    padding: 0 15px;
+  }
+  &__title{
+    h2{
+      text-transform: capitalize;
+      font-weight: 600;
+      margin-bottom: 10px;
+      @include breakpoint($tablet){
+        margin-bottom: 30px;
+      }
+    }
+  }
+  &__card{
+    margin-bottom: 30px;
+    @include clearfix();
+    @include breakpoint($pc){
+      @include  span(first 9);
+    }
+    &:last-child{
+      margin-bottom: 0;
+    }
+    &__img{
+      width: 50%;
+      float: left;
+    }
+    &__content{
+      padding: 0 10px 12px;
+      width: 50%;
+      float: left;
+      h4{
+        font-size: 12px;
+        line-height: normal;
+        font-weight: 400;
+        color: $dark-gray;
+        margin:8px 0;
+        @include breakpoint($tablet){
+          font-size: 22px;
+          line-height: 1.6;
+          margin-bottom: 32px;
+        }
+        @include breakpoint($pc){
+          line-height: 1.27;
+          margin: 15px 0 30px;
+        }
+      }
+      @include breakpoint($pc){
+        padding-left: 30px;
+      }
+    }
+  }
+}

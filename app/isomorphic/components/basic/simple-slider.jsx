@@ -21,7 +21,7 @@ function SimpleSlider(props) {
         }
       ]
     };
-  return !props.stories ? null : <div className="simple-slider">
+  return !props.stories ? null : <div className="simple-slider component-wrapper-fluid">
       <Slider {...settings}>
         {props.stories.map((item) =>
           <div key={item.id}>

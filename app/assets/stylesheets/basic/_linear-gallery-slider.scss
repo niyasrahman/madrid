@@ -1,13 +1,12 @@
 .linear-gallery-slider{
   background: $color8;
   padding: 28px 0;
-  margin-bottom: 50px;
   @include breakpoint($pc){
     padding: 40px 0;
   }
   &__title{
     @include container;
-    margin-left: 15px;
+    padding: 0 15px;
     @include breakpoint($pc){
       margin-left: auto;
     }

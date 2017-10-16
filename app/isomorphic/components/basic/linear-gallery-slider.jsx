@@ -34,7 +34,7 @@ function LinearGallerySlider(props) {
     borderBottom: 'solid 2px #fff',
     color: '#fff'
   }
-  return !props.stories ? null : <div className="linear-gallery-slider">
+  return !props.stories ? null : <div className="linear-gallery-slider component-wrapper-fluid">
       <div className="linear-gallery-slider__title">
         <SectionName inlineStyle={inlineStyle} name={props.config['collection-name']} type="large"/>
       </div>

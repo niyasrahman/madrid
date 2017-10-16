@@ -13,13 +13,13 @@ function FullscreenMediaList(props) {
   const sectionColor = {
     borderBottomColor: props.config['collection-color']
   }
-  return <div className="recent__stories">
-    <div className="recent__stories__content">
-      <div className="recent__stories__content__title">
+  return <div className="fullscreen-media-list">
+    <div className="fullscreen-media-list__content component-wrapper">
+      <div className="fullscreen-media-list__content__title">
         <h2 className="section--title section--recent--large section--title--large" style={sectionColor}>{props.config['collection-name']}</h2>
       </div>
       {props.stories.slice(0,5).map(storyObj =>
-        <div className="col-9 recent__stories__object" key={storyObj.id}>
+        <div className="col-9 fullscreen-media-list__object" key={storyObj.id}>
           <MediaObject story={storyObj.story} config={config}/>
         </div>
       )}
