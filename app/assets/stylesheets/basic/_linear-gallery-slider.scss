@@ -11,8 +11,11 @@
       margin-left: auto;
     }
   }
-  img{
-    max-width: 100%;
+  &__slides {
+    padding: 15px 0 0;
+    img{
+      max-width: 100%;
+    }
   }
 }
 .linear-gallery-slider__slider-content {

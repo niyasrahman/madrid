@@ -64,8 +64,8 @@ $slick-opacity-not-active: 0.25 !default;
 .slick-next {
     position: absolute;
     display: block;
-    height: 70px;
-    width: 70px;
+    height: 40px;
+    width: 40px;
     z-index: 1;
     line-height: 0px;
     font-size: 0px;
@@ -80,11 +80,16 @@ $slick-opacity-not-active: 0.25 !default;
     padding: 0;
     border: none;
     outline: none;
-    background-size: 40px !important;
+    background-size: 25px !important;
     background-position: center center !important;
     border-radius: 50%;
     &:hover, &:focus {
         outline: none;
+    }
+    @include breakpoint($tablet) {
+      width: 70px;
+      height: 70px;
+      background-size: 40px !important;
     }
     &.slick-disabled:before {
         opacity: $slick-opacity-not-active;
@@ -103,9 +108,11 @@ $slick-opacity-not-active: 0.25 !default;
 .slick-next {
   background: url('../icons/next-button.svg') no-repeat;
   background-size: contain;
+  margin-right: 15px;
 }
 
 .slick-prev {
+    margin-left: 15px;
     left: 0px;
     [dir="rtl"] & {
         left: auto;

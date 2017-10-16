@@ -15,7 +15,6 @@ function LinearGallerySlider(props) {
       {
         breakpoint: 768,
         settings: {
-          arrows: false,
           centerPadding: '20px',
           slidesToShow: 3
         }
@@ -24,7 +23,7 @@ function LinearGallerySlider(props) {
         breakpoint: 480,
         settings: {
           arrows: false,
-          centerPadding: '40px',
+          centerPadding: '80px',
           slidesToShow: 1
         }
       }
@@ -39,7 +38,7 @@ function LinearGallerySlider(props) {
       <div className="linear-gallery-slider__title">
         <SectionName inlineStyle={inlineStyle} name={props.config['collection-name']} type="large"/>
       </div>
-      <Slider {...settings}>
+      <Slider {...settings} className="linear-gallery-slider__slides">
         {props.stories.map((item) =>
           <div key={item.id} className="linear-gallery-slider__slider-content">
             <SliderItem item={item} />

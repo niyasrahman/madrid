@@ -11,15 +11,7 @@ function SimpleSlider(props) {
       infinite: true,
       speed: 600,
       arrows: true,
-      slidesToShow: 1,
-      responsive: [
-        {
-          breakpoint: 768,
-          settings: {
-            arrows: false,
-          }
-        }
-      ]
+      slidesToShow: 1
     };
   return !props.stories ? null : <div className="simple-slider component-wrapper-fluid">
       <Slider {...settings}>

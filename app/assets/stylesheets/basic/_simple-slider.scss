@@ -21,10 +21,13 @@
     right: 0;
     margin: auto;
     color: $white;
-    width: 76%;
+    width: 70%;
     line-height: 1.32;
     text-align: center;
     transform: translateY(-50%);
+    @include breakpoint($tablet) {
+      width: 76%;
+    }
     p {
       font-size: 28px;
       margin-bottom: 34px;
@@ -56,6 +59,7 @@
     padding: 12px 30px;
     border: 2px solid $white;
     font-size: 16px;
+    width: 200px;
     letter-spacing: 2.2px;
     font-weight: 600;
     text-transform: uppercase;
@@ -64,7 +68,6 @@
     @include breakpoint($pc){
       font-size: 17.5px;
       letter-spacing: 2.4px;
-      width: 200px;
       font-weight: 400;
       text-align: center;
       border: 3px solid $white;
