@@ -3,6 +3,7 @@ const { Link } = require("quintype-toddy-libs/components/link");
 
 const { StoryCard } = require("../basic/story-card.jsx")
 const { NewsletterSub } = require("../basic/newsletter-sub.jsx")
+const { SectionName } = require("../basic/section-name.jsx");
 
 const ArrowImg = require('../../../assets/icons/readmore_arrow.svg');
 
@@ -16,14 +17,12 @@ function LShapeOneWidget(props) {
   const storyListConfig = {
     image: true
   }
-  const sectionColor = {
-    borderBottomColor: props.config['collection-color']
+  const inlineStyle = {
+    borderBottom: '4px solid ' + props.config['collection-color']
   }
   return (
     <div className="l-shape-grid component-wrapper">
-      <div className="l-shape-grid__title">
-        <h2 className="section--title--large" style={sectionColor}>{props.config['collection-name']}</h2>
-      </div>
+      <SectionName inlineStyle={inlineStyle} name={props.config['collection-name']} type="large"/>
       <div className="col-8">
         <StoryCard story={props.stories[0]} config={primarStoryCardConfig} type="imageBackground"/>
       </div>

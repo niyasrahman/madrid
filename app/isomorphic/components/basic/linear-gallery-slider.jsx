@@ -31,8 +31,9 @@ function LinearGallerySlider(props) {
     ]
   };
   const inlineStyle = {
-    borderBottom: 'solid 2px #fff',
-    color: '#fff'
+    borderBottom: 'solid 4px #fff',
+    color: '#fff',
+    marginBottom: '0'
   }
   return !props.stories ? null : <div className="linear-gallery-slider component-wrapper-fluid">
       <div className="linear-gallery-slider__title">

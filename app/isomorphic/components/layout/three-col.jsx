@@ -2,20 +2,19 @@ const React = require("react");
 
 const { StoryCard } = require("../basic/story-card.jsx")
 const { StoryList } = require("../basic/story-list.jsx")
+const { SectionName } = require("../basic/section-name.jsx");
 
 function ThreeCol(props) {
   const secondColFirstCardConfig = {
     image: true,
     imageAspectRatio: [2,3]
   };
-  const sectionColor = {
-    borderBottomColor: props.config['collection-color']
-  };
+  const inlineStyle = {
+    borderBottom: '4px solid ' + props.config['collection-color']
+  }
   return (
     <div className="three-col component-wrapper">
-      <div className="section__head__title">
-        <h2 className="section--title--large section--three-col--large" style={sectionColor}>{props.config['collection-name']}</h2>
-      </div>
+      <SectionName inlineStyle={inlineStyle} name={props.config['collection-name']} type="large"/>
       <div>
         <div className="col-4">
           <StoryCard story={props.stories[0]} type="imageBackground" config={secondColFirstCardConfig}/>
