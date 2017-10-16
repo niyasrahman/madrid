@@ -1,14 +1,14 @@
 const React = require("react");
 const classNames = require('classnames');
+const { Link } = require("quintype-toddy-libs/components/link");
 
-const SearchImg = require('../../assets/icons/search.svg');
 const CloseImg = require('../../assets/icons/close.svg');
 const FacebookImg = require('../../assets/icons/facebook.svg');
 const LinkedinImg = require('../../assets/icons/linkedin.svg');
 const TwitterImg = require('../../assets/icons/twitter.svg');
 const GoogleImg = require('../../assets/icons/google.svg');
 
-const { Link } = require("quintype-toddy-libs/components/link");
+const { Search } = require("./basic/search.jsx");
 
 class NavigationComponent extends React.Component {
   constructor(props) {
@@ -53,7 +53,7 @@ function NavBar(props) {
         </div>
         <div className="header__last">
           <div className="header__last__button"><a href="#" className="button button--primary">Sign in</a></div>
-          <div className="header__last__search"><img src={SearchImg} alt="" className="search--black" /></div>
+          <Search />
         </div>
       </div>
     </div>

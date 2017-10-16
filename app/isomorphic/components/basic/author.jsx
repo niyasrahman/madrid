@@ -11,8 +11,6 @@ function Author(props) {
       {props.author.date && <p className="author__published-date">Posted <TimeAgo date={props.author.date} /></p>}
     </div>
   </div>
-
-  return <div className="author--title">{props.author.name}</div>
 }
 
 exports.Author = Author;
