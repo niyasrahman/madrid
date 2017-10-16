@@ -33,8 +33,7 @@
       }
     }
     &--enlarged {
-      padding-top: 0;
-      padding-left: 10px;
+      padding: 0 15px 0 10px;
       div {
         font-size: 11px;
         @include breakpoint($tablet) {

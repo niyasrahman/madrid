@@ -25,3 +25,18 @@
     }
   }
 }
+
+
+.section--title--large{
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: capitalize;
+  letter-spacing: normal;
+  text-align: left;
+  color: $black;
+  display: inline-block;
+  border-bottom: solid 4px;
+  @include breakpoint($pc){
+    font-size: 34px;
+  }
+}

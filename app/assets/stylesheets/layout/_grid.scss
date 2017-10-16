@@ -1,11 +1,8 @@
 .component-wrapper {
-  padding: 0 15px;
+  padding: 15px 15px 0;
   margin-bottom: 15px;
   overflow: auto;
   @include container;
-  @include breakpoint($tablet){
-    padding-top: 15px;
-  }
 }
 .component-wrapper-fluid {
   margin-bottom: 15px;

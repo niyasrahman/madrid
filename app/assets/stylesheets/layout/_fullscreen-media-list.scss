@@ -1,15 +1,20 @@
 .fullscreen-media-list{
   background: $white;
-  padding: 15px;
-  margin-bottom: 30px;
+  padding: 15px 0;
+  margin-bottom: 5px;
   @include breakpoint($tablet){
     background: none;
+    padding: 15px;
+    margin-bottom: 15px;
   }
   @include breakpoint($pc){
     background: $white;
   }
   &__object {
-    padding: 15px 0;
+    padding: 10px 0;
+    @include breakpoint($tablet){
+      padding: 15px 0;
+    }
   }
 }
 .fullscreen-media-list__content{
