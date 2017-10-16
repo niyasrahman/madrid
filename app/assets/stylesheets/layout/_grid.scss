@@ -4,11 +4,12 @@
   overflow: auto;
   @include container;
   @include breakpoint($tablet){
-    margin-bottom: 30px;
+    padding-top: 15px;
   }
 }
 .component-wrapper-fluid {
+  margin-bottom: 15px;
   @include breakpoint($tablet){
-    margin-bottom: 30px;
+    padding-top: 15px;
   }
 }
