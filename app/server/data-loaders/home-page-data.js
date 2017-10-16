@@ -5,7 +5,7 @@ const {getNavigationMenuArray} = require("./menu-data");
 
 exports.loadHomePageData = function loadHomePageData(config) {
   let placeholderCollectionSlugs = [];
-  return client.getCollectionBySlug('home', {})
+  return client.getCollectionBySlug('home', {'item-type': 'collection'})
     .then(homeCollection => {
       placeholderCollectionSlugs = childCollectionSlugsFromCollection(homeCollection);
       return makeBulkRequest(placeholderCollectionSlugs);
@@ -51,7 +51,7 @@ function childCollectionSlugsFromCollection(collection) {
 
 function createCollectionBulkRequest(slugs) {
   return _.reduce(slugs, function(acc, slug) {
-    acc[slug] = {"_type": "collection", "slug": slug, "limit": "8"}
+    acc[slug] = {"_type": "collection", "slug": slug, "limit": "8", "item-type": "story"}
     return acc
   }, {});
 }
