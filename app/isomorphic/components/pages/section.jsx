@@ -1,8 +1,9 @@
 const React = require("react");
 
 const { NavigationComponent } = require("../navigation-component.jsx");
-const { StoryGrid } = require("../story-grid.jsx");
 const { Footer } = require('../layout/footer.jsx')
+
+const { FullscreenMediaList } = require("../layout/fullscreen-media-list.jsx");
 
 class SectionPage extends React.Component {
   render() {
@@ -26,10 +27,15 @@ class SectionPage extends React.Component {
       menu: this.props.data.navigationMenu,
       links: staticLinks
     };
+    const config = {
+      'collection-name': this.props.data.collection.name,
+      'collection-slug': this.props.data.collection.slug,
+      'collection-color': this.props.data.collection.color
+    }
     return <div>
       <NavigationComponent {...navbarConfig}/>
       <h1>Section - {this.props.data.section["display-name"] || this.props.data.section["name"]}</h1>
-      <StoryGrid stories={this.props.data.stories} />
+      <FullscreenMediaList stories={this.props.data.collection} config= {config}/>
       <Footer links={staticLinks}/>
     </div>;
   }

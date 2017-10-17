@@ -17,7 +17,9 @@ function FullscreenMediaList(props) {
   return <div className="fullscreen-media-list">
     <div className="fullscreen-media-list__content component-wrapper">
       <SectionName inlineStyle={inlineStyle} name={props.config['collection-name']} type="large"/>
-      {props.stories.slice(0,5).map(storyObj =>
+      {props.stories.slice(0,5)
+        .filter((item) => item.type === 'story')
+        .map(storyObj =>
         <div className="col-9 fullscreen-media-list__object" key={storyObj.id}>
           <MediaObject story={storyObj.story} config={config}/>
         </div>

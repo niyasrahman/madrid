@@ -1,24 +1,19 @@
 const React = require("react");
 
-const { Link } = require("quintype-toddy-libs/components/link");
-const { ResponsiveImage } = require("quintype-toddy-libs/components/responsive-image");
-
-function StoryGridStoryItem(props) {
-  return <Link href={"/" + (props.story['parent-collection'] ? props.story['generated-slug'] : props.story.slug) } className="story-grid-item">
-      <figure className="story-grid-item-image qt-image-16x9">
-        <ResponsiveImage slug={props.story["hero-image-s3-key"]} metadata={props.story["hero-image-metadata"]}
-          aspectRatio={[16,9]}
-          defaultWidth={480} widths={[250,480,640]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 23%"
-          imgParams={{auto:['format', 'compress']}}/>
-      </figure>
-      <h2 dangerouslySetInnerHTML={ {__html: props.story.headline }} />
-      <span className="story-grid-item-author">{props.story['author-name']}</span>
-    </Link>;
-}
+const { StoryCard } = require("./basic/story-card.jsx");
 
 function StoryGrid(props) {
+  const config = {
+    section: true,
+    subheadline: true,
+    image: true,
+    imageAspectRatio: [4,3]
+  }
   return <div className="story-grid">
-    {props.stories.map((story, index) => <StoryGridStoryItem story={story} key={index}></StoryGridStoryItem>)}
+    {props.collection.map((item, index) => {
+      return item.type === 'story' && <div className="col-4"><StoryCard config={config} story={item} key={index}></StoryCard></div>
+      })
+    }
   </div>;
 }
 
