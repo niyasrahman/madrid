@@ -27,7 +27,7 @@ exports.loadSectionPageData = function loadSectionPageData(sectionId, config) {
       })
       return {
         section: config["sections"].find(section => section.id == sectionId),
-        collection: collection.items,
+        collection: collection,
         navigationMenu: structuredMenu
       }
     });
