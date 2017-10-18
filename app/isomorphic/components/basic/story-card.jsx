@@ -1,4 +1,5 @@
 const React = require("react");
+const classNames = require('classnames');
 
 const { Link } = require("quintype-toddy-libs/components/link");
 const { ResponsiveImage } = require("quintype-toddy-libs/components/responsive-image");
@@ -45,14 +46,14 @@ function StoryCardSimple(props) {
   // We can customize this component by passing down a config
   // We can enable Image, Subheadline and Section name if the config values are true.
   // By default we'll hide all.
-  return <div className="story-card story-card--simple">
+  return <div className={classNames('story-card', { 'story-card--transparent': props.config && props.config.transparent }) }>
       { props.config && props.config.image &&
         <figure className="story-card__image story-card__image--16x9">
           <ResponsiveImage slug={props.story["hero-image-s3-key"]} metadata={props.story["hero-image-metadata"]}
             aspectRatio={[4,3]}
             imgParams={{auto:['format', 'compress']}}/>
         </figure> }
-      <div className="story-card__content">
+      <div className={classNames('story-card__content', { 'story-card__content--transparent': props.config && props.config.transparent }) }>
         { props.config && props.config.section &&
           <SectionName inlineStyle={inlineStyle} name={props.story.sections[0]['display-name']}/>
         }

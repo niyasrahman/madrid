@@ -4,21 +4,21 @@ const { StoryCard } = require("../basic/story-card.jsx")
 const { MediaObjectsList } = require("../basic/media-object-list.jsx")
 const { SectionName } = require("../basic/section-name.jsx");
 
-function TwoCol(props) {
+function CardGroup(props) {
   const storyCardConfig = {
-    subheadline: true,
-    image: true
+    subheadline: false,
+    image: true,
+    transparent: true
   }
   const inlineStyle = {
     borderBottom: '4px solid ' + props.config['collection-color']
   }
   return (
-    <div className="two-col component-wrapper">
-      <SectionName inlineStyle={inlineStyle} name={props.config['collection-name']} type="large"/>
-      <div className="two-col__media-list">
-        <MediaObjectsList stories= {props.stories.slice(0,3)} />
+    <div className="component-wrapper">
+      <div className="col-8">
+        <StoryCard story={props.stories[3]} config={storyCardConfig}/>
       </div>
-      <div className="two-col__last">
+      <div className="col-4">
         <StoryCard story={props.stories[3]} config={storyCardConfig}/>
       </div>
     </div>
@@ -26,4 +26,4 @@ function TwoCol(props) {
 }
 
 
-exports.TwoCol = TwoCol;
+exports.CardGroup = CardGroup;

@@ -3,6 +3,8 @@
   position: relative;
   height: auto;
   overflow: hidden;
+  background: $white;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
   &__content {
     padding: 20px;
     p {
@@ -17,6 +19,12 @@
       line-height: 1.31;
       font-weight: 400;
       margin: 10px 0;
+    }
+    &--transparent {
+      padding: 0;
+      h2 {
+        font-weight: 600;
+      }
     }
     @include breakpoint($tablet) {
       h2 {
@@ -84,8 +92,8 @@
       background: linear-gradient(to top, transparentize($black, 0.3), transparent 50%, transparent);
     }
   }
-  &--simple {
-    background: $white;
-    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  &--transparent {
+    background: none;
+    box-shadow: none;
   }
 }
