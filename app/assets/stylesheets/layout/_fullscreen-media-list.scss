@@ -4,7 +4,6 @@
   margin-bottom: 5px;
   @include breakpoint($tablet){
     background: none;
-    padding: 15px;
     margin-bottom: 15px;
   }
   @include breakpoint($pc){

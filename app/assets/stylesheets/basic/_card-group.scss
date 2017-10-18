@@ -1,0 +1,5 @@
+.card-group {
+  @include breakpoint($tablet) {
+    padding-top: 30px;
+  }
+}

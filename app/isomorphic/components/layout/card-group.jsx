@@ -5,7 +5,7 @@ const { MediaObjectsList } = require("../basic/media-object-list.jsx")
 const { SectionName } = require("../basic/section-name.jsx");
 
 function CardGroup(props) {
-  const storyCardConfig = {
+  const majorStoryCardConfig = {
     subheadline: false,
     image: true,
     transparent: true
@@ -14,12 +14,17 @@ function CardGroup(props) {
     borderBottom: '4px solid ' + props.config['collection-color']
   }
   return (
-    <div className="component-wrapper">
-      <div className="col-8">
-        <StoryCard story={props.stories[3]} config={storyCardConfig}/>
-      </div>
-      <div className="col-4">
-        <StoryCard story={props.stories[3]} config={storyCardConfig}/>
+    <div className="card-group">
+      <div className="component-wrapper">
+        <SectionName inlineStyle={inlineStyle} name={props.config['collection-name']} type="large"/>
+        <div className="col-8">
+          <StoryCard story={props.stories[0]} config={majorStoryCardConfig}/>
+        </div>
+        <div className="col-4">
+          <StoryCard story={props.stories[1]}/>
+          <StoryCard story={props.stories[2]}/>
+          <StoryCard story={props.stories[3]}/>
+        </div>
       </div>
     </div>
   )
