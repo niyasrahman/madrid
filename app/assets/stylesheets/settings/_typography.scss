@@ -1,13 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:100,300,300i,400,400i,700,700i,900,900i);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,800,900);
 @import url(https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i);
-$sans: 'open sans', Helvetica,Arial, sans-serif;
-$lato: 'Lato', sans-serif;
-$neuz: "neuzeit-grotesk";
-$lora: 'Lora', serif;
-$primary-typeface: $neuz;
-$secondary-typeface: $lato;
 
+
+:root {
+    --sansTypeface: 'neuzeit-grotesk', sans-serif;
+    --serifTypeface: 'Lora', serif;
+}
 
 $base:      20px;
 $mobbase:   8px;
@@ -41,7 +38,7 @@ html {
 }
 
 body {
-    font-family: $neuz;
+    font-family: var(--sansTypeface);
     font-weight: 400;
     font-size: em($base);
     line-height: $line;
@@ -64,14 +61,14 @@ h2 {
     font-size: em($fontsize-halfjumbo);
     line-height: em(40, $fontsize-halfjumbo);
     padding: em(24, $fontsize-halfjumbo) 0 em(16, $fontsize-halfjumbo);
-    font-family: $primary-typeface;
+    font-family: var(--sansTypeface);
 }
 
 h3 {
     font-size: em($fontsize-largest);
     line-height: em(36, $fontsize-largest);
     word-break: normal;
-    font-family: $primary-typeface;
+    font-family: var(--sansTypeface);
 }
 
 h4 {
@@ -92,7 +89,7 @@ h6 {
 }
 
 p {
-    font-family: $primary-typeface;
+    font-family: var(--sansTypeface);
     font-size: em($fontsize-base);
     line-height: 1.6;
 }
