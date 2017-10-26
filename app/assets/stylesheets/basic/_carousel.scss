@@ -47,7 +47,7 @@
   }
 
   p {
-    font-family: $lora;
+    font-family: var(--serifTypeface);
     @include breakpoint($tablet) {
       display: block;
       font-size: 12px;
