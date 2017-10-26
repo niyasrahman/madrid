@@ -10,6 +10,7 @@ function StoryHeaderCard(props) {
           <a className="story-section" href={"/" + props.story.sections[0]['slug']} style={sectionColor}>
             {props.story.sections[0]['display-name'].length > 0 && props.story.sections[0]['display-name'] }
           </a>
+          { (props.story['story-template'] === "live-blog") && <span className="live-story">live</span> }
           <h3 className="story-headline" dangerouslySetInnerHTML={ {__html: props.story.headline }} />
           <p className="story-summary">{props.story.subheadline}</p>
           <div className="story-byline">

@@ -43,7 +43,7 @@ html {
 body {
     font-family: $neuz;
     font-weight: 400;
-    font-size: em($base);
+    font-size: $base;
     line-height: $line;
     text-rendering: auto;
 }
