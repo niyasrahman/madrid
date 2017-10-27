@@ -33,12 +33,12 @@
   .story-header {
     border: 0;
     background-color: $white;
-    margin: -40px 0 0;
-    padding: 0 10px;
+    margin: 0 -15px;
+    padding: 0 20px;
   }
   .story-cards {
     background-color: $white;
-    margin: 20px 0px;
+    margin: 20px -15px;
     padding: 10px 20px;
   }
   .card_added_at {
@@ -60,5 +60,13 @@
     text-align: left;
     color: $color4;
     margin: 10px 0;
+    @include breakpoint($pc) {
+      font-size: 24px;
+    }
   }
 }
+.live-blog-story--content.blank-story--content {
+  padding: 0 15px;
+  background: $color10;
+ }
+
