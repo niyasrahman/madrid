@@ -1,7 +1,4 @@
 .live-blog-story {
-  .story-header {
-    border: 0;
-  }
   .story-headline {
     display: inline;
     vertical-align: middle;
@@ -36,12 +33,12 @@
   .story-header {
     border: 0;
     background-color: $white;
-    margin: 0 -15px;
-    padding: 0 20px;
+    margin: -40px 0 0;
+    padding: 0 10px;
   }
   .story-cards {
     background-color: $white;
-    margin: 20px -15px;
+    margin: 20px 0px;
     padding: 10px 20px;
   }
   .card_added_at {
@@ -64,7 +61,4 @@
     color: $color4;
     margin: 10px 0;
   }
-}
-.live-blog-story--content.blank-story--content {
-  background: $color10;
 }

@@ -14,7 +14,7 @@ function LiveBlogTemplate(props) {
           imgParams={{auto:['format', 'compress']}}/>
       </figure>
       <div className="live-blog-story--wrapper blank-story--wrapper">
-        <div className="live-blog-story--content blank-story--content">
+        <div className="live-blog-story--content">
           <StoryHeaderCard story={props.story}/>
           {props.story.cards.map((card, index) => <div className="story-cards" id={card.id}>
             <TimeAgo date={card['card-added-at']}  className="card_added_at"/>
