@@ -1,0 +1,70 @@
+.live-blog-story {
+  .story-header {
+    border: 0;
+  }
+  .story-headline {
+    display: inline;
+    vertical-align: middle;
+  }
+  .live-story {
+    position: relative;
+    font-family: var(--sansTypeface);
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-align: right;
+    text-transform: uppercase;
+    border-radius: 3px;
+    color: $white;
+    vertical-align: middle;
+    padding: 4px 10px 4px 20px;
+    margin-right: 10px;
+    &::before {
+      content: "\2022";
+      position: absolute;
+      top: 6px;
+      left: 4px;
+      height: 10px;
+      width: 10px;
+      font-size: 15px;
+      color: $white;
+      z-index: 99;
+      border: 1px solid $transparent-white;
+      border-radius: 50%;
+      line-height: 0.8;
+    }
+  }
+  .story-header {
+    border: 0;
+    background-color: $white;
+    margin: 0 -15px;
+    padding: 0 20px;
+  }
+  .story-cards {
+    background-color: $white;
+    margin: 20px -15px;
+    padding: 10px 20px;
+  }
+  .card_added_at {
+    font-size: 14px;
+    text-align: left;
+    color: $color4;
+    padding: 5px 20px;
+    background-color: $color10;
+  }
+  .card_updated_at {
+    font-size: 14px;
+    text-align: left;
+    color: $color4;
+  }
+  .story-element-title h2 {
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.36;
+    text-align: left;
+    color: $color4;
+    margin: 10px 0;
+  }
+}
+.live-blog-story--content.blank-story--content {
+  background: $color10;
+}
