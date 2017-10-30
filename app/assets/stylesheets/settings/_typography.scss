@@ -3,6 +3,10 @@
     --serifTypeface: 'Lora', serif;
 }
 
+@function em($target, $context: 16) {
+  @return ($target / $context) * 1em;
+}
+
 $base:      20px;
 $mobbase:   8px;
 $line:      1.6;
@@ -18,6 +22,7 @@ $fontsize-halfjumbo:  29;
 $fontsize-jumbo:      36;
 
 // Font weights ----------------------------------
+$regular-light: 300;
 $regular: 400;
 $regular1: 500;
 $regular2: 600;

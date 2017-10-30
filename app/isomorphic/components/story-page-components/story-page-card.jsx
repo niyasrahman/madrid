@@ -8,12 +8,12 @@ const StoryPageCard = props => {
     {props.card['story-elements'].map((element, index) => {
       switch (element.subtype) {
         case 'summary':
-          return <div>
+          return <div key={index}>
             <SummaryElement element={element} key={index} story={props.story}></SummaryElement>
           </div>
           break;
         case 'blockquote':
-          return <div>
+          return <div key={index}>
             <BlockquoteElement element={element} key={index} story={props.story}></BlockquoteElement>
           </div>
           break;

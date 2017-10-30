@@ -33,13 +33,20 @@
   .story-header {
     border: 0;
     background-color: $white;
-    margin: 0 -15px;
+    margin: 0;
     padding: 0 20px;
+    @include breakpoint($pc) {
+      padding: 30px 50px;
+    }
   }
   .story-cards {
     background-color: $white;
-    margin: 20px -15px;
+    margin: 20px 0px;
     padding: 10px 20px;
+    @include breakpoint($pc) {
+      margin: 40px 0;
+      padding: 30px 250px 50px 50px;
+    }
   }
   .card_added_at {
     font-size: 14px;
@@ -47,11 +54,19 @@
     color: $color4;
     padding: 5px 20px;
     background-color: $color10;
+    @include breakpoint($pc) {
+      font-size: 16px;
+      margin: 0 0 0 -30px;
+    }
   }
   .card_updated_at {
     font-size: 14px;
     text-align: left;
     color: $color4;
+    font-weight: $regular-light;
+    @include breakpoint($pc) {
+      font-size: 16px;
+    }
   }
   .story-element-title h2 {
     font-size: 22px;
@@ -61,12 +76,29 @@
     color: $color4;
     margin: 10px 0;
     @include breakpoint($pc) {
-      font-size: 24px;
+      font-size: 26px;
     }
   }
 }
+.live-blog-story-hero-image.blank-story-hero-image.qt-image-16x9 {
+  @include breakpoint($pc){
+    padding-top: 28%;
+  }
+}
 .live-blog-story--content.blank-story--content {
-  padding: 0 15px;
-  background: $color10;
+  position: relative;
+  padding: 0;
+  background: $page-background-grey;
  }
+.key-events {
+  position: absolute;
+  width: 350px;
+  max-height: 450px;
+  top: 300px;
+  right: -145px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  z-index: 10;
+}
 
