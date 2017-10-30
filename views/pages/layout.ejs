@@ -12,16 +12,23 @@
     <meta content="black" name="apple-mobile-web-app-status-bar-style">
     <meta content="Madrid" name="apple-mobile-web-app-title">
     <%# Loading Typekit font%>
-    <script>
-      (function(d) {
-        var config = {
-          kitId: 'fit4gpd',
-          scriptTimeout: 3000,
-          async: true
-        },
-        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-      })(document);
-    </script>
+      <script>
+        WebFontConfig = {
+          typekit: { id: 'fit4gpd' },
+          google: {
+            families: ['Lora:400,400i,700,700i']
+          },
+          timeout: 2000 // Set the timeout to two seconds
+        };
+
+        (function(d) {
+          var wf = d.createElement('script'), s = d.scripts[0];
+          wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+          wf.async = true;
+          s.parentNode.insertBefore(wf, s);
+        })(document);
+      </script>
+
     <%-metadata.join("\n"); %>
     <script type="text/javascript">var qtReady = qtReady || [];</script>
   </head>

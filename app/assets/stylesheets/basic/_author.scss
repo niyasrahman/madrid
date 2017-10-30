@@ -14,12 +14,12 @@
 
 .author__content {
   float: left;
-  font-family: $neuz;
+  font-family: var(--sansTypeface);
 
   .author__published-date time,
   p.author__published-date {
     font-size: 10px;
-    font-family: $neuz;
+    font-family: var(--sansTypeface);
     text-align: left;
     color: $color9;
     font-weight: 300;
