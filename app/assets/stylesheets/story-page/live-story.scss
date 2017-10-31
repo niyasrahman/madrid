@@ -91,14 +91,46 @@
   background: $page-background-grey;
  }
 .key-events {
-  position: absolute;
-  width: 350px;
-  max-height: 450px;
-  top: 300px;
-  right: -145px;
-  background-color: #ffffff;
-  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  z-index: 10;
+  display: none;
+  @include breakpoint($pc) {
+    display: inline-block;
+    position: absolute;
+    width: 300px;
+    max-height: 450px;
+    top: 300px;
+    right: -145px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow: scroll;
+    z-index: 100;
+  }
+  &-fixed {
+    @include breakpoint($pc) {
+      top: calc(50% - 310px);;
+      position: fixed;
+      right: 175px;
+    }
+  }
+  &-heading {
+    font-size: 22px;
+    text-transform: capitalize;
+    font-weight: $regular2;
+    padding: 15px 20px;
+    margin: -20px -20px 15px;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.1);
+  }
+  .card_added_at {
+    background-color: inherit;
+    margin: 0;
+    font-size: 12px;
+    color: $color6;
+    font-weight: $regular-light;
+    padding: 0;
+  }
+  .event-title {
+    font-size: 20px;
+    line-height: 1.25;
+    color: $color4;
+  }
 }
-
