@@ -17,9 +17,9 @@ class LiveBlogTemplate extends React.Component {
       const keyEventsPos = keyEvents[0].offsetTop + 300;
       window.addEventListener('scroll', function(e){
         if(window.pageYOffset > keyEventsPos){
-          keyEvents[0].classList.add("key-events-fixed");
+          keyEvents[0].classList.add("key-events--fixed");
         } else {
-          keyEvents[0].classList.remove("key-events-fixed");
+          keyEvents[0].classList.remove("key-events--fixed");
         }
       });
     }
@@ -37,9 +37,9 @@ class LiveBlogTemplate extends React.Component {
           <StoryHeaderCard story={this.props.story}/>
           <LiveBlogKeyEvents story={ this.props.story } />
           {this.props.story.cards.map((card, index) => <div className="story-cards" id={card.id} key={index}>
-            <TimeAgo date={card['card-added-at']}  className="card_added_at"/>
+            <TimeAgo date={card['card-added-at']}  className="card-added-at"/>
             <StoryPageCard key={index} card={card} story={this.props.story}/>
-            <p className="card_updated_at">Last updated <TimeAgo date={card['card-updated-at']}/></p>
+            <p className="card-updated-at">Last updated <TimeAgo date={card['card-updated-at']}/></p>
           </div>)}
         </div>
       </div>

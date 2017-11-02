@@ -3,9 +3,10 @@
     --serifTypeface: 'Lora', serif;
 }
 
-@function em($target, $context: 16) {
-  @return ($target / $context) * 1em;
-}
+//Causing home page layout to break
+// @function em($target, $context: 16) {
+//   @return ($target / $context) * 1em;
+// }
 
 $base:      20px;
 $mobbase:   8px;
