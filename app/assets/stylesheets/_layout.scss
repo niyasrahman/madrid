@@ -83,7 +83,7 @@ body {
     animation: float 2.5s ease-in-out infinite;
   }
   h2{
-    font-family: $lato;
+    font-family: var(--sansTypeface);
   }
   h3{
     color: #000;
@@ -156,7 +156,7 @@ body {
 .header__first__logo{
   a{
     display: block;
-    font-family: $lato;
+    font-family: var(--sansTypeface);
     font-size: 22px;
     font-weight: bold;
     color: #000000;
@@ -169,7 +169,7 @@ body {
   width: 60%;
   float: left;
   nav{
-    font-family: $neuz;
+    font-family: var(--sansTypeface);
     margin-top: 15px;
     min-height: 50px;
     ul{

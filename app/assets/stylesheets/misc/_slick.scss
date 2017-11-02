@@ -8,7 +8,7 @@
 // "\2022" outputs ascii character "•"
 
 $slick-font-path: "./fonts/" !default;
-$slick-font-family: $lato;
+$slick-font-family: var(--sansTypeface);
 $slick-loader-path: "./" !default;
 $slick-arrow-color: white !default;
 $slick-dot-color: black !default;

@@ -34,10 +34,10 @@
 }
 
 .sidebar__nav{
-  font-family: $neuz;
+  font-family: var(--sansTypeface);
 }
 .sidebar__nav__logo{
-  font-family: $lato;
+  font-family: var(--sansTypeface);
   font-size: 34px;
   font-weight: bold;
   margin-bottom: 60px;
@@ -57,7 +57,7 @@
   }
 }
 .sidebar__nav{
-  font-family: $neuz;
+  font-family: var(--sansTypeface);
   ul{
     margin: 0;
     padding: 0;
