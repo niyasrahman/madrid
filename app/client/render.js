@@ -1,4 +1,4 @@
-import { renderIsomorphicComponent, history, navigateToPage, getRouteData } from 'quintype-toddy-libs/client/start';
+import { renderIsomorphicComponent } from 'quintype-toddy-libs/client/start';
 
 import { pickComponent } from '../isomorphic/pick-component';
 
