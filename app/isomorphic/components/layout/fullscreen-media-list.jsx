@@ -5,18 +5,23 @@ const { SectionName } = require("../basic/section-name.jsx");
 
 function FullscreenMediaList(props) {
   const config = {
-    section: true,
+    section: !props.HideSectionName,
     enlarged: true,
     noBackground: true,
     storyTime: true,
     aspectRatio: [5,3]
   }
+
   const inlineStyle = {
     borderBottom: '4px solid ' + props.config['collection-color']
   }
   return <div className="fullscreen-media-list">
     <div className="fullscreen-media-list__content component-wrapper">
-      <SectionName inlineStyle={inlineStyle} name={props.config['collection-name']} type="large"/>
+      {
+        !props.HideSectionName ? 
+        <SectionName inlineStyle={inlineStyle} name={props.config['collection-name']} type="large"/>
+        : null
+      }
       {props.stories.slice(0,5)
         .filter((item) => item.type === 'story')
         .map(storyObj =>

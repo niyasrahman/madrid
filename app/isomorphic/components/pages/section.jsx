@@ -4,7 +4,6 @@ const { NavigationComponent } = require("../navigation-component.jsx");
 const { Footer } = require('../layout/footer.jsx')
 
 const { FullscreenMediaList } = require("../layout/fullscreen-media-list.jsx");
-const { ThreeCol } = require("../layout/three-col.jsx");
 const { ThreeStoryCards } = require("../layout/three-story-cards.jsx");
 const { OneStoryCardSixStoryList } = require("../layout/onestorycard-sixstorylist.jsx");
 const { CardGroup } = require("../layout/card-group.jsx");
@@ -41,8 +40,7 @@ class SectionPage extends React.Component {
       <CardGroup stories={this.props.data.collection.items.slice(0,4)} config= {config}/>
       <ThreeStoryCards stories={this.props.data.collection.items.slice(0,3)} config= {config}/>
       <OneStoryCardSixStoryList stories={this.props.data.collection.items.slice(0,7)} config= {config}/>
-      <ThreeCol stories={this.props.data.collection.items.slice(0,7)} config= {config}/>
-      <FullscreenMediaList stories={this.props.data.collection.items.slice(4)} config= {config}/>
+      <FullscreenMediaList HideSectionName = {true} stories={this.props.data.collection.items.slice(4)} config= {config}/>
       <Footer links={staticLinks}/>
     </div>;
   }
