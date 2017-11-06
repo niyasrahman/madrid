@@ -17,9 +17,9 @@ class LiveBlogTemplate extends React.Component {
       const keyEventsPos = keyEvents[0].offsetTop + 300;
       window.addEventListener('scroll', function(e){
         if(window.pageYOffset > keyEventsPos){
-          keyEvents[0].classList.add("key-events--fixed");
+          keyEvents[0].classList.add("key-events__fixed");
         } else {
-          keyEvents[0].classList.remove("key-events--fixed");
+          keyEvents[0].classList.remove("key-events__fixed");
         }
       });
     }

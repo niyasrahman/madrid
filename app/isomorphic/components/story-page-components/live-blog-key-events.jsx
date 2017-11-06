@@ -22,7 +22,7 @@ function KeyEvent(props) {
 
 function LiveBlogKeyEvents(props) {
   return <div className="key-events">
-  <h3 className="key-events--heading"> key events</h3>
+  <h3 className="key-events__heading"> key events</h3>
   { props.story.cards.map((card, index)=>
     card.metadata.attributes && <KeyEvent card={card} key={index}/>) }
   </div>

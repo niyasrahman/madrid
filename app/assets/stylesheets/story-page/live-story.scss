@@ -106,14 +106,14 @@
     overflow: scroll;
     z-index: 100;
   }
-  &--fixed {
+  &__fixed {
     @include breakpoint($pc) {
       top: calc(50% - 310px);;
       position: fixed;
       right: calc(50% - 510px);
     }
   }
-  &--heading {
+  &__heading {
     font-size: 22px;
     text-transform: capitalize;
     font-weight: $regular2;
