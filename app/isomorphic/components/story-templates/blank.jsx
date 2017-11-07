@@ -1,34 +1,10 @@
 const React = require("react");
 
-const { Link } = require("quintype-toddy-libs/components/link");
 const { ResponsiveImage } = require("quintype-toddy-libs/components/responsive-image");
-const { StoryElement } = require("quintype-toddy-libs/components/story-element");
 const { StoryHeaderCard } = require("../story-page-components/story-header-card.jsx");
 const { StoryTags } = require("../story-page-components/story-tags.jsx");
 const { RelatedStories } = require("../story-page-components/related-stories.jsx");
-const { SummaryElement} = require("../basic/summary-element.jsx")
-const { BlockquoteElement} = require("../basic/blockquote-element.jsx")
-
-function StoryPageCard(props){
-  return <div>
-    {props.card['story-elements'].map((element, index) => {
-      switch (element.subtype) {
-        case 'summary':
-          return <div>
-            <SummaryElement element={element} key={index} story={props.story}></SummaryElement>
-          </div>
-          break;
-        case 'blockquote':
-          return <div>
-            <BlockquoteElement element={element} key={index} story={props.story}></BlockquoteElement>
-          </div>
-          break;
-        default:
-          return <StoryElement element={element} key={index} story={props.story}></StoryElement>
-      }
-    })}
-  </div>
-}
+const { StoryPageCard } = require("../story-page-components/story-page-card.jsx");
 
 function BlankStoryTemplate(props) {
   return <article className="blank-story">
