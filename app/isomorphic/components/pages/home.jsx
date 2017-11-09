@@ -10,7 +10,7 @@ const { ThreeCol } = require("../layout/three-col.jsx");
 const { TwoCol } = require("../layout/two-col.jsx");
 const { LShapeOneWidget } = require("../layout/l-shape-one-widget.jsx");
 const { FullscreenMediaList } = require("../layout/fullscreen-media-list.jsx");
-const { Footer } = require('../layout/footer.jsx')
+const { Footer } = require('../layout/footer.jsx');
 
 class HomePage extends React.Component {
 
