@@ -2,7 +2,8 @@
   padding: 15px 0;
   background-color: $white;
   @include breakpoint($tablet) {
-  	padding: 50px 0 30px;
+  	padding-top: 50px;
+  	padding-bottom: 50px;
   }
   &__slides {}
   &__slider-content {}
@@ -14,9 +15,12 @@
     border-radius: 0;
     background-size: 50px;
     @include breakpoint($tablet) {
+    	width: 60px;
+      height: 100px;
+    }
+    @include breakpoint($pc) {
     	width: 95px;
       height: 130px;
-      background-size: 50px;
     }
   }
   .slick-active {
@@ -50,12 +54,19 @@
   
   &__heading {
   	position: absolute;
-    font-size: em($fontsize-largest);
-    line-height: em(16, $fontsize-largest);
-    margin: 18px 25px;
+    font-size: 18px;
+    line-height: 1.2em;
+    margin: 10px 15px;
     color: $white;
     bottom: 0;
     display: none;
+    @include breakpoint($tablet) {
+    	font-size: 20px;
+    	margin: 15px 20px;
+    }
+    @include breakpoint($pc) {
+    	font-size: 29px;
+    	margin: 18px 25px;
+    }
   }
-
 }

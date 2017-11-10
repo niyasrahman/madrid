@@ -15,21 +15,21 @@ function OneMainCardSlider(props) {
       centerPadding: '270px',
       slidesToShow: 1,
       responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          centerPadding: '120px',
-          slidesToShow: 1
+        {
+          breakpoint: 768,
+          settings: {
+            centerPadding: '20px',
+            slidesToShow: 1
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            centerPadding: '80px',
+            slidesToShow: 1
+          }
         }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          centerPadding: '50px',
-          slidesToShow: 1
-        }
-      }
-    ]
+      ]
     };
   return !props.stories ? null : <div className="one-main-card-slider component-wrapper-fluid">
       <Slider {...settings} className="one-main-card-slider__slides component-wrapper">
