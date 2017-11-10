@@ -1,0 +1,65 @@
+.breaking-news {
+  @include container;
+  display: flex;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  padding: 10px 0;
+  color: $white;
+  background-color: $base-blue;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+  @include breakpoint($pc) {
+    top: 95px;
+    justify-content: center;
+    background-color: inherit;
+    box-shadow: none;
+  }
+  &__heading {
+    font-size: 18px;
+    line-height: 1.0;
+    letter-spacing: 0.4px;
+    padding: 0 15px;
+    border-right: 1px solid;
+    margin-right: 15px;
+    @include breakpoint($pc) {
+      display: table;
+      font-size: 20px;
+      line-height: 1.6;
+      letter-spacing: 0.5px;
+      background-color: $base-blue;
+      border: 0;
+      padding: 10px 20px;
+      margin: 0;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+    }
+  }
+  &__story {
+    font-size: 14px;
+    line-height: 1.29;
+    font-weight: $regular-light;
+    @include breakpoint($pc) {
+      font-size: 22px;
+      line-height: 1.45;
+      font-weight: $regular;
+      color: $black;
+    }
+  }
+  &__carousel {
+    @include breakpoint($pc) {
+      max-width: 970px;
+      padding: 10px 0 0 20px;
+      background-color: $white;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+// make space for the breaking news div
+
+.story-grid {
+  margin-top: 23px;
+  @include breakpoint($pc) {
+    margin-top: 90px;
+  }
+}
