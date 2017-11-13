@@ -1,3 +1,5 @@
+const _ = require('lodash');
+
 const {Story} = require("quintype-toddy-libs/server/api-client");
 const {getNavigationMenuArray} = require("./menu-data");
 
