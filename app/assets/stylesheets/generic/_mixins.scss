@@ -1,0 +1,137 @@
+@mixin bgicon-size($width, $height: $width) {
+  width: $width;
+  height: $height;
+  background-size: $width - 2px;
+}
+
+@function em($target, $context: 16) {
+  @return ($target / $context) * 1em;
+}
+
+@function rem($target, $context: 16) {
+  @return ($target / $context) * 1rem;
+}
+
+//Aspect ratio
+
+@mixin aspect-ratio($width, $height) {
+  figure {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+//clearfix
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+// Transform
+@mixin transform($transforms) {
+	-webkit-transform: $transforms;
+	-moz-transform: $transforms;
+	-ms-transform: $transforms;
+	transform: $transforms;
+}
+
+// Rotate
+@mixin rotate ($deg) {
+	@include transform(rotate(#{$deg}deg));
+}
+
+// Rotate X
+@mixin rotateX ($deg) {
+	@include transform(rotateX(#{$deg}deg));
+}
+
+// Rotate Y
+@mixin rotateY ($deg) {
+	@include transform(rotateY(#{$deg}deg));
+}
+
+// Scale
+@mixin scale($scale) {
+	@include transform(scale($scale));
+}
+
+// Scale X
+@mixin scaleX($scale) {
+	@include transform(scaleX($scale));
+}
+
+// Scale Y
+@mixin scaleY($scale) {
+	@include transform(scaleY($scale));
+}
+
+// Translate
+@mixin translate ($x, $y) {
+	@include transform(translate($x, $y));
+}
+
+// Translate X
+@mixin translateX ($x) {
+	@include transform(translateX($x));
+}
+
+// Translate Y
+@mixin translateY ($y) {
+	@include transform(translateY($y));
+}
+
+// Skew
+@mixin skew ($x, $y) {
+	@include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+// Skew X
+@mixin skewX ($x) {
+	@include transform(skewX(#{$x}deg));
+}
+
+
+// Skew Y
+@mixin skewY ($y) {
+	@include transform(skewY(#{$x}deg));
+}
+
+// Transform Origin
+@mixin transform-origin ($origin) {
+   -webkit-transform-origin: $origin;
+   -moz-transform-origin: $origin;
+	-ms-transform-origin: $origin;
+	transform-origin: $origin;
+}
+
+//transition
+@mixin transition( $val : ease 0.5s ) {
+  -webkit-transition: $val;
+  -moz-transition:$val;
+  -o-transition:$val;
+  -ms-transition:$val;
+  transition:$val;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}

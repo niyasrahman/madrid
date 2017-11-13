@@ -46,9 +46,10 @@ function SliderItem(props) {
   {/* The `story` can be an item from items of a collection or a story itself.
    assigning it accordinlgy.*/}
   const story = props.item.type === 'story' && props.item.story ? props.item.story : props.item;
-
+  console.log(props);
+  const video_story = props.item.template-type;
   return (
-    <Link className="overlay-story-card overlay-story-card--video" href={"/" + (story['parent-collection'] ? story['generated-slug'] : story.slug) }>
+    <Link className={`'overlay-story-card' ${ video_story === 'video' ? 'overlay-story-card--video' : null}`} href={"/" + (story['parent-collection'] ? story['generated-slug'] : story.slug) }>
       <figure>
         <ResponsiveImage slug={story["hero-image-s3-key"]} metadata={story["hero-image-metadata"]}
           aspectRatio={[57,32]}

@@ -3,6 +3,8 @@
 @import "~slick-carousel/slick/slick.css";
 
 @import "generic/normalize";
+@import 'generic/mixins';
+@import 'generic/extends';
 
 @import 'settings/colors';
 @import 'settings/typography';
