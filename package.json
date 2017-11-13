@@ -18,7 +18,7 @@
     "node-jsx": "^0.13.3",
     "quintype-js": "^0.1.6",
     "quintype-seo-node": "^0.1.6",
-    "quintype-toddy-libs": "^0.6.1",
+    "quintype-toddy-libs": "^0.7.1",
     "react": "^15.6.1",
     "react-slick": "^0.15.4",
     "react-timeago": "^3.4.3",
