@@ -1,7 +1,7 @@
-const {Story, client} = require("quintype-toddy-libs/server/api-client");
+const {Story} = require("quintype-toddy-libs/server/api-client");
 const {getNavigationMenuArray} = require("./menu-data");
 
-exports.loadSectionPageData = function loadSectionPageData(sectionId, config) {
+exports.loadSectionPageData = function loadSectionPageData(client, sectionId, config) {
   const section = _.find(config.sections, function(section) { return section.id === sectionId; });
   const sectionSlug = section.collection ? section.collection.slug : null;
 

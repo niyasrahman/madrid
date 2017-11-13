@@ -1,14 +1,13 @@
-_ = require("lodash");
-const {client} = require("quintype-toddy-libs/server/api-client");
+const _ = require("lodash");
 // TODO: menu should be a common Component. now accessing this from every pages. (home, story etc)
 const {getNavigationMenuArray} = require("./menu-data");
 
-exports.loadHomePageData = function loadHomePageData(config) {
+exports.loadHomePageData = function loadHomePageData(client, config) {
   let placeholderCollectionSlugs = [];
   return client.getCollectionBySlug('home', {'item-type': 'collection'})
     .then(homeCollection => {
       placeholderCollectionSlugs = childCollectionSlugsFromCollection(homeCollection);
-      return makeBulkRequest(placeholderCollectionSlugs);
+      return makeBulkRequest(client, placeholderCollectionSlugs);
     })
     .then(allCollections => {
       const structuredMenu = getNavigationMenuArray(config.layout.menu);
@@ -56,7 +55,7 @@ function createCollectionBulkRequest(slugs) {
   }, {});
 }
 
-function makeBulkRequest(slugs) {
+function makeBulkRequest(client, slugs) {
   var requestPayload = createCollectionBulkRequest(_.flatten(slugs));
   return client.getInBulk({requests: requestPayload})
   .then(bulkResponse => {
