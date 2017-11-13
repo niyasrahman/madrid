@@ -2,7 +2,7 @@
   position: relative;
   display: block;
   &:before {
-    background: image-url('icons/playicon.svg') no-repeat center center;
+    background: image-url('playicon.svg') no-repeat center center;
     display: block;
     content: '';
     position: absolute;
@@ -16,7 +16,7 @@
 }
 .play-button {
   &:before {
-    background: image-url('icons/playicon.svg') no-repeat center center;
+    background: image-url('playicon.svg') no-repeat center center;
     content: '';
     display: inline-block;
     height: 26px;
