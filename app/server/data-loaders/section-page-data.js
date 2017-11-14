@@ -8,7 +8,8 @@ exports.loadSectionPageData = function loadSectionPageData(client, sectionId, co
   const sectionSlug = section.collection ? section.collection.slug : null;
 
   return Collection.getCollectionBySlug(client, sectionSlug)
-    .then(collection => {
+    .then(response => {
+      let collection = response.collection;
       const menu = config.layout.menu;
       const structuredMenu = getNavigationMenuArray(menu);
       const collectionMenuObject = _.find(menu, function(menuCollectionItem) { return menuCollectionItem['section-slug'] === collection.slug; });
@@ -31,7 +32,7 @@ exports.loadSectionPageData = function loadSectionPageData(client, sectionId, co
         section: config["sections"].find(section => section.id == sectionId),
         collection: collection,
         navigationMenu: structuredMenu,
-        cacheKeys: collection.cacheKeys(config["publisher-id"])
+        cacheKeys: response.cacheKeys(config["publisher-id"])
       }
     });
 }
