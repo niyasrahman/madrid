@@ -4,6 +4,7 @@ const Slider = require("react-slick").default;
 const { Link } = require("quintype-toddy-libs/components/link");
 const { ResponsiveImage } = require("quintype-toddy-libs/components/responsive-image");
 
+const classNames = require('classnames');
 
 function OneMainCardSlider(props) {
   const settings = {
@@ -47,7 +48,7 @@ function SliderItem(props) {
    assigning it accordinlgy.*/}
   const story = props.item.type === 'story' && props.item.story ? props.item.story : props.item;
   return (
-    <Link className="overlay-story-card overlay-story-card--video" href={"/" + (story['parent-collection'] ? story['generated-slug'] : story.slug) }>
+    <Link className={classNames('overlay-story-card', {'overlay-story-card--video': props.item.story['story-template'] === 'video'})} href={"/" + (story['parent-collection'] ? story['generated-slug'] : story.slug) }>
       <figure>
         <ResponsiveImage slug={story["hero-image-s3-key"]} metadata={story["hero-image-metadata"]}
           aspectRatio={[57,32]}
