@@ -2,7 +2,7 @@
   position: relative;
   display: block;
   &:before {
-    background: image-url('playicon.svg') no-repeat center center;
+    background: url('../icons/playicon.svg') no-repeat center center;
     display: block;
     content: '';
     position: absolute;
@@ -11,21 +11,6 @@
     left: 50%;
     transform: translate(-50%, -50%);
     // just overwrite this mixin whenever size diference is there
-    @include bgicon-size(60px);
-  }
-}
-.play-button {
-  &:before {
-    background: image-url('playicon.svg') no-repeat center center;
-    content: '';
-    display: inline-block;
-    height: 26px;
-    width: 26px;
-    position: absolute;
-    z-index: $zIndex-1;
-    background-size: 26px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    @include bgicon-size(90px);
   }
 }

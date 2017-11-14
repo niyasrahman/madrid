@@ -46,7 +46,6 @@ function SliderItem(props) {
   {/* The `story` can be an item from items of a collection or a story itself.
    assigning it accordinlgy.*/}
   const story = props.item.type === 'story' && props.item.story ? props.item.story : props.item;
-  // const video_story = props.item.template-type;
   return (
     <Link className="overlay-story-card overlay-story-card--video" href={"/" + (story['parent-collection'] ? story['generated-slug'] : story.slug) }>
       <figure>

@@ -39,10 +39,10 @@ class SectionPage extends React.Component {
     return <div>
       <NavigationComponent {...navbarConfig}/>
       <CardGroup stories={this.props.data.collection.items.slice(0,4)} config= {config}/>
-      <OneMainCardSlider stories={this.props.data.collection.items.slice(0,3)} config= {config}/>
+      <OneMainCardSlider stories={this.props.data.collection.items.slice(0,20)} config= {config}/>
       <ThreeStoryCards stories={this.props.data.collection.items.slice(0,3)} config= {config}/>
       <OneStoryCardSixStoryList stories={this.props.data.collection.items.slice(0,7)} config= {config}/>
-      <FullscreenMediaList HideSectionName = {true} stories={this.props.data.collection.items.slice(4)} config= {config}/>
+      <FullscreenMediaList HideSectionName = {true} stories={this.props.data.collection.collection.items.slice(4)} config= {config}/>
       <Footer links={staticLinks}/>
     </div>;
   }
