@@ -17,7 +17,6 @@
     "ejs": "^2.5.6",
     "express": "^4.15.3",
     "js-yaml": "^3.9.0",
-    "lodash": "^4.17.4",
     "node-jsx": "^0.13.3",
     "quintype-js": "^0.1.6",
     "quintype-seo-node": "^0.1.6",
