@@ -38,7 +38,7 @@ class StoryPage extends React.Component {
         <NavigationComponent {...navbarConfig}/>
         { (this.props.data.story['story-template'] === "live-blog")?
           <LiveBlogStory story={this.props.data.story} /> :
-          <BlankStory story={this.props.data.story} relatedStories={this.props.data.relatedStories['related-stories']}/>
+          <BlankStory story={this.props.data.story} relatedStories={this.props.data.relatedStories}/>
         }
         <Footer links={staticLinks}/>
       </div>
