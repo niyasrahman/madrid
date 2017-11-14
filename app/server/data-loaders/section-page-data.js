@@ -1,13 +1,13 @@
 const _ = require('lodash');
 
-const {Story} = require("quintype-toddy-libs/server/api-client");
+const {Story, Collection} = require("quintype-toddy-libs/server/api-client");
 const {getNavigationMenuArray} = require("./menu-data");
 
 exports.loadSectionPageData = function loadSectionPageData(client, sectionId, config) {
   const section = _.find(config.sections, function(section) { return section.id === sectionId; });
   const sectionSlug = section.collection ? section.collection.slug : null;
 
-  return client.getCollectionBySlug(sectionSlug)
+  return Collection.getCollectionBySlug(client, sectionSlug)
     .then(collection => {
       const menu = config.layout.menu;
       const structuredMenu = getNavigationMenuArray(menu);
@@ -30,7 +30,8 @@ exports.loadSectionPageData = function loadSectionPageData(client, sectionId, co
       return {
         section: config["sections"].find(section => section.id == sectionId),
         collection: collection,
-        navigationMenu: structuredMenu
+        navigationMenu: structuredMenu,
+        cacheKeys: collection.cacheKeys(config["publisher-id"])
       }
     });
 }
