@@ -3,6 +3,9 @@
 @import "~slick-carousel/slick/slick.css";
 
 @import "generic/normalize";
+@import 'generic/mixins';
+@import 'generic/extends';
+@import 'generic/ads';
 
 @import 'settings/colors';
 @import 'settings/typography';
@@ -22,7 +25,9 @@
 @import "basic/simple-slider";
 @import "basic/carousel";
 @import "basic/linear-gallery-slider";
+@import "basic/one-main-card-slider";
 @import "basic/story-card";
+@import "basic/overlay-story-card";
 @import "basic/story-list";
 @import "basic/section-name";
 @import "basic/author";

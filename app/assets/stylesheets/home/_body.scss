@@ -38,7 +38,12 @@ img{
     @include span(9);
   }
 }
-
+.col-3 {
+  @include span(12);
+  @include breakpoint($pc){
+    @include span(3);
+  }
+}
 .section__head__title{
   margin-bottom: 20px;
   @include breakpoint($pc){

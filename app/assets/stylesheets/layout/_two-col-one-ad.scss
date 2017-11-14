@@ -4,6 +4,7 @@
       display: none;
       @include breakpoint($pc){
         display: block;
+        margin-bottom: 30px;
       }
     }
     &__second{

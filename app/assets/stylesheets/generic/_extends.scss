@@ -1,0 +1,16 @@
+.video-play-icon {
+  position: relative;
+  display: block;
+  &:before {
+    background: url('../icons/playicon.svg') no-repeat center center;
+    display: block;
+    content: '';
+    position: absolute;
+    z-index: $zIndex-1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    // just overwrite this mixin whenever size diference is there
+    @include bgicon-size(90px);
+  }
+}
