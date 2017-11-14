@@ -33,12 +33,14 @@ function FullscreenMediaList(props) {
         </div>
       )}
       </div>
-      <div className="col-4 ads-375x245">
-      {
-        props.adsSlot ?
-        <img src={adImage} alt="Ad"/>
-        : null
-      }
+      <div className="col-4">
+        <div className="ads-375x245">
+        {
+          props.adsSlot ?
+          <img src={adImage} alt="Ad"/>
+          : null
+        }
+        </div>
       </div>
     </div>
   </div>
