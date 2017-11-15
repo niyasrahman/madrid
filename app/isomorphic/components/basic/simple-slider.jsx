@@ -33,7 +33,9 @@ function SliderItem(props) {
     <div className="simple-slider__item">
       <figure>
         <ResponsiveImage slug={story["hero-image-s3-key"]} metadata={story["hero-image-metadata"]}
-          aspectRatio={[16,3]}/>
+          aspectRatio={[9,3]}
+          defaultWidth={480} widths={[250,480,640]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 23%"
+          imgParams={{auto:['format', 'compress'], fit:'max'}}/>
       </figure>
       <div className="simple-slider__content">
         <p>Must Reads</p>

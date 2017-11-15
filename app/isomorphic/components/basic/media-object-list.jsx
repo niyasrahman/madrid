@@ -24,7 +24,7 @@ function MediaObject({story, config}) {
         <ResponsiveImage slug={story["hero-image-s3-key"]} metadata={story["hero-image-metadata"]}
           aspectRatio={config.aspectRatio ? config.aspectRatio : '[4:3]'}
           defaultWidth={480} widths={[250,480,640]}
-          imgParams={{auto:['format', 'compress']}}/>
+          imgParams={{auto:['format', 'compress'], fit:'max'}}/>
       </div>
       <div className={classNames('media__content', {'media__content--enlarged': config.enlarged})}>
         { config.section && <SectionName inlineStyle={inlineStyle} name={story.sections[0]['display-name']}/>}

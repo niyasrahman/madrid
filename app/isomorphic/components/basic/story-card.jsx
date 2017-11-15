@@ -27,7 +27,8 @@ function StoryCardBgImage(props) {
       <ResponsiveImage slug={props.story["hero-image-s3-key"]} metadata={props.story["hero-image-metadata"]}
         aspectRatio={props.aspectRatio ? props.aspectRatio : '[4:3]'}
         defaultWidth={480}
-        imgParams={{auto:['format', 'compress']}}/>
+        widths={[250,480,640]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 23%"
+        imgParams={{auto:['format', 'compress'], fit:'max'}}/>
     </figure>
     <div className="story-card__content story-card__content--over-image">
       <h2 dangerouslySetInnerHTML={ {__html: props.story.headline }} />
@@ -51,7 +52,8 @@ function StoryCardSimple(props) {
         <figure className="story-card__image story-card__image--16x9">
           <ResponsiveImage slug={props.story["hero-image-s3-key"]} metadata={props.story["hero-image-metadata"]}
             aspectRatio={[4,3]}
-            imgParams={{auto:['format', 'compress']}}/>
+            defaultWidth={480} widths={[250,480,640]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 23%"
+            imgParams={{auto:['format', 'compress'], fit:'max'}}/>
         </figure> }
       <div className={classNames('story-card__content', { 'story-card__content--transparent': props.config && props.config.transparent }) }>
         { props.config && props.config.section &&

@@ -1,7 +1,6 @@
 const React = require("react");
 
 const { NavigationComponent } = require("../navigation-component.jsx");
-const { StoryGrid } = require("../story-grid.jsx");
 const { TwoColOneAd } = require("../layout/two-col-one-ad.jsx");
 const { FullscreenCarousel } = require("../layout/fullscreen-carousel.jsx");
 const { FullscreenSimpleSlider } = require("../layout/fullscreen-simple-slider.jsx");

@@ -53,8 +53,7 @@ function SliderItem(props) {
         <ResponsiveImage slug={story["hero-image-s3-key"]} metadata={story["hero-image-metadata"]}
           aspectRatio={[57,32]}
           defaultWidth={320} widths={[250,480,640]}
-          imgParams={{auto:['format', 'compress']}}
-          className=""/>
+          imgParams={{auto:['format', 'compress'], fit:'max'}}/>
       </figure>
       <p className="overlay-story-card__heading" dangerouslySetInnerHTML={ {__html: story.headline }} />
     </Link>
