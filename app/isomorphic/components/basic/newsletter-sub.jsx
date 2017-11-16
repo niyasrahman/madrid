@@ -1,6 +1,8 @@
 const React = require("react");
 const adImage = require('../../../assets/images/qt-ad.png');
 const newsletterImage = require('../../../assets/icons/newsletter.svg');
+const { Button } = require("./button.jsx");
+
 
 function NewsletterSub() {
   return <div className="two-col-one-ad__last">
@@ -12,7 +14,7 @@ function NewsletterSub() {
         <h2>Subscribe to Newsletter</h2>
         <form className="two-col-one-ad__email">
           <input type="email" name="email" value="" placeholder="Your email" />
-          <button type="submit" className="button button--secondary" name="button">Subscribe</button>
+          <Button classNamesString="qt-button--secondary">Subscribe</Button>
         </form>
       </div>
     </div>

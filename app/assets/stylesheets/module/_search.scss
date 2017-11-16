@@ -1,0 +1,39 @@
+.qt-search {
+  &__icon {
+    cursor: pointer;
+  }
+  &__form-wrapper {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    display: block;
+    left: 0;
+    z-index: $zIndex-1;
+    background: $white;
+    transition: height .3s;
+    overflow: hidden;
+  }
+  &__form {
+    padding: 24px 0;
+    margin-bottom: 0;
+    display: flex;
+    border-bottom: 1px solid $gray-lightest;
+  }
+  &__form-label {
+    flex: 1 90%;
+    span {
+      @include sr-only;
+    }
+  }
+  &__form-input {
+    letter-spacing: 1px;
+    color: $black;
+    font-size: 20px;
+    &:focus {
+      outline: none;
+    }
+  }
+  &__form-submit {
+    flex: 1 10%;
+  }
+}
