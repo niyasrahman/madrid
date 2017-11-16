@@ -1,16 +1,24 @@
-.button{
+.qt-button{
   border-radius: 100px;
   text-align: center;
   font-family: var(--sansTypeface);
   font-size: 16px;
   font-weight: 300;
   padding: 10px 28px;
-    color: $white;
-}
-.button--primary{
-  background: $base-blue;
-}
-.button--secondary{
+  color: $white;
+  &:hover {
+    cursor: pointer;
+  }
+  &--primary{
+    background: $base-blue;
+  }
+  &--secondary{
     border: 1px solid $white;
     background: $base-blue;
+  }
+  &--transparent {
+    background: $white;
+    color: $base-blue;
+    border: 2px solid $base-blue;
+  }
 }

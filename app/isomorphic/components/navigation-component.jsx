@@ -9,6 +9,7 @@ const TwitterImg = require('../../assets/icons/twitter.svg');
 const GoogleImg = require('../../assets/icons/google.svg');
 
 const { Search } = require("./basic/search.jsx");
+const { Button } = require("./basic/button.jsx");
 
 class NavigationComponent extends React.Component {
   constructor(props) {
@@ -52,7 +53,7 @@ function NavBar(props) {
           </nav>
         </div>
         <div className="header__last">
-          <div className="header__last__button"><a href="#" className="button button--primary">Sign in</a></div>
+          <div className="header__last__button"><Button classNamesString="qt-button--primary">Sign in</Button></div>
           <Search />
         </div>
       </div>
