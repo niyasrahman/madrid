@@ -1,0 +1,16 @@
+$white                    : #fff;
+$black                    : #000;
+
+$darkest-gray             : lighten( $black, 13 ); //#222222
+$darker-gray              : lighten( $black, 24 ); //#3d3d3d
+$dark-gray                : lighten( $black, 30 ); //#4c4c4c
+$gray                     : lighten( $black, 36 ); //#5c5c5c
+$gray-light               : lighten( $black, 51 ); //#818181
+$gray-lighter             : lighten( $black, 64 ); //#a4a4a4
+$gray-lightest            : lighten( $black, 90 ); //#e9e6e6
+$gray-white               : lighten( $black, 96 ); //#f4f4f4
+
+$base-blue                : #2f73e4;
+$off-white                : rgba(255,255,255,0.75);
+
+

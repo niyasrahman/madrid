@@ -24,7 +24,7 @@
   &__title{
     h2{
       text-transform: capitalize;
-      font-weight: 600;
+      font-weight: $bold;
       margin-bottom: 10px;
       @include breakpoint($tablet){
         margin-bottom: 30px;
@@ -51,8 +51,8 @@
       h4{
         font-size: 12px;
         line-height: normal;
-        font-weight: 400;
-        color: $dark-gray;
+        font-weight: $regular;
+        color: $darkest-gray;
         margin:8px 0;
         @include breakpoint($tablet){
           font-size: 22px;

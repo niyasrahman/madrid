@@ -1,50 +1,8 @@
-@import "~susy/sass/susy";
-@import '~breakpoint-sass/stylesheets/breakpoint';
 @import "~slick-carousel/slick/slick.css";
 
-@import "generic/normalize";
-@import 'generic/mixins';
-@import 'generic/extends';
-@import 'generic/ads';
-
-@import 'settings/colors';
-@import 'settings/typography';
-@import 'settings/susy-settings';
-
-@import "elements/form";
-
-@import "layout";
-
-@import "home/body";
-@import "story-page/text-story";
-@import "story-page/live-story";
-
-@import "components/button";
-@import "components/menu";
-
-@import "basic/simple-slider";
-@import "basic/carousel";
-@import "basic/linear-gallery-slider";
-@import "basic/one-main-card-slider";
-@import "basic/story-card";
-@import "basic/overlay-story-card";
-@import "basic/story-list";
-@import "basic/section-name";
-@import "basic/author";
-@import "basic/media";
-@import "basic/card-group";
-
-@import "section/section-body";
-
-@import "app";
-@import "images";
-
-@import "layout/grid";
-@import "layout/two-col-one-ad";
-@import "layout/three-col";
-@import "layout/two-col";
-@import "layout/l-shape-one-widget";
-@import "layout/fullscreen-media-list";
+@import "base/base";
+@import "module/module";
+@import "layout/layout";
 
 // Library Customizations
-@import "misc/slick"
+@import "vendor/slick"
