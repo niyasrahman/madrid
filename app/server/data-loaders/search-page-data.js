@@ -8,12 +8,12 @@ exports.loadSearchPageData = function loadSearchPageData(client, query, config) 
   return Story.getSearch(client, {'q': query, 'limit': '20'})
     .then(result => {
       const menu = config.layout.menu;
-      const structuredMenu = getNavigationMenuArray(menu);
+      const navigationMenu = getNavigationMenuArray(menu);
       return {
-        stories: getProcessedStories(result.stories, config.layout.menu, config.sections),
+        stories: getProcessedStories(result.stories, menu, config.sections),
         total: result.total,
-        navigationMenu: structuredMenu,
-        cacheKeys: result.stories.map(story => storyToCacheKey(config["publisher-id"], story))
+        navigationMenu: navigationMenu,
+        cacheKeys: result.stories.map(story => storyToCacheKey(config["publisher-id"], story)),
         query: query
       }
     });

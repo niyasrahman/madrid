@@ -61,10 +61,11 @@ class Search extends React.Component {
       <img src={SearchImg} alt="" className="qt-search__icon" onClick={this.openSearchForm}/>
       <div className='qt-search__form-wrapper' style={formStyle}>
         <form onSubmit={this.handleSubmit} className="qt-search__form component-wrapper" ref={(searchForm) => this.searchForm = searchForm}>
-          <label className="qt-search__form-label">
+          <label className="qt-search__form-label" htmlFor="searchForm">
             <span>Search query: </span>
             <input type="text" value={this.state.searchQuery}
               onChange={this.handleChange}
+              id="searchForm"
               onKeyDown={this.keyPress}
               className="qt-search__form-input"
               placeholder="What are you looking for?"

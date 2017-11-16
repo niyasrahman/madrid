@@ -8,11 +8,11 @@ exports.loadTagPageData = function loadTagPageData(client, tagSlug, config) {
   return Story.getStories(client, 'top', {'tag': tagSlug, 'limit': '20'})
     .then(stories => {
       const menu = config.layout.menu;
-      const structuredMenu = getNavigationMenuArray(menu);
+      const navigationMenu = getNavigationMenuArray(menu);
       return {
         tag: tagSlug,
-        stories: getProcessedStories(stories, config.layout.menu, config.sections),
-        navigationMenu: structuredMenu,
+        stories: getProcessedStories(stories, menu, config.sections),
+        navigationMenu: navigationMenu,
         cacheKeys: stories.map(story => storyToCacheKey(config["publisher-id"], story))
       }
     });
