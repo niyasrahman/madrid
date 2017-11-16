@@ -13,6 +13,7 @@ class Search extends React.Component {
       initialized: false
     };
     this.openSearchForm = this.openSearchForm.bind(this);
+    this.keyPress = this.keyPress.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -28,6 +29,14 @@ class Search extends React.Component {
     this.setState({searchQuery: event.target.value});
   }
 
+  keyPress(event) {
+    if (event.keyCode == 27) {
+      this.setState({
+        isSearchFormOpen: false
+      })
+    }
+  }
+
   handleSubmit(event) {
     console.log('A query was submitted: ' + this.state.searchQuery);
     event.preventDefault();
@@ -36,6 +45,8 @@ class Search extends React.Component {
   openSearchForm() {
     this.setState({
       isSearchFormOpen: !this.state.isSearchFormOpen
+    }, () => {
+      this.input.focus();
     })
   }
 
@@ -52,7 +63,12 @@ class Search extends React.Component {
         <form onSubmit={this.handleSubmit} className="qt-search__form component-wrapper" ref={(searchForm) => this.searchForm = searchForm}>
           <label className="qt-search__form-label">
             <span>Search query: </span>
-            <input type="text" value={this.state.searchQuery} onChange={this.handleChange} className="qt-search__form-input" placeholder="What are you looking for?"/>
+            <input type="text" value={this.state.searchQuery}
+              onChange={this.handleChange}
+              onKeyDown={this.keyPress}
+              className="qt-search__form-input"
+              placeholder="What are you looking for?"
+              ref={(input) => this.input = input}/>
           </label>
           <Button type="submit" classNamesString="qt-button--transparent" className="qt-search__form-submit">Search</Button>
         </form>
