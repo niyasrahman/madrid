@@ -38,7 +38,9 @@ class Search extends React.Component {
   }
 
   handleSubmit(event) {
-    console.log('A query was submitted: ' + this.state.searchQuery);
+    // TODO: Navigate to search results page on correct Redux way.
+    // This is a hack right now. Directly navigating to search page using JS.
+    window.location.href = window.location.origin + '/search/' + this.state.searchQuery;
     event.preventDefault();
   }
 
