@@ -21,14 +21,16 @@ function MediaObject({story, config}) {
     <Link href={"/" + (story['parent-collection'] ? story['generated-slug'] : story.slug)}
       className={classNames('media', {'media--bg-white': !config.noBackground, 'media--with-shadow': !config.noBackground})}>
       <div className="media__img">
-        <ResponsiveImage slug={story["hero-image-s3-key"]} metadata={story["hero-image-metadata"]}
-          aspectRatio={config.aspectRatio ? config.aspectRatio : '[4:3]'}
-          defaultWidth={480} widths={[250,480,640]}
-          imgParams={{auto:['format', 'compress'], fit:'max'}}/>
+        <figure>
+          <ResponsiveImage slug={story["hero-image-s3-key"]} metadata={story["hero-image-metadata"]}
+            aspectRatio={config.aspectRatio ? config.aspectRatio : '[4:3]'}
+            defaultWidth={480} widths={[250,480,640]}
+            imgParams={{auto:['format', 'compress'], fit:'max'}}/>
+        </figure>
       </div>
       <div className={classNames('media__content', {'media__content--enlarged': config.enlarged})}>
         { config.section && <SectionName inlineStyle={inlineStyle} name={story.sections[0]['display-name']}/>}
-        <h2 className={classNames({'media__title--enlarged': config.enlarged})}
+        <h2 className={classNames('media-title', {'media__title--enlarged': config.enlarged})}
           dangerouslySetInnerHTML={ {__html: story.headline }} />
         <Author author={author}/>
       </div>

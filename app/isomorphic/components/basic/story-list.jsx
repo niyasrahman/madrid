@@ -30,7 +30,7 @@ function StoryListItem({story, config}) {
         config && config.section &&
         <SectionName inlineStyle={inlineStyle} name={story.sections[0]['display-name']}/>
       }
-      <h2 dangerouslySetInnerHTML={ {__html: story.headline }} />
+      <h2 className="story-list__heading" dangerouslySetInnerHTML={ {__html: story.headline }} />
       <Author author={author}/>
     </Link>
   )

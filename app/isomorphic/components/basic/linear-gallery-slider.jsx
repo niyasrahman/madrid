@@ -35,7 +35,7 @@ function LinearGallerySlider(props) {
     marginBottom: '0'
   }
   return !props.stories ? null : <div className="linear-gallery-slider component-wrapper-fluid">
-      <div className="linear-gallery-slider__title">
+      <div className="linear-gallery-slider__heading">
         <SectionName inlineStyle={inlineStyle} name={props.config['collection-name']} type="large"/>
       </div>
       <Slider {...settings} className="linear-gallery-slider__slides">
@@ -60,7 +60,7 @@ function SliderItem(props) {
           defaultWidth={320} widths={[250,480,640]}
           imgParams={{auto:['format', 'compress'], fit:'max'}}/>
       </figure>
-      <p dangerouslySetInnerHTML={ {__html: story.headline }} />
+      <p className="linear-gallery-slider__item-title" dangerouslySetInnerHTML={ {__html: story.headline }} />
     </Link>
   )
 }

@@ -31,7 +31,7 @@ function StoryCardBgImage(props) {
         imgParams={{auto:['format', 'compress'], fit:'max'}}/>
     </figure>
     <div className="story-card__content story-card__content--over-image">
-      <h2 dangerouslySetInnerHTML={ {__html: props.story.headline }} />
+      <h2 className="story-card__heading" dangerouslySetInnerHTML={ {__html: props.story.headline }} />
       <Author author={author} />
     </div>
   </div>
@@ -59,8 +59,8 @@ function StoryCardSimple(props) {
         { props.config && props.config.section &&
           <SectionName inlineStyle={inlineStyle} name={props.story.sections[0]['display-name']}/>
         }
-        <h2 dangerouslySetInnerHTML={ {__html: props.story.headline }} />
-        { props.config && props.config.subheadline && <p dangerouslySetInnerHTML={ {__html: props.story.subheadline }} /> }
+        <h2 className="story-card__heading" dangerouslySetInnerHTML={ {__html: props.story.headline }} />
+        { props.config && props.config.subheadline && <p className="story-card__description" dangerouslySetInnerHTML={ {__html: props.story.subheadline }} /> }
         <Author author={author} />
       </div>
     </div>

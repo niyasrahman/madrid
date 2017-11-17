@@ -6,39 +6,40 @@
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
   &__content {
     padding: 20px;
-    p {
+    .story-card__description {
       font-size: 14px;
       color: $gray;
       line-height: 1.57;
       margin-bottom: 20px;
     }
-    h2 {
+    .story-card__heading {
       font-size: 26px;
       color: $darkest-gray;
       line-height: 1.31;
       font-weight: $regular;
       margin: 10px 0;
+      padding: 0;
     }
     &--transparent {
       padding: 0;
-      h2 {
+      .story-card__heading {
         font-weight: $bold;
       }
     }
     @include breakpoint($tablet) {
-      h2 {
+      .story-card__heading {
         font-size: 22px;
       }
-      p {
+      .story-card__description {
         font-size: 12px;
       }
     }
     @include breakpoint($pc) {
-      h2 {
+      .story-card__heading {
         font-size: 26px;
         line-height: 1.31;
       }
-      p {
+      .story-card__description {
         font-size: 14px;
         line-height: 1.57;
         margin-bottom: 27px;
@@ -49,7 +50,7 @@
       bottom: 0;
       left: 0;
       padding: 20px;
-      h2 {
+      .story-card__heading {
         font-size: 34px;
         color: $white;
         line-height: 1.18;
@@ -66,15 +67,18 @@
   }
   &__image {
     margin: 0;
-    &--16x9 {
+    &.story-card__image--16x9 {
       padding-top: 56.25%;
       margin: 0;
       position: relative;
       overflow: hidden;
-      & img {
+      img {
         position: absolute;
         top: 0;
         left: 0;
+        bottom: 0;
+        right: 0;
+        height: 100%;
       }
     }
     &--cover:after {

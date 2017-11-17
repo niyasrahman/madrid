@@ -3,23 +3,19 @@
     --serifTypeface: 'Lora', serif;
 }
 
-//Causing home page layout to break
-// @function em($target, $context: 16) {
-//   @return ($target / $context) * 1em;
-// }
-
 $base:      20px;
-$mobbase:   8px;
+$tabbase:   12px;
+$mobbase:   16px;
 $line:      1.6;
 
-$fontsize-smaller:    11px;
+$fontsize-smaller:    11;
 $fontsize-small:      13;
-$fontsize-base:       17;
+$fontsize-base:       16;
 $fontsize-medium:     18;
 $fontsize-large:      21;
 $fontsize-larger:     24;
 $fontsize-largest:    29;
-$fontsize-halfjumbo:  29;
+$fontsize-halfjumbo:  32;
 $fontsize-jumbo:      36;
 
 // Font weights ----------------------------------

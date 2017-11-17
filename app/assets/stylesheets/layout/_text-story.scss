@@ -142,10 +142,13 @@
       p, li {
         font-family: var(--serifTypeface);
         font-size: 16px;
-        @include breakpoint($tablet) {
-          font-style: 20px;
-        }
         color: $dark-gray;
+        @include breakpoint($tablet) {
+          font-size: 12px;
+        }
+        @include breakpoint($pc) {
+          font-size: 20px;
+        }
       }
       p {
         margin-bottom: 15px;

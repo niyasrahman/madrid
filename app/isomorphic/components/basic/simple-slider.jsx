@@ -38,8 +38,8 @@ function SliderItem(props) {
           imgParams={{auto:['format', 'compress'], fit:'max'}}/>
       </figure>
       <div className="simple-slider__content">
-        <p>Must Reads</p>
-        <h2>{story.headline}</h2>
+        <p className="simple-slider__section-name">Must Reads</p>
+        <h2 className="simple-slider__story-heading">{story.headline}</h2>
         <Link href={"/" + (story['parent-collection'] ? story['generated-slug'] : story.slug) } className="simple-slider__link" >
           read story
         </Link>

@@ -14,29 +14,28 @@
 
 .carousel-slide {
   overflow: auto;
-}
-
-.carousel-slide__content {
-  @include span(12);
-  @include breakpoint($tablet) {
-     @include span(last 6);
+  &__content {
+    @include span(12);
+    @include breakpoint($tablet) {
+      @include span(last 6);
+    }
+    @include breakpoint($pc) {
+      padding: 20px 15px 40px 10px;
+    }
+    padding: 15px;
+    font-size: 18px;
+    text-align: left;
+    color: $gray;
+    font-weight: 300;
   }
-  @include breakpoint($pc) {
-    padding: 20px 15px 40px 10px;
-  }
-  padding: 15px;
-  font-size: 18px;
-  text-align: left;
-  color: $gray;
-  font-weight: 300;
-
-  h2 {
+  &__heading {
     font-size: 26px;
     line-height: 1.31;
     text-align: left;
     color: $darkest-gray;
     margin-top: 5px;
     font-weight: $regular;
+    padding: 0;
     @include breakpoint($tablet) {
       font-size: 22px;
     }
@@ -46,7 +45,7 @@
     }
   }
 
-  p {
+  &__description {
     font-family: var(--serifTypeface);
     @include breakpoint($tablet) {
       display: block;
@@ -58,15 +57,15 @@
       margin-bottom: 35px;
     }
   }
-}
-
-.carousel-slide__image {
-  img {
-    max-width: 100%;
-  }
-  @include breakpoint($tablet) {
-    float: left;
-    margin-right: 0;
-    width: 50%;
+  &__image {
+    @include aspect-ratio(4,3);
+    @include breakpoint($tablet) {
+      float: left;
+      margin-right: 0;
+      width: 50%;
+    }
+    figure {
+      margin: 0;
+    }
   }
 }

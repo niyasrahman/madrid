@@ -4,13 +4,10 @@
   background-size: $width - 2px;
 }
 
-// @function em($target, $context: 16) {
-//   @return ($target / $context) * 1em;
-// }
+@function em($target, $context: 16) {
+  @return ($target / $context) * 1em;
+}
 
-// @function rem($target, $context: 16) {
-//   @return ($target / $context) * 1rem;
-// }
 @mixin clearfix() {
   &:before,
   &:after {

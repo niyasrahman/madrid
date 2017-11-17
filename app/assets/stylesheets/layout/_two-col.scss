@@ -1,34 +1,33 @@
-
-.two-col{
-  img{
+.two-col {
+  img {
     max-width: 100%;
   }
   &__media-list {
     @include container;
     margin-bottom: 30px;
-    @include breakpoint($tablet){
+    @include breakpoint($tablet) {
       @include span(first 6);
     }
   }
-  &__last{
+  &__last {
     @include span(12);
     margin-top: 20px;
-    @include breakpoint($tablet){
+    @include breakpoint($tablet) {
       @include span(last 6);
       margin: 0;
-      .section--content{
-        h2{
+      .section--content {
+        h2 {
           font-size: 18px;
         }
       }
     }
-    @include breakpoint($pc){
-      .section--content{
+    @include breakpoint($pc) {
+      .section--content {
         padding: 30px;
-        h2{
+        h2 {
           font-size: 26px;
         }
-        p{
+        p {
           font-size: 18px;
         }
       }
@@ -36,6 +35,6 @@
   }
 }
 
-.two-col__title{
+.two-col__title {
   margin-bottom: 30px;
 }
