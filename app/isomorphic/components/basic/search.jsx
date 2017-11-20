@@ -38,8 +38,6 @@ class Search extends require("quintype-toddy-libs/components/navigation-componen
   }
 
   handleSubmit(event) {
-    // TODO: Navigate to search results page on correct Redux way.
-    // This is a hack right now. Directly navigating to search page using JS.
     this.navigateTo('/search/' + this.state.searchQuery);
     event.preventDefault();
   }
