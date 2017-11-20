@@ -1,6 +1,5 @@
 .card-group {
-  margin-top: 15px;
   @include breakpoint($tablet) {
-    margin-top: 65px;
+    padding-top: 30px;
   }
 }

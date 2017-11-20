@@ -1,9 +1,8 @@
 .carousel-wrapper {
   @include container;
-  margin-top: 50px;
   margin-bottom: 50px;
   @include breakpoint($pc) {
-    margin-top: 90px;
+    margin-top: 40px;
     padding: 0 15px;
   }
 }
