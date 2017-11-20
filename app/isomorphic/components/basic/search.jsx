@@ -3,7 +3,7 @@ const SearchImg = require('../../../assets/icons/search.svg');
 
 const { Button } = require('./button.jsx')
 
-class Search extends React.Component {
+class Search extends require("quintype-toddy-libs/components/navigation-component-base") {
   constructor(props) {
     super(props);
     this.state = {
@@ -40,7 +40,7 @@ class Search extends React.Component {
   handleSubmit(event) {
     // TODO: Navigate to search results page on correct Redux way.
     // This is a hack right now. Directly navigating to search page using JS.
-    window.location.href = window.location.origin + '/search/' + this.state.searchQuery;
+    this.navigateTo('/search/' + this.state.searchQuery);
     event.preventDefault();
   }
 
