@@ -3,24 +3,23 @@ const React = require("react");
 const { ResponsiveImage } = require("quintype-toddy-libs/components/responsive-image");
 
 function RelatedStoryCard(props){
-  if(props.showImage){
-    classname = 'story-title story-title-bold';
-  } else {
-    classname = 'story-title';
-  }
-  return !props.story ? null : <div className="related_stories-story-card">
-    <a href={"/" + props.story.slug} >
+  classname = props.showImage ? 'story-title story-title-bold' : 'story-title';
+  // The `props.story` can be an item from items of a collection or a story itself.
+  // assigning it accordinlgy.
+  const story = props.story && props.story.story ? props.story.story : props.story;
+  return !story ? null : <div className="related_stories-story-card">
+    <a href={"/" + (story['parent-collection'] ? story['generated-slug'] : story.slug)} >
       {
         props.showImage && <figure className="story-card-image">
-          <ResponsiveImage slug={props.story["hero-image-s3-key"]} metadata={props.story["hero-image-metadata"]}
+          <ResponsiveImage slug={story["hero-image-s3-key"]} metadata={story["hero-image-metadata"]}
             aspectRatio={[4,3]}
             defaultWidth={480} widths={[250,480,640]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 23%"
-            imgParams={{auto:['format', 'compress']}}/>
+            imgParams={{auto:['format', 'compress'], fit:'max'}}/>
         </figure>
       }
-        <h2 dangerouslySetInnerHTML={ {__html: props.story.headline }} className={classname}/>
+        <h2 dangerouslySetInnerHTML={ {__html: story.headline }} className={classname}/>
         <div className="author-title">
-          {props.story['author-name']}
+          {story['author-name']}
         </div>
     </a>
   </div>

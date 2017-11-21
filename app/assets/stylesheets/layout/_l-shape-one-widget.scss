@@ -19,16 +19,16 @@
       left: 0;
       color: $white;
       padding: 0 22px 15px;
-      box-shadow: inset 0 -114px 177px -79px #000;
+      box-shadow: inset 0 -114px 177px -79px $black;
       .author--title{
         color: $white;
       }
       h3{
-        font-size: 22px;
+        font-size: rem(22);
         line-height: 1.36;
         margin-bottom: 15px;
         @include breakpoint($pc){
-          font-size: 34px;
+          font-size: rem(34);
           line-height: 1.29;
           margin-bottom: 17px;
         }

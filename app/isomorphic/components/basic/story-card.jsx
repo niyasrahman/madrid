@@ -27,10 +27,11 @@ function StoryCardBgImage(props) {
       <ResponsiveImage slug={props.story["hero-image-s3-key"]} metadata={props.story["hero-image-metadata"]}
         aspectRatio={props.aspectRatio ? props.aspectRatio : '[4:3]'}
         defaultWidth={480}
-        imgParams={{auto:['format', 'compress']}}/>
+        widths={[250,480,640]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 23%"
+        imgParams={{auto:['format', 'compress'], fit:'max'}}/>
     </figure>
     <div className="story-card__content story-card__content--over-image">
-      <h2 dangerouslySetInnerHTML={ {__html: props.story.headline }} />
+      <h2 className="story-card__heading" dangerouslySetInnerHTML={ {__html: props.story.headline }} />
       <Author author={author} />
     </div>
   </div>
@@ -51,14 +52,15 @@ function StoryCardSimple(props) {
         <figure className="story-card__image story-card__image--16x9">
           <ResponsiveImage slug={props.story["hero-image-s3-key"]} metadata={props.story["hero-image-metadata"]}
             aspectRatio={[4,3]}
-            imgParams={{auto:['format', 'compress']}}/>
+            defaultWidth={480} widths={[250,480,640]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 23%"
+            imgParams={{auto:['format', 'compress'], fit:'max'}}/>
         </figure> }
       <div className={classNames('story-card__content', { 'story-card__content--transparent': props.config && props.config.transparent }) }>
         { props.config && props.config.section &&
           <SectionName inlineStyle={inlineStyle} name={props.story.sections[0]['display-name']}/>
         }
-        <h2 dangerouslySetInnerHTML={ {__html: props.story.headline }} />
-        { props.config && props.config.subheadline && <p dangerouslySetInnerHTML={ {__html: props.story.subheadline }} /> }
+        <h2 className="story-card__heading" dangerouslySetInnerHTML={ {__html: props.story.headline }} />
+        { props.config && props.config.subheadline && <p className="story-card__description" dangerouslySetInnerHTML={ {__html: props.story.subheadline }} /> }
         <Author author={author} />
       </div>
     </div>

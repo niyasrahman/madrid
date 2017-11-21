@@ -1,0 +1,43 @@
+.related_stories {
+  display: none;
+  background-color: $white;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.1);
+  @include breakpoint($pc) {
+    display: block;
+    width: 370px;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    z-index: 10;
+  }
+  &-heading {
+    font-size: rem(22);
+    padding: 20px 20px 15px;
+  }
+  &-story-card {
+    border-bottom: 1px solid $gray-lightest;
+    margin: 0 20px;
+
+    .story-card-image {
+      margin: 0 -20px;
+    }
+    .story-title {
+      font-size: rem(20);
+      line-height: 1.3;
+      color: $darkest-gray;
+      padding:20px 0px;
+    }
+    .story-title-bold {
+      font-weight: bold;
+    }
+    .author-title {
+      font-size: rem(12);
+      color: $gray-light;
+      padding:0 0 10px 0;
+    }
+  }
+}
+
+.related_stories-story-card:last-of-type {
+  border-bottom: 0;
+}

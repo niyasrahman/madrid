@@ -25,7 +25,7 @@ ul.stories-list {
     padding: 10px;
     margin: 0;
     font-size: 16px;
-    text-shadow: 1px 1px $light-gray;
+    text-shadow: 1px 1px $darker-gray;
   }
 
   @media (min-width: 768px) {
@@ -52,7 +52,7 @@ ul.stories-list {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: rem(16);
   margin: 4px 2px;
   cursor: pointer;
 }

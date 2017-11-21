@@ -1,24 +1,37 @@
-_ = require("lodash");
-const {client} = require("quintype-toddy-libs/server/api-client");
+const _ = require("lodash");
 // TODO: menu should be a common Component. now accessing this from every pages. (home, story etc)
 const {getNavigationMenuArray} = require("./menu-data");
+const {Collection} = require("quintype-toddy-libs/server/api-client");
 
-exports.loadHomePageData = function loadHomePageData(config) {
+function concatAll(initial, arrays) {
+  return arrays.reduce((l, a) => l.concat(a), initial);
+}
+
+exports.loadHomePageData = function loadHomePageData(client, config) {
   let placeholderCollectionSlugs = [];
-  return client.getCollectionBySlug('home', {'item-type': 'collection'})
-    .then(homeCollection => {
+  var homeCollection;
+  return Collection.getCollectionBySlug(client, 'home', {'item-type': 'collection'})
+    .then(rhomeCollection => {
+      homeCollection = rhomeCollection;
       placeholderCollectionSlugs = childCollectionSlugsFromCollection(homeCollection);
-      return makeBulkRequest(placeholderCollectionSlugs);
+      return makeBulkRequest(client, placeholderCollectionSlugs);
     })
     .then(allCollections => {
       const structuredMenu = getNavigationMenuArray(config.layout.menu);
       allCollections.processedResults = addParentSlugInStorySlugs(allCollections.results, config, config.layout.menu);
       const structuredCollections = allCollections.placeholderCollectionSlugs.map((collectionSlug) => {
       	return allCollections.processedResults[collectionSlug];
-      })
-      return {'homeCollections': structuredCollections,
-              'navigationMenu': structuredMenu
-             };
+      });
+      return {
+        homeCollections: structuredCollections,
+        navigationMenu: structuredMenu,
+        cacheKeys: concatAll(
+          homeCollection.cacheKeys(config["publisher-id"]),
+          Object.values(allCollections["results"])
+                .map(collection => Collection.build(collection).cacheKeys(config["publisher-id"])
+                .slice(0, 5))
+        )
+      };
     });
 }
 
@@ -56,7 +69,7 @@ function createCollectionBulkRequest(slugs) {
   }, {});
 }
 
-function makeBulkRequest(slugs) {
+function makeBulkRequest(client, slugs) {
   var requestPayload = createCollectionBulkRequest(_.flatten(slugs));
   return client.getInBulk({requests: requestPayload})
   .then(bulkResponse => {

@@ -1,0 +1,106 @@
+.story-card {
+  position: relative;
+  height: auto;
+  overflow: hidden;
+  background: $white;
+  box-shadow: 0 2px 10px 0 rgba($black, 0.1);
+  &__content {
+    padding: 20px;
+    .story-card__description {
+      font-size: rem(14);
+      color: $gray;
+      line-height: 1.57;
+      margin-bottom: 20px;
+    }
+    .story-card__heading {
+      font-size: rem(26);
+      color: $darkest-gray;
+      line-height: 1.31;
+      font-weight: $regular;
+      margin: 10px 0;
+      padding: 0;
+    }
+    &--transparent {
+      padding: 0;
+      .story-card__heading {
+        font-weight: $bold;
+      }
+    }
+    @include breakpoint($tablet) {
+      .story-card__heading {
+        font-size: rem(22);
+      }
+      .story-card__description {
+        font-size: rem(12);
+      }
+    }
+    @include breakpoint($pc) {
+      .story-card__heading {
+        font-size: rem(26);
+        line-height: 1.31;
+      }
+      .story-card__description {
+        font-size: rem(14);
+        line-height: 1.57;
+        margin-bottom: 27px;
+      }
+    }
+    &--over-image {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 20px;
+      .story-card__heading {
+        font-size: rem(34);
+        color: $white;
+        line-height: 1.18;
+        @include breakpoint($tablet) {
+          font-size: rem(32);
+        }
+      }
+      // Todo: Move this customization to Author Component itself.
+      .author__name {
+        color: $white;
+        margin-top: 24px;
+      }
+    }
+  }
+  &__image {
+    margin: 0;
+    &.story-card__image--16x9 {
+      padding-top: 56.25%;
+      margin: 0;
+      position: relative;
+      overflow: hidden;
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 100%;
+      }
+    }
+    &--cover:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(to top, transparentize($black, 0.3), transparent 50%, transparent);
+    }
+  }
+  &--transparent {
+    background: none;
+    box-shadow: none;
+  }
+}
+
+.story-card-link {
+  margin-bottom: 20px;
+  display: block;
+  &:last-child:not(:first-child) {
+    margin-bottom: 0;
+  }
+}

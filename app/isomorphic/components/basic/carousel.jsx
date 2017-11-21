@@ -62,16 +62,18 @@ function Slide(props) {
   }
   return <div className="carousel-slide">
     <div className="carousel-slide__image">
+      <figure>
         <ResponsiveImage slug={props.story["hero-image-s3-key"]} metadata={props.story["hero-image-metadata"]}
           aspectRatio={[4,3]}
           defaultWidth={480} widths={[250,480,640]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 23%"
-          imgParams={{auto:['format', 'compress']}}/>
+          imgParams={{auto:['format', 'compress'], fit:'max'}}/>
+      </figure>
     </div>
     <div className="carousel-slide__content">
       <SectionName inlineStyle={inlineStyle} name={props.story.sections[0]['display-name']} />
-      <h2 dangerouslySetInnerHTML={ {__html: props.story.headline }} />
+      <h2 className="carousel-slide__heading" dangerouslySetInnerHTML={ {__html: props.story.headline }} />
       {/* Remove extra charecters if content is so big */}
-      <p dangerouslySetInnerHTML={ {__html: props.story.subheadline.length > 105 ? props.story.subheadline.substr(0, 100).concat('...') : props.story.subheadline }} />
+      <p className="carousel-slide__description" dangerouslySetInnerHTML={ {__html: props.story.subheadline.length > 105 ? props.story.subheadline.substr(0, 100).concat('...') : props.story.subheadline }} />
       <Author author={{
           "name": props.story['author-name'],
           "image": props.story['author-image'],

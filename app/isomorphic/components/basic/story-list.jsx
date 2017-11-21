@@ -7,29 +7,30 @@ const { SectionName } = require("./section-name.jsx");
 
 function StoryList(props) {
   return !props.stories ? null :  <div className="story-list">
-    {props.stories.map((storyObj) => {
-        {/* This `storyObj` object includes `id`, `type` and actual `story` object. We only
-        need actual story object.*/}
-        return storyObj && <StoryListItem story={storyObj.story} key={storyObj.id} config={props.config}></StoryListItem>
+    {props.stories.map((storyObj, index) => {
+        // The `props.story` can be an item from items of a collection or a story itself.
+        // assigning it accordinlgy.
+        const story = storyObj && storyObj.type === 'story' && storyObj.story ? storyObj.story : storyObj;
+        return story && <StoryListItem story={story} key={index} config={props.config}></StoryListItem>
       }
     )}
   </div>
 }
 
-function StoryListItem(props) {
+function StoryListItem({story, config}) {
   const inlineStyle = {
-    borderBottom: 'solid 2px ' + props.story['section-color']
+    borderBottom: 'solid 2px ' + story['section-color']
   }
   const author = {
-    name: props.story['author-name']
+    name: story['author-name']
   }
   return (
-    !props.story ? null : <Link href={"/" + (props.story['parent-collection'] ? props.story['generated-slug'] : props.story.slug) }>
+    <Link href={"/" + (story['parent-collection'] ? story['generated-slug'] : story.slug) }>
       {
-        props.config && props.config.section &&
-        <SectionName inlineStyle={inlineStyle} name={props.story.sections[0]['display-name']}/>
+        config && config.section &&
+        <SectionName inlineStyle={inlineStyle} name={story.sections[0]['display-name']}/>
       }
-      <h2 dangerouslySetInnerHTML={ {__html: props.story.headline }} />
+      <h2 className="story-list__heading" dangerouslySetInnerHTML={ {__html: story.headline }} />
       <Author author={author}/>
     </Link>
   )
