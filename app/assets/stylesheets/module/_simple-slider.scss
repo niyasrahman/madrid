@@ -34,22 +34,22 @@
     }
   }
   &__section-name {
-    font-size: 28px;
+    font-size: rem(28);
     margin-bottom: 34px;
     text-align: center;
     color: $white;
     font-weight: $bold;
     @include breakpoint($pc) {
-      font-size: 34px;
+      font-size: rem(34);
     }
   }
 
   &__story-heading {
-    font-size: 22px;
+    font-size: rem(22);
     font-weight: 200;
     padding: 0;
     @include breakpoint($pc) {
-      font-size: 38px;
+      font-size: rem(38);
       line-height: 1.32;
     }
   }
@@ -66,7 +66,7 @@
     background: none;
     padding: 12px 30px;
     border: 2px solid $white;
-    font-size: 16px;
+    font-size: rem(16);
     width: 200px;
     letter-spacing: 2.2px;
     font-weight: $bold;
@@ -75,7 +75,7 @@
     color: $white;
 
     @include breakpoint($pc) {
-      font-size: 17.5px;
+      font-size: rem(18);
       letter-spacing: 2.4px;
       font-weight: $regular;
       text-align: center;

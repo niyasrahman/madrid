@@ -28,7 +28,7 @@
   &__form-input {
     letter-spacing: 1px;
     color: $black;
-    font-size: 20px;
+    font-size: rem(20);
     &:focus {
       outline: none;
     }

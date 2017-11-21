@@ -24,11 +24,11 @@
         color: $white;
       }
       h3{
-        font-size: 22px;
+        font-size: rem(22);
         line-height: 1.36;
         margin-bottom: 15px;
         @include breakpoint($pc){
-          font-size: 34px;
+          font-size: rem(34);
           line-height: 1.29;
           margin-bottom: 17px;
         }

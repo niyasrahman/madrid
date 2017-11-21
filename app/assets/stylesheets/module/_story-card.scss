@@ -3,17 +3,17 @@
   height: auto;
   overflow: hidden;
   background: $white;
-  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px 0 rgba($black, 0.1);
   &__content {
     padding: 20px;
     .story-card__description {
-      font-size: 14px;
+      font-size: rem(14);
       color: $gray;
       line-height: 1.57;
       margin-bottom: 20px;
     }
     .story-card__heading {
-      font-size: 26px;
+      font-size: rem(26);
       color: $darkest-gray;
       line-height: 1.31;
       font-weight: $regular;
@@ -28,19 +28,19 @@
     }
     @include breakpoint($tablet) {
       .story-card__heading {
-        font-size: 22px;
+        font-size: rem(22);
       }
       .story-card__description {
-        font-size: 12px;
+        font-size: rem(12);
       }
     }
     @include breakpoint($pc) {
       .story-card__heading {
-        font-size: 26px;
+        font-size: rem(26);
         line-height: 1.31;
       }
       .story-card__description {
-        font-size: 14px;
+        font-size: rem(14);
         line-height: 1.57;
         margin-bottom: 27px;
       }
@@ -51,11 +51,11 @@
       left: 0;
       padding: 20px;
       .story-card__heading {
-        font-size: 34px;
+        font-size: rem(34);
         color: $white;
         line-height: 1.18;
         @include breakpoint($tablet) {
-          font-size: 32px;
+          font-size: rem(32);
         }
       }
       // Todo: Move this customization to Author Component itself.

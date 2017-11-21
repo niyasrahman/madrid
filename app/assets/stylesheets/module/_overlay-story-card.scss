@@ -24,7 +24,7 @@
   
   &__heading {
   	position: absolute;
-    font-size: 18px;
+    font-size: rem(18);
     line-height: 1.2em;
     margin: 10px 15px;
     color: $white;
@@ -34,17 +34,23 @@
     transition: all .5s ease-in;
     z-index: $zIndex-1;
     @include breakpoint($tablet) {
-    	font-size: 20px;
+    	font-size: rem(20);
     	margin: 15px 20px;
     }
     @include breakpoint($pc) {
-    	font-size: 29px;
+    	font-size: rem(29);
     	margin: 18px 25px;
     }
   }
   &--video {
     figure {
       @extend .video-play-icon;
+      &:before {
+       @include bgicon-size(40px);
+        @include breakpoint($tablet) {
+          @include bgicon-size(90px);
+        }
+      }
     }
   }
 }

@@ -18,22 +18,22 @@
 
   &__published-date time,
   &__published-date {
-    font-size: 10px;
+    font-size: rem(10);
     font-family: var(--sansTypeface);
     text-align: left;
     color: $darker-gray;
     font-weight: 300;
     @include breakpoint($tablet) {
       margin-bottom: 0;
-      font-size: 14px;
+      font-size: rem(14);
     }
   }
   
   &__name {
-    font-size: 12px;
+    font-size: rem(12);
     font-weight: 300;
     @include breakpoint($tablet) {
-      font-size: 16px;
+      font-size: rem(16);
     }
   }
 }

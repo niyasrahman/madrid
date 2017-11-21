@@ -54,7 +54,7 @@ img{
 .sub--section{
   background: rgba($black,0.5);
   color: $white;
-  font-size: 20px;
+  font-size: rem(20);
   font-weight: $bold;
   padding: 6px 14px;
 }
@@ -77,11 +77,11 @@ img{
   }
 }
 .author--submission{
-  font-size: 11px;
+  font-size: rem(11);
   font-weight: 300;
   color: $darker-gray;
   @include breakpoint($pc){
-    font-size: 14px;
+    font-size: rem(14);
   }
 }
 .footer{
@@ -124,7 +124,7 @@ img{
           padding-left: 10px;
           a{
             display: block;
-            font-size: 16px;
+            font-size: rem(16);
           }
           a::after {
             content: "|";

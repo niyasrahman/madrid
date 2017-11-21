@@ -30,7 +30,7 @@ img {
 
 #main-navigation li a {
     color: white;
-    font-size: 32px;
+    font-size: rem(32);
     text-transform: uppercase;
     font-family: 'Open Sans', sans-serif;
     text-decoration: none;
@@ -53,7 +53,7 @@ img {
 
 h1 {
     font-family: 'Open Sans', sans-serif;
-    font-size: 30px;
+    font-size: rem(30);
     font-weight: 800;
     margin: 10px 0;
     text-align: center;
@@ -62,7 +62,7 @@ h1 {
 
 h1 span {
     font-family: 'Cardo', serif;
-    font-size: 24px;
+    font-size: rem(24);
     font-style: italic;
     font-weight: $regular;
     margin: 0 5px;
@@ -150,7 +150,7 @@ a {
 }
 
 .story-grid-item h2 {
-  font-size: 16px;
+  font-size: rem(16);
   text-align: center;
   height: 100px;
 }
@@ -161,6 +161,6 @@ a {
 
 .story-grid-author {
   display: block;
-  font-size: 12px;
+  font-size: rem(12);
   float: right;
 }

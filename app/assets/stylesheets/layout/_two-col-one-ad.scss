@@ -1,47 +1,47 @@
-.two-col-one-ad{
-  &__last{
-    &__first{
+.two-col-one-ad {
+  &__last {
+    &__first {
       display: none;
-      @include breakpoint($pc){
+      @include breakpoint($pc) {
         display: block;
         margin-bottom: 30px;
       }
     }
-    &__second{
+    &__second {
       background: $base-blue;
       padding: 34px 36px;
-      h2{
+      h2 {
         color: $white;
-        font-size: 20px;
+        font-size: rem(20);
         line-height: 1.4;
         text-align: center;
         font-weight: 300;
       }
-      img{
+      img {
         width: 32px;
         display: block;
         margin: 0 auto 10px;
       }
-      @include breakpoint($pc){
-        img{
+      @include breakpoint($pc) {
+        img {
           width: 32px;
           display: block;
           margin: 0 auto 10px;
         }
       }
     }
-    @include breakpoint($tablet){
+    @include breakpoint($tablet) {
       display: none;
     }
-    @include breakpoint($pc){
+    @include breakpoint($pc) {
       display: block;
     }
   }
-  &__email{
-    input{
+  &__email {
+    input {
       margin: 20px 0 25px;
     }
-    button{
+    button {
       display: table;
       margin: 0 auto;
       background: $base-blue;

@@ -3,9 +3,18 @@
     --serifTypeface: 'Lora', serif;
 }
 
-$base:      20px;
-$tabbase:   12px;
-$mobbase:   16px;
+// setting base font size for devices start
+
+$base: 16;
+@include breakpoint($tablet) {
+  $base: 12; 
+}
+@include breakpoint($pc) {
+  $base: 20; 
+}
+
+// setting base font size for devices start
+
 $line:      1.6;
 
 $fontsize-smaller:    11;
@@ -38,7 +47,7 @@ html {
 body {
     font-family: var(--sansTypeface);
     font-weight: 400;
-    font-size: $base;
+    font-size: rem($base);
     line-height: $line;
     text-rendering: auto;
 }
@@ -50,44 +59,44 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
 }
 
 h1 {
-    font-size: em($fontsize-jumbo);
-    line-height: em(50, $fontsize-halfjumbo);
+    font-size: rem($fontsize-jumbo);
+    line-height: rem(50, $fontsize-jumbo);
     font-weight: 300;
 }
 
 h2 {
-    font-size: em($fontsize-halfjumbo);
-    line-height: em(40, $fontsize-halfjumbo);
-    padding: em(24, $fontsize-halfjumbo) 0 em(16, $fontsize-halfjumbo);
+    font-size: rem($fontsize-halfjumbo);
+    line-height: rem(40, $fontsize-halfjumbo);
+    padding: rem(24, $fontsize-halfjumbo) 0 rem(16, $fontsize-halfjumbo);
     font-family: var(--sansTypeface);
 }
 
 h3 {
-    font-size: em($fontsize-largest);
-    line-height: em(36, $fontsize-largest);
+    font-size: rem($fontsize-largest);
+    line-height: rem(36, $fontsize-largest);
     word-break: normal;
     font-family: var(--sansTypeface);
 }
 
 h4 {
-    font-size: em($fontsize-larger);
-    line-height: em(32, $fontsize-larger);
+    font-size: rem($fontsize-larger);
+    line-height: rem(32, $fontsize-larger);
     font-weight: bold;
 }
 
 h5 {
-    font-size: em($fontsize-medium);
-    line-height: em(24, $fontsize-medium);
+    font-size: rem($fontsize-medium);
+    line-height: rem(24, $fontsize-medium);
     font-weight: bold;
 }
 
 h6 {
-    font-size: em($fontsize-small);
-    line-height: em(16, $fontsize-small);
+    font-size: rem($fontsize-small);
+    line-height: rem(16, $fontsize-small);
 }
 
 p {
     font-family: var(--sansTypeface);
-    font-size: em($fontsize-base);
+    font-size: rem($fontsize-base);
     line-height: 1.6;
 }

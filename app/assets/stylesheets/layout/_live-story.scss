@@ -6,7 +6,7 @@
   .live-story {
     position: relative;
     font-family: var(--sansTypeface);
-    font-size: 13px;
+    font-size: rem(13);
     letter-spacing: 1.5px;
     text-align: right;
     text-transform: uppercase;
@@ -22,7 +22,7 @@
       left: 4px;
       height: 10px;
       width: 10px;
-      font-size: 15px;
+      font-size: rem(15);
       color: $white;
       z-index: 99;
       border: 1px solid $off-white;
@@ -49,35 +49,35 @@
     }
   }
   .card-added-at {
-    font-size: 14px;
+    font-size: rem(14);
     text-align: left;
     color: $dark-gray;
     padding: 10px 20px 10px 30px;
     background: url("../icons/clock.svg") no-repeat 5px center;
     background-color: $gray-white;
     @include breakpoint($pc) {
-      font-size: 16px;
+      font-size: rem(16);
       margin: 0 0 0 -30px;
     }
   }
   .card-updated-at {
-    font-size: 14px;
+    font-size: rem(14);
     text-align: left;
     color: $dark-gray;
     font-weight: $lighter;
     @include breakpoint($pc) {
-      font-size: 16px;
+      font-size: rem(16);
     }
   }
   .story-element-title h2 {
-    font-size: 22px;
+    font-size: rem(22);
     font-weight: bold;
     line-height: 1.36;
     text-align: left;
     color: $dark-gray;
     margin: 10px 0;
     @include breakpoint($pc) {
-      font-size: 26px;
+      font-size: rem(26);
     }
   }
 }
@@ -114,7 +114,7 @@
     }
   }
   &__heading {
-    font-size: 22px;
+    font-size: rem(22);
     text-transform: capitalize;
     font-weight: $bold;
     padding: 15px 20px;
@@ -125,13 +125,13 @@
     background-color: inherit;
     background-size: 17px;
     margin: 0;
-    font-size: 12px;
+    font-size: rem(12);
     color: $gray-light;
     font-weight: $lighter;
     padding: 5px 0px 5px 30px;
   }
   .event-title {
-    font-size: 20px;
+    font-size: rem(20);
     line-height: 1.25;
     color: $dark-gray;
     margin-left: 15px;

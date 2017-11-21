@@ -17,7 +17,7 @@
       margin: 0;
       .section--content {
         h2 {
-          font-size: 18px;
+          font-size: rem(18);
         }
       }
     }
@@ -25,10 +25,10 @@
       .section--content {
         padding: 30px;
         h2 {
-          font-size: 26px;
+          font-size: rem(26);
         }
         p {
-          font-size: 18px;
+          font-size: rem(18);
         }
       }
     }

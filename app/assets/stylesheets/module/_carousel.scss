@@ -23,13 +23,13 @@
       padding: 20px 15px 40px 10px;
     }
     padding: 15px;
-    font-size: 18px;
+    font-size: rem(18);
     text-align: left;
     color: $gray;
     font-weight: 300;
   }
   &__heading {
-    font-size: 26px;
+    font-size: rem(26);
     line-height: 1.31;
     text-align: left;
     color: $darkest-gray;
@@ -37,10 +37,10 @@
     font-weight: $regular;
     padding: 0;
     @include breakpoint($tablet) {
-      font-size: 22px;
+      font-size: rem(22);
     }
     @include breakpoint($pc) {
-      font-size: 34px;
+      font-size: rem(34);
       margin: 0 0 15px;
     }
   }
@@ -49,11 +49,11 @@
     font-family: var(--serifTypeface);
     @include breakpoint($tablet) {
       display: block;
-      font-size: 12px;
+      font-size: rem(12);
       margin-bottom: 28px;
     }
     @include breakpoint($pc) {
-      font-size: 18px;
+      font-size: rem(18);
       margin-bottom: 35px;
     }
   }
