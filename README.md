@@ -1,6 +1,6 @@
-# malibu
+# Madrid
 
-This will probably get renamed to toddy when it gets feature parity (soon)
+Madrid is the demo app using [Malibu](https://github.com/quintype/malibu) as a starting point.
 
 ## toddy-libs
 
