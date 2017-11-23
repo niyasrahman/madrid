@@ -1,9 +1,10 @@
 const React = require("react");
+const { Link } = require("quintype-toddy-libs/components/link");
 
 function Tag(props) {
-  return <a href={"/topic/"+props.tag.slug} className="story-tag">
+  return <Link href={"/topic/"+props.tag.slug} className="story-tag">
           {props.tag.name}
-         </a>
+        </Link>
 }
 
 function StoryTags(props) {
