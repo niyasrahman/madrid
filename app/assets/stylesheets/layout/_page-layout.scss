@@ -30,6 +30,14 @@ body {
 //     padding: 22px 15px;
 //   }
 // }
+
+// space for breaking news container
+.navbar {
+  margin-bottom: 55px;
+  @include breakpoint($pc) {
+    margin-bottom: 70px;
+  }
+}
 .header{
   @include full;
   padding: 17.5px 15px;
