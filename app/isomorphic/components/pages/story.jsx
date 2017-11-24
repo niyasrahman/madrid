@@ -2,7 +2,6 @@ const React = require("react");
 
 const { BlankStory } = require("../story-templates/blank.jsx");
 const { LiveBlogStory } = require("../story-templates/live-blog.jsx");
-const { NavigationComponent } = require("../navigation-component.jsx");
 const { Footer } = require('../layout/footer.jsx')
 const { InfiniteStoryBase } = require('quintype-toddy-libs/components/infinite-story-base')
 
@@ -44,14 +43,7 @@ class StoryPage extends React.Component {
         url: '/terms'
       }
     ]
-
-    const navbarConfig = {
-      title: 'Madrid',
-      menu: this.props.data.navigationMenu,
-      links: staticLinks
-    };
     return (<div>
-        <NavigationComponent {...navbarConfig}/>
         <InfiniteStoryBase {...this.props}
                             render={(storyProps) => storyPageContent(storyProps, this.props.data.relatedStories)}
                             loadItems={storyPageLoadItems}

@@ -4212,9 +4212,9 @@ quintype-seo-node@^0.1.6:
   dependencies:
     lodash "^4.16.4"
 
-quintype-toddy-libs@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/quintype-toddy-libs/-/quintype-toddy-libs-1.2.0.tgz#75633d19ce039736e97e23979ce769bbe1d54e67"
+quintype-toddy-libs@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/quintype-toddy-libs/-/quintype-toddy-libs-1.2.1.tgz#17fa8cc1cefce960754b154acff012f4799772f9"
   dependencies:
     atob "^2.0.3"
     classnames "^2.2.5"

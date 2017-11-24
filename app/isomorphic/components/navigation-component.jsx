@@ -1,5 +1,7 @@
 const React = require("react");
 const classNames = require('classnames');
+const _ = require("lodash")
+const {connect} = require("react-redux");
 const { Link } = require("quintype-toddy-libs/components/link");
 
 const CloseImg = require('../../assets/icons/close.svg');
@@ -10,55 +12,6 @@ const GoogleImg = require('../../assets/icons/google.svg');
 
 const { Search } = require("./basic/search.jsx");
 const { Button } = require("./basic/button.jsx");
-
-class NavigationComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOffcanvasOpen: false
-    }
-    this.openSidemenu = this.openSidemenu.bind(this);
-  }
-  openSidemenu() {
-    this.setState({
-      isOffcanvasOpen: true
-    })
-  }
-  render() {
-    return <div className="navbar">
-      <OffCanvasMenu {...this.props} isOffcanvasOpen={this.state.isOffcanvasOpen}/>
-      <NavBar {...this.props} openSidemenu={this.openSidemenu}/>
-    </div>
-  }
-}
-
-function NavBar(props) {
-  return <div className="header bg--white">
-      <div className="header__container">
-        <AppLogo {...props} />
-        <div className="header__middle">
-          <nav className="header__middle__nav">
-            <ul>
-              {props.menu.map((item, index)=> {
-                if(item.children.length) {
-                  return (
-                    <MenuItem item={item} key={index}/>
-                  )
-                }
-                return <li key={index} className="nav-item">
-                  <Link href={ '/'+ item['section-slug']}>{item.title}</Link>
-                </li>
-              })}
-            </ul>
-          </nav>
-        </div>
-        <div className="header__last">
-          <div className="header__last__button"><Button classNamesString="qt-button--primary">Sign in</Button></div>
-          <Search />
-        </div>
-      </div>
-    </div>
-}
 
 class OffCanvasMenu extends React.Component {
   constructor(props) {
@@ -179,4 +132,76 @@ class SideMenuItem extends React.Component {
   }
 }
 
-exports.NavigationComponent = NavigationComponent;
+function NavBar(props) {
+  return <div className="header bg--white">
+      <div className="header__container">
+        <AppLogo {...props} />
+        <div className="header__middle">
+          <nav className="header__middle__nav">
+            <ul>
+              {props.menu.map((item, index)=> {
+                if(item.children.length) {
+                  return (
+                    <MenuItem item={item} key={index}/>
+                  )
+                }
+                return <li key={index} className="nav-item">
+                  <Link href={ '/'+ item['section-slug']}>{item.title}</Link>
+                </li>
+              })}
+            </ul>
+          </nav>
+        </div>
+        <div className="header__last">
+          <div className="header__last__button"><Button classNamesString="qt-button--primary">Sign in</Button></div>
+          <Search />
+        </div>
+      </div>
+    </div>
+}
+
+class NavigationBase extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOffcanvasOpen: false
+    }
+    this.openSidemenu = this.openSidemenu.bind(this);
+  }
+  openSidemenu() {
+    this.setState({
+      isOffcanvasOpen: true
+    })
+  }
+  render() {
+    return <div className="navbar">
+      <OffCanvasMenu {...this.props} isOffcanvasOpen={this.state.isOffcanvasOpen}/>
+      <NavBar {...this.props} openSidemenu={this.openSidemenu}/>
+    </div>
+  }
+}
+
+function mapStateToProps(state) {
+  const staticLinks = [
+    {
+      content: 'About us',
+      url: '/about'
+    },
+    {
+      content: 'Privacy Policy',
+      url: '/privacy'
+    },
+    {
+      content: 'Terms & Conditions',
+      url: '/terms'
+    }
+  ]
+
+  // Showing the first 5 menu items only to keep up with design.
+  return {
+    title: 'Madrid',
+    menu: _.get(state, ["qt", "data", "navigationMenu"], []),
+    links: staticLinks
+  };
+}
+exports.NavigationComponent = connect(mapStateToProps, () => ({}))(NavigationBase);

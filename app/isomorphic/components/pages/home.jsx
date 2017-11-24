@@ -1,6 +1,5 @@
 const React = require("react");
 
-const { NavigationComponent } = require("../navigation-component.jsx");
 const { TwoColOneAd } = require("../layout/two-col-one-ad.jsx");
 const { FullscreenCarousel } = require("../layout/fullscreen-carousel.jsx");
 const { FullscreenSimpleSlider } = require("../layout/fullscreen-simple-slider.jsx");
@@ -30,13 +29,6 @@ class HomePage extends React.Component {
       }
     ]
 
-    // Showing the first 5 menu items only to keep up with design.
-    const navbarConfig = {
-      title: 'Madrid',
-      menu: this.props.data.navigationMenu.splice(0,5),
-      links: staticLinks
-    };
-
     const templates = {
       'featured-stories': FullscreenCarousel,
       'main-stories': TwoColOneAd,
@@ -53,7 +45,6 @@ class HomePage extends React.Component {
     }
 
     return <div>
-      <NavigationComponent {...navbarConfig}/>
       {this.props.data.homeCollections.map((collection, index) => {
         if (collection) {
           const config = {

@@ -1,6 +1,5 @@
 const React = require("react");
 
-const { NavigationComponent } = require("../navigation-component.jsx");
 const { Footer } = require('../layout/footer.jsx')
 
 const { OneMainCardSlider } = require("../layout/one-main-card-slider.jsx");
@@ -26,18 +25,12 @@ class SectionPage extends React.Component {
       }
     ]
 
-    const navbarConfig = {
-      title: 'Madrid',
-      menu: this.props.data.navigationMenu,
-      links: staticLinks
-    };
     const config = {
       'collection-name': this.props.data.collection.name,
       'collection-slug': this.props.data.collection.slug,
       'collection-color': this.props.data.collection.color
     }
     return <div>
-      <NavigationComponent {...navbarConfig}/>
       <CardGroup stories={this.props.data.collection.items.slice(0,4)} config= {config}/>
       <OneMainCardSlider stories={this.props.data.collection.items.slice(0,20)} config= {config}/>
       <ThreeStoryCards stories={this.props.data.collection.items.slice(0,3)} config= {config}/>
