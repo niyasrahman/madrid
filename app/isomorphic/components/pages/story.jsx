@@ -2,7 +2,6 @@ const React = require("react");
 
 const { BlankStory } = require("../story-templates/blank.jsx");
 const { LiveBlogStory } = require("../story-templates/live-blog.jsx");
-const { Footer } = require('../layout/footer.jsx')
 const { InfiniteStoryBase } = require('quintype-toddy-libs/components/infinite-story-base')
 
 function storyPageContent({story, index, relatedStories}) {
@@ -29,29 +28,11 @@ class StoryPage extends React.Component {
     window.scrollTo(0, 0)
   }
   render() {
-    const staticLinks = [
-      {
-        content: 'About us',
-        url: '/about'
-      },
-      {
-        content: 'Privacy Policy',
-        url: '/privacy'
-      },
-      {
-        content: 'Terms & Conditions',
-        url: '/terms'
-      }
-    ]
-    return (<div>
-        <InfiniteStoryBase {...this.props}
-                            render={(storyProps) => storyPageContent(storyProps, this.props.data.relatedStories)}
-                            loadItems={storyPageLoadItems}
-                            onItemFocus={(item) => console.log(`Story In View: ${item.story.headline}`)}
-                            onInitialItemFocus={(item) => console.log(`Do Analytics ${item.story.headline}`)} />
-        <Footer links={staticLinks}/>
-      </div>
-    )
+    return <InfiniteStoryBase {...this.props}
+              render={(storyProps) => storyPageContent(storyProps, this.props.data.relatedStories)}
+              loadItems={storyPageLoadItems}
+              onItemFocus={(item) => console.log(`Story In View: ${item.story.headline}`)}
+              onInitialItemFocus={(item) => console.log(`Do Analytics ${item.story.headline}`)} />
   }
 }
 

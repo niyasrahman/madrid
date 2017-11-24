@@ -1,26 +1,10 @@
 const React = require("react");
 
 const { FullscreenMediaList } = require("../layout/fullscreen-media-list.jsx");
-const { Footer } = require('../layout/footer.jsx')
-
 
 class TagPage extends React.Component {
 
   render() {
-    const staticLinks = [
-      {
-        content: 'About us',
-        url: '/about'
-      },
-      {
-        content: 'Privacy Policy',
-        url: '/privacy'
-      },
-      {
-        content: 'Terms & Conditions',
-        url: '/terms'
-      }
-    ]
     // TODO: Get these color values from a common config.
     const config = {
       'collection-name': `Results for ${this.props.data.tag}`,
@@ -35,7 +19,6 @@ class TagPage extends React.Component {
           <p>No stories found for tag <strong>{this.props.data.tag}</strong>.</p>
         </div>
       }
-      <Footer links={staticLinks}/>
     </div>;
   }
 }

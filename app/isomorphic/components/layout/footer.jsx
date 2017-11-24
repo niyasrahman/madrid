@@ -1,7 +1,9 @@
 const React = require('react');
+const {connect} = require("react-redux");
+
 const Logo = require('../../../assets/icons/quintype_logo.svg')
 
-function Footer(props) {
+function FooterBase(props) {
   return <footer className="footer">
     <div className="footer__content">
       <div className="footer__content__first">
@@ -22,4 +24,23 @@ function Footer(props) {
   </footer>
 }
 
-exports.Footer = Footer;
+function mapStateToProps(state) {
+  return {
+    links: [
+      {
+        content: 'About us',
+        url: '/about'
+      },
+      {
+        content: 'Privacy Policy',
+        url: '/privacy'
+      },
+      {
+        content: 'Terms & Conditions',
+        url: '/terms'
+      }
+    ]
+  }
+}
+
+exports.Footer = connect(mapStateToProps, () => ({}))(FooterBase);

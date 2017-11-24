@@ -13,22 +13,6 @@ const { Footer } = require('../layout/footer.jsx');
 class HomePage extends React.Component {
 
   render() {
-    // TODO: Get these staticLinks and navbarConfig from a common config file
-    const staticLinks = [
-      {
-        content: 'About us',
-        url: '/about'
-      },
-      {
-        content: 'Privacy Policy',
-        url: '/privacy'
-      },
-      {
-        content: 'Terms & Conditions',
-        url: '/terms'
-      }
-    ]
-
     const templates = {
       'featured-stories': FullscreenCarousel,
       'main-stories': TwoColOneAd,
@@ -58,7 +42,6 @@ class HomePage extends React.Component {
           );
         }
       })}
-      <Footer links={staticLinks}/>
     </div>;
   }
 }
