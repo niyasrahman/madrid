@@ -38,6 +38,9 @@ class Search extends require("quintype-toddy-libs/components/navigation-componen
   }
 
   handleSubmit(event) {
+    this.setState({
+      isSearchFormOpen: false
+    })
     this.navigateTo('/search/' + this.state.searchQuery);
     event.preventDefault();
   }
