@@ -2896,7 +2896,7 @@ js-tokens@^3.0.0, js-tokens@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-3.0.2.tgz#9866df395102130e38f7f996bceb65443209c25b"
 
-js-yaml@^3.9.0:
+js-yaml@^3.10.0, js-yaml@^3.9.0:
   version "3.10.0"
   resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.10.0.tgz#2e78441646bd4682e963f22b6e92823c309c62dc"
   dependencies:
@@ -4101,7 +4101,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.10, prop-types@^15.5.3, prop-types@^15.5.4:
+prop-types@^15.5.10, prop-types@^15.5.3, prop-types@^15.5.4, prop-types@^15.6.0:
   version "15.6.0"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.0.tgz#ceaf083022fc46b4a35f69e13ef75aed0d639856"
   dependencies:
@@ -4212,24 +4212,24 @@ quintype-seo-node@^0.1.6:
   dependencies:
     lodash "^4.16.4"
 
-quintype-toddy-libs@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/quintype-toddy-libs/-/quintype-toddy-libs-1.2.1.tgz#17fa8cc1cefce960754b154acff012f4799772f9"
+quintype-toddy-libs@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/quintype-toddy-libs/-/quintype-toddy-libs-1.5.0.tgz#d20b9149d6506075fcd41aa38a9c7ca1311c92bf"
   dependencies:
     atob "^2.0.3"
     classnames "^2.2.5"
     get-youtube-id "^1.0.0"
     http-proxy "^1.16.2"
-    js-yaml "^3.9.0"
+    js-yaml "^3.10.0"
     lodash "^4.17.4"
     quintype-backend "^0.4.1"
     quintype-js "^0.1.6"
-    react "^15.6.1"
-    react-dom "^15.6.1"
-    react-redux "^5.0.5"
-    react-router "^4.1.2"
-    react-soundcloud-widget "^2.0.4"
-    react-youtube "^7.4.0"
+    react "^16.1.1"
+    react-dom "^16.1.1"
+    react-redux "^5.0.6"
+    react-router "^4.2.0"
+    react-soundcloud-widget "git://github.com/gja/react-soundcloud-widget"
+    react-youtube "^7.5.0"
     redux "^3.7.2"
     url "^0.11.0"
 
@@ -4268,16 +4268,16 @@ rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-dom@^15.6.1:
-  version "15.6.2"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.6.2.tgz#41cfadf693b757faf2708443a1d1fd5a02bef730"
+react-dom@^16.1.1:
+  version "16.1.1"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.1.1.tgz#b2e331b6d752faf1a2d31399969399a41d8d45f8"
   dependencies:
-    fbjs "^0.8.9"
+    fbjs "^0.8.16"
     loose-envify "^1.1.0"
-    object-assign "^4.1.0"
-    prop-types "^15.5.10"
+    object-assign "^4.1.1"
+    prop-types "^15.6.0"
 
-react-redux@^5.0.5:
+react-redux@^5.0.6:
   version "5.0.6"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-5.0.6.tgz#23ed3a4f986359d68b5212eaaa681e60d6574946"
   dependencies:
@@ -4299,7 +4299,7 @@ react-router-dom@^4.1.2:
     react-router "^4.2.0"
     warning "^3.0.0"
 
-react-router@^4.1.2, react-router@^4.2.0:
+react-router@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/react-router/-/react-router-4.2.0.tgz#61f7b3e3770daeb24062dae3eedef1b054155986"
   dependencies:
@@ -4323,9 +4323,9 @@ react-slick@^0.15.4:
     object-assign "^4.1.0"
     slick-carousel "^1.6.0"
 
-react-soundcloud-widget@^2.0.4:
+"react-soundcloud-widget@git://github.com/gja/react-soundcloud-widget.git":
   version "2.0.4"
-  resolved "https://registry.yarnpkg.com/react-soundcloud-widget/-/react-soundcloud-widget-2.0.4.tgz#69663516878d8d52de1d93e4fac062f02a9c60af"
+  resolved "git://github.com/gja/react-soundcloud-widget.git#d42fab3c25cbab19aa38eab9dc33936acfed6ca8"
   dependencies:
     load-script "^1.0.0"
 
@@ -4333,7 +4333,7 @@ react-timeago@^3.4.3:
   version "3.4.3"
   resolved "https://registry.yarnpkg.com/react-timeago/-/react-timeago-3.4.3.tgz#eb9061eefb044e4a2b09ce8c99d34645b2dbfa25"
 
-react-youtube@^7.4.0:
+react-youtube@^7.5.0:
   version "7.5.0"
   resolved "https://registry.yarnpkg.com/react-youtube/-/react-youtube-7.5.0.tgz#3175a9c4e078164cf103ce4bc780a9e4ca4f1f94"
   dependencies:
@@ -4350,6 +4350,15 @@ react@^15.6.1:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
     prop-types "^15.5.10"
+
+react@^16.1.1:
+  version "16.1.1"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.1.1.tgz#d5c4ef795507e3012282dd51261ff9c0e824fe1f"
+  dependencies:
+    fbjs "^0.8.16"
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.0"
 
 read-pkg-up@^1.0.1:
   version "1.0.1"
