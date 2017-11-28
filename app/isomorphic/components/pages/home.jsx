@@ -28,7 +28,7 @@ class HomePage extends React.Component {
       return templates[designTemplate] ? templates[designTemplate] : ThreeCol;
     }
 
-    return <div>
+    return <div className="home-page">
       {this.props.data.homeCollections.map((collection, index) => {
         if (collection) {
           const config = {
