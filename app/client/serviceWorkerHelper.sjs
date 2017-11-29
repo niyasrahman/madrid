@@ -1,6 +1,6 @@
 const workboxVersion = '1.1.0';
 
-import {matchBestRoute} from 'quintype-toddy-libs/isomorphic/match-best-route';
+import {matchBestRoute} from '@quintype/framework/isomorphic/match-best-route';
 
 function qDebug() {
   if(process.env.NODE_ENV !== 'production') {

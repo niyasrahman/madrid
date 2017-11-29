@@ -3,7 +3,7 @@ const SearchImg = require('../../../assets/icons/search.svg');
 
 const { Button } = require('./button.jsx')
 
-class Search extends require("quintype-toddy-libs/components/navigation-component-base") {
+class Search extends require("@quintype/framework/components/navigation-component-base") {
   constructor(props) {
     super(props);
     this.state = {

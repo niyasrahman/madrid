@@ -1,6 +1,6 @@
 const _ = require('lodash');
 
-const {Story, Collection} = require("quintype-toddy-libs/server/api-client");
+const {Story, Collection} = require("@quintype/framework/server/api-client");
 const {getNavigationMenuArray} = require("./menu-data");
 
 exports.loadSectionPageData = function loadSectionPageData(client, sectionId, config) {

@@ -1,6 +1,6 @@
 const _ = require("lodash");
-const {assetPath} = require("quintype-toddy-libs/server/asset-helper");
-const {renderReduxComponent} = require("quintype-toddy-libs/server/render");
+const {assetPath} = require("@quintype/framework/server/asset-helper");
+const {renderReduxComponent} = require("@quintype/framework/server/render");
 
 const { NavigationComponent } = require("../../isomorphic/components/navigation-component.jsx")
 const { Footer } = require("../../isomorphic/components/layout/footer.jsx")

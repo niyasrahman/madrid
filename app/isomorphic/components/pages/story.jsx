@@ -2,7 +2,7 @@ const React = require("react");
 
 const { BlankStory } = require("../story-templates/blank.jsx");
 const { LiveBlogStory } = require("../story-templates/live-blog.jsx");
-const { InfiniteStoryBase } = require('quintype-toddy-libs/components/infinite-story-base')
+const { InfiniteStoryBase } = require('@quintype/framework/components/infinite-story-base')
 
 function storyPageContent({story, index, relatedStories}) {
   if(story['story-template'] == 'live-blog') {

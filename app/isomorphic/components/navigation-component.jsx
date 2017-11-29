@@ -2,7 +2,7 @@ const React = require("react");
 const classNames = require('classnames');
 const _ = require("lodash")
 const {connect} = require("react-redux");
-const { Link } = require("quintype-toddy-libs/components/link");
+const { Link } = require("@quintype/framework/components/link");
 
 const CloseImg = require('../../assets/icons/close.svg');
 const FacebookImg = require('../../assets/icons/facebook.svg');

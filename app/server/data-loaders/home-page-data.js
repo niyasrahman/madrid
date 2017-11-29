@@ -1,7 +1,7 @@
 const _ = require("lodash");
 // TODO: menu should be a common Component. now accessing this from every pages. (home, story etc)
 const {getNavigationMenuArray} = require("./menu-data");
-const {Collection} = require("quintype-toddy-libs/server/api-client");
+const {Collection} = require("@quintype/framework/server/api-client");
 
 function concatAll(initial, arrays) {
   return arrays.reduce((l, a) => l.concat(a), initial);

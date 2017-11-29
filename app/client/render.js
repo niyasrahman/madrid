@@ -1,4 +1,4 @@
-import { renderIsomorphicComponent, renderComponent, renderBreakingNews } from 'quintype-toddy-libs/client/start';
+import { renderIsomorphicComponent, renderComponent, renderBreakingNews } from '@quintype/framework/client/start';
 import { BreakingNewsView } from '../isomorphic/components/breaking-news-view';
 import { pickComponent } from '../isomorphic/pick-component';
 import { NavigationComponent } from '../isomorphic/components/navigation-component.jsx';

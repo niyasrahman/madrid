@@ -1,8 +1,8 @@
 const React = require("react");
 const Slider = require("react-slick").default;
-const { ResponsiveImage } = require("quintype-toddy-libs/components/responsive-image");
+const { ResponsiveImage } = require("@quintype/framework/components/responsive-image");
 
-const { Link } = require("quintype-toddy-libs/components/link");
+const { Link } = require("@quintype/framework/components/link");
 const { SectionName } = require("./section-name.jsx");
 
 

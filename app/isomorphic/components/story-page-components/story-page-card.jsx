@@ -1,7 +1,7 @@
 const React = require("react");
 const { SummaryElement} = require("../basic/summary-element.jsx");
 const { BlockquoteElement} = require("../basic/blockquote-element.jsx");
-const { StoryElement } = require("quintype-toddy-libs/components/story-element");
+const { StoryElement } = require("@quintype/framework/components/story-element");
 
 const StoryPageCard = props => {
   return <div>

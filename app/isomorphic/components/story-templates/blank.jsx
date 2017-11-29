@@ -1,6 +1,6 @@
 const React = require("react");
 
-const { ResponsiveImage } = require("quintype-toddy-libs/components/responsive-image");
+const { ResponsiveImage } = require("@quintype/framework/components/responsive-image");
 const { StoryHeaderCard } = require("../story-page-components/story-header-card.jsx");
 const { StoryTags } = require("../story-page-components/story-tags.jsx");
 const { RelatedStories } = require("../story-page-components/related-stories.jsx");
