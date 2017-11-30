@@ -4268,7 +4268,7 @@ rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-dom@^16.1.1:
+react-dom@^16.1.1, react-dom@^16.2.0:
   version "16.2.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.2.0.tgz#69003178601c0ca19b709b33a83369fe6124c044"
   dependencies:
@@ -4323,9 +4323,9 @@ react-slick@^0.15.4:
     object-assign "^4.1.0"
     slick-carousel "^1.6.0"
 
-"react-soundcloud-widget@git://github.com/gja/react-soundcloud-widget.git":
+"react-soundcloud-widget@git://github.com/gja/react-soundcloud-widget":
   version "2.0.4"
-  resolved "git://github.com/gja/react-soundcloud-widget.git#d42fab3c25cbab19aa38eab9dc33936acfed6ca8"
+  resolved "git://github.com/gja/react-soundcloud-widget#d42fab3c25cbab19aa38eab9dc33936acfed6ca8"
   dependencies:
     load-script "^1.0.0"
 
@@ -4341,16 +4341,7 @@ react-youtube@^7.5.0:
     prop-types "^15.5.3"
     youtube-player "^5.4.0"
 
-react@16.0.0:
-  version "16.0.0"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.0.0.tgz#ce7df8f1941b036f02b2cca9dbd0cb1f0e855e2d"
-  dependencies:
-    fbjs "^0.8.16"
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    prop-types "^15.6.0"
-
-react@^16.1.1:
+react@^16.1.1, react@^16.2.0:
   version "16.2.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.2.0.tgz#a31bd2dab89bff65d42134fa187f24d054c273ba"
   dependencies:
