@@ -1,5 +1,5 @@
 const React = require("react");
-const { StoryElement } = require("@quintype/framework/components/story-element");
+const { StoryElement } = require("@quintype/components");
 
 const blockquoteImg = require("../../../assets/icons/blockquote.svg");
 

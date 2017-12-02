@@ -1,8 +1,7 @@
 const React = require("react");
 const Slider = require("react-slick").default;
 
-const { Link } = require("@quintype/framework/components/link");
-const { ResponsiveImage } = require("@quintype/framework/components/responsive-image");
+const { Link, ResponsiveImage } = require("@quintype/components");
 
 
 function SimpleSlider(props) {

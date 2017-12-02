@@ -48,7 +48,6 @@ module.exports = {
     module: {
       rules: [
         { test: /\.jsx?$/, exclude: /node_modules/, use: BABEL_PRESET },
-        { test: /\.jsx?$/, include: /node_modules\/@quintype\/framework/, use: BABEL_PRESET },
         {
           test: /\.(sass|scss)$/,
           loader: config.sassLoader

@@ -2,8 +2,7 @@ const React = require("react");
 const TimeAgo = require('react-timeago').default;
 const classNames = require('classnames');
 
-const { Link } = require("@quintype/framework/components/link");
-const { ResponsiveImage } = require("@quintype/framework/components/responsive-image");
+const { Link, ResponsiveImage } = require("@quintype/components");
 
 const { Author } = require("./author.jsx");
 const { SectionName } = require("./section-name.jsx");

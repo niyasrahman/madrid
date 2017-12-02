@@ -1,5 +1,5 @@
 const React = require("react");
-const { Link } = require("@quintype/framework/components/link");
+const { Link } = require("@quintype/components");
 const Slider = require("react-slick").default;
 
 function BreakingNewsView(props) {

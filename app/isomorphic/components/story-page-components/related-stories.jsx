@@ -1,6 +1,6 @@
 const _ = require("lodash");
 const React = require("react");
-const { ResponsiveImage } = require("@quintype/framework/components/responsive-image");
+const { ResponsiveImage } = require("@quintype/components");
 
 function RelatedStoryCard(props){
   classname = props.showImage ? 'story-title story-title-bold' : 'story-title';

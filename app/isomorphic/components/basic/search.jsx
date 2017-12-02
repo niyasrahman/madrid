@@ -3,7 +3,9 @@ const SearchImg = require('../../../assets/icons/search.svg');
 
 const { Button } = require('./button.jsx')
 
-class Search extends require("@quintype/framework/components/navigation-component-base") {
+const {NavigationComponentBase} = require("@quintype/components");
+
+class Search extends NavigationComponentBase {
   constructor(props) {
     super(props);
     this.state = {

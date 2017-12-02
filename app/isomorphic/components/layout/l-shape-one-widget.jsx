@@ -1,5 +1,5 @@
 const React = require("react");
-const { Link } = require("@quintype/framework/components/link");
+const { Link } = require("@quintype/components");
 
 const { StoryCard } = require("../basic/story-card.jsx")
 const { NewsletterSub } = require("../basic/newsletter-sub.jsx")
