@@ -12,12 +12,13 @@ global.app = app;
 
 // This is the entry point. Ideally, unused functions will get compiled out
 function startApp() {
-  getRouteData(window.location.pathname, {config: true})
+  const location = global.location;
+  getRouteData(`${location.pathname}${location.search || ""}`, {config: true})
     .then((result) => {
       const store = createQtStore(null, result.body);
 
       renderApplication(store);
-      history.listen(change => app.maybeNavigateTo(change.pathname, store));
+      history.listen(change => app.maybeNavigateTo(`${change.pathname}${change.search || ""}`, store));
 
       if(process.env.NODE_ENV == 'development' && module.hot) {
         module.hot.accept('./render', () => renderApplication(store));
