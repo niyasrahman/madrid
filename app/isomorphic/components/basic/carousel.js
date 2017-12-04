@@ -1,6 +1,5 @@
 import React from "react";
 import Slider from "react-slick";
-require('whatwg-fetch');
 
 import { Link, ResponsiveImage} from "@quintype/components";
 

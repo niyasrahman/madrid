@@ -3,7 +3,7 @@ import React from "react";
 import { ResponsiveImage } from "@quintype/components";
 import { StoryHeaderCard } from "../story-page-components/story-header-card.js";
 import { StoryPageCard } from "../story-page-components/story-page-card.js";
-const { LiveBlogKeyEvents } =  require("../story-page-components/live-blog-key-events.js");
+import { LiveBlogKeyEvents } from "../story-page-components/live-blog-key-events.js";
 import TimeAgo from 'react-timeago';
 
 class LiveBlogTemplate extends React.Component {

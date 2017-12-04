@@ -3,12 +3,12 @@ import css from '../../app/assets/stylesheets/application.scss';
 import { createQtStore } from '@quintype/framework/store/create-store';
 import { history, getRouteData, app } from '@quintype/framework/client/start';
 import { NAVIGATE_TO_PAGE } from '@quintype/components/store/actions';
+import { renderApplication } from './render'
 
+require('whatwg-fetch');
 global.Promise = global.Promise || require("bluebird");
 global.superagent = require('superagent-promise')(require('superagent'), Promise);
 global.app = app;
-
-import { renderApplication } from './render'
 
 // This is the entry point. Ideally, unused functions will get compiled out
 function startApp() {
