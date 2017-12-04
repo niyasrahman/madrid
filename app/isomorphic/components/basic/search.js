@@ -1,21 +1,27 @@
 import React from "react";
 import SearchImg from '../../../assets/icons/search.svg';
 
+import { SearchBox } from '@quintype/components'
 import { Button } from './button.js'
+
+function DrawForm({children}) {
+  return [
+    <label className="qt-search__form-label" htmlFor="searchForm" key="1">
+      <span>Search query: </span>
+      {children}
+    </label>,
+    <Button type="submit" classNamesString="qt-button--transparent" className="qt-search__form-submit" key="2">Search</Button>
+  ];
+}
 
 class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isSearchFormOpen: false,
-      searchQuery: '',
       searchFormHeight: 0,
       initialized: false
     };
-    this.openSearchForm = this.openSearchForm.bind(this);
-    this.keyPress = this.keyPress.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -25,32 +31,9 @@ class Search extends React.Component {
       initialized: true
     })
   }
-  handleChange(event) {
-    this.setState({searchQuery: event.target.value});
-  }
-
-  keyPress(event) {
-    if (event.keyCode == 27) {
-      this.setState({
-        isSearchFormOpen: false
-      })
-    }
-  }
-
-  handleSubmit(event) {
-    this.setState({
-      isSearchFormOpen: false
-    })
-    this.navigateTo('/search/' + this.state.searchQuery);
-    event.preventDefault();
-  }
 
   openSearchForm() {
-    this.setState({
-      isSearchFormOpen: !this.state.isSearchFormOpen
-    }, () => {
-      this.input.focus();
-    })
+    this.setState({isSearchFormOpen: true}, () => this.input.focus())
   }
 
   render() {
@@ -61,21 +44,17 @@ class Search extends React.Component {
       opacity: this.state.initialized ? 1 : 0
     }
     return <div className="qt-search" style={initialStyle}>
-      <img src={SearchImg} alt="" className="qt-search__icon" onClick={this.openSearchForm}/>
+      <img src={SearchImg} alt="" className="qt-search__icon" onClick={() =>this.openSearchForm()}/>
       <div className='qt-search__form-wrapper' style={formStyle}>
-        <form onSubmit={this.handleSubmit} className="qt-search__form component-wrapper" ref={(searchForm) => this.searchForm = searchForm}>
-          <label className="qt-search__form-label" htmlFor="searchForm">
-            <span>Search query: </span>
-            <input type="text" value={this.state.searchQuery}
-              onChange={this.handleChange}
-              id="searchForm"
-              onKeyDown={this.keyPress}
-              className="qt-search__form-input"
-              placeholder="What are you looking for?"
-              ref={(input) => this.input = input}/>
-          </label>
-          <Button type="submit" classNamesString="qt-button--transparent" className="qt-search__form-submit">Search</Button>
-        </form>
+        <SearchBox className="qt-search__form component-wrapper"
+                   template={DrawForm}
+                   inputId="searchForm"
+                   inputRef={(input) => this.input = input}
+                   inputClassName="qt-search__form-input"
+                   formRef={(searchForm) => this.searchForm = searchForm}
+                   onSubmitHandler={() => this.setState({isSearchFormOpen: false})}
+                   onEscape={() => this.setState({isSearchFormOpen: false})}
+                   placeholder="What are you looking for?" />
       </div>
     </div>
   }
