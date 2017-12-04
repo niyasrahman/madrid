@@ -1,10 +1,10 @@
-const _ = require("lodash");
+import _ from "lodash";
 
-const {Story} = require("@quintype/framework/server/api-client");
-const {storyToCacheKey} = require("@quintype/framework/server/caching");
-const {getNavigationMenuArray} = require("./menu-data");
+import {Story} from "@quintype/framework/server/api-client";
+import {storyToCacheKey} from "@quintype/framework/server/caching";
+import {getNavigationMenuArray} from "./menu-data";
 
-exports.loadTagPageData = function loadTagPageData(client, tagSlug, config) {
+export function loadTagPageData(client, tagSlug, config) {
   return Story.getStories(client, 'top', {'tag': tagSlug, 'limit': '20'})
     .then(stories => {
       const menu = config.layout.menu;

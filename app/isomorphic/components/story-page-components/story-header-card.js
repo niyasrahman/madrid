@@ -1,5 +1,5 @@
-const React = require("react");
-const TimeAgo = require('react-timeago').default;
+import React from "react";
+import TimeAgo from 'react-timeago';
 
 
 function StoryHeaderCard(props) {
@@ -29,4 +29,4 @@ function StoryHeaderCard(props) {
         </header>
 }
 
-exports.StoryHeaderCard = StoryHeaderCard;
+export { StoryHeaderCard };

@@ -1,13 +1,13 @@
-const _ = require("lodash");
+import _ from "lodash";
 // TODO: menu should be a common Component. now accessing this from every pages. (home, story etc)
-const {getNavigationMenuArray} = require("./menu-data");
-const {Collection} = require("@quintype/framework/server/api-client");
+import {getNavigationMenuArray} from "./menu-data";
+import {Collection} from "@quintype/framework/server/api-client";
 
 function concatAll(initial, arrays) {
   return arrays.reduce((l, a) => l.concat(a), initial);
 }
 
-exports.loadHomePageData = function loadHomePageData(client, config) {
+export function loadHomePageData(client, config) {
   let placeholderCollectionSlugs = [];
   var homeCollection;
   return Collection.getCollectionBySlug(client, 'home', {'item-type': 'collection'})

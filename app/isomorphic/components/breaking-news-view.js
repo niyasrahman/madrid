@@ -1,6 +1,6 @@
-const React = require("react");
-const { Link } = require("@quintype/components");
-const Slider = require("react-slick").default;
+import React from "react";
+import { Link } from "@quintype/components";
+import Slider from "react-slick";
 
 function BreakingNewsView(props) {
   const settings = {
@@ -35,4 +35,4 @@ function BreakingNewsView(props) {
   }
 }
 
-exports.BreakingNewsView = BreakingNewsView;
+export { BreakingNewsView };

@@ -1,9 +1,9 @@
-const React = require("react");
+import React from "react";
 
-const { Carousel } = require('../basic/carousel.js')
+import { Carousel } from '../basic/carousel.js'
 
 function FullscreenCarousel(props) {
   return <Carousel stories={props.stories} limit={6} />;
 }
 
-exports.FullscreenCarousel = FullscreenCarousel;
+export { FullscreenCarousel };

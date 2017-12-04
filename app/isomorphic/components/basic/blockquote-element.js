@@ -1,7 +1,7 @@
-const React = require("react");
-const { StoryElement } = require("@quintype/components");
+import React from "react";
+import { StoryElement } from "@quintype/components";
 
-const blockquoteImg = require("../../../assets/icons/blockquote.svg");
+import blockquoteImg from "../../../assets/icons/blockquote.svg";
 
 class BlockquoteElement extends React.Component {
   constructor(props) {
@@ -15,4 +15,4 @@ class BlockquoteElement extends React.Component {
   }
 }
 
-exports.BlockquoteElement = BlockquoteElement;
+export { BlockquoteElement };

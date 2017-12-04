@@ -1,5 +1,5 @@
-const React = require("react");
-const TimeAgo = require('react-timeago').default;
+import React from "react";
+import TimeAgo from 'react-timeago';
 
 const FetchEventTitle = props => {
   return <div>
@@ -28,4 +28,4 @@ function LiveBlogKeyEvents(props) {
   </div>
 }
 
-exports.LiveBlogKeyEvents = LiveBlogKeyEvents;
+export { LiveBlogKeyEvents };

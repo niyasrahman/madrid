@@ -1,5 +1,5 @@
-const React = require("react");
-const { Link } = require("@quintype/components");
+import React from "react";
+import { Link } from "@quintype/components";
 
 function Tag(props) {
   return <Link href={"/topic/"+props.tag.slug} className="story-tag">
@@ -13,4 +13,4 @@ function StoryTags(props) {
         </div>
 }
 
-exports.StoryTags = StoryTags;
+export { StoryTags };

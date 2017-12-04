@@ -1,10 +1,10 @@
-const React = require("react");
+import React from "react";
 
-const { StoryCard } = require("../basic/story-card.js")
-const { StoryList } = require("../basic/story-list.js")
-const { SectionName } = require("../basic/section-name.js");
+import { StoryCard } from "../basic/story-card.js"
+import { StoryList } from "../basic/story-list.js"
+import { SectionName } from "../basic/section-name.js";
 
-function ThreeStoryCards(props) {
+export function ThreeStoryCards(props) {
   const majorStoryCardConfig = {
     image: true,
     imageAspectRatio: [2,3]
@@ -23,5 +23,3 @@ function ThreeStoryCards(props) {
     </div>
   )
 }
-
-module.exports.ThreeStoryCards = ThreeStoryCards;

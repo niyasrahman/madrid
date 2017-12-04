@@ -1,9 +1,9 @@
-const _ = require('lodash');
+import _ from 'lodash';
 
-const {Story, Collection} = require("@quintype/framework/server/api-client");
-const {getNavigationMenuArray} = require("./menu-data");
+import {Story, Collection} from "@quintype/framework/server/api-client";
+import {getNavigationMenuArray} from "./menu-data";
 
-exports.loadSectionPageData = function loadSectionPageData(client, sectionId, config) {
+export function loadSectionPageData(client, sectionId, config) {
   const section = _.find(config.sections, function(section) { return section.id === sectionId; });
   const sectionSlug = section.collection ? section.collection.slug : null;
 

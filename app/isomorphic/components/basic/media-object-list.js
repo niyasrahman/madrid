@@ -1,11 +1,11 @@
-const React = require("react");
-const TimeAgo = require('react-timeago').default;
-const classNames = require('classnames');
+import React from "react";
+import TimeAgo from 'react-timeago';
+import classNames from 'classnames';
 
-const { Link, ResponsiveImage } = require("@quintype/components");
+import { Link, ResponsiveImage } from "@quintype/components";
 
-const { Author } = require("./author.js");
-const { SectionName } = require("./section-name.js");
+import { Author } from "./author.js";
+import { SectionName } from "./section-name.js";
 
 function MediaObject({story, config}) {
   config = config || {};
@@ -46,5 +46,5 @@ function MediaObjectsList(props) {
   )
 }
 
-exports.MediaObject = MediaObject;
-exports.MediaObjectsList = MediaObjectsList;
+export { MediaObject };
+export { MediaObjectsList };

@@ -1,10 +1,10 @@
-const React = require("react");
+import React from "react";
 
-const { ResponsiveImage } = require("@quintype/components");
-const { StoryHeaderCard } = require("../story-page-components/story-header-card.js");
-const { StoryPageCard } = require("../story-page-components/story-page-card.js");
+import { ResponsiveImage } from "@quintype/components";
+import { StoryHeaderCard } from "../story-page-components/story-header-card.js";
+import { StoryPageCard } from "../story-page-components/story-page-card.js";
 const { LiveBlogKeyEvents } =  require("../story-page-components/live-blog-key-events.js");
-const TimeAgo = require('react-timeago').default;
+import TimeAgo from 'react-timeago';
 
 class LiveBlogTemplate extends React.Component {
   componentDidMount() {
@@ -55,4 +55,4 @@ class LiveBlogStory extends React.Component {
   }
 }
 
-exports.LiveBlogStory = LiveBlogStory;
+export { LiveBlogStory };

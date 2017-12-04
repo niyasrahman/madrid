@@ -1,7 +1,7 @@
-const React = require("react");
-const { SummaryElement} = require("../basic/summary-element.js");
-const { BlockquoteElement} = require("../basic/blockquote-element.js");
-const { StoryElement } = require("@quintype/components");
+import React from "react";
+import { SummaryElement} from "../basic/summary-element.js";
+import { BlockquoteElement} from "../basic/blockquote-element.js";
+import { StoryElement } from "@quintype/components";
 
 const StoryPageCard = props => {
   return <div>
@@ -24,4 +24,4 @@ const StoryPageCard = props => {
   </div>
 }
 
-exports.StoryPageCard = StoryPageCard;
+export { StoryPageCard };

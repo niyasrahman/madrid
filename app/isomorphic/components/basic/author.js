@@ -1,5 +1,5 @@
-const React = require("react");
-const TimeAgo = require('react-timeago').default;
+import React from "react";
+import TimeAgo from 'react-timeago';
 
 function Author(props) {
   return <div className="author">
@@ -13,4 +13,4 @@ function Author(props) {
   </div>
 }
 
-exports.Author = Author;
+export { Author };

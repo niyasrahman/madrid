@@ -1,10 +1,10 @@
-const React = require("react");
-const classNames = require('classnames');
+import React from "react";
+import classNames from 'classnames';
 
-const { Link, ResponsiveImage } = require("@quintype/components");
+import { Link, ResponsiveImage } from "@quintype/components";
 
-const { Author } = require("./author.js");
-const { SectionName } = require("./section-name.js");
+import { Author } from "./author.js";
+import { SectionName } from "./section-name.js";
 
 function StoryCard(props) {
   // The `props.story` can be an item from items of a collection or a story itself.
@@ -65,4 +65,4 @@ function StoryCardSimple(props) {
     </div>
 }
 
-exports.StoryCard = StoryCard;
+export { StoryCard };

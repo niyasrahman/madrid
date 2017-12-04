@@ -1,4 +1,4 @@
-const React = require('react');
+import React from 'react';
 
 function Button({children, classNamesString, type}) {
   return <button className={`qt-button ${classNamesString}`} type={type || 'button'}>
@@ -6,4 +6,4 @@ function Button({children, classNamesString, type}) {
   </button>
 }
 
-exports.Button = Button;
+export { Button };

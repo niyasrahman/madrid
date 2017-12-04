@@ -1,5 +1,5 @@
-const React = require("react");
-const classNames = require('classnames');
+import React from "react";
+import classNames from 'classnames';
 
 
 function SectionName(props) {
@@ -10,4 +10,4 @@ function SectionName(props) {
   </div>
 }
 
-exports.SectionName = SectionName;
+export { SectionName };

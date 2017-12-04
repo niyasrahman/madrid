@@ -1,11 +1,11 @@
-const _ = require("lodash");
-const {assetPath} = require("@quintype/framework/server/asset-helper");
-const {renderReduxComponent} = require("@quintype/framework/server/render");
+import _ from "lodash";
+import {assetPath} from "@quintype/framework/server/asset-helper";
+import {renderReduxComponent} from "@quintype/framework/server/render";
 
-const { NavigationComponent } = require("../../isomorphic/components/navigation-component.js")
-const { Footer } = require("../../isomorphic/components/layout/footer.js")
+import { NavigationComponent } from "../../isomorphic/components/navigation-component.js"
+import { Footer } from "../../isomorphic/components/layout/footer.js"
 
-exports.renderLayout = function renderLayout(res, params){
+export function renderLayout(res, params){
   res.render("pages/layout", _.extend({
     assetPath: assetPath,
     content: "",

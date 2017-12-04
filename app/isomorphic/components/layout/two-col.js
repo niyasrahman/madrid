@@ -1,8 +1,8 @@
-const React = require("react");
+import React from "react";
 
-const { StoryCard } = require("../basic/story-card.js")
-const { MediaObjectsList } = require("../basic/media-object-list.js")
-const { SectionName } = require("../basic/section-name.js");
+import { StoryCard } from "../basic/story-card.js"
+import { MediaObjectsList } from "../basic/media-object-list.js"
+import { SectionName } from "../basic/section-name.js";
 
 function TwoCol(props) {
   const storyCardConfig = {
@@ -26,4 +26,4 @@ function TwoCol(props) {
 }
 
 
-exports.TwoCol = TwoCol;
+export { TwoCol };

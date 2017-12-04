@@ -1,8 +1,8 @@
-const React = require("react");
-const Slider = require("react-slick").default;
-const { Link, ResponsiveImage } = require("@quintype/components");
+import React from "react";
+import Slider from "react-slick";
+import { Link, ResponsiveImage } from "@quintype/components";
 
-const { SectionName } = require("./section-name.js");
+import { SectionName } from "./section-name.js";
 
 
 function LinearGallerySlider(props) {
@@ -64,4 +64,4 @@ function SliderItem(props) {
   )
 }
 
-exports.LinearGallerySlider = LinearGallerySlider;
+export { LinearGallerySlider };

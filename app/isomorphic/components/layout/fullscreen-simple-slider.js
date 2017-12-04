@@ -1,9 +1,9 @@
-const React = require("react");
+import React from "react";
 
-const { SimpleSlider } = require('../basic/simple-slider.js')
+import { SimpleSlider } from '../basic/simple-slider.js'
 
 function FullscreenSimpleSlider(props) {
   return <SimpleSlider stories={props.stories} />;
 }
 
-exports.FullscreenSimpleSlider = FullscreenSimpleSlider;
+export { FullscreenSimpleSlider };

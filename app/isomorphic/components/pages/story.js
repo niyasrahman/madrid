@@ -1,8 +1,8 @@
-const React = require("react");
+import React from "react";
 
-const { BlankStory } = require("../story-templates/blank.js");
-const { LiveBlogStory } = require("../story-templates/live-blog.js");
-const { InfiniteStoryBase } = require("@quintype/components")
+import { BlankStory } from "../story-templates/blank.js";
+import { LiveBlogStory } from "../story-templates/live-blog.js";
+import { InfiniteStoryBase } from "@quintype/components"
 
 function storyPageContent({story, index, relatedStories}) {
   if(story['story-template'] == 'live-blog') {
@@ -36,4 +36,4 @@ class StoryPage extends React.Component {
   }
 }
 
-exports.StoryPage = StoryPage;
+export { StoryPage };

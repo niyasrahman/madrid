@@ -8,5 +8,5 @@ startApp(() => {
     extensions: ['png', 'jpg', 'jpeg', 'svg', 'gif', 'mp4'],
     name: FileName
   });
-  return require("./app/server/app.js");
+  return require("./app/server/app.js").app;
 })

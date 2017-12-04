@@ -1,11 +1,9 @@
-const React = require("react");
-const SearchImg = require('../../../assets/icons/search.svg');
+import React from "react";
+import SearchImg from '../../../assets/icons/search.svg';
 
-const { Button } = require('./button.js')
+import { Button } from './button.js'
 
-const {NavigationComponentBase} = require("@quintype/components");
-
-class Search extends NavigationComponentBase {
+class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -83,4 +81,4 @@ class Search extends NavigationComponentBase {
   }
 }
 
-exports.Search = Search;
+export { Search };

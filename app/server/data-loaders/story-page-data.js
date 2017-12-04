@@ -1,10 +1,10 @@
-const _ = require('lodash');
+import _ from 'lodash';
 
-const {Story} = require("@quintype/framework/server/api-client");
-const {getNavigationMenuArray} = require("./menu-data");
+import {Story} from "@quintype/framework/server/api-client";
+import {getNavigationMenuArray} from "./menu-data";
 
 
-exports.loadStoryPageData = function loadStoryPageData(client, params, config){
+export function loadStoryPageData(client, params, config){
   var cacheKeys = [];
   let story = {};
   return Story.getStoryBySlug(client, params.storySlug)

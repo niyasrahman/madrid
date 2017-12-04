@@ -1,9 +1,9 @@
-const React = require("react");
+import React from "react";
 
-const { Link } = require("@quintype/components");
+import { Link } from "@quintype/components";
 
-const { Author } = require("./author.js");
-const { SectionName } = require("./section-name.js");
+import { Author } from "./author.js";
+import { SectionName } from "./section-name.js";
 
 function StoryList(props) {
   return !props.stories ? null :  <div className="story-list">
@@ -36,5 +36,5 @@ function StoryListItem({story, config}) {
   )
 }
 
-exports.StoryList = StoryList;
-exports.StoryListItem = StoryListItem;
+export { StoryList };
+export { StoryListItem };

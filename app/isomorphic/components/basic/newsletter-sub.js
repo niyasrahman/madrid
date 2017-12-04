@@ -1,7 +1,7 @@
-const React = require("react");
-const adImage = require('../../../assets/images/qt-ad.png');
-const newsletterImage = require('../../../assets/icons/newsletter.svg');
-const { Button } = require("./button.js");
+import React from "react";
+import adImage from '../../../assets/images/qt-ad.png';
+import newsletterImage from '../../../assets/icons/newsletter.svg';
+import { Button } from "./button.js";
 
 
 function NewsletterSub() {
@@ -20,4 +20,4 @@ function NewsletterSub() {
     </div>
 }
 
-exports.NewsletterSub = NewsletterSub;
+export { NewsletterSub };

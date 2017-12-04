@@ -1,9 +1,9 @@
-const React = require("react");
+import React from "react";
 
-const { MediaObject } = require("../basic/media-object-list.js")
-const { SectionName } = require("../basic/section-name.js");
+import { MediaObject } from "../basic/media-object-list.js"
+import { SectionName } from "../basic/section-name.js";
 
-const adImage = require('../../../assets/images/qt-ad.png');
+import adImage from '../../../assets/images/qt-ad.png';
 
 function FullscreenMediaList(props) {
   const mediaObjectConfig = {
@@ -48,4 +48,4 @@ function FullscreenMediaList(props) {
   </div>
 }
 
-exports.FullscreenMediaList = FullscreenMediaList;
+export { FullscreenMediaList };

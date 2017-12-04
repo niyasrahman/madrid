@@ -1,7 +1,7 @@
-const React = require('react');
-const {connect} = require("react-redux");
+import React from 'react';
+import {connect} from "react-redux";
 
-const Logo = require('../../../assets/icons/quintype_logo.svg')
+import Logo from '../../../assets/icons/quintype_logo.svg'
 
 function FooterBase(props) {
   return <footer className="footer">
@@ -43,4 +43,4 @@ function mapStateToProps(state) {
   }
 }
 
-exports.Footer = connect(mapStateToProps, () => ({}))(FooterBase);
+export const Footer = connect(mapStateToProps, () => ({}))(FooterBase);

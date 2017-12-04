@@ -1,17 +1,17 @@
-const React = require("react");
-const classNames = require('classnames');
-const _ = require("lodash")
-const {connect} = require("react-redux");
-const { Link } = require("@quintype/components");
+import React from "react";
+import classNames from 'classnames';
+import _ from "lodash"
+import {connect} from "react-redux";
+import { Link } from "@quintype/components";
 
-const CloseImg = require('../../assets/icons/close.svg');
-const FacebookImg = require('../../assets/icons/facebook.svg');
-const LinkedinImg = require('../../assets/icons/linkedin.svg');
-const TwitterImg = require('../../assets/icons/twitter.svg');
-const GoogleImg = require('../../assets/icons/google.svg');
+import CloseImg from '../../assets/icons/close.svg';
+import FacebookImg from '../../assets/icons/facebook.svg';
+import LinkedinImg from '../../assets/icons/linkedin.svg';
+import TwitterImg from '../../assets/icons/twitter.svg';
+import GoogleImg from '../../assets/icons/google.svg';
 
-const { Search } = require("./basic/search.js");
-const { Button } = require("./basic/button.js");
+import { Search } from "./basic/search.js";
+import { Button } from "./basic/button.js";
 
 class OffCanvasMenu extends React.Component {
   constructor(props) {
@@ -204,4 +204,5 @@ function mapStateToProps(state) {
     links: staticLinks
   };
 }
-exports.NavigationComponent = connect(mapStateToProps, () => ({}))(NavigationBase);
+
+export const NavigationComponent = connect(mapStateToProps, () => ({}))(NavigationBase);

@@ -1,14 +1,14 @@
-const React = require("react");
+import React from "react";
 
-const { TwoColOneAd } = require("../layout/two-col-one-ad.js");
-const { FullscreenCarousel } = require("../layout/fullscreen-carousel.js");
-const { FullscreenSimpleSlider } = require("../layout/fullscreen-simple-slider.js");
-const { FullscreenLinearGallerySlider } = require("../layout/fullscreen-linear-gallery-slider.js");
-const { ThreeCol } = require("../layout/three-col.js");
-const { TwoCol } = require("../layout/two-col.js");
-const { LShapeOneWidget } = require("../layout/l-shape-one-widget.js");
-const { FullscreenMediaList } = require("../layout/fullscreen-media-list.js");
-const { Footer } = require('../layout/footer.js');
+import { TwoColOneAd } from "../layout/two-col-one-ad.js";
+import { FullscreenCarousel } from "../layout/fullscreen-carousel.js";
+import { FullscreenSimpleSlider } from "../layout/fullscreen-simple-slider.js";
+import { FullscreenLinearGallerySlider } from "../layout/fullscreen-linear-gallery-slider.js";
+import { ThreeCol } from "../layout/three-col.js";
+import { TwoCol } from "../layout/two-col.js";
+import { LShapeOneWidget } from "../layout/l-shape-one-widget.js";
+import { FullscreenMediaList } from "../layout/fullscreen-media-list.js";
+import { Footer } from '../layout/footer.js';
 
 class HomePage extends React.Component {
 
@@ -46,4 +46,4 @@ class HomePage extends React.Component {
   }
 }
 
-exports.HomePage = HomePage;
+export { HomePage };

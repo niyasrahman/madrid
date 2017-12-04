@@ -1,11 +1,11 @@
-const React = require("react");
-const Slider = require("react-slick").default;
+import React from "react";
+import Slider from "react-slick";
 require('whatwg-fetch');
 
-const { Link, ResponsiveImage} = require("@quintype/components");
+import { Link, ResponsiveImage} from "@quintype/components";
 
-const { Author } = require("./author.js");
-const { SectionName } = require("./section-name.js");
+import { Author } from "./author.js";
+import { SectionName } from "./section-name.js";
 
 function Carousel(props) {
   const settings = {
@@ -82,4 +82,4 @@ function Slide(props) {
 
 }
 
-exports.Carousel = Carousel;
+export { Carousel };

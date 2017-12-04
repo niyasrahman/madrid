@@ -1,6 +1,6 @@
-const _ = require("lodash");
-const React = require("react");
-const { ResponsiveImage } = require("@quintype/components");
+import _ from "lodash";
+import React from "react";
+import { ResponsiveImage } from "@quintype/components";
 
 function RelatedStoryCard(props){
   const classname = props.showImage ? 'story-title story-title-bold' : 'story-title';
@@ -33,4 +33,4 @@ function RelatedStories(props) {
   </div>
 }
 
-exports.RelatedStories = RelatedStories;
+export { RelatedStories };

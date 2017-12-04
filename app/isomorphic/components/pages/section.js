@@ -1,10 +1,10 @@
-const React = require("react");
+import React from "react";
 
-const { OneMainCardSlider } = require("../layout/one-main-card-slider.js");
-const { FullscreenMediaList } = require("../layout/fullscreen-media-list.js");
-const { ThreeStoryCards } = require("../layout/three-story-cards.js");
-const { OneStoryCardSixStoryList } = require("../layout/onestorycard-sixstorylist.js");
-const { CardGroup } = require("../layout/card-group.js");
+import { OneMainCardSlider } from "../layout/one-main-card-slider.js";
+import { FullscreenMediaList } from "../layout/fullscreen-media-list.js";
+import { ThreeStoryCards } from "../layout/three-story-cards.js";
+import { OneStoryCardSixStoryList } from "../layout/onestorycard-sixstorylist.js";
+import { CardGroup } from "../layout/card-group.js";
 
 class SectionPage extends React.Component {
   render() {
@@ -23,4 +23,4 @@ class SectionPage extends React.Component {
   }
 }
 
-exports.SectionPage = SectionPage;
+export { SectionPage };

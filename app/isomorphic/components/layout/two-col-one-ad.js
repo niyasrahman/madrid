@@ -1,8 +1,8 @@
-const React = require("react");
+import React from "react";
 
-const { StoryCard } = require("../basic/story-card.js")
-const { StoryList } = require("../basic/story-list.js")
-const { NewsletterSub } = require("../basic/newsletter-sub.js")
+import { StoryCard } from "../basic/story-card.js"
+import { StoryList } from "../basic/story-list.js"
+import { NewsletterSub } from "../basic/newsletter-sub.js"
 
 function TwoColOneAd(props) {
   const storyCardConfig = {
@@ -35,4 +35,4 @@ function TwoColOneAd(props) {
 
 }
 
-exports.TwoColOneAd = TwoColOneAd;
+export { TwoColOneAd };

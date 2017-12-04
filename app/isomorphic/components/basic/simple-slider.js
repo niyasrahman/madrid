@@ -1,7 +1,7 @@
-const React = require("react");
-const Slider = require("react-slick").default;
+import React from "react";
+import Slider from "react-slick";
 
-const { Link, ResponsiveImage } = require("@quintype/components");
+import { Link, ResponsiveImage } from "@quintype/components";
 
 
 function SimpleSlider(props) {
@@ -47,4 +47,4 @@ function SliderItem(props) {
   )
 }
 
-exports.SimpleSlider = SimpleSlider;
+export { SimpleSlider };

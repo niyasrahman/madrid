@@ -1,9 +1,9 @@
-const React = require("react");
-const Slider = require("react-slick").default;
+import React from "react";
+import Slider from "react-slick";
 
-const { Link, ResponsiveImage } = require("@quintype/components");
+import { Link, ResponsiveImage } from "@quintype/components";
 
-const classNames = require('classnames');
+import classNames from 'classnames';
 
 function OneMainCardSlider(props) {
   const settings = {
@@ -59,4 +59,4 @@ function SliderItem(props) {
   )
 }
 
-exports.OneMainCardSlider = OneMainCardSlider;
+export { OneMainCardSlider };

@@ -1,11 +1,11 @@
-const React = require("react");
-const { Link } = require("@quintype/components");
+import React from "react";
+import { Link } from "@quintype/components";
 
-const { StoryCard } = require("../basic/story-card.js")
-const { NewsletterSub } = require("../basic/newsletter-sub.js")
-const { SectionName } = require("../basic/section-name.js");
+import { StoryCard } from "../basic/story-card.js"
+import { NewsletterSub } from "../basic/newsletter-sub.js"
+import { SectionName } from "../basic/section-name.js";
 
-const ArrowImg = require('../../../assets/icons/readmore_arrow.svg');
+import ArrowImg from '../../../assets/icons/readmore_arrow.svg';
 
 function LShapeOneWidget(props) {
   const primarStoryCardConfig = {
@@ -50,4 +50,4 @@ function LShapeOneWidget(props) {
 
 }
 
-exports.LShapeOneWidget = LShapeOneWidget;
+export { LShapeOneWidget };

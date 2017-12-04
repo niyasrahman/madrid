@@ -1,6 +1,6 @@
-const React = require("react");
+import React from "react";
 
-const { StoryCard } = require("./basic/story-card.js");
+import { StoryCard } from "./basic/story-card.js";
 
 function StoryGrid(props) {
   const config = {
@@ -17,4 +17,4 @@ function StoryGrid(props) {
     </div>
 }
 
-exports.StoryGrid = StoryGrid;
+export { StoryGrid };

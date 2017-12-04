@@ -1,9 +1,9 @@
-const React = require("react");
+import React from "react";
 
-const { LinearGallerySlider } = require('../basic/linear-gallery-slider.js')
+import { LinearGallerySlider } from '../basic/linear-gallery-slider.js'
 
 function FullscreenLinearGallerySlider(props) {
   return <LinearGallerySlider {...props}/>
 }
 
-exports.FullscreenLinearGallerySlider = FullscreenLinearGallerySlider;
+export { FullscreenLinearGallerySlider };

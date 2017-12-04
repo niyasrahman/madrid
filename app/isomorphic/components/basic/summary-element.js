@@ -1,8 +1,8 @@
-const React = require("react");
-const { StoryElement } = require("@quintype/components");
+import React from "react";
+import { StoryElement } from "@quintype/components";
 
-const caretImg = require("../../../assets/icons/caret-up.svg");
-const classNames = require('classnames');
+import caretImg from "../../../assets/icons/caret-up.svg";
+import classNames from 'classnames';
 
 class SummaryElement extends React.Component {
   constructor(props) {
@@ -42,4 +42,4 @@ class SummaryElement extends React.Component {
   }
 }
 
-exports.SummaryElement = SummaryElement;
+export { SummaryElement };

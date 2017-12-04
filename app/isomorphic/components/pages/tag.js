@@ -1,6 +1,6 @@
-const React = require("react");
+import React from "react";
 
-const { FullscreenMediaList } = require("../layout/fullscreen-media-list.js");
+import { FullscreenMediaList } from "../layout/fullscreen-media-list.js";
 
 class TagPage extends React.Component {
 
@@ -23,4 +23,4 @@ class TagPage extends React.Component {
   }
 }
 
-exports.TagPage = TagPage;
+export { TagPage };

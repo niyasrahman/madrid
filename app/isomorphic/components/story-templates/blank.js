@@ -1,10 +1,10 @@
-const React = require("react");
+import React from "react";
 
-const { ResponsiveImage } = require("@quintype/components");
-const { StoryHeaderCard } = require("../story-page-components/story-header-card.js");
-const { StoryTags } = require("../story-page-components/story-tags.js");
-const { RelatedStories } = require("../story-page-components/related-stories.js");
-const { StoryPageCard } = require("../story-page-components/story-page-card.js");
+import { ResponsiveImage } from "@quintype/components";
+import { StoryHeaderCard } from "../story-page-components/story-header-card.js";
+import { StoryTags } from "../story-page-components/story-tags.js";
+import { RelatedStories } from "../story-page-components/related-stories.js";
+import { StoryPageCard } from "../story-page-components/story-page-card.js";
 
 function BlankStoryTemplate(props) {
   return <article className="blank-story">
@@ -31,4 +31,4 @@ function BlankStory(props) {
   </div>
 }
 
-exports.BlankStory = BlankStory;
+export { BlankStory };

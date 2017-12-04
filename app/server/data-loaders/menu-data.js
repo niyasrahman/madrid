@@ -1,4 +1,4 @@
-const _ = require('lodash');
+import _ from 'lodash';
 
 exports.getNavigationMenuArray = function(menuList) {
   _(menuList).forEach(f=> {
