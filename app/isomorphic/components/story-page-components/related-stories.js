@@ -3,7 +3,7 @@ const React = require("react");
 const { ResponsiveImage } = require("@quintype/components");
 
 function RelatedStoryCard(props){
-  classname = props.showImage ? 'story-title story-title-bold' : 'story-title';
+  const classname = props.showImage ? 'story-title story-title-bold' : 'story-title';
   // The `props.story` can be an item from items of a collection or a story itself.
   // assigning it accordinlgy.
   const story = props.story && props.story.story ? props.story.story : props.story;
