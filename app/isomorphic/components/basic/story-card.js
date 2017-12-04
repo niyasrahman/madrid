@@ -3,8 +3,8 @@ const classNames = require('classnames');
 
 const { Link, ResponsiveImage } = require("@quintype/components");
 
-const { Author } = require("./author.jsx");
-const { SectionName } = require("./section-name.jsx");
+const { Author } = require("./author.js");
+const { SectionName } = require("./section-name.js");
 
 function StoryCard(props) {
   // The `props.story` can be an item from items of a collection or a story itself.

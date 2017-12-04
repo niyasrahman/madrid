@@ -1,7 +1,7 @@
 const React = require("react");
 
-const { MediaObject } = require("../basic/media-object-list.jsx")
-const { SectionName } = require("../basic/section-name.jsx");
+const { MediaObject } = require("../basic/media-object-list.js")
+const { SectionName } = require("../basic/section-name.js");
 
 const adImage = require('../../../assets/images/qt-ad.png');
 

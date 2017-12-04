@@ -1,10 +1,10 @@
 const React = require("react");
 
 const { ResponsiveImage } = require("@quintype/components");
-const { StoryHeaderCard } = require("../story-page-components/story-header-card.jsx");
-const { StoryTags } = require("../story-page-components/story-tags.jsx");
-const { RelatedStories } = require("../story-page-components/related-stories.jsx");
-const { StoryPageCard } = require("../story-page-components/story-page-card.jsx");
+const { StoryHeaderCard } = require("../story-page-components/story-header-card.js");
+const { StoryTags } = require("../story-page-components/story-tags.js");
+const { RelatedStories } = require("../story-page-components/related-stories.js");
+const { StoryPageCard } = require("../story-page-components/story-page-card.js");
 
 function BlankStoryTemplate(props) {
   return <article className="blank-story">

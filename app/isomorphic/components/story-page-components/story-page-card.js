@@ -1,6 +1,6 @@
 const React = require("react");
-const { SummaryElement} = require("../basic/summary-element.jsx");
-const { BlockquoteElement} = require("../basic/blockquote-element.jsx");
+const { SummaryElement} = require("../basic/summary-element.js");
+const { BlockquoteElement} = require("../basic/blockquote-element.js");
 const { StoryElement } = require("@quintype/components");
 
 const StoryPageCard = props => {

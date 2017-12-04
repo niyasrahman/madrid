@@ -10,8 +10,8 @@ const LinkedinImg = require('../../assets/icons/linkedin.svg');
 const TwitterImg = require('../../assets/icons/twitter.svg');
 const GoogleImg = require('../../assets/icons/google.svg');
 
-const { Search } = require("./basic/search.jsx");
-const { Button } = require("./basic/button.jsx");
+const { Search } = require("./basic/search.js");
+const { Button } = require("./basic/button.js");
 
 class OffCanvasMenu extends React.Component {
   constructor(props) {

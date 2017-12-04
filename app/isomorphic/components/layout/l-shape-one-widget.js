@@ -1,9 +1,9 @@
 const React = require("react");
 const { Link } = require("@quintype/components");
 
-const { StoryCard } = require("../basic/story-card.jsx")
-const { NewsletterSub } = require("../basic/newsletter-sub.jsx")
-const { SectionName } = require("../basic/section-name.jsx");
+const { StoryCard } = require("../basic/story-card.js")
+const { NewsletterSub } = require("../basic/newsletter-sub.js")
+const { SectionName } = require("../basic/section-name.js");
 
 const ArrowImg = require('../../../assets/icons/readmore_arrow.svg');
 

@@ -1,6 +1,6 @@
 const React = require("react");
 
-const { StoryCard } = require("./basic/story-card.jsx");
+const { StoryCard } = require("./basic/story-card.js");
 
 function StoryGrid(props) {
   const config = {

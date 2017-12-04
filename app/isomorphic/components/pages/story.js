@@ -1,7 +1,7 @@
 const React = require("react");
 
-const { BlankStory } = require("../story-templates/blank.jsx");
-const { LiveBlogStory } = require("../story-templates/live-blog.jsx");
+const { BlankStory } = require("../story-templates/blank.js");
+const { LiveBlogStory } = require("../story-templates/live-blog.js");
 const { InfiniteStoryBase } = require("@quintype/components")
 
 function storyPageContent({story, index, relatedStories}) {

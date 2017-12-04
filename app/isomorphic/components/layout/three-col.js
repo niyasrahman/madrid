@@ -1,8 +1,8 @@
 const React = require("react");
 
-const { StoryCard } = require("../basic/story-card.jsx")
-const { StoryList } = require("../basic/story-list.jsx")
-const { SectionName } = require("../basic/section-name.jsx");
+const { StoryCard } = require("../basic/story-card.js")
+const { StoryList } = require("../basic/story-list.js")
+const { SectionName } = require("../basic/section-name.js");
 
 function ThreeCol(props) {
   const secondColFirstCardConfig = {

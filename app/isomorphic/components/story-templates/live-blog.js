@@ -1,9 +1,9 @@
 const React = require("react");
 
 const { ResponsiveImage } = require("@quintype/components");
-const { StoryHeaderCard } = require("../story-page-components/story-header-card.jsx");
-const { StoryPageCard } = require("../story-page-components/story-page-card.jsx");
-const { LiveBlogKeyEvents } =  require("../story-page-components/live-blog-key-events.jsx");
+const { StoryHeaderCard } = require("../story-page-components/story-header-card.js");
+const { StoryPageCard } = require("../story-page-components/story-page-card.js");
+const { LiveBlogKeyEvents } =  require("../story-page-components/live-blog-key-events.js");
 const TimeAgo = require('react-timeago').default;
 
 class LiveBlogTemplate extends React.Component {

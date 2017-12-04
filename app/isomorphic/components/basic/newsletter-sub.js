@@ -1,7 +1,7 @@
 const React = require("react");
 const adImage = require('../../../assets/images/qt-ad.png');
 const newsletterImage = require('../../../assets/icons/newsletter.svg');
-const { Button } = require("./button.jsx");
+const { Button } = require("./button.js");
 
 
 function NewsletterSub() {

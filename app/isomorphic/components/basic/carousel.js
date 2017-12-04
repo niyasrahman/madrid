@@ -4,8 +4,8 @@ require('whatwg-fetch');
 
 const { Link, ResponsiveImage} = require("@quintype/components");
 
-const { Author } = require("./author.jsx");
-const { SectionName } = require("./section-name.jsx");
+const { Author } = require("./author.js");
+const { SectionName } = require("./section-name.js");
 
 function Carousel(props) {
   const settings = {

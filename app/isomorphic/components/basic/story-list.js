@@ -2,8 +2,8 @@ const React = require("react");
 
 const { Link } = require("@quintype/components");
 
-const { Author } = require("./author.jsx");
-const { SectionName } = require("./section-name.jsx");
+const { Author } = require("./author.js");
+const { SectionName } = require("./section-name.js");
 
 function StoryList(props) {
   return !props.stories ? null :  <div className="story-list">

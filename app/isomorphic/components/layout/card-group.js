@@ -1,8 +1,8 @@
 const React = require("react");
 
-const { StoryCard } = require("../basic/story-card.jsx")
-const { MediaObjectsList } = require("../basic/media-object-list.jsx")
-const { SectionName } = require("../basic/section-name.jsx");
+const { StoryCard } = require("../basic/story-card.js")
+const { MediaObjectsList } = require("../basic/media-object-list.js")
+const { SectionName } = require("../basic/section-name.js");
 
 function CardGroup(props) {
   const majorStoryCardConfig = {

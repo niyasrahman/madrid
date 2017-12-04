@@ -1,6 +1,6 @@
 const React = require("react");
 
-const { Carousel } = require('../basic/carousel.jsx')
+const { Carousel } = require('../basic/carousel.js')
 
 function FullscreenCarousel(props) {
   return <Carousel stories={props.stories} limit={6} />;

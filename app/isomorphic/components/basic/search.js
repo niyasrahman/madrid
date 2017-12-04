@@ -1,7 +1,7 @@
 const React = require("react");
 const SearchImg = require('../../../assets/icons/search.svg');
 
-const { Button } = require('./button.jsx')
+const { Button } = require('./button.js')
 
 const {NavigationComponentBase} = require("@quintype/components");
 

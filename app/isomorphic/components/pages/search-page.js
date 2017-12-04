@@ -1,6 +1,6 @@
 const React = require("react");
 
-const { FullscreenMediaList } = require("../layout/fullscreen-media-list.jsx");
+const { FullscreenMediaList } = require("../layout/fullscreen-media-list.js");
 
 class SearchPage extends React.Component {
 

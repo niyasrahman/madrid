@@ -2,7 +2,7 @@ const React = require("react");
 const Slider = require("react-slick").default;
 const { Link, ResponsiveImage } = require("@quintype/components");
 
-const { SectionName } = require("./section-name.jsx");
+const { SectionName } = require("./section-name.js");
 
 
 function LinearGallerySlider(props) {

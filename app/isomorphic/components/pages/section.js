@@ -1,10 +1,10 @@
 const React = require("react");
 
-const { OneMainCardSlider } = require("../layout/one-main-card-slider.jsx");
-const { FullscreenMediaList } = require("../layout/fullscreen-media-list.jsx");
-const { ThreeStoryCards } = require("../layout/three-story-cards.jsx");
-const { OneStoryCardSixStoryList } = require("../layout/onestorycard-sixstorylist.jsx");
-const { CardGroup } = require("../layout/card-group.jsx");
+const { OneMainCardSlider } = require("../layout/one-main-card-slider.js");
+const { FullscreenMediaList } = require("../layout/fullscreen-media-list.js");
+const { ThreeStoryCards } = require("../layout/three-story-cards.js");
+const { OneStoryCardSixStoryList } = require("../layout/onestorycard-sixstorylist.js");
+const { CardGroup } = require("../layout/card-group.js");
 
 class SectionPage extends React.Component {
   render() {
