@@ -8,7 +8,6 @@ import { ThreeCol } from "../layout/three-col.js";
 import { TwoCol } from "../layout/two-col.js";
 import { LShapeOneWidget } from "../layout/l-shape-one-widget.js";
 import { FullscreenMediaList } from "../layout/fullscreen-media-list.js";
-import { Footer } from '../layout/footer.js';
 
 class HomePage extends React.Component {
 

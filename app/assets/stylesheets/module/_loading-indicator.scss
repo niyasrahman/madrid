@@ -1,0 +1,39 @@
+.loading-indicator-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: $zIndex-100;
+  .qt-loading-animation {
+    width: 70px;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 45%;
+    &:before {
+      content: '';
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: rgba($white,0.75);
+    }
+    &:after {
+      content: '';
+      position: fixed;
+      left: calc(50% - 50px);
+      top: calc(50% - 25px);
+      width: 100px;
+      height: 50px;
+      background: url("../icons/loading.svg") no-repeat 5px center;
+    }
+  }
+}
+.qt-loading-animation {
+  display: none;
+}

@@ -2,49 +2,6 @@ img {
     max-width: 100%;
 }
 
-/*Menu*/
-#main-navigation {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 10;
-    transform: translateY(-100%);
-    background-color: black;
-    transition: all 0.5s;
-}
-
-#main-navigation ul {
-    list-style: none;
-    padding: 0;
-    max-width: 400px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-#main-navigation li {
-    padding: 10px 0;
-    color: white;
-}
-
-#main-navigation li a {
-    color: white;
-    font-size: rem(32);
-    text-transform: uppercase;
-    font-family: 'Open Sans', sans-serif;
-    text-decoration: none;
-    transition: all 0.5s;
-}
-
-#main-navigation li a::hover {
-    border-bottom: 1px solid white;
-}
-
-#main-navigation:target {
-    transform: translateY(0);
-}
-
 .container {
     max-width: 1000px;
     margin: 0 auto;
