@@ -15,6 +15,27 @@
       padding: 15px 0;
     }
   }
+  &__load-more {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 15px;
+    a {
+      background: $white;
+      padding: 0 15px;
+      z-index: $zIndex-1;
+    }
+      &:before {
+        content: '';
+        position: absolute;
+        height: 1px;
+        left: 0;
+        right: 0;
+        top: 28px;
+        background: $gray-lighter;
+        opacity: .5;
+      }
+  }
 }
 .fullscreen-media-list__content{
   @include container;
