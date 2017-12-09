@@ -12,6 +12,6 @@ export function renderLayout(res, params){
     navbar: renderReduxComponent(NavigationComponent, params.store),
     footer: renderReduxComponent(Footer, params.store),
     title: "Madrid",
-    metadata : []
+    metaTags: params.seoTags ? params.seoTags.toString() : "",
   }, params))
 }

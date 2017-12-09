@@ -6,15 +6,6 @@ Madrid is the demo app using [Malibu](https://github.com/quintype/malibu) as a s
 
 IMPORTANT: This app implements very little functionality in the app itself. The majority of functionality is built into the [toddy-libs](https://github.com/quintype/quintype-toddy-libs) repository.
 
-## Running in development mode
-
-```shell
-$ brew install yarn       # install yarn, FB's NPM replacement
-$ yarn                    # install all libraries
-$ npm run asset-server    # start webkit hot loading server on port 8080. Does live push
-$ npm start               # start the actual web server. Restart this if server side code changes
-```
-
 #### Running with supervisord (local)
 
 ```shell
