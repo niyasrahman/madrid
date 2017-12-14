@@ -11,7 +11,6 @@
     "@quintype/framework": "^2.7.0",
     "@quintype/seo": "^1.1.0",
     "asset-require-hook": "^1.1.0",
-    "babel-cli": "^6.26.0",
     "breakpoint-sass": "^2.7.1",
     "classnames": "^2.2.5",
     "compression": "^1.7.0",
@@ -29,6 +28,7 @@
   },
   "devDependencies": {
     "@quintype/build": "^1.1.0",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
     "babel-preset-env": "^1.6.0",
