@@ -41,3 +41,19 @@ $ npm run compile && npm start # restart this if you change the service worker
 - [ ] Valid Route, but data not found
 - [ ] SEO Stuff
 - [ ] Analytics stuff
+
+
+### Note:
+We should change the configuration in production black knight as below to enable mapping to 
+different publishers to their own itsman.
+
+```
+asset_host: https://fea.quintype.com
+host_to_api_host:
+  "madrid.quintype.io": "ace.internal.quintype.io"
+  "www.dyingtheartof.com": "dyingtheartof.internal.quintype.io"
+host_to_automatic_api_host:
+  - "-web"
+  - ".madrid"
+sketches_host: http://ace.internal.quintype.io
+```
