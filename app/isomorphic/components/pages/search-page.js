@@ -9,6 +9,7 @@ class SearchPage extends React.Component {
     const config = {
       'collection-name': `Results for ${this.props.data.query}`,
       'collection-color': '#e32313',
+      hideLoadmore: true,
       limit: 20
     }
     return <div>

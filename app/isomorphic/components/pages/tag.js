@@ -9,6 +9,7 @@ class TagPage extends React.Component {
     const config = {
       'collection-name': `Results for ${this.props.data.tag}`,
       'collection-color': '#e32313',
+      hideLoadmore: true,
       limit: 20
     }
     return <div>

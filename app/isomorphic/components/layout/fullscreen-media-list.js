@@ -35,11 +35,13 @@ function FullscreenMediaList(props) {
             </div>
           }
         )}
-        <div className="fullscreen-media-list__load-more">
-          <Link href={'/' + props.config['collection-slug']}>
-            Load more
-          </Link>
-        </div>
+        { !props.config.hideLoadmore &&
+          <div className="fullscreen-media-list__load-more">
+            <Link href={'/' + props.config['collection-slug']}>
+              Load more
+            </Link>
+          </div>
+        }
       </div>
       <div className="col-4">
         {

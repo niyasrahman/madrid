@@ -11,7 +11,8 @@ class SectionPage extends React.Component {
     const config = {
       'collection-name': this.props.data.collection.name,
       'collection-slug': this.props.data.collection.slug,
-      'collection-color': this.props.data.collection.color
+      'collection-color': this.props.data.collection.color,
+      hideLoadmore: true
     }
     return <div>
       <CardGroup stories={this.props.data.collection.items.slice(0,4)} config= {config}/>
