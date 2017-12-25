@@ -5,6 +5,7 @@ import { StoryHeaderCard } from "../story-page-components/story-header-card.js";
 import { StoryTags } from "../story-page-components/story-tags.js";
 import { RelatedStories } from "../story-page-components/related-stories.js";
 import { StoryPageCard } from "../story-page-components/story-page-card.js";
+import adImage from '../../../assets/images/qt-ad.png';
 
 function BlankStoryTemplate(props) {
   return <article className="blank-story">
@@ -19,7 +20,12 @@ function BlankStoryTemplate(props) {
           <StoryHeaderCard story={props.story}/>
           {props.story.cards.map((card, index) => <StoryPageCard key={index} card={card} story={props.story}/>)}
           <StoryTags tags={props.story.tags} />
-          <RelatedStories stories = {props.relatedStories}></RelatedStories>
+          <div className="blank-story__aside">
+            <div className="ads-375x245">
+              <img src={adImage} alt="Ad"/>
+            </div>
+            <RelatedStories stories = {props.relatedStories}></RelatedStories>
+          </div>
         </div>
       </div>
     </article>
