@@ -90,21 +90,13 @@
       }
     }
     &-byline {
-      display: block;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       overflow: auto;
-      margin-bottom: 20px;
+      margin: 20px 0;
     }
-    // &-image-author {
-    //   width: 50px;
-    //   height: 50px;
-    //   overflow: hidden;
-    //   float: left;
-    //   margin: 15px 15px 15px 0;
-    // }
-    // &-author-image {
-    //   object-fit: contain;
-    // }
-    &-byline_author_time {
+    &-byline__author_time {
       display: inline-block;
       float: left;
       margin: 15px 0 0;
@@ -112,6 +104,9 @@
       color: $gray-light;
       font-weight: 300;
       text-transform: capitalize;
+    }
+    &-byline__social-share {
+      display: flex;
     }
     &-author {
       font-size: rem(14);

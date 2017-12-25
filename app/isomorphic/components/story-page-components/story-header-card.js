@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Author } from "../basic/author.js";
+import { SocialShare } from "../basic/social-share.js";
 
 
 class StoryHeaderCard extends React.Component {
@@ -29,6 +30,12 @@ class StoryHeaderCard extends React.Component {
     const liveDisplayStyles = {
       backgroundColor : this.state.story['section-color']
     }
+    const tagsArray = this.state.story.tags.reduce((acc, item) => {
+      acc.push(item.name)
+      return acc;
+    }, [])
+    const stringifiedTagsArray = tagsArray.toString();
+
     return <header className="story-header">
             <a className="story-section" href={"/" + this.state.story.sections[0]['slug']} style={sectionColor}>
               {this.state.story.sections[0]['display-name'].length > 0 && this.state.story.sections[0]['display-name'] }
@@ -39,14 +46,18 @@ class StoryHeaderCard extends React.Component {
             </div>
             <p className="story-summary">{this.state.story.subheadline}</p>
             <div className="story-byline">
-              <div className="story-byline_author_time">
+              <div className="story-byline__author_time">
                 <Author author={{
                     "name": this.state.story['author-name'],
                     "image": this.state.story['author-image'],
                     "date": this.state.story['first-published-at']}} />
               </div>
+              <div className="story-byline__social-share">
+                <SocialShare url={this.state.story.slug}
+                  title={this.state.story.headline}
+                  hashtags={stringifiedTagsArray}/>
+              </div>
             </div>
-             {/* <ShareStory /> */}
           </header>
   }
 }
