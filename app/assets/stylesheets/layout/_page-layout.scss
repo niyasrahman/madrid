@@ -22,22 +22,7 @@ body {
 .body-container{
   @include full;
 }
-// .header{
-//   @include full;
-//   padding: 27px 40px;
-//   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
-//   @include breakpoint(max-width 750px){
-//     padding: 22px 15px;
-//   }
-// }
 
-// space for breaking news container
-.navbar {
-  margin-bottom: 55px;
-  @include breakpoint($pc) {
-    margin-bottom: 70px;
-  }
-}
 .header{
   @include full;
   padding: 17.5px 15px;

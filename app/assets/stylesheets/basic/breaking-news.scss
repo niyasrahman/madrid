@@ -1,16 +1,13 @@
 .breaking-news {
   @include container;
   display: flex;
-  position: absolute;
-  top: 70px;
-  left: 0;
-  right: 0;
-  padding: 10px 0;
+  margin-bottom: 15px;
   color: $white;
   background-color: $base-blue;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
   @include breakpoint($pc) {
-    top: 95px;
+    padding: 25px 0 0;
+    margin-bottom: 25px;
     justify-content: center;
     background-color: inherit;
     box-shadow: none;
@@ -19,7 +16,7 @@
     font-size: 18px;
     line-height: 1.0;
     letter-spacing: 0.4px;
-    padding: 0 15px;
+    padding: 20px 15px;
     border-right: 1px solid;
     margin-right: 15px;
     @include breakpoint($pc) {
@@ -47,6 +44,7 @@
     }
   }
   &__carousel {
+    padding: 20px 0;
     @include breakpoint($pc) {
       max-width: 970px;
       min-height: 73px;
