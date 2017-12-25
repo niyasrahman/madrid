@@ -8,22 +8,25 @@ import TimeAgo from 'react-timeago';
 
 class LiveBlogTemplate extends React.Component {
   componentDidMount() {
-    this.onPageScrollEvent();
-  }
-  onPageScrollEvent() {
     if(window.matchMedia("(min-width: 900px)").matches) {
-      const windowScrollPos = window.pageYOffset;
-      const keyEvents = document.getElementsByClassName('key-events');
-      const keyEventsPos = keyEvents[0].offsetTop + 300;
-      window.addEventListener('scroll', function(e){
-        if(window.pageYOffset > keyEventsPos){
-          keyEvents[0].classList.add("key-events__fixed");
-        } else {
-          keyEvents[0].classList.remove("key-events__fixed");
-        }
-      });
+      window.addEventListener('scroll', this.handleScroll);
     }
   }
+
+  handleScroll(){
+    const keyEvents = document.getElementsByClassName('key-events');
+    const keyEventsPos = keyEvents[0].offsetTop + 300;
+    if(window.pageYOffset > keyEventsPos){
+      keyEvents[0].classList.add("key-events__fixed");
+    } else {
+      keyEvents[0].classList.remove("key-events__fixed");
+    }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
   render(){
   return <article className="live-blog-story blank-story">
       <figure className="live-blog-story-hero-image blank-story-hero-image qt-image-16x9">
