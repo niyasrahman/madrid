@@ -33,7 +33,7 @@ class Search extends React.Component {
   }
 
   openSearchForm() {
-    this.setState({isSearchFormOpen: true}, () => this.input.focus())
+    this.setState({isSearchFormOpen: true})
   }
 
   render() {
