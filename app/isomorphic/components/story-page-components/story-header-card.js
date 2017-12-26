@@ -2,7 +2,10 @@ import React from "react";
 
 import { Author } from "../basic/author.js";
 import { SocialShare } from "../basic/social-share.js";
-
+import fbIcon from '../../../assets/icons/social/fb-share.svg';
+import twitterIcon from '../../../assets/icons/social/twitter-share.svg';
+import linkedinIcon from '../../../assets/icons/social/linkedin-share.svg';
+import gplusIcon from '../../../assets/icons/social/gplus-share.svg';
 
 class StoryHeaderCard extends React.Component {
   constructor(props) {
@@ -55,7 +58,11 @@ class StoryHeaderCard extends React.Component {
               <div className="story-byline__social-share">
                 <SocialShare url={this.state.story.slug}
                   title={this.state.story.headline}
-                  hashtags={stringifiedTagsArray}/>
+                  hashtags={stringifiedTagsArray}
+                  fbIcon={fbIcon}
+                  twitterIcon={twitterIcon}
+                  linkedinIcon={linkedinIcon}
+                  gplusIcon={gplusIcon}/>
               </div>
             </div>
           </header>
