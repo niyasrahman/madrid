@@ -8,7 +8,7 @@ import TimeAgo from 'react-timeago';
 
 class LiveBlogTemplate extends React.Component {
   componentDidMount() {
-    if(window.matchMedia("(min-width: 900px)").matches) {
+    if(window && window.matchMedia("(min-width: 900px)").matches) {
       window.addEventListener('scroll', this.handleScroll);
     }
   }
