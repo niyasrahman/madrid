@@ -4,7 +4,9 @@ import { PAGE_TYPE } from "./constants";
 
 // Static Routes are not part of the PWA. Also, they aren't part of the JS bundle
 export const STATIC_ROUTES = [
-  {path: "/about-us", pageType: PAGE_TYPE.STATIC_PAGE, renderParams: {contentTemplate: "./about-us"}}
+  {path: "/about-us", pageType: PAGE_TYPE.STATIC_PAGE, renderParams: {contentTemplate: "./about-us"}},
+  {path: "/terms-and-conditions", pageType: PAGE_TYPE.STATIC_PAGE, renderParams: {contentTemplate: "./terms-and-conditions"}},
+  {path: "/privacy-policy", pageType: PAGE_TYPE.STATIC_PAGE, renderParams: {contentTemplate: "./privacy-policy"}}
 ];
 
 const ISOMORPHIC_ROUTES = [

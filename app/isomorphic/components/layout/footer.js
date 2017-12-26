@@ -29,15 +29,15 @@ function mapStateToProps(state) {
     links: [
       {
         content: 'About us',
-        url: '/about'
+        url: '/about-us'
       },
       {
         content: 'Privacy Policy',
-        url: '/privacy'
+        url: '/privacy-policy'
       },
       {
         content: 'Terms & Conditions',
-        url: '/terms'
+        url: '/terms-and-conditions'
       }
     ]
   }

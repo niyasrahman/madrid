@@ -1,0 +1,53 @@
+.static-container {
+  @include container;
+  padding: 15px 15px 0;
+  margin-bottom: 15px;
+  overflow: auto;
+  @include breakpoint($tablet) {
+    padding: 30px;
+  }
+  @include breakpoint($pc) {
+    padding: 50px 120px;
+  }
+  &__wrapper {
+    background: $white;
+    padding: 20px;
+    @include breakpoint($tablet) {
+      padding: 30px;
+    }
+    @include breakpoint($pc) {
+      padding: 30px 40px;
+    }
+  }
+  &__headline {
+    font-family: var(--sansTypeface);
+    font-size: rem(28);
+    line-height: 1.21;
+    margin: 10px 0;
+    font-weight: $bold;
+    color: $darkest-gray;
+    text-align: left;
+    text-transform: capitalize;
+    @include breakpoint($tablet) {
+      font-size: rem(26);
+      line-height: 1.15;
+      margin-bottom: 30px;
+    }
+    @include breakpoint($pc) {
+      font-size: rem(44);
+      list-height: 1.14;
+    }
+  }
+  &__description {
+    font-family: var(--serifTypeface);
+    font-size: rem(14);
+    color: $dark-gray;
+    margin-bottom: 15px;
+    &:last-child {
+      margin-bottom: 25px;
+    }
+    @include breakpoint($pc) {
+      font-size: rem(16);
+    }
+  }
+}
