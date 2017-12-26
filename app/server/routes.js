@@ -19,5 +19,5 @@ const ISOMORPHIC_ROUTES = [
 ];
 
 export function generateRoutes(config) {
-  return ISOMORPHIC_ROUTES.concat(generateSectionPageRoutes(config), generateStoryPageRoutes(config));
+  return ISOMORPHIC_ROUTES.concat(generateSectionPageRoutes(config), generateStoryPageRoutes(config, {withoutParentSection: true}));
 }
