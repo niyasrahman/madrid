@@ -5,4 +5,5 @@ export const PAGE_TYPE = Object.freeze({
   SEARCH_PAGE : "search-page",
   STORY_PAGE : "story-page",
   STORY_PUBLIC_PREVIEW_PAGE : "story-public-preview-page",
+  STATIC_PAGE: 'static-page',
 });

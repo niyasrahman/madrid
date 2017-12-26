@@ -9,6 +9,7 @@ export function renderLayout(res, params){
   res.render("pages/layout", _.extend({
     assetPath: assetPath,
     content: "",
+    contentTemplate: null,
     navbar: renderReduxComponent(NavigationComponent, params.store),
     footer: renderReduxComponent(Footer, params.store),
     title: "Madrid",
