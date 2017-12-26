@@ -14,5 +14,6 @@ export function renderLayout(res, params){
     footer: renderReduxComponent(Footer, params.store),
     title: "Madrid",
     metaTags: params.seoTags ? params.seoTags.toString() : "",
+    disableAjaxNavigation: false,
   }, params))
 }

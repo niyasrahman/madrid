@@ -60,6 +60,9 @@
     </div>
     <div id="footer"><%- footer %></div>
     <div id="loading-indicator"></div>
+    <%_ if(disableAjaxNavigation) { _%>
+    <script type="text/javascript">window.disableAjaxNavigation = true;</script>
+    <%_ } _%>
     <script type="text/javascript" src="<%= assetPath("app.js") %>" async></script>
    </body>
 </html>
