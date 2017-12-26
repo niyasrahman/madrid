@@ -1,0 +1,13 @@
+.story-element-data-table {
+  margin-bottom: 25px;
+}
+
+.ReactTable .-pagination .-btn {
+  background: $base-blue;
+  color: $white;
+}
+
+.ReactTable .-pagination .-btn:not([disabled]):hover {
+  background: rgba($base-blue, 0.3);
+  color: $white;
+}
