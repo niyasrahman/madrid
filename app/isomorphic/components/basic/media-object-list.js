@@ -22,7 +22,7 @@ function MediaObject({story, config}) {
       <div className="media__img">
         <figure>
           <ResponsiveImage slug={story["hero-image-s3-key"]} metadata={story["hero-image-metadata"]}
-            aspectRatio={config.aspectRatio ? config.aspectRatio : '[4:3]'}
+            aspectRatio={config.aspectRatio ? config.aspectRatio : [4, 3]}
             defaultWidth={480} widths={[250,480,640]}
             imgParams={{auto:['format', 'compress'], fit:'max'}}/>
         </figure>
