@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Author } from "../basic/author.js";
-import { SocialShare } from "../basic/social-share.js";
+import { SocialShare } from "@quintype/components";
 import fbIcon from '../../../assets/icons/social/fb-share.svg';
 import twitterIcon from '../../../assets/icons/social/twitter-share.svg';
 import linkedinIcon from '../../../assets/icons/social/linkedin-share.svg';
@@ -24,6 +24,31 @@ class StoryHeaderCard extends React.Component {
           story: currentStory
         });
       }.bind(this))
+  }
+
+  getSocialCardsTemplate({fbUrl, twitterUrl, gplusUrl, linkedinUrl}) {
+    return <ul className="social-share-icons">
+        <li className="social-share-icon">
+          <a href={fbUrl} target="_blank">
+            <img src={fbIcon} alt="fb icon"/>
+          </a>
+        </li>
+        <li className="social-share-icon">
+          <a href={twitterUrl} target="_blank">
+            <img src={twitterIcon} alt="twitter icon"/>
+          </a>
+        </li>
+        <li className="social-share-icon">
+          <a href={gplusUrl} target="_blank">
+            <img src={gplusIcon} alt="gplus icon"/>
+          </a>
+        </li>
+        <li className="social-share-icon">
+          <a href={linkedinUrl} target="_blank">
+            <img src={linkedinIcon} alt="linkedin icon"/>
+          </a>
+        </li>
+      </ul>
   }
 
   render() {
@@ -58,11 +83,8 @@ class StoryHeaderCard extends React.Component {
               <div className="story-byline__social-share">
                 <SocialShare url={this.state.story.slug}
                   title={this.state.story.headline}
-                  hashtags={stringifiedTagsArray}
-                  fbIcon={fbIcon}
-                  twitterIcon={twitterIcon}
-                  linkedinIcon={linkedinIcon}
-                  gplusIcon={gplusIcon}/>
+                  template={this.getSocialCardsTemplate}
+                  hashtags={stringifiedTagsArray} />
               </div>
             </div>
           </header>

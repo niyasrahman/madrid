@@ -8,7 +8,7 @@ import {loadTagPageData} from "./data-loaders/tag-page-data";
 import {loadSearchPageData} from "./data-loaders/search-page-data";
 import {PAGE_TYPE} from "./constants";
 
-const WHITELIST_CONFIG_KEYS = ['cdn-image'];
+const WHITELIST_CONFIG_KEYS = ['cdn-image', 'sketches-host'];
 
 function loadErrorData(error) {
   const errorComponents = { 404 : "not-found" };
