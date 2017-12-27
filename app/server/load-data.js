@@ -6,6 +6,7 @@ import {loadStoryPublicPreviewPageData} from "./data-loaders/story-public-previe
 import {loadSectionPageData} from "./data-loaders/section-page-data";
 import {loadTagPageData} from "./data-loaders/tag-page-data";
 import {loadSearchPageData} from "./data-loaders/search-page-data";
+import {loadStaticPageData} from "./data-loaders/static-page-data";
 import {PAGE_TYPE} from "./constants";
 
 const WHITELIST_CONFIG_KEYS = ['cdn-image', 'sketches-host'];
@@ -28,7 +29,7 @@ function loadData(pageType, params, config, client) {
       case PAGE_TYPE.SEARCH_PAGE: return loadSearchPageData(client, params.q, config);
       case PAGE_TYPE.STORY_PAGE: return loadStoryPageData(client, params, config);
       case PAGE_TYPE.STORY_PUBLIC_PREVIEW_PAGE: return loadStoryPublicPreviewPageData(client, params, config);
-      case PAGE_TYPE.STATIC_PAGE: return Promise.resolve({cacheKeys: ["static"]});
+      case PAGE_TYPE.STATIC_PAGE: return loadStaticPageData(config);
       default: return Promise.resolve({stories: [{headline: "Foobar"}]})
     }
   }
