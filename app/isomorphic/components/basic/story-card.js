@@ -10,7 +10,7 @@ function StoryCard(props) {
   // The `props.story` can be an item from items of a collection or a story itself.
   // assigning it accordinlgy.
   const story = props.story && props.story.type === 'story' && props.story.story ? props.story.story : props.story;
-  return !story ? null : <Link href={"/" + (story['parent-collection'] ? story['generated-slug'] : story.slug)} className="story-card-link">
+  return !story ? null : <Link href={"/" + story.slug} className="story-card-link">
       {props.type === 'imageBackground' ?
         <StoryCardBgImage story={story} aspectRatio={props.config ? props.config.imageAspectRatio : null}/> :
         <StoryCardSimple story={story} config={props.config}/>}

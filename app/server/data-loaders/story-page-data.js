@@ -17,14 +17,6 @@ export function loadStoryPageData(client, params, config){
     })
     .then(relatedStories => {
       const structuredMenu = getNavigationMenuArray(config.layout.menu);
-      relatedStories.forEach(({story})=>{
-        const parentSectionId = story.sections[0]['parent-id'];
-        const parentSection = _.find(config.sections, function(section) { return section.id === parentSectionId; });
-        if(parentSection) {
-          story['generated-slug'] = parentSection.slug + '/' + story.slug;
-          story['parent-collection'] = parentSection;
-        }
-      })
       return{
         story: story,
         relatedStories,

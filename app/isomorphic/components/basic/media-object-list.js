@@ -17,7 +17,7 @@ function MediaObject({story, config}) {
     date: config.storyTime && story['first-published-at']
   }
   return story &&
-    <Link href={"/" + (story['parent-collection'] ? story['generated-slug'] : story.slug)}
+    <Link href={"/" + story.slug}
       className={classNames('media', {'media--bg-white': !config.noBackground, 'media--with-shadow': !config.noBackground})}>
       <div className="media__img">
         <figure>

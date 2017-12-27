@@ -25,7 +25,7 @@ function StoryListItem({story, config}) {
     name: story['author-name']
   }
   return (
-    <Link href={"/" + (story['parent-collection'] ? story['generated-slug'] : story.slug) }>
+    <Link href={"/" + story.slug }>
       {
         config && config.section &&
         <SectionName inlineStyle={inlineStyle} name={story.sections[0]['display-name']}/>

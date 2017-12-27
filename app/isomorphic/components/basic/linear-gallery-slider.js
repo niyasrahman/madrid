@@ -52,7 +52,7 @@ function SliderItem(props) {
    assigning it accordinlgy.*/}
   const story = props.item.type === 'story' && props.item.story ? props.item.story : props.item;
   return (
-    <Link href={"/" + (story['parent-collection'] ? story['generated-slug'] : story.slug) }>
+    <Link href={"/" + story.slug }>
       <figure>
         <ResponsiveImage slug={story["hero-image-s3-key"]} metadata={story["hero-image-metadata"]}
           aspectRatio={[4,3]}

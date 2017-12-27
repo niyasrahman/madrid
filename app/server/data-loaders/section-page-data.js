@@ -19,12 +19,6 @@ export function loadSectionPageData(client, sectionId, config) {
       collection.items
         .filter((item) => item.type === 'story')
         .forEach(({story})=>{
-        const parentCollectionId = story.sections[0]['parent-id'];
-        const parentCollection = _.find(config.sections, function(collection) { return collection.id === parentCollectionId; });
-        if(parentCollection) {
-          story['generated-slug'] = parentCollection.slug + '/' + story.slug;
-          story['parent-collection'] = parentCollection;
-        }
         const menuObject = _.find(menu, function(menuItem) { return menuItem['section-slug'] === story.sections[0].slug; });
         story['section-color'] = menuObject ? menuObject.data.color : '#6093f2';
       })

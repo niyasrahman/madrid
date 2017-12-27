@@ -39,7 +39,7 @@ function SliderItem(props) {
       <div className="simple-slider__content">
         <p className="simple-slider__section-name">Must Reads</p>
         <h2 className="simple-slider__story-heading">{story.headline}</h2>
-        <Link href={"/" + (story['parent-collection'] ? story['generated-slug'] : story.slug) } className="simple-slider__link" >
+        <Link href={"/" + story.slug } className="simple-slider__link" >
           read story
         </Link>
       </div>

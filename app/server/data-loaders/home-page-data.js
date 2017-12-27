@@ -42,12 +42,6 @@ function addParentSlugInStorySlugs(data, config, menu) {
     // menu color is set.
     collection.color = collectionMenuObject ? collectionMenuObject.data.color : '#6093f2';
     collection.items.forEach(({story})=>{
-      const parentCollectionId = story.sections[0]['parent-id'];
-      const parentCollection = _.find(config.sections, function(collection) { return collection.id === parentCollectionId; });
-      if(parentCollection) {
-        story['generated-slug'] = parentCollection.slug + '/' + story.slug;
-        story['parent-collection'] = parentCollection;
-      }
       const menuObject = _.find(menu, function(menuItem) { return menuItem['section-slug'] === story.sections[0].slug; });
       story['section-color'] = menuObject ? menuObject.data.color : '#6093f2';
     })

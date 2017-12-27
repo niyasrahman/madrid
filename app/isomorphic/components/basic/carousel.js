@@ -48,7 +48,7 @@ class CarouselItem extends React.Component {
   }
   render() {
     return !this.state.story ? null :
-      <Link href={"/" + (this.state.story['parent-collection'] ? this.state.story['generated-slug'] : this.state.story.slug)}>
+      <Link href={"/" + this.state.story.slug}>
         <Slide story={this.state.story}/>
       </Link>
   }

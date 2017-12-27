@@ -8,7 +8,7 @@ function RelatedStoryCard(props){
   // assigning it accordinlgy.
   const story = props.story && props.story.story ? props.story.story : props.story;
   return !story ? null : <div className="related_stories-story-card">
-    <a href={"/" + (story['parent-collection'] ? story['generated-slug'] : story.slug)} >
+    <a href={"/" + story.slug} >
       {
         props.showImage && <figure className="story-card-image">
           <ResponsiveImage slug={story["hero-image-s3-key"]} metadata={story["hero-image-metadata"]}
