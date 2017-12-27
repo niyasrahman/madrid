@@ -13,6 +13,8 @@ import GoogleImg from '../../assets/icons/google.svg';
 import { Search } from "./basic/search.js";
 import { Button } from "./basic/button.js";
 
+import { STATIC_LINKS } from "./constants"
+
 class OffCanvasMenu extends React.Component {
   constructor(props) {
     super(props);
@@ -55,7 +57,7 @@ class OffCanvasMenu extends React.Component {
           <ul className="sidebar__info">
             {this.props.links.map((item, index) => {
                 return <li key={index}>
-                  <Link href={ '/'+ item.url}>{item.content}</Link>
+                  <a href={item.url}>{item.content}</a>
                 </li>
             })}
           </ul>
@@ -182,26 +184,12 @@ class NavigationBase extends React.Component {
 }
 
 function mapStateToProps(state) {
-  const staticLinks = [
-    {
-      content: 'About us',
-      url: '/about'
-    },
-    {
-      content: 'Privacy Policy',
-      url: '/privacy'
-    },
-    {
-      content: 'Terms & Conditions',
-      url: '/terms'
-    }
-  ]
 
   // Showing the first 5 menu items only to keep up with design.
   return {
     title: 'Madrid',
     menu: _.get(state, ["qt", "data", "navigationMenu"], []),
-    links: staticLinks
+    links: STATIC_LINKS
   };
 }
 

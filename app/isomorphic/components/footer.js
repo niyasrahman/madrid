@@ -1,7 +1,8 @@
 import React from 'react';
 import {connect} from "react-redux";
 
-import Logo from '../../../assets/icons/quintype_logo.svg'
+import Logo from '../../assets/icons/quintype_logo.svg'
+import { STATIC_LINKS } from "./constants"
 
 function FooterBase(props) {
   return <footer className="footer">
@@ -26,20 +27,7 @@ function FooterBase(props) {
 
 function mapStateToProps(state) {
   return {
-    links: [
-      {
-        content: 'About us',
-        url: '/about-us'
-      },
-      {
-        content: 'Privacy Policy',
-        url: '/privacy-policy'
-      },
-      {
-        content: 'Terms & Conditions',
-        url: '/terms-and-conditions'
-      }
-    ]
+    links: STATIC_LINKS
   }
 }
 
