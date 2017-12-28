@@ -32,8 +32,8 @@ class Search extends React.Component {
     })
   }
 
-  openSearchForm() {
-    this.setState({isSearchFormOpen: true})
+  toggleSearchForm() {
+    this.setState({isSearchFormOpen: !this.state.isSearchFormOpen}, () => {document.getElementById("searchForm").focus();})
   }
 
   render() {
@@ -44,7 +44,7 @@ class Search extends React.Component {
       opacity: this.state.initialized ? 1 : 0
     }
     return <div className="qt-search" style={initialStyle}>
-      <img src={SearchImg} alt="" className="qt-search__icon" onClick={() =>this.openSearchForm()}/>
+      <img src={SearchImg} alt="" className="qt-search__icon" onClick={() =>this.toggleSearchForm()}/>
       <div className='qt-search__form-wrapper' style={formStyle}>
         <SearchBox className="qt-search__form component-wrapper"
                    template={DrawForm}
