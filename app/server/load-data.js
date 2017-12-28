@@ -9,7 +9,7 @@ import {loadSearchPageData} from "./data-loaders/search-page-data";
 import {loadStaticPageData} from "./data-loaders/static-page-data";
 import {PAGE_TYPE} from "./constants";
 
-const WHITELIST_CONFIG_KEYS = ['cdn-image', 'sketches-host'];
+const WHITELIST_CONFIG_KEYS = ['cdn-image', 'sketches-host', 'polltype-host'];
 
 function loadErrorData(error) {
   const errorComponents = { 404 : "not-found" };
