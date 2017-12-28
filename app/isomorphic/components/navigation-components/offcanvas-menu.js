@@ -12,9 +12,6 @@ import GoogleImg from '../../../assets/icons/google.svg';
 class OffcanvasMenu extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      isOpen: props.isOffcanvasOpen
-    }
     this.closeMenu = this.closeMenu.bind(this);
   }
   componentWillReceiveProps(newProps) {
@@ -23,14 +20,12 @@ class OffcanvasMenu extends React.Component {
     })
   }
   closeMenu() {
-    this.setState({
-      isOpen: false
-    })
+    this.props.closeMenu();
   }
   render() {
     return <div>
-      <div className={classNames('overlay', {'overlay--active': this.state.isOpen})} onClick={this.closeMenu}></div>
-      <div className={classNames('sidebar', 'bg--white', {'open': this.state.isOpen})}>
+      <div className={classNames('overlay', {'overlay--active': this.props.isOffcanvasOpen})} onClick={this.closeMenu}></div>
+      <div className={classNames('sidebar', 'bg--white', {'open': this.props.isOffcanvasOpen})}>
         <nav className="sidebar__nav">
           <ul>
             <li className="sidebar__nav__logo">
@@ -44,7 +39,7 @@ class OffcanvasMenu extends React.Component {
                 )
               }
               return <li key={index}>
-                <Link href={ '/'+ item['section-slug']}>{item.title}</Link>
+                <Link href={ '/'+ item['section-slug']} onClick={this.closeMenu}>{item.title}</Link>
               </li>
             })}
           </ul>
