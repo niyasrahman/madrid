@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "@quintype/components";
 
 import { Author } from "../basic/author.js";
 import { SocialShare } from "@quintype/components";
@@ -65,9 +66,14 @@ class StoryHeaderCard extends React.Component {
     const stringifiedTagsArray = tagsArray.toString();
 
     return <header className="story-header">
-            <a className="story-section" href={"/" + this.state.story.sections[0]['slug']} style={sectionColor}>
+            <Link className="story-section"
+              href={"/" +
+                (this.state.story['parent-section'] ?
+                  this.state.story['parent-section'].slug + '/' + this.state.story.sections[0].slug :
+                  this.state.story.sections[0].slug)}
+              style={sectionColor}>
               {this.state.story.sections[0]['display-name'].length > 0 && this.state.story.sections[0]['display-name'] }
-            </a>
+            </Link>
             <div>
               { (this.state.story['story-template'] === "live-blog") && <span className="live-story" style={liveDisplayStyles}>live</span> }
               <h3 className="story-headline" dangerouslySetInnerHTML={ {__html: this.state.story.headline }} />

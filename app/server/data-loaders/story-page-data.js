@@ -13,6 +13,11 @@ export function loadStoryPageData(client, params, config){
       story = storyResponse.asJson();
       const menuObject = _.find(config.layout.menu, function(menuItem) { return menuItem['section-slug'] === story.sections[0].slug; });
       story['section-color'] = menuObject ? menuObject.data.color : '#6093f2';
+      const parentSectionId = story.sections[0]['parent-id'];
+      const parentSection = _.find(config.sections, function(section) { return section.id === parentSectionId; });
+      if(parentSection) {
+        story['parent-section'] = parentSection;
+      }
       return storyResponse.getRelatedStories(client)
     })
     .then(relatedStories => {
