@@ -24,6 +24,7 @@
       background: $white;
       padding: 0 15px;
       z-index: $zIndex-1;
+      cursor: pointer;
     }
       &:before {
         content: '';

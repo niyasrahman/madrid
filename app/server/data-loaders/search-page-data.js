@@ -5,7 +5,7 @@ import {storyToCacheKey} from "@quintype/framework/server/caching";
 import {getNavigationMenuArray} from "./menu-data";
 
 export function loadSearchPageData(client, query, config) {
-  return Story.getSearch(client, {'q': query, 'limit': '20'})
+  return Story.getSearch(client, {'q': query, 'limit': '10'})
     .then(result => {
       const menu = config.layout.menu;
       const navigationMenu = getNavigationMenuArray(menu);
