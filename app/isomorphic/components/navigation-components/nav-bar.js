@@ -28,7 +28,6 @@ function NavBar(props) {
           </nav>
         </div>
         <div className="header__last">
-          <div className="header__last__button"><Button classNamesString="qt-button--primary">Sign in</Button></div>
           <Search />
         </div>
       </div>
