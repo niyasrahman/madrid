@@ -37,10 +37,9 @@
     border: 0;
     background-color: $white;
     margin: 0;
-    padding: 0 20px;
+    padding: 10px 20px;
     @include breakpoint($pc) {
       padding: 30px 250px 30px 50px;
-      margin-bottom: 70px;
     }
   }
   .story-cards {
@@ -51,6 +50,10 @@
       margin: 40px 0;
       padding: 30px 250px 50px 50px;
     }
+  }
+  .story-section {
+    margin-bottom: 10px;
+    display: inline-block;
   }
   .card-added-at {
     font-size: rem(14);
@@ -95,6 +98,7 @@
   padding: 0;
   background: $gray-white;
   margin-bottom: 0;
+  margin-top: 0;
  }
  // We need this extra wrapper for keyEvents component to behave like sticky.
  .live-blog-story__extra-wrapper {
@@ -111,6 +115,7 @@
     width: 300px;
     max-height: 450px;
     top: 100px;
+    margin-top: 50px;
     background-color: $white;
     box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.1);
     padding: 20px;
