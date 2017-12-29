@@ -26,11 +26,11 @@ function RelatedStoryCard(props){
 }
 
 function RelatedStories(props) {
-  return <div className="related_stories">
-    <h4 className="related_stories-heading"> Related Stories </h4>
-    <RelatedStoryCard story={_.head(props.stories)} showImage={true}/>
-    {_.drop(props.stories).map((story, index) => <RelatedStoryCard key={index} story={story} showImage={false} />)}
-  </div>
+  return !props.stories.length ? null : <div className="related_stories">
+      <h4 className="related_stories-heading"> Related Stories </h4>
+      <RelatedStoryCard story={_.head(props.stories)} showImage={true}/>
+      {_.drop(props.stories).map((story, index) => <RelatedStoryCard key={index} story={story} showImage={false} />)}
+    </div>
 }
 
 export { RelatedStories };

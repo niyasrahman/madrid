@@ -8,4 +8,4 @@ export const PAGE_TYPE = Object.freeze({
   STATIC_PAGE: 'static-page',
 });
 
-export const WHITELIST_CONFIG_KEYS = ['cdn-image', 'sketches-host'];
+export const WHITELIST_CONFIG_KEYS = ['cdn-image', 'sketches-host', 'polltype-host'];
