@@ -3,6 +3,9 @@
     display: inline;
     vertical-align: middle;
   }
+  &--wrapper {
+    padding-bottom: 0;
+  }
   .live-story {
     position: relative;
     font-family: var(--sansTypeface);
@@ -36,7 +39,8 @@
     margin: 0;
     padding: 0 20px;
     @include breakpoint($pc) {
-      padding: 30px 50px;
+      padding: 30px 250px 30px 50px;
+      margin-bottom: 70px;
     }
   }
   .story-cards {
@@ -90,28 +94,29 @@
   position: relative;
   padding: 0;
   background: $gray-white;
+  margin-bottom: 0;
+ }
+ // We need this extra wrapper for keyEvents component to behave like sticky.
+ .live-blog-story__extra-wrapper {
+   @include container;
+   position: relative;
+   padding: 30px 0;
  }
 .key-events {
   display: none;
   @include breakpoint($pc) {
     display: inline-block;
-    position: absolute;
+    position: -webkit-sticky;
+    position: sticky;
     width: 300px;
     max-height: 450px;
-    top: 300px;
-    right: -145px;
+    top: 100px;
     background-color: $white;
     box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.1);
     padding: 20px;
     overflow: scroll;
     z-index: 100;
-  }
-  &__fixed {
-    @include breakpoint($pc) {
-      top: calc(50% - 310px);;
-      position: fixed;
-      right: calc(50% - 510px);
-    }
+    float: right;
   }
   &__heading {
     font-size: rem(22);
