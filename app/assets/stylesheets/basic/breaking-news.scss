@@ -5,6 +5,7 @@
   color: $white;
   background-color: $base-blue;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
   @include breakpoint($pc) {
     padding: 25px 0 0;
     margin-bottom: 25px;
