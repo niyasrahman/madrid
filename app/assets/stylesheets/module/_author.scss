@@ -23,12 +23,13 @@
     text-align: left;
     color: $darker-gray;
     font-weight: 300;
+    text-transform: none;
     @include breakpoint($tablet) {
       margin-bottom: 0;
       font-size: rem(14);
     }
   }
-  
+
   &__name {
     font-size: rem(12);
     font-weight: 300;
