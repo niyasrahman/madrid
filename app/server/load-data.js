@@ -7,17 +7,11 @@ import {loadSectionPageData} from "./data-loaders/section-page-data";
 import {loadTagPageData} from "./data-loaders/tag-page-data";
 import {loadSearchPageData} from "./data-loaders/search-page-data";
 import {loadStaticPageData} from "./data-loaders/static-page-data";
-import {PAGE_TYPE} from "./constants";
+import {loadErrorPageData} from "./data-loaders/error-page-data";
+import {PAGE_TYPE, WHITELIST_CONFIG_KEYS} from "./constants";
 
-const WHITELIST_CONFIG_KEYS = ['cdn-image', 'sketches-host'];
-
-function loadErrorData(error) {
-  const errorComponents = { 404 : "not-found" };
-  return Promise.resolve({
-    data: null,
-    config: _.pick(config, WHITELIST_CONFIG_KEYS),
-    pageType : errorComponents[error.httpStatusCode]
-  })
+function loadErrorData(error, config) {
+  return loadErrorPageData(error, config);
 }
 
 function loadData(pageType, params, config, client) {
@@ -45,4 +39,4 @@ function loadData(pageType, params, config, client) {
     });
 }
 
-export { loadData };
+export { loadData, loadErrorData };

@@ -184,7 +184,6 @@ class NavigationBase extends React.Component {
 }
 
 function mapStateToProps(state) {
-
   // Showing the first 5 menu items only to keep up with design.
   return {
     title: 'Madrid',

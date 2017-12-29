@@ -7,3 +7,5 @@ export const PAGE_TYPE = Object.freeze({
   STORY_PUBLIC_PREVIEW_PAGE : "story-public-preview-page",
   STATIC_PAGE: 'static-page',
 });
+
+export const WHITELIST_CONFIG_KEYS = ['cdn-image', 'sketches-host'];
