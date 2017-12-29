@@ -13,7 +13,7 @@ const ImageSlideshowElement = (props) => {
   };
 
   const images = _.map(props.element['story-elements'], image => (
-    <div className="story-element-image-slideshow__slide">
+    <div className="story-element-image-slideshow__slide" key={image.id}>
       <figure key={image.id} className="story-element-image-slideshow__image-container">
         <ResponsiveImage slug={image["image-s3-key"]}
                         metadata={image["metadata"]}
