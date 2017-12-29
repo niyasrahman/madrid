@@ -22,7 +22,7 @@ class SectionPage extends React.Component {
         HideSectionName={true}
         stories={this.props.data.collection.items.slice(4)}
         config= {config}
-        hideLoadmore: {true} />
+        hideLoadmore= {true} />
     </div>;
   }
 }
