@@ -29,7 +29,7 @@ class OffcanvasMenu extends React.Component {
         <nav className="sidebar__nav">
           <ul>
             <li className="sidebar__nav__logo">
-              <div className="logo logo--blue">{this.props.title}</div>
+              <Link href="/" className="logo logo--blue">{this.props.title}</Link>
               <div className="close menu-close" onClick={this.closeMenu}><img src={CloseImg} alt="{CloseImg}"/></div>
             </li>
             {this.props.menu.map((item, index)=> {

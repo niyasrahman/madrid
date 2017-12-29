@@ -44,6 +44,11 @@
   .logo{
     float: left;
     color: $base-blue;
+    font-family: var(--sansTypeface);
+    font-size: rem(34);
+    font-weight: bold;
+    display: inline-block;
+    padding: 0;
   }
   .close{
     float: right;
