@@ -1,6 +1,8 @@
 .breaking-news {
   @include container;
+  width: 100%;
   display: flex;
+  align-items: center;
   margin-bottom: 15px;
   color: $white;
   background-color: $base-blue;
@@ -37,6 +39,7 @@
     font-size: 14px;
     line-height: 1.29;
     font-weight: 300;
+
     @include breakpoint($pc) {
       font-size: 22px;
       line-height: 1.45;
@@ -46,6 +49,8 @@
   }
   &__carousel {
     padding: 20px 0;
+    pointer-events: none;
+
     @include breakpoint($pc) {
       max-width: 970px;
       min-height: 73px;
@@ -55,7 +60,8 @@
     }
   }
   .slick-slide {
-    pointer-events: none;
+    pointer-events: none !important;
+    width: 100%;
   }
   .slick-active {
     pointer-events: all;
