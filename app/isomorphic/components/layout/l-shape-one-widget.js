@@ -33,7 +33,7 @@ function LShapeOneWidget(props) {
           <script async src="//www.polltype.com/embed.js"></script>
         </div>
       </div>
-      <div className="row">
+      <div className="l-shape-grid__row">
         {props.stories.slice(1,4).map((story) => {
           return <div className="col-4" key={story.id}>
             <StoryCard config={storyListConfig}

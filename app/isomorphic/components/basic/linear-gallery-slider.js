@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 import { Link, ResponsiveImage } from "@quintype/components";
-
+import canUseDom from "../../../utils/can-use-dom";
 import { SectionName } from "./section-name.js";
 
 
@@ -33,18 +33,25 @@ function LinearGallerySlider(props) {
     color: '#fff',
     marginBottom: '0'
   }
-  return !props.stories ? null : <div className="linear-gallery-slider component-wrapper-fluid">
+  if(!props.stories) {
+    return null
+  }
+
+  return (
+    <div className="linear-gallery-slider component-wrapper-fluid">
       <div className="linear-gallery-slider__heading">
         <SectionName inlineStyle={inlineStyle} name={props.config['collection-name']} type="large"/>
       </div>
+      {canUseDom &&
       <Slider {...settings} className="linear-gallery-slider__slides">
         {props.stories.map((item) =>
           <div key={item.id} className="linear-gallery-slider__slider-content">
             <SliderItem item={item} />
           </div>
         )}
-      </Slider>
+      </Slider> }
     </div>
+  )
 }
 
 function SliderItem(props) {

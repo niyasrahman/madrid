@@ -47,6 +47,16 @@
       @include span(last 4);
     }
   }
+  &__row {
+    clear: both;
+
+    .story-card__content .story-card__heading {
+      @include breakpoint($tablet) {
+        min-height: 110px;
+      }
+    }
+  }
+
   &__read-more {
     float: right;
     clear: both;

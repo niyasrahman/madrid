@@ -2,8 +2,14 @@
 
   background: $darkest-gray;
   padding: 28px 0;
+
+  @include breakpoint($tablet) {
+    min-height: 330px;
+  }
+  
   @include breakpoint($pc) {
     padding: 40px 0;
+    min-height: 500px;
   }
 
   &__heading {

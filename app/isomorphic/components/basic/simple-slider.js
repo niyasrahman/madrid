@@ -7,7 +7,7 @@ import { Link, ResponsiveImage } from "@quintype/components";
 function SimpleSlider(props) {
   const settings = {
       dots: false,
-      infinite: true,
+      infinite: props.stories.length > 1,
       speed: 600,
       arrows: true,
       slidesToShow: 1

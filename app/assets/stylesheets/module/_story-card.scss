@@ -43,6 +43,7 @@
         font-size: rem(14);
         line-height: 1.57;
         margin-bottom: 27px;
+        min-height: 150px;
       }
     }
     &--over-image {
@@ -98,7 +99,7 @@
 }
 
 .story-card-link {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   display: block;
   &:last-child:not(:first-child) {
     margin-bottom: 0;

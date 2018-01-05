@@ -9,7 +9,7 @@ import { SectionName } from "./section-name.js";
 function Carousel(props) {
   const settings = {
       dots: true,
-      infinite: true,
+      infinite: props.limit > 1,
       speed: 500,
       arrows: false,
       slidesToShow: 1,
