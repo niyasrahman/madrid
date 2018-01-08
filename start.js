@@ -1,6 +1,6 @@
 const {startApp} = require("@quintype/framework/server/start");
 
-const PUBLIC_PATH='/ace/assets/';
+const PUBLIC_PATH='/quintype-ace/assets/';
 const FileName = process.env.NODE_ENV == 'production' ? `${PUBLIC_PATH}[name]-[hash:20].[ext]` : `${PUBLIC_PATH}[name].[ext]`;
 
 startApp(() => {

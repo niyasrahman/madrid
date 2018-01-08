@@ -58,5 +58,6 @@ typings/
 .env
 
 /public/ace
+/public/quintype-ace
 /webpack-assets.json
 /asset-manifest.json

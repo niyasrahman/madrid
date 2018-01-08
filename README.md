@@ -50,10 +50,10 @@ different publishers to their own itsman.
 ```
 asset_host: https://fea.quintype.com
 host_to_api_host:
-  "madrid.quintype.io": "ace.internal.quintype.io"
+  "madrid.quintype.io": "quintype-demo.internal.quintype.io"
   "www.dyingtheartof.com": "dyingtheartof.internal.quintype.io"
 host_to_automatic_api_host:
   - "-web"
   - ".madrid"
-sketches_host: http://ace.internal.quintype.io
+sketches_host: http://quintype-demo.internal.quintype.io
 ```

@@ -1,3 +1,3 @@
 const {webpackConfig} = require("@quintype/build/webpack-config")
 
-module.exports = webpackConfig("ace", __dirname)
+module.exports = webpackConfig("quintype-ace", __dirname)
