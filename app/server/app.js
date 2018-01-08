@@ -1,7 +1,7 @@
-import compression from 'compression';
-import express from 'express';
 
-import {initializeAllClients} from "@quintype/framework/server/api-client";
+import createApp from '@quintype/framework/server/create-app';
+import logger from "@quintype/framework/server/logger";
+
 import {upstreamQuintypeRoutes, isomorphicRoutes, staticRoutes} from "@quintype/framework/server/routes";
 
 import {generateRoutes, STATIC_ROUTES} from './routes';
@@ -10,11 +10,8 @@ import {loadData, loadErrorData} from "./load-data";
 import {pickComponent} from "../isomorphic/pick-component";
 import {SEO} from "@quintype/seo";
 
-export const app = express();
+export const app = createApp();
 
-app.set("view engine", "ejs");
-app.use(express.static("public"));
-app.use(compression());
 upstreamQuintypeRoutes(app);
 
 const STATIC_TAGS = {
@@ -42,7 +39,7 @@ const STRUCTURED_DATA = {
 }
 
 isomorphicRoutes(app, {
-  logError: (error) => console.error(error),
+  logError: (error) => logger.error(error),
   generateRoutes: generateRoutes,
   loadData: loadData,
   pickComponent: pickComponent,
