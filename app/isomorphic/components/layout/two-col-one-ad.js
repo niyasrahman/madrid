@@ -13,6 +13,11 @@ function TwoColOneAd(props) {
   const storyListConfig = {
     section: true
   }
+
+  if(props.stories.length < 1) {
+    return <div></div>
+  }
+  
   return (
     <div className="two-col-one-ad component-wrapper">
       <div className="col-4">

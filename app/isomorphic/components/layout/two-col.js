@@ -12,6 +12,11 @@ function TwoCol(props) {
   const inlineStyle = {
     borderBottom: '4px solid ' + props.config['collection-color']
   }
+
+  if(props.stories.length < 1) {
+    return <div></div>
+  }
+
   return (
     <div className="two-col component-wrapper">
       <SectionName inlineStyle={inlineStyle} name={props.config['collection-name']} type="large"/>

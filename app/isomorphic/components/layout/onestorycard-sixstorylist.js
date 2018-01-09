@@ -24,6 +24,11 @@ function OneStoryCardSixStoryList(props) {
   const inlineStyle = {
     borderBottom: '4px solid ' + props.config['collection-color']
   }
+  
+  if(props.stories.length < 1) {
+    return <div></div>
+  }
+
   return (
     <div className="onestorycard-sixstorylist component-wrapper">
       <div className="col-4">

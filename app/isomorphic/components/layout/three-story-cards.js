@@ -9,6 +9,11 @@ export function ThreeStoryCards(props) {
     image: true,
     imageAspectRatio: [2,3]
   }
+
+  if(props.stories.length < 1) {
+    return <div></div>
+  }
+
   return (
     <div className="three-story-cards component-wrapper">
       <div className="col-4">

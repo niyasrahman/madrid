@@ -19,6 +19,11 @@ function FullscreenMediaList(props) {
     borderBottom: '4px solid ' + props.config['collection-color']
   }
   const limit = props.config.limit || 3;
+
+  if(props.stories.length < 1) {
+    return <div></div>
+  }
+
   return <div className="fullscreen-media-list">
     <div className="fullscreen-media-list__content component-wrapper">
       {

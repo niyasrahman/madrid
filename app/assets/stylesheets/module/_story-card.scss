@@ -82,14 +82,32 @@
         height: 100%;
       }
     }
-    &--cover:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background: linear-gradient(to top, transparentize($black, 0.3), transparent 50%, transparent);
+    &--cover {
+      position: relative;
+      min-height: 400px;
+
+      @include breakpoint($pc) {
+        min-height: 510px;
+      }
+
+      img {
+       position: absolute;
+       top: 0;
+       left: 0;
+       bottom: 0;
+       right: 0;
+       height: 100%;
+
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to top, transparentize($black, 0.3), transparent 50%, transparent);
+      }
     }
   }
   &--transparent {

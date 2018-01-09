@@ -58,6 +58,8 @@ function Slide(props) {
   const inlineStyle = {
     borderBottom: 'solid 2px ' + props.story['section-color']
   }
+  const storySubheadline = props.story.subheadline && props.story.subheadline.length > 105 ? props.story.subheadline.substr(0, 100).concat('...') : props.story.subheadline;
+
   return <div className="carousel-slide">
     <div className="carousel-slide__image">
       <figure>
@@ -71,7 +73,7 @@ function Slide(props) {
       <SectionName inlineStyle={inlineStyle} name={props.story.sections[0]['display-name']} />
       <h2 className="carousel-slide__heading" dangerouslySetInnerHTML={ {__html: props.story.headline }} />
       {/* Remove extra charecters if content is so big */}
-      <p className="carousel-slide__description" dangerouslySetInnerHTML={ {__html: props.story.subheadline.length > 105 ? props.story.subheadline.substr(0, 100).concat('...') : props.story.subheadline }} />
+      <p className="carousel-slide__description" dangerouslySetInnerHTML={ {__html: storySubheadline }} />
       <Author author={{
           "name": props.story['author-name'],
           "image": props.story['author-image'],
