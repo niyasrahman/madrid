@@ -4,7 +4,7 @@ import { Link } from "@quintype/components";
 import { MediaObject } from "../basic/media-object-list.js"
 import { SectionName } from "../basic/section-name.js";
 
-import adImage from '../../../assets/images/qt-ad.png';
+import { DfpAd } from "../dfp-ads";
 
 function FullscreenMediaList(props) {
   const mediaObjectConfig = {
@@ -54,8 +54,8 @@ function FullscreenMediaList(props) {
       <div className="col-4">
         {
           props.adsSlot ?
-          <div className="ads-375x245">
-            <img src={adImage} alt="Ad"/>
+          <div className="ads-320x250">
+            <DfpAd adtype="Demo-Ad" />
           </div>
           : null
         }

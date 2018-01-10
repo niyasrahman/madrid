@@ -2,12 +2,12 @@ import React from "react";
 import adImage from '../../../assets/images/qt-ad.png';
 import newsletterImage from '../../../assets/icons/newsletter.svg';
 import { Button } from "./button.js";
-
+import { DfpAd } from "../dfp-ads";
 
 function NewsletterSub() {
   return <div className="two-col-one-ad__last">
       <div className="two-col-one-ad__last__first">
-        <img src={adImage} alt="Ad"/>
+        <DfpAd adtype="Demo-Ad" />
       </div>
       <div className="two-col-one-ad__last__second">
         <img src={newsletterImage} alt="Newsletter" />

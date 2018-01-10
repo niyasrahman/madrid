@@ -6,6 +6,11 @@
         display: block;
         margin-bottom: 10px;
       }
+      & > div {
+        // Center the ad
+        margin: 0 auto;
+        text-align: center;
+      }
     }
     &__second {
       background: $base-blue;
