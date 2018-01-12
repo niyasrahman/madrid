@@ -2,6 +2,26 @@
 
 Madrid is the demo app using [Malibu](https://github.com/quintype/malibu) as a starting point.
 
+## Initial Collection setup
+We need collections with the following slugs for publishers to work with Madrid theme:
+1. home
+2. featured-stories
+3. main-stories
+4. must-read
+5. politics
+6. film
+7. other
+8. lifestyle
+9. recent-stories
+
+The collection slug restriction is temporary. It'll be changed to accept any collection once the necessary change is made in Itsman.
+
+- The collections 2 through 9 has to be the children of `home` collection.
+- Only the stories in those collections will be considered in homepage, and any collection added will be ignored.
+- Even if collections with different slugs are added in the home collection, they should show up in a fallback layout. 
+- So as long as there is a collection called home with some collections in them which has stories, the homepage should load.
+
+
 ## toddy-libs
 
 IMPORTANT: This app implements very little functionality in the app itself. The majority of functionality is built into the [toddy-libs](https://github.com/quintype/quintype-toddy-libs) repository.
