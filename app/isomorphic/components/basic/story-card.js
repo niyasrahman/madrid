@@ -19,7 +19,7 @@ function StoryCard(props) {
 
 function StoryCardBgImage(props) {
   const author = {
-    name: props.story['author-name']
+    name: props.story['authors'][0]['name'] ? props.story['authors'][0]['name'] : props.story['author-name'],
   }
   return <div className="story-card">
     <figure className="story-card__image story-card__image--cover">
@@ -41,7 +41,7 @@ function StoryCardSimple(props) {
     borderBottom: 'solid 2px ' + props.story['section-color']
   }
   const author = {
-    name: props.story['author-name']
+    name: props.story['authors'][0]['name'] ? props.story['authors'][0]['name'] : props.story['author-name'],
   }
   // We can customize this component by passing down a config
   // We can enable Image, Subheadline and Section name if the config values are true.
