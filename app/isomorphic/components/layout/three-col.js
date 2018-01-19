@@ -20,15 +20,15 @@ function ThreeCol(props) {
   return (
     <div className="three-col component-wrapper">
       <SectionName inlineStyle={inlineStyle} name={props.config['collection-name']} type="large"/>
-      <div>
-        <div className="col-4">
+      <div className="three-col__items">
+        <div className="three-col__item">
           <StoryCard story={props.stories[0]} type="imageBackground" config={secondColFirstCardConfig}/>
         </div>
-        <div className="col-4">
+        <div className="three-col__item">
           <StoryCard story={props.stories[1]} config={secondColFirstCardConfig}/>
           <StoryCard story={props.stories[2]}/>
         </div>
-        <div className="three-col__last">
+        <div className="three-col__item">
           <StoryList
             stories={[props.stories[1], props.stories[2], props.stories[3], props.stories[4]]}>
           </StoryList>
