@@ -75,7 +75,7 @@ function Slide(props) {
       {/* Remove extra charecters if content is so big */}
       <p className="carousel-slide__description" dangerouslySetInnerHTML={ {__html: storySubheadline }} />
       <Author author={{
-          "name": props.story['author-name'],
+          "name": props.story['authors'][0]['name'] ? props.story['authors'][0]['name'] : props.story['author-name'],
           "image": props.story['author-image'],
           "date": props.story['first-published-at']}} />
     </div>
