@@ -17,7 +17,7 @@ class LiveBlogTemplate extends React.Component {
       <figure className="live-blog-story-hero-image blank-story-hero-image qt-image-16x9">
         <ResponsiveImage slug={this.props.story["hero-image-s3-key"]} metadata={this.props.story["hero-image-metadata"]}
           aspectRatio={[9,3]}
-          defaultWidth={480} widths={[250,480,640]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 23%"
+          defaultWidth={480} widths={[250,480,640,960,1200]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 98%"
           imgParams={{auto:['format', 'compress'], fit:'max'}}/>
       </figure>
       <div className="live-blog-story__extra-wrapper">
