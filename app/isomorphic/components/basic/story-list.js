@@ -22,7 +22,7 @@ function StoryListItem({story, config}) {
     borderBottom: 'solid 2px ' + story['section-color']
   }
   const author = {
-    name: story['author-name']
+    name: story['authors'][0]['name'] ? story['authors'][0]['name'] : story['author-name'],
   }
   return (
     <Link href={"/" + story.slug }>

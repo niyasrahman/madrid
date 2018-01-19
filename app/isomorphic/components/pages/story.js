@@ -12,7 +12,7 @@ function storyPageContent({story, index, relatedStories}) {
   }
 }
 
-const FIELDS = "id,headline,slug,url,hero-image-s3-key,hero-image-metadata,first-published-at,last-published-at,alternative,published-at,author-name,author-id,sections,story-template,cards,tags";
+const FIELDS = "id,headline,slug,url,hero-image-s3-key,hero-image-metadata,first-published-at,last-published-at,alternative,published-at,author-name,author-id,sections,story-template,cards,tags,authors";
 function storyPageLoadItems(pageNumber) {
   // Replace this with your logic for loading stories
   return global.superagent
