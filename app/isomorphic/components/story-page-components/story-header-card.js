@@ -72,7 +72,7 @@ class StoryHeaderCard extends React.Component {
                   this.state.story['parent-section'].slug + '/' + this.state.story.sections[0].slug :
                   this.state.story.sections[0].slug)}
               style={sectionColor}>
-              {this.state.story.sections[0]['display-name'] && this.state.story.sections[0]['display-name'].length > 0 }
+              {this.state.story.sections[0]['display-name'] || this.state.story.sections[0]['name'] }
             </Link>
             <div>
               { (this.state.story['story-template'] === "live-blog") && <span className="live-story" style={liveDisplayStyles}>live</span> }
@@ -82,7 +82,7 @@ class StoryHeaderCard extends React.Component {
             <div className="story-byline">
               <div className="story-byline__author_time">
                 <Author author={{
-                    "name": this.state.story['authors'][0]['name'] ? this.state.story['authors'][0]['name'] : this.state.story['author-name'],
+                    "name": this.state.story['authors'][0]['name'] || this.state.story['author-name'],
                     "image": this.state.story['author-image'],
                     "date": this.state.story['first-published-at']}} />
               </div>

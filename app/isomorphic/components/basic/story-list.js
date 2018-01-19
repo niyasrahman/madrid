@@ -22,13 +22,13 @@ function StoryListItem({story, config}) {
     borderBottom: 'solid 2px ' + story['section-color']
   }
   const author = {
-    name: story['authors'][0]['name'] ? story['authors'][0]['name'] : story['author-name'],
+    name: story['authors'][0]['name'] || story['author-name'],
   }
   return (
     <Link href={"/" + story.slug }>
       {
         config && config.section &&
-        <SectionName inlineStyle={inlineStyle} name={story.sections[0]['display-name']}/>
+        <SectionName inlineStyle={inlineStyle} name={story.sections[0]['display-name'] || story.sections[0]['name']}/>
       }
       <h2 className="story-list__heading" dangerouslySetInnerHTML={ {__html: story.headline }} />
       <Author author={author}/>

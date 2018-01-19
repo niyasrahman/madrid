@@ -19,7 +19,7 @@ function RelatedStoryCard(props){
       }
         <h2 dangerouslySetInnerHTML={ {__html: story.headline }} className={classname}/>
         <div className="author-title">
-          {story['authors'][0]['name'] ? story['authors'][0]['name'] : story['author-name']}
+          {story['authors'][0]['name'] || story['author-name']}
         </div>
     </a>
   </div>

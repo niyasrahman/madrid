@@ -19,7 +19,7 @@ function StoryCard(props) {
 
 function StoryCardBgImage(props) {
   const author = {
-    name: props.story['authors'][0]['name'] ? props.story['authors'][0]['name'] : props.story['author-name'],
+    name: props.story['authors'][0]['name'] || props.story['author-name'],
   }
   return <div className="story-card">
     <figure className="story-card__image story-card__image--cover">
@@ -41,7 +41,7 @@ function StoryCardSimple(props) {
     borderBottom: 'solid 2px ' + props.story['section-color']
   }
   const author = {
-    name: props.story['authors'][0]['name'] ? props.story['authors'][0]['name'] : props.story['author-name'],
+    name: props.story['authors'][0]['name'] || props.story['author-name'],
   }
   // We can customize this component by passing down a config
   // We can enable Image, Subheadline and Section name if the config values are true.
@@ -56,7 +56,7 @@ function StoryCardSimple(props) {
         </figure> }
       <div className={classNames('story-card__content', { 'story-card__content--transparent': props.config && props.config.transparent }) }>
         { props.config && props.config.section &&
-          <SectionName inlineStyle={inlineStyle} name={props.story.sections[0]['display-name']}/>
+          <SectionName inlineStyle={inlineStyle} name={props.story.sections[0]['display-name'] || props.story.sections[0]['name']}/>
         }
         <h2 className="story-card__heading" dangerouslySetInnerHTML={ {__html: props.story.headline }} />
         { props.config && props.config.subheadline && <p className="story-card__description" dangerouslySetInnerHTML={ {__html: props.story.subheadline }} /> }
