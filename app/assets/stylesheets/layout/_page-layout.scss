@@ -148,7 +148,7 @@ body {
   }
 }
 .header__middle{
-  width: 60%;
+  width: 70%;
   float: left;
   nav{
     font-family: var(--sansTypeface);
@@ -158,8 +158,10 @@ body {
       list-style-type: none;
       margin: 0;
       padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
       li{
-        display: inline-block;
         a, span{
           display: block;
           cursor: pointer;
@@ -236,7 +238,7 @@ body {
   }
 }
 .header__last{
-  width: 20%;
+  width: 10%;
   float: right;
   margin-top: 4px;
   display: flex;
