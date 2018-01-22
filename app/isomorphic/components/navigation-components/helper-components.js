@@ -10,7 +10,7 @@ function MenuItem(props) {
     <span>{props.item.title}</span>
     <ul style={listStyle}>
       {props.item.children.map((child, index)=> {
-        return <SubmenuItem item={child} key={child['section-slug']}/>
+        return <SubmenuItem item={child} key={child['section-slug'] + child['id']}/>
       })}
     </ul>
   </li>
@@ -45,7 +45,7 @@ class SideMenuItem extends React.Component {
       <span>{this.props.item.title}</span>
       <ul className={classNames('submenu', {'submenu--show': this.state.openDownMenu})}>
         {this.props.item.children.map((child, index) => {
-          return <SubmenuItem item={child} key={child['section-slug']}/>
+          return <SubmenuItem item={child} key={child['section-slug'] + child['id'] }/>
         })}
       </ul>
     </li>
