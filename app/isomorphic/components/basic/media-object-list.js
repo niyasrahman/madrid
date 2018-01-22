@@ -13,7 +13,7 @@ function MediaObject({story, config}) {
     borderBottom: 'solid 2px ' + story['section-color']
   }
   const author = {
-    name: _.get(story['authors'], [0]['name'], story['author-name']),
+    name: _.get(story['authors'][0], ['name'], story['author-name']),
     date: config.storyTime && story['first-published-at']
   }
   return story &&
