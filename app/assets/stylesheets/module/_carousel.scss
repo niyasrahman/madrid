@@ -14,13 +14,21 @@
 
 .carousel-slide {
   overflow: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @include breakpoint($tablet) {
+    grid-template-columns: 2fr 3fr;
+    grid-auto-rows: 300px;
+  }
+
+  @include breakpoint($pc) {
+    grid-auto-rows: 400px;
+  }
+
   &__content {
-    @include span(12);
-    @include breakpoint($tablet) {
-      @include span(last 6);
-    }
     @include breakpoint($pc) {
-      padding: 20px 15px 40px 10px;
+      padding: 20px 15px 40px 20px;
     }
     padding: 15px;
     font-size: rem(18);
@@ -58,14 +66,24 @@
     }
   }
   &__image {
-    @include aspect-ratio(4,3);
-    @include breakpoint($tablet) {
-      float: left;
-      margin-right: 0;
-      width: 50%;
-    }
+    height: 100%;
+
     figure {
       margin: 0;
+      height: 100%;
+    }
+
+    img {
+      height: 100%;
+    }
+  }
+  .author {
+    margin-top: rem(16);
+
+    @include breakpoint($tablet) {
+      position: absolute;
+      bottom: rem(20);
+      margin-top: 0;
     }
   }
 }
