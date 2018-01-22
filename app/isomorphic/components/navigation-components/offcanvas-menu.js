@@ -1,8 +1,8 @@
 import React from "react";
 import classNames from 'classnames';
 import { Link } from "@quintype/components";
-
-import { SideMenuItem } from './helper-components'
+import assetify from '@quintype/framework/assetify';
+import { SideMenuItem } from './helper-components';
 import CloseImg from '../../../assets/icons/close.svg';
 import FacebookImg from '../../../assets/icons/facebook.svg';
 import LinkedinImg from '../../../assets/icons/linkedin.svg';
@@ -31,7 +31,7 @@ class OffcanvasMenu extends React.Component {
             <li className="sidebar__nav__logo" key={'nav-logo'}>
               <Link href="/" className="logo logo--blue">{this.props.title}</Link>
               <div className="close menu-close" onClick={this.closeMenu}>
-                <img src={CloseImg} alt="Close" />
+                <img src={assetify(CloseImg)} alt="Close Side Menu" />
               </div>
             </li>
             {this.props.menu.map((item, index)=> {
@@ -53,10 +53,10 @@ class OffcanvasMenu extends React.Component {
             })}
           </ul>
           <ul className="sidebar__social">
-            <li><a href="https://www.facebook.com/QuintypeInc/" target="_blank"><img src={FacebookImg} alt="Facebook"/></a></li>
-            <li><a href="https://www.linkedin.com/company/4788674/" target="_blank"><img src={LinkedinImg} alt="Linkedin"/></a></li>
-            <li><a href="https://twitter.com/quintype_inc" target="_blank"><img src={TwitterImg} alt="Twitter"/></a></li>
-            <li><a href="https://plus.google.com/" target="_blank"><img src={GoogleImg} alt="Google"/></a></li>
+            <li><a href="https://www.facebook.com/QuintypeInc/" target="_blank"><img src={assetify(FacebookImg)} alt="Facebook"/></a></li>
+            <li><a href="https://www.linkedin.com/company/4788674/" target="_blank"><img src={assetify(LinkedinImg)} alt="Linkedin"/></a></li>
+            <li><a href="https://twitter.com/quintype_inc" target="_blank"><img src={assetify(TwitterImg)} alt="Twitter"/></a></li>
+            <li><a href="https://plus.google.com/" target="_blank"><img src={assetify(GoogleImg)} alt="Google"/></a></li>
           </ul>
         </nav>
       </div>

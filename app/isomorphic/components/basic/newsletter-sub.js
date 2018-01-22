@@ -1,5 +1,5 @@
 import React from "react";
-import adImage from '../../../assets/images/qt-ad.png';
+import assetify from '@quintype/framework/assetify';
 import newsletterImage from '../../../assets/icons/newsletter.svg';
 import { Button } from "./button.js";
 import { DfpAd } from "../dfp-ads";
@@ -10,7 +10,7 @@ function NewsletterSub() {
         <DfpAd adtype="Demo-Ad" />
       </div>
       <div className="two-col-one-ad__last__second">
-        <img src={newsletterImage} alt="Newsletter" />
+        <img src={assetify(newsletterImage)} alt="Newsletter" />
         <h2>Subscribe to Newsletter</h2>
         <form className="two-col-one-ad__email">
           <input type="email" name="email" value="" placeholder="Your email" />

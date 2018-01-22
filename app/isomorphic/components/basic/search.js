@@ -1,6 +1,6 @@
 import React from "react";
 import SearchImg from '../../../assets/icons/search.svg';
-
+import assetify from '@quintype/framework/assetify';
 import { SearchBox } from '@quintype/components'
 import { Button } from './button.js'
 
@@ -44,7 +44,7 @@ class Search extends React.Component {
       opacity: this.state.initialized ? 1 : 0
     }
     return <div className="qt-search" style={initialStyle}>
-      <img src={SearchImg} alt="" className="qt-search__icon" onClick={() =>this.toggleSearchForm()}/>
+      <img src={assetify(SearchImg)} alt="" className="qt-search__icon" onClick={() =>this.toggleSearchForm()}/>
       <div className='qt-search__form-wrapper' style={formStyle}>
         <SearchBox className="qt-search__form component-wrapper"
                    template={DrawForm}
