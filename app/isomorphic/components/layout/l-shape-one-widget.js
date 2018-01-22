@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "@quintype/components";
-
+import assetify from '@quintype/framework/assetify';
 import { StoryCard } from "../basic/story-card.js"
 import { NewsletterSub } from "../basic/newsletter-sub.js"
 import { SectionName } from "../basic/section-name.js";
@@ -20,7 +20,7 @@ function LShapeOneWidget(props) {
   const inlineStyle = {
     borderBottom: '4px solid ' + props.config['collection-color']
   }
-  
+
   if(props.stories.length < 1) {
     return <div></div>
   }
@@ -48,7 +48,7 @@ function LShapeOneWidget(props) {
       </div>
       <Link href={'/' + props.config['collection-slug']} className="l-shape-grid__read-more">
         Read more
-        <img src={ArrowImg} alt="Arrow"/>
+        <img src={assetify(ArrowImg)} alt="Arrow"/>
       </Link>
     </div>
   )

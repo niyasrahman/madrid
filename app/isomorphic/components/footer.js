@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from "react-redux";
-
+import assetify from '@quintype/framework/assetify';
 import Logo from '../../assets/icons/quintype_logo.svg'
 import { STATIC_LINKS } from "./constants"
 
@@ -8,7 +8,7 @@ function FooterBase(props) {
   return <footer className="footer">
     <div className="footer__content">
       <div className="footer__content__first">
-        <img src={Logo} alt="Logo"/>
+        <img src={assetify(Logo)} alt="Logo"/>
       </div>
       <div className="footer__content__last">
         <ul>
