@@ -1,7 +1,7 @@
 import React from "react";
 import TimeAgo from 'react-timeago';
 import classNames from 'classnames';
-
+import _ from "lodash";
 import { Link, ResponsiveImage } from "@quintype/components";
 
 import { Author } from "./author.js";
@@ -13,7 +13,7 @@ function MediaObject({story, config}) {
     borderBottom: 'solid 2px ' + story['section-color']
   }
   const author = {
-    name: story['authors'][0]['name'] || story['author-name'],
+    name: _.get(story['authors'], [0]['name'], story['author-name']),
     date: config.storyTime && story['first-published-at']
   }
   return story &&

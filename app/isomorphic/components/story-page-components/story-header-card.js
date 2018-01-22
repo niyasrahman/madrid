@@ -1,4 +1,5 @@
 import React from "react";
+import _ from "lodash";
 import { Link } from "@quintype/components";
 
 import { Author } from "../basic/author.js";
@@ -82,7 +83,7 @@ class StoryHeaderCard extends React.Component {
             <div className="story-byline">
               <div className="story-byline__author_time">
                 <Author author={{
-                    "name": this.state.story['authors'][0]['name'] || this.state.story['author-name'],
+                    "name": _.get(this.state.story['authors'], [0]['name'], this.state.story['author-name']),
                     "image": this.state.story['author-image'],
                     "date": this.state.story['first-published-at']}} />
               </div>

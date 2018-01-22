@@ -1,6 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
-
+import _ from "lodash";
 import { Link, ResponsiveImage} from "@quintype/components";
 
 import { Author } from "./author.js";
@@ -73,7 +73,7 @@ function Slide(props) {
       <h2 className="carousel-slide__heading" dangerouslySetInnerHTML={ {__html: props.story.headline }} />
       <p className="carousel-slide__description" dangerouslySetInnerHTML={ {__html: props.story.subheadline }} />
       <Author author={{
-          "name": props.story['authors'][0]['name'] || props.story['author-name'],
+          "name": _.get(props.story['authors'], [0]['name'], props.story['author-name']),
           "image": props.story['author-image'],
           "date": props.story['first-published-at']}} />
     </div>

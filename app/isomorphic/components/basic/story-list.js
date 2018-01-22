@@ -1,5 +1,5 @@
 import React from "react";
-
+import _ from "lodash";
 import { Link } from "@quintype/components";
 
 import { Author } from "./author.js";
@@ -22,7 +22,7 @@ function StoryListItem({story, config}) {
     borderBottom: 'solid 2px ' + story['section-color']
   }
   const author = {
-    name: story['authors'][0]['name'] || story['author-name'],
+    name: _.get(story['authors'], [0]['name'], story['author-name']),
   }
   return (
     <Link href={"/" + story.slug }>
