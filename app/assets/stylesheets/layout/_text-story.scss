@@ -189,6 +189,30 @@
           font-size: rem(28);
         }
       }
+      a {
+        position: relative;
+        display: inline-block;
+        transition: .3s;
+        text-decoration: none;
+        color: $base-blue;
+        }
+
+        a::after {
+          position: absolute;
+          bottom: .3em;
+          left: 0;
+          content: '';
+          width: 100%;
+          height: 1px;
+          background-color: $base-blue;
+          opacity: 0;
+          transition: .3s;
+        }
+
+        a:hover::after {
+          bottom: 0;
+          opacity: 1;
+        }
     }
     &-element-image {
       figure {
