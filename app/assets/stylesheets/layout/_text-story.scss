@@ -71,7 +71,7 @@
       }
       @include breakpoint($pc) {
         font-size: rem(44);
-        list-height: 1.14;
+        line-height: 1.14;
       }
     }
     &-summary {
