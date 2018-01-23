@@ -276,6 +276,8 @@
         font-family: var(--sansTypeface);
         font-style: italic;
         color: $dark-gray;
+        padding: 0 rem(10);
+
         @include breakpoint($tablet) {
           font-size: rem(18);
         }
