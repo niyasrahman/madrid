@@ -343,13 +343,13 @@
           padding: 10px 0;
           margin-right: 5px;
           cursor: pointer;
-          transform: rotate3d(1, 0, 0, 180deg);
+          transform: rotate3d(1, 0, 0, 0deg);
           transition: transform .5s;
           @include breakpoint($tablet) {
             width: 30px;
           }
           &.is-closed {
-            transform: rotate3d(1, 0, 0, 0deg);
+            transform: rotate3d(1, 0, 0, 180deg);
           }
         }
       }
