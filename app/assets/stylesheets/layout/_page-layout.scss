@@ -172,9 +172,7 @@ body {
           font-weight: $regular;
           padding-bottom: 25px;
           text-transform: uppercase;
-          margin-right: 40px;
           @include breakpoint(max-width 1038px){
-            margin-right: 10px;
             font-size: rem(16);
           }
         }
