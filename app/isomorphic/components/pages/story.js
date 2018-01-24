@@ -4,7 +4,7 @@ import { BlankStory } from "../story-templates/blank.js";
 import { LiveBlogStory } from "../story-templates/live-blog.js";
 import { InfiniteStoryBase } from "@quintype/components"
 
-function storyPageContent({story, index, relatedStories}) {
+export function StoryPageContent({story, index, relatedStories}) {
   if(story['story-template'] == 'live-blog') {
     return <LiveBlogStory story={story} />;
   } else {
@@ -20,7 +20,7 @@ function storyPageLoadItems(pageNumber) {
            .then(response => response.body.stories.map(story => ({story: story, relatedStories: []})));
 }
 
-class StoryPage extends React.Component {
+export class StoryPage extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -29,11 +29,9 @@ class StoryPage extends React.Component {
   }
   render() {
     return <InfiniteStoryBase {...this.props}
-              render={(storyProps) => storyPageContent(storyProps, this.props.data.relatedStories)}
+              render={(storyProps) => StoryPageContent(storyProps, this.props.data.relatedStories)}
               loadItems={storyPageLoadItems}
               onItemFocus={(item) => console.log(`Story In View: ${item.story.headline}`)}
               onInitialItemFocus={(item) => console.log(`Do Analytics ${item.story.headline}`)} />
   }
 }
-
-export { StoryPage };

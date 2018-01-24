@@ -32,7 +32,7 @@ function loadData(pageType, params, config, client) {
     .then((data) => {
       return {
         httpStatusCode : 200,
-        pageType: pageType,
+        pageType: data.pageType || pageType,
         data: data,
         config: _.pick(config.asJson(), WHITELIST_CONFIG_KEYS)
       };

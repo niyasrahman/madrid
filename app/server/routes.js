@@ -6,14 +6,14 @@ import { PAGE_TYPE } from "./constants";
 export const STATIC_ROUTES = [
   {path: "/about-us", pageType: PAGE_TYPE.STATIC_PAGE, renderParams: {contentTemplate: "./about-us"}},
   {path: "/terms-and-conditions", pageType: PAGE_TYPE.STATIC_PAGE, renderParams: {contentTemplate: "./terms-and-conditions"}},
-  {path: "/privacy-policy", pageType: PAGE_TYPE.STATIC_PAGE, renderParams: {contentTemplate: "./privacy-policy"}}
+  {path: "/privacy-policy", pageType: PAGE_TYPE.STATIC_PAGE, renderParams: {contentTemplate: "./privacy-policy"}},
+  {path: "/preview/story", pageType: PAGE_TYPE.STORY_PREVIEW, exact: true, renderParams: {contentTemplate: "./story-preview"}, disableIsomorphicComponent: false},
+  {path: "/preview/home", pageType: PAGE_TYPE.HOME_PREVIEW, exact: true, renderParams: {contentTemplate: "./story-preview"}, disableIsomorphicComponent: false},
 ];
 
 const ISOMORPHIC_ROUTES = [
   {path: "/", pageType: "home-page", exact: true},
-  {path: "/preview/story", pageType: "story-preview-page", exact: true},
   {path: "/preview/story/:encryptedKey", pageType: "story-public-preview-page", exact: true},
-  {path: "/preview/home", pageType: "home-preview-page", exact: true},
   {path: "/topic/:tagSlug", pageType: "tag-page", exact: true, skipPWA: true},
   {path: "/search", pageType: "search-page", exact: true, skipPWA: true},
 ];
