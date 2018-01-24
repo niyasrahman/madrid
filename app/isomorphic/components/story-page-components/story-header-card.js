@@ -7,6 +7,7 @@ import fbIcon from '../../../assets/icons/social/fb-share.svg';
 import twitterIcon from '../../../assets/icons/social/twitter-share.svg';
 import linkedinIcon from '../../../assets/icons/social/linkedin-share.svg';
 import gplusIcon from '../../../assets/icons/social/gplus-share.svg';
+import assetify from '@quintype/framework/assetify';
 
 class StoryHeaderCard extends React.Component {
   constructor(props) {
@@ -17,36 +18,36 @@ class StoryHeaderCard extends React.Component {
   componentDidMount() {
     const currentStory = this.state.story;
     fetch('/api/v1/authors/' + this.state.story['author-id'])
-      .then(function(response) {
-        return response.json();
-      }).then(function(authorDetails) {
-        currentStory['author-image'] = authorDetails.author['avatar-url'];
-        this.setState({
-          story: currentStory
-        });
-      }.bind(this))
-  }
+     .then(function(response) {
+       return response.json();
+     }).then(authorDetails => {
+       currentStory['author-image'] = authorDetails.author['avatar-url'];
+       this.setState({
+         story: currentStory
+       });
+     });
+}
 
-  getSocialCardsTemplate({fbUrl, twitterUrl, gplusUrl, linkedinUrl}) {
-    return <ul className="social-share-icons">
+getSocialCardsTemplate({fbUrl, twitterUrl, gplusUrl, linkedinUrl}) {
+  return <ul className="social-share-icons">
         <li className="social-share-icon">
           <a href={fbUrl} target="_blank">
-            <img src={fbIcon} alt="fb icon"/>
+            <img src={assetify(fbIcon)} alt="fb icon"/>
           </a>
         </li>
         <li className="social-share-icon">
           <a href={twitterUrl} target="_blank">
-            <img src={twitterIcon} alt="twitter icon"/>
+            <img src={assetify(twitterIcon)} alt="twitter icon"/>
           </a>
         </li>
         <li className="social-share-icon">
           <a href={gplusUrl} target="_blank">
-            <img src={gplusIcon} alt="gplus icon"/>
+            <img src={assetify(gplusIcon)} alt="gplus icon"/>
           </a>
         </li>
         <li className="social-share-icon">
           <a href={linkedinUrl} target="_blank">
-            <img src={linkedinIcon} alt="linkedin icon"/>
+            <img src={assetify(linkedinIcon)} alt="linkedin icon"/>
           </a>
         </li>
       </ul>
