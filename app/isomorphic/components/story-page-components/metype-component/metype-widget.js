@@ -4,27 +4,11 @@ class MetypeWidget extends React.Component {
 
   constructor(props) {
     super(props);
-    this.loadScript = this.loadScript.bind(this);
     this.global = false;
   }
 
   componentDidMount() {
     this.global = window;
-    !window.talktype && this.loadScript();
-  }
-
-  loadScript() {
-      const metypeScript = document.createElement('script');
-      metypeScript.setAttribute("src", 'http://metype.staging.quintype.com/quintype-metype/assets/application.js');
-      metypeScript.async = 1;
-      metypeScript.onload = () => {
-        const metypeContainer = this.metypeWidget;
-        metypeContainer.setAttribute('data-metype-page-url', this.props.pageUrl || window.location.href);
-        metypeContainer.setAttribute('data-metype-window-height', window.innerHeight);
-        metypeContainer.setAttribute('data-metype-screen-width', window.screen.width);
-        window.talktype.commentWidgetIframe(metypeContainer);
-      };
-      document.body.appendChild(metypeScript);
   }
 
   render() {

@@ -5,26 +5,10 @@ class MetypeFeedWidget extends React.Component {
   constructor(props) {
     super(props);
     this.global = false;
-    this.loadScript = this.loadScript.bind(this);
   }
 
   componentDidMount() {
     this.global = window;
-    !window.talktype && this.loadScript();
-  }
-
-  loadScript() {
-      const metypeScript = document.createElement('script');
-      metypeScript.setAttribute("src", 'http://metype.staging.quintype.com/quintype-metype/assets/application.js');
-      metypeScript.async = 1;
-      metypeScript.onload = () => {
-        const metypeContainer = this.metypeFeedWidget;
-        metypeContainer.setAttribute('data-metype-page-url',  window.location.href);
-        metypeContainer.setAttribute('data-metype-window-height', window.innerHeight);
-        metypeContainer.setAttribute('data-metype-screen-width', window.screen.width);
-        window.talktype.feedWidgetIframe(metypeContainer);
-      };
-      document.body.appendChild(metypeScript);
   }
 
   metypeToggleButton(){
@@ -39,15 +23,15 @@ class MetypeFeedWidget extends React.Component {
     const {primaryColor, publisher, host, accountId, className, secondaryColor} = this.props;
 
     return <div id='feed-metype-container'
-      ref={(el) => this.metypeFeedWidget = el }
-      className='feed-iframe-container'
-      data-metype-account-id={accountId || 2}
-      data-metype-host={host || 'http://metype.staging.quintype.com'}
-      data-metype-publisher={publisher}
-      data-metype-primary-color={primaryColor}
-      data-metype-secondary-color={secondaryColor} >
-        <div id='metype-clickthru' className='metype-clickthru' onClick={() => this.metypeToggleButton()}></div>
-        <div className="metype-feed-slide-icon" id="metype-feed-slide-icon" onClick={() => this.metypeToggleButton()}></div>
+                ref={(el) => this.metypeFeedWidget = el }
+                className='feed-iframe-container'
+                data-metype-account-id={accountId || 2}
+                data-metype-host={host || 'http://metype.staging.quintype.com'}
+                data-metype-publisher={publisher}
+                data-metype-primary-color={primaryColor}
+                data-metype-secondary-color={secondaryColor} >
+      <div id='metype-clickthru' className='metype-clickthru' onClick={() => this.metypeToggleButton()}></div>
+      <div className="metype-feed-slide-icon" id="metype-feed-slide-icon" onClick={() => this.metypeToggleButton()}></div>
     </div>
   }
 }
