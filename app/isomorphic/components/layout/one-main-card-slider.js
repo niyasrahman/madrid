@@ -47,7 +47,7 @@ function SliderItem(props) {
    assigning it accordinlgy.*/}
   const story = props.item.type === 'story' && props.item.story ? props.item.story : props.item;
   return (
-    <Link className={classNames('overlay-story-card', {'overlay-story-card--video': props.item.story['story-template'] === 'video'})} href={"/" + story.slug }>
+    <Link className={classNames('overlay-story-card', {'overlay-story-card--video': story['story-template'] === 'video'})} href={"/" + story.slug }>
       <figure>
         <ResponsiveImage slug={story["hero-image-s3-key"]} metadata={story["hero-image-metadata"]}
           aspectRatio={[57,32]}

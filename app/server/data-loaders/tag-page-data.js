@@ -23,7 +23,7 @@ function getProcessedStories(stories, menu, sections) {
   // TODO: Optimize
   stories.forEach(story => {
     story = story.story;
-    const menuObject = _.find(menu, function(menuItem) { return menuItem['section-slug'] === story.sections[0].slug; });
+    const menuObject = _.find(menu, function(menuItem) { return story && story.sections[0] && menuItem['section-slug'] === story.sections[0].slug; });
     story['section-color'] = menuObject ? menuObject.data.color : '#6093f2';
     processedStories.push(story);
   })
