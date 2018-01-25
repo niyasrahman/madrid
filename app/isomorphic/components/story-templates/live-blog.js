@@ -42,11 +42,6 @@ class LiveBlogTemplate extends React.Component {
   }
 }
 
-/*<MetypeWidget
-        host={"http://metype.staging.quintype.com/"}
-        accountID={2}
-        pageURL={'http://metype.staging.quintype.com/'} />*/
-
 class LiveBlogStory extends React.Component {
   render() {
     return <div className="story-grid">

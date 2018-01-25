@@ -13,7 +13,6 @@ class MetypeScripts extends React.Component {
     const metypeScript = document.createElement('script');
     metypeScript.setAttribute("src", 'http://metype.staging.quintype.com/quintype-metype/assets/application.js');
     metypeScript.async = 1;
-    metypeScript.setAttribute('data-metype-script-id', 'metype-application-js');
     metypeScript.onload = () => {
       const metypeContainer = document.getElementById('feed-metype-container');
       metypeContainer.setAttribute('data-metype-page-url', this.props.pageUrl || window.location.href);

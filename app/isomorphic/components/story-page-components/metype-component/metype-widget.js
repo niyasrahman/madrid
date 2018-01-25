@@ -10,6 +10,7 @@ class MetypeWidget extends React.Component {
   componentDidMount() {
     this.global = window;
     if (window.talktype && this.metypeWidget) {
+      this.metypeWidget.setAttribute('data-metype-page-url', window.location.href);
       window.talktype.commentWidgetIframe(this.metypeWidget);
     }
   }
@@ -21,10 +22,10 @@ class MetypeWidget extends React.Component {
                 ref={(el) => this.metypeWidget = el }
                 className={`iframe-container ${className || ''}`}
                 data-metype-account-id={accountId || 2}
-                data-metype-host={host || 'http://metype.staging.quintype.com'}
-                data-metype-primary-color={primaryColor}
-                data-metype-bg-color={secondaryColor}
-                data-metype-font-color={fontColor}
+                data-metype-host={host || 'http://localhost:3000'}
+                data-metype-primary-color={primaryColor || '#4d086a'}
+                data-metype-bg-color={secondaryColor || '#fff'}
+                data-metype-font-color={fontColor || '#000'}
                 data-metype-window-width={this.global ? window.screen.width : 700}
                 data-metype-window-height={this.global ? window.screen.height : 700}
                 data-metype-page-url={pageURL || `http://metype.staging.quintype.com/`} />

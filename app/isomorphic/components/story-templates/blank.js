@@ -29,14 +29,14 @@ function BlankStoryTemplate(props) {
             </div>
             <RelatedStories stories = {props.relatedStories}></RelatedStories>
           </div>
+          <MetypeScripts />
+          <MetypeFeedWidget />
+          <MetypeWidget
+            host={"http://metype.staging.quintype.com/"}
+            accountID={2}
+            pageURL={'http://metype.staging.quintype.com/'} />
         </div>
       </div>
-      <MetypeScripts />
-      <MetypeFeedWidget />
-      <MetypeWidget
-        host={"http://metype.staging.quintype.com/"}
-        accountID={2}
-        pageURL={'http://metype.staging.quintype.com/'} />
     </article>
 }
 
