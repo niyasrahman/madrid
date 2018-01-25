@@ -6,6 +6,8 @@ import { StoryTags } from "../story-page-components/story-tags.js";
 import { RelatedStories } from "../story-page-components/related-stories.js";
 import { StoryPageCard } from "../story-page-components/story-page-card.js";
 import { DfpAd } from "../dfp-ads";
+import { MetypeWidget } from "../story-page-components/metype-component/metype-widget";
+import { MetypeFeedWidget } from "../story-page-components/metype-component/metype-feed-widget";
 
 function BlankStoryTemplate(props) {
   return <article className="blank-story">
@@ -31,9 +33,16 @@ function BlankStoryTemplate(props) {
     </article>
 }
 
+
+
 function BlankStory(props) {
   return <div className="story-grid">
     <BlankStoryTemplate {...props}></BlankStoryTemplate>
+    <MetypeFeedWidget />
+    <MetypeWidget
+      host={"http://metype.staging.quintype.com/"}
+      accountID={2}
+      pageURL={'http://metype.staging.quintype.com/'} />
   </div>
 }
 
