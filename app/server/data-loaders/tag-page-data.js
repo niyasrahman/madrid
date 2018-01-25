@@ -5,7 +5,8 @@ import {storyToCacheKey} from "@quintype/framework/server/caching";
 import {getNavigationMenuArray} from "./menu-data";
 
 export function loadTagPageData(client, tagSlug, config) {
-  return Story.getStories(client, 'top', {'tag': tagSlug, 'limit': '20'})
+  const storyFields = 'slug,story-content-id,id,headline,hero-image-s3-key,hero-image-metadata,sections,tags,author-name,author-id,authors,created-at,first-published-at,published-at,last-published-at';
+  return Story.getStories(client, 'top', {'tag': tagSlug, 'fields': storyFields, 'limit': '20'})
     .then(stories => {
       const menu = config.layout.menu;
       const navigationMenu = getNavigationMenuArray(menu);
