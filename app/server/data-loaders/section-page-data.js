@@ -42,7 +42,7 @@ export function loadSectionPageData(client, sectionId, config) {
         let collection = {
           items: [],
           type: 'story',
-          name: section.name,
+          name: section['display-name'] || section.name,
           slug: section.slug,
           color: collectionMenuObject ? collectionMenuObject.data.color : '#6093f2'
         };
