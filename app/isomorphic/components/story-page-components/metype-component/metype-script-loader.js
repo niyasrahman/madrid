@@ -25,7 +25,7 @@ class MetypeScripts extends React.Component {
     document.body.appendChild(metypeScript);
   }
   render(){
-    return <div>Scripts loaded</div>
+    return null
   }
 }
 

@@ -9,6 +9,9 @@ class MetypeWidget extends React.Component {
 
   componentDidMount() {
     this.global = window;
+    if (window.talktype && this.metypeWidget) {
+      window.talktype.commentWidgetIframe(this.metypeWidget);
+    }
   }
 
   render() {

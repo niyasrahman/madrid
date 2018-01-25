@@ -9,6 +9,9 @@ class MetypeFeedWidget extends React.Component {
 
   componentDidMount() {
     this.global = window;
+    if (window.talktype && this.metypeFeedWidget) {
+      window.talktype.feedWidgetIframe(this.metypeFeedWidget);
+    }
   }
 
   metypeToggleButton(){
