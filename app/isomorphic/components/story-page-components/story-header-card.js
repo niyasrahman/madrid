@@ -74,7 +74,7 @@ class StoryHeaderCard extends React.Component {
             this.state.story['parent-section'].slug + '/' + this.state.story.sections[0].slug :
             this.state.story.sections[0].slug)}
         style={sectionColor}>
-        {this.state.story.sections[0]['display-name'] && this.state.story.sections[0]['display-name'].length > 0 }
+        {this.state.story.sections[0]['display-name'] || this.state.story.sections[0]['name'] }
       </Link>
       <div>
         { (this.state.story['story-template'] === "live-blog") && <span className="live-story" style={liveDisplayStyles}>live</span> }
