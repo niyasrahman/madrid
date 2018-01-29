@@ -14,7 +14,6 @@
     background-color: $white;
     padding: 15px;
     z-index: 10;
-    min-height: 1400px;
     @include breakpoint($pc){
       padding: 30px 220px 55px 55px;
     }
@@ -71,7 +70,7 @@
       }
       @include breakpoint($pc) {
         font-size: rem(44);
-        list-height: 1.14;
+        line-height: 1.14;
       }
     }
     &-summary {
@@ -181,6 +180,7 @@
       }
       h3 {
         font-size: rem(20);
+        line-height: 1.5;
         @include breakpoint($tablet) {
           font-size: rem(24);
         }
@@ -188,6 +188,30 @@
           font-size: rem(28);
         }
       }
+      a {
+        position: relative;
+        display: inline-block;
+        transition: .3s;
+        text-decoration: none;
+        color: $base-blue;
+        }
+
+        a::after {
+          position: absolute;
+          bottom: .3em;
+          left: 0;
+          content: '';
+          width: 100%;
+          height: 1px;
+          background-color: $base-blue;
+          opacity: 0;
+          transition: .3s;
+        }
+
+        a:hover::after {
+          bottom: 0;
+          opacity: 1;
+        }
     }
     &-element-image {
       figure {
@@ -276,6 +300,8 @@
         font-family: var(--sansTypeface);
         font-style: italic;
         color: $dark-gray;
+        padding: 0 rem(10);
+
         @include breakpoint($tablet) {
           font-size: rem(18);
         }
@@ -341,13 +367,13 @@
           padding: 10px 0;
           margin-right: 5px;
           cursor: pointer;
-          transform: rotate3d(1, 0, 0, 180deg);
+          transform: rotate3d(1, 0, 0, 0deg);
           transition: transform .5s;
           @include breakpoint($tablet) {
             width: 30px;
           }
           &.is-closed {
-            transform: rotate3d(1, 0, 0, 0deg);
+            transform: rotate3d(1, 0, 0, 180deg);
           }
         }
       }

@@ -1,7 +1,7 @@
 import React from "react";
 import TimeAgo from 'react-timeago';
 import classNames from 'classnames';
-
+import _ from "lodash";
 import { Link, ResponsiveImage } from "@quintype/components";
 
 import { Author } from "./author.js";
@@ -13,7 +13,7 @@ function MediaObject({story, config}) {
     borderBottom: 'solid 2px ' + story['section-color']
   }
   const author = {
-    name: story['authors'] ? story['authors'][0]['name'] : story['author-name'],
+    name: _.get(story['authors'][0], ['name'], story['author-name']),
     date: config.storyTime && story['first-published-at']
   }
   return story &&
@@ -28,7 +28,7 @@ function MediaObject({story, config}) {
         </figure>
       </div>
       <div className={classNames('media__content', {'media__content--enlarged': config.enlarged})}>
-        { config.section && <SectionName inlineStyle={inlineStyle} name={story.sections[0]['display-name']}/>}
+        { config.section && <SectionName inlineStyle={inlineStyle} name={story.sections[0]['display-name'] || story.sections[0]['name']}/>}
         <h2 className={classNames('media-title', {'media__title--enlarged': config.enlarged})}
           dangerouslySetInnerHTML={ {__html: story.headline }} />
         <Author author={author}/>

@@ -14,7 +14,7 @@ export function loadStoryPageData(client, params, config){
       const menuObject = _.find(config.layout.menu, function(menuItem) { return menuItem['section-slug'] === story.sections[0].slug; });
       story['section-color'] = menuObject ? menuObject.data.color : '#6093f2';
       const parentSectionId = story.sections[0]['parent-id'];
-      const parentSection = _.find(config.sections, function(section) { return section.id === parentSectionId; });
+      const parentSection = _.find(config.sections, function(section) { return story && story.sections[0] && section.id === parentSectionId; });
       if(parentSection) {
         story['parent-section'] = parentSection;
       }

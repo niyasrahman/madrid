@@ -1,5 +1,5 @@
 import React from "react";
-import { StoryPage } from "./story.js";
+import { StoryPageContent } from "./story.js";
 
 class StoryPagePreview extends React.Component {
   constructor(props) {
@@ -14,14 +14,17 @@ class StoryPagePreview extends React.Component {
   collectStoryData() {
     global.addEventListener("message", (event) => {
       if (event.data.story) {
-        this.setState({story: event.data.story});
+        this.setState({
+          story: event.data.story,
+          relatedStories: Array(4).fill(event.data.story)
+        });
       }
     });
   }
 
   render() {
     if (!this.state.story) return <div></div>;
-    return <StoryPage data={this.state}/>
+    return <StoryPageContent index={0} {...this.state}/>
   }
 }
 

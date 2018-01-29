@@ -30,9 +30,8 @@
     <%# Loading Typekit font%>
       <script>
         WebFontConfig = {
-          typekit: { id: 'fit4gpd' },
           google: {
-            families: ['Lora:400,400i,700,700i']
+            families: ['Lora:400,400i,700,700i','Lato:400,400i,700,700i']
           },
           timeout: 2000 // Set the timeout to two seconds
         };
@@ -51,9 +50,7 @@
 
   <body>
     <div id="navbar"><%- navbar %></div>
-    <%_ if(!contentTemplate) { _%>
-      <div id='breaking-news-container' class="breaking-news-wrapper"></div>
-    <%_ } _%>
+    <div id='breaking-news-container' class="breaking-news-wrapper"></div>
     <div id="container">
       <!-- contentTemplate is for static pages, content for other contents -->
       <%_ if(contentTemplate) { _%><%- include(contentTemplate) -%><%_ }else { _%><%- content %><%_ } _%>
