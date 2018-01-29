@@ -17,12 +17,12 @@ class LiveBlogTemplate extends React.Component {
     return <article className="live-blog-story blank-story">
       <figure className="live-blog-story-hero-image blank-story-hero-image qt-image-16x9">
         { breakpoint('tablet') ?
-            <ResponsiveImage slug={props.story["hero-image-s3-key"]} metadata={props.story["hero-image-metadata"]}
+            <ResponsiveImage slug={this.props.story["hero-image-s3-key"]} metadata={this.props.story["hero-image-metadata"]}
             aspectRatio={[9,3]}
             defaultWidth={480} widths={[250,480,640,960,1200]} sizes="(max-width: 500px) 98%"
             imgParams={{auto:['format', 'compress'], fit:'max'}} />
             :
-            <ResponsiveImage slug={props.story["hero-image-s3-key"]} metadata={props.story["hero-image-metadata"]}
+            <ResponsiveImage slug={this.props.story["hero-image-s3-key"]} metadata={this.props.story["hero-image-metadata"]}
             aspectRatio={[16,9]}
             defaultWidth={480} widths={[250,480,640]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 98%"
             imgParams={{auto:['format', 'compress'], fit:'max'}} />
