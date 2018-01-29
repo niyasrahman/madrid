@@ -18,7 +18,7 @@ function FooterBase(props) {
         </ul>
         <div className="copy--right">
           <div>copyright 2018</div>
-          <strong>Powered by quintype</strong>
+          <a href="https://www.quintype.com/"><strong>Powered by quintype</strong></a>
         </div>
       </div>
     </div>
