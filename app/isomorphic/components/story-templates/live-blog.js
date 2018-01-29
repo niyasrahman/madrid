@@ -34,6 +34,10 @@ class LiveBlogTemplate extends React.Component {
               <TimeAgo date={card['card-added-at']}  className="card-added-at" formatter={this.formatter}/>
               <StoryPageCard key={index} card={card} story={this.props.story}/>
               <p className="card-updated-at">Last updated <TimeAgo date={card['card-updated-at']}/></p>
+              <MetypeWidget
+                host={"http://metype.staging.quintype.com/"}
+                accountID={2}
+                pageURL={'http://metype.staging.quintype.com/'} />
             </div>)}
           </div>
         </div>
@@ -48,10 +52,6 @@ class LiveBlogStory extends React.Component {
       <LiveBlogTemplate {...this.props}></LiveBlogTemplate>
       <MetypeScripts />
       <MetypeFeedWidget />
-      <MetypeWidget
-        host={"http://metype.staging.quintype.com/"}
-        accountID={2}
-        pageURL={'http://metype.staging.quintype.com/'} />
     </div>
   }
 }

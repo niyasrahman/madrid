@@ -22,7 +22,7 @@ class MetypeWidget extends React.Component {
                 ref={(el) => this.metypeWidget = el }
                 className={`iframe-container ${className || ''}`}
                 data-metype-account-id={accountId || 2}
-                data-metype-host={host || 'http://localhost:3000'}
+                data-metype-host={host || 'http://localhost:3000'} //Change fallback to deployed domain name
                 data-metype-primary-color={primaryColor || '#4d086a'}
                 data-metype-bg-color={secondaryColor || '#fff'}
                 data-metype-font-color={fontColor || '#000'}

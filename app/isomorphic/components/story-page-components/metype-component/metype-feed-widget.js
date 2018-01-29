@@ -5,7 +5,6 @@ class MetypeFeedWidget extends React.Component {
   constructor(props) {
     super(props);
     this.global = false;
-    console.log(``);
   }
 
   componentDidMount() {
@@ -30,7 +29,7 @@ class MetypeFeedWidget extends React.Component {
                 ref={(el) => this.metypeFeedWidget = el }
                 className='feed-iframe-container'
                 data-metype-account-id={accountId || 2}
-                data-metype-host={host || 'http://metype.staging.quintype.com'}
+                data-metype-host={host || 'http://metype.staging.quintype.com'} //Change fallback to deployed domain name
                 data-metype-publisher={publisher}
                 data-metype-primary-color={primaryColor || '#4d086a'}
                 data-metype-bg-color={secondaryColor || '#fff'}
