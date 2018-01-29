@@ -9,6 +9,7 @@ import { DateTime } from 'luxon';
 import {MetypeScripts} from "../story-page-components/metype-component/metype-script-loader";
 import {MetypeWidget} from "../story-page-components/metype-component/metype-widget";
 import {MetypeFeedWidget} from "../story-page-components/metype-component/metype-feed-widget";
+import { breakpoint } from "../../../utils/breakpoint";
 
 class LiveBlogTemplate extends React.Component {
   formatter(value, unit, suffix, date, defaultFormatter) {
@@ -18,10 +19,17 @@ class LiveBlogTemplate extends React.Component {
   render(){
     return <article className="live-blog-story blank-story">
       <figure className="live-blog-story-hero-image blank-story-hero-image qt-image-16x9">
-        <ResponsiveImage slug={this.props.story["hero-image-s3-key"]} metadata={this.props.story["hero-image-metadata"]}
-          aspectRatio={[9,3]}
-          defaultWidth={480} widths={[250,480,640,960,1200]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 98%"
-          imgParams={{auto:['format', 'compress'], fit:'max'}}/>
+        { breakpoint('tablet') ?
+            <ResponsiveImage slug={this.props.story["hero-image-s3-key"]} metadata={this.props.story["hero-image-metadata"]}
+            aspectRatio={[9,3]}
+            defaultWidth={480} widths={[250,480,640,960,1200]} sizes="(max-width: 500px) 98%"
+            imgParams={{auto:['format', 'compress'], fit:'max'}} />
+            :
+            <ResponsiveImage slug={this.props.story["hero-image-s3-key"]} metadata={this.props.story["hero-image-metadata"]}
+            aspectRatio={[16,9]}
+            defaultWidth={480} widths={[250,480,640]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 98%"
+            imgParams={{auto:['format', 'compress'], fit:'max'}} />
+        }
       </figure>
       <div className="live-blog-story__extra-wrapper">
         <div className="live-blog-story--wrapper blank-story--wrapper">
@@ -50,8 +58,10 @@ class LiveBlogStory extends React.Component {
   render() {
     return <div className="story-grid">
       <LiveBlogTemplate {...this.props}></LiveBlogTemplate>
-      <MetypeScripts />
-      <MetypeFeedWidget />
+      <MetypeWidget
+        host={"http://metype.staging.quintype.com/"}
+        accountID={2}
+        pageURL={'http://metype.staging.quintype.com/'} />
     </div>
   }
 }

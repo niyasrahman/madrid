@@ -8,7 +8,7 @@
   "license": "MIT",
   "dependencies": {
     "@quintype/components": "^1.6.2",
-    "@quintype/framework": "^2.25.1",
+    "@quintype/framework": "^2.27.0",
     "@quintype/seo": "^1.4.2",
     "asset-require-hook": "^1.1.0",
     "breakpoint-sass": "^2.7.1",

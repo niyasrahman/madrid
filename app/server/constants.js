@@ -6,6 +6,8 @@ export const PAGE_TYPE = Object.freeze({
   STORY_PAGE : "story-page",
   STORY_PUBLIC_PREVIEW_PAGE : "story-public-preview-page",
   STATIC_PAGE: 'static-page',
+  STORY_PREVIEW: 'story-preview-page',
+  HOME_PREVIEW: 'home-preview-page'
 });
 
 export const WHITELIST_CONFIG_KEYS = ['cdn-image', 'sketches-host', 'polltype-host'];
