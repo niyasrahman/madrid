@@ -24,7 +24,7 @@ function OneStoryCardSixStoryList(props) {
   const inlineStyle = {
     borderBottom: '4px solid ' + props.config['collection-color']
   }
-  
+
   if(props.stories.length < 1) {
     return <div></div>
   }
@@ -36,12 +36,12 @@ function OneStoryCardSixStoryList(props) {
       </div>
       <div className="col-4">
         <StoryList
-          stories={[props.stories[1], props.stories[2], props.stories[3]]}>
+          stories={[props.stories[1], props.stories[2], props.stories[3],props.stories[4], props.stories[5]]}>
         </StoryList>
       </div>
       <div className="col-4">
         <StoryList
-          stories={[props.stories[4], props.stories[5], props.stories[6]]}>
+          stories={[props.stories[6], props.stories[7], props.stories[8], props.stories[9], props.stories[10]]}>
         </StoryList>
       </div>
     </div>

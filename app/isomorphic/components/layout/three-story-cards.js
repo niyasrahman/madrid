@@ -15,14 +15,14 @@ export function ThreeStoryCards(props) {
   }
 
   return (
-    <div className="three-story-cards component-wrapper">
-      <div className="col-4">
+    <div className="three-col__items component-wrapper">
+      <div className="three-col__item">
         <StoryCard story={props.stories[0]} config={majorStoryCardConfig}/>
       </div>
-      <div className="col-4">
+      <div className="three-col__item">
         <StoryCard story={props.stories[1]} config={majorStoryCardConfig}/>
       </div>
-      <div className="col-4">
+      <div className="three-col__item">
         <StoryCard story={props.stories[2]} config={majorStoryCardConfig}/>
       </div>
     </div>

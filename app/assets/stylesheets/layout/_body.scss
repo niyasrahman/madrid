@@ -116,12 +116,15 @@ img{
         list-style-type: none;
         margin-bottom: 30px;
         text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
         @include breakpoint($pc){
           float: right;
         }
         li{
           display: inline-block;
-          padding-left: 10px;
           a{
             display: block;
             font-size: rem(16);
@@ -129,7 +132,7 @@ img{
           a::after {
             content: "|";
             float: right;
-            padding-left: 4px;
+            padding: 0 5px;
             @include breakpoint($pc) {
               content: "";
             }

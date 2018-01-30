@@ -21,7 +21,7 @@ function ThreeCol(props) {
     <div className="three-col component-wrapper">
       <SectionName inlineStyle={inlineStyle} name={props.config['collection-name']} type="large"/>
       <div className="three-col__items">
-        <div className="three-col__item">
+        <div className="three-col__item full-image">
           <StoryCard story={props.stories[0]} type="imageBackground" config={secondColFirstCardConfig}/>
         </div>
         <div className="three-col__item">
