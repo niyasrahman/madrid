@@ -27,6 +27,13 @@ class LiveBlogTemplate extends React.Component {
     }
   }
 
+  loadWidget(){
+    return (<MetypeWidget
+      host={MetypeConfig.host}
+      accountId={MetypeConfig.accountId}
+      pageURL={this.generateHostUrl(this.props.story)} />);
+  }
+
   render(){
     return <article className="live-blog-story blank-story">
       <figure className="live-blog-story-hero-image blank-story-hero-image qt-image-16x9">
@@ -53,10 +60,7 @@ class LiveBlogTemplate extends React.Component {
               <TimeAgo date={card['card-added-at']}  className="card-added-at" formatter={this.formatter}/>
               <StoryPageCard key={index} card={card} story={this.props.story}/>
               <p className="card-updated-at">Last updated <TimeAgo date={card['card-updated-at']}/></p>
-              <MetypeWidget
-                host={MetypeConfig.host}
-                accountId={MetypeConfig.accountId}
-                pageURL={this.generateHostUrl(this.props.story)} />
+                {((this.props.story.cards.length - 1) === index) && this.loadWidget()}
             </div>)}
           </div>
         </div>

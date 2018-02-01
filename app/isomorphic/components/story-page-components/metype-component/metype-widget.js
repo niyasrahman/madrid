@@ -1,5 +1,5 @@
 import React from "react";
-import {MetypeScripts} from "./metype-script-loader";
+import {scriptLoader} from "./metype-script-loader";
 
 class MetypeWidget extends React.Component {
 
@@ -9,7 +9,8 @@ class MetypeWidget extends React.Component {
   }
 
   componentDidMount() {
-    this.initWidget();
+    !window.talktype && scriptLoader(this.props.host, () => this.initWidget(this.randomNumber));
+    this.initWidget(this.randomNumber);
   }
 
   metypeToggleButton(){
@@ -20,9 +21,10 @@ class MetypeWidget extends React.Component {
     (!global && window.talktype) && window.talktype.slideButton();
   }
 
-  initWidget(){
-    if (window.talktype && this.metypeWidget) {
-      window.talktype.commentWidgetIframe(this.metypeWidget);
+  initWidget(randomNumber){
+    if (window.talktype) {
+      console.log(`exex`);
+      window.talktype.commentWidgetIframe(document.getElementById(`metype-container-${randomNumber}`));
     }
   }
 
@@ -42,7 +44,6 @@ class MetypeWidget extends React.Component {
            data-metype-window-height={!global ? window.screen.height : 700}
            data-metype-page-url={pageURL}>
       </div>
-      <MetypeScripts metypeContainer={`metype-container-${this.randomNumber}`} host={host} onLoadCallback={this.initWidget}/>
     </div>
   }
 }

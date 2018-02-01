@@ -1,5 +1,5 @@
 import React from "react";
-import {MetypeScripts} from "./metype-script-loader";
+import {MetypeScripts, scriptLoader} from "./metype-script-loader";
 
 class MetypeFeedWidget extends React.Component {
 
@@ -7,8 +7,11 @@ class MetypeFeedWidget extends React.Component {
     super(props);
   }
 
+  componentDidMount(){
+    !window.talktype && scriptLoader(this.props.host,  () => this.initFeed(this.randomNumber));
+  }
 
-  initFeed(){
+  initFeed(randomNumber){
     if (window.talktype) {
       window.talktype.feedWidgetIframe(document.getElementById('feed-metype-container'));
     }
@@ -25,8 +28,7 @@ class MetypeFeedWidget extends React.Component {
   render() {
     const {primaryColor, publisher, host, accountId, className, secondaryColor, fontColor} = this.props;
 
-    return <div>
-      <div id={`feed-metype-container`}
+    return <div id={`feed-metype-container`}
            ref={(el) => this.metypeFeedWidget = el }
            className='feed-iframe-container'
            data-metype-account-id={accountId}
@@ -38,8 +40,6 @@ class MetypeFeedWidget extends React.Component {
         <div id='metype-clickthru' className='metype-clickthru' onClick={() => this.metypeToggleButton()}></div>
         <div className="metype-feed-slide-icon" id="metype-feed-slide-icon" onClick={() => this.metypeToggleButton()}></div>
       </div>
-      <MetypeScripts metypeContainer={`feed-metype-container`} host={host} onLoadCallback={this.initFeed} />
-    </div>
   }
 }
 

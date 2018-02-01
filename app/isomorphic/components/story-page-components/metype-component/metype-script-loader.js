@@ -1,26 +1,10 @@
-import React from "react";
+const scriptLoader = (host, callback) =>  {
+  const metypeScript = document.createElement('script');
+  metypeScript.setAttribute("src", `${host}/quintype-metype/assets/application.js`);
+  metypeScript.setAttribute("data-metype-script", "1" );
+  metypeScript.async = 1;
+  metypeScript.onload = () => callback();
+  document.body.appendChild(metypeScript);
+};
 
-class MetypeScripts extends React.Component {
-  constructor(props){
-    super(props);
-  }
-
-  componentDidMount(){
-    !window.talktype && this.loadScript();
-  }
-
-  loadScript() {
-    if(document.querySelector('script[data-metype-script="1"]')) return false;
-    const metypeScript = document.createElement('script');
-    metypeScript.setAttribute("src", `${this.props.host}/quintype-metype/assets/application.js`);
-    metypeScript.setAttribute("data-metype-script", "1" );
-    metypeScript.async = 1;
-    metypeScript.onload = () => this.props.onLoadCallback();
-    document.body.appendChild(metypeScript);
-  }
-  render(){
-    return null
-  }
-}
-
-export {MetypeScripts};
+export {scriptLoader};
