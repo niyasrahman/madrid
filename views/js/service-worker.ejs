@@ -1,7 +1,7 @@
 <%- serviceWorkerHelper %>;
 
 const REQUIRED_ASSETS = [
-  {url: '/shell.html', revision: '1'},
+  {url: '/shell.html', revision: '<%= assetHash("app.js") %>'},
   <%_ const cssPath = assetPath("app.css") _%>
   <%_ if(cssPath) { _%>
   "<%= cssPath %>",
@@ -9,8 +9,10 @@ const REQUIRED_ASSETS = [
   "<%= assetPath("app.js") %>"
 ];
 
-initializeQServiceWorker(self, {
+const workbox = initializeQServiceWorker(self, {
   routes: <%- JSON.stringify(routes) %>,
   assets: REQUIRED_ASSETS,
   hostname: <%- JSON.stringify(hostname) %>
 });
+
+workbox.router.registerRoute('/route-data.json', workbox.strategies.networkFirst());

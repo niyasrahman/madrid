@@ -24,6 +24,7 @@ function loadData(pageType, params, config, client) {
       case PAGE_TYPE.STORY_PAGE: return loadStoryPageData(client, params, config);
       case PAGE_TYPE.STORY_PUBLIC_PREVIEW_PAGE: return loadStoryPublicPreviewPageData(client, params, config);
       case PAGE_TYPE.STATIC_PAGE: return loadStaticPageData(config);
+      case PAGE_TYPE.HOME_PREVIEW: return loadHomePageData(client, config);
       default: return Promise.resolve({stories: [{headline: "Foobar"}]})
     }
   }
