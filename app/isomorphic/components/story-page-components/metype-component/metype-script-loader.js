@@ -10,16 +10,17 @@ class MetypeScripts extends React.Component {
   }
 
   loadScript() {
+    if(document.querySelector('script[data-metype-script="1"]')) return false;
     const metypeScript = document.createElement('script');
-    metypeScript.setAttribute("src", 'http://metype.staging.quintype.com/quintype-metype/assets/application.js');
+    metypeScript.setAttribute("src", 'https://d1y1r594kapmgi.cloudfront.net/quintype-metype/assets/application.js');
+    metypeScript.setAttribute("data-metype-script", "1" );
     metypeScript.async = 1;
     metypeScript.onload = () => {
-      const metypeContainer = document.getElementById('feed-metype-container');
-      metypeContainer.setAttribute('data-metype-page-url', this.props.pageUrl || window.location.href);
-      metypeContainer.setAttribute('data-metype-window-height', window.innerHeight);
-      metypeContainer.setAttribute('data-metype-screen-width', window.screen.width);
-      window.talktype.feedWidgetIframe(metypeContainer);
-      window.talktype.commentWidgetIframe(metypeContainer);
+      const feedMetypeContainer = document.getElementById(this.props.metypeContainer);
+      feedMetypeContainer.setAttribute('data-metype-page-url', this.props.pageUrl || window.location.href);
+      feedMetypeContainer.setAttribute('data-metype-window-height', window.innerHeight);
+      feedMetypeContainer.setAttribute('data-metype-screen-width', window.screen.width);
+      window.talktype.feedWidgetIframe(feedMetypeContainer);
     };
     document.body.appendChild(metypeScript);
   }

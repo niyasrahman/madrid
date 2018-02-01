@@ -1,7 +1,6 @@
 import React from "react";
 import classNames from 'classnames';
 import { Link } from "@quintype/components";
-import {MetypeScripts} from "../story-page-components/metype-component/metype-script-loader";
 import {MetypeFeedWidget} from "../story-page-components/metype-component/metype-feed-widget";
 import { AppLogo } from './app-logo.js'
 import { MenuItem } from './helper-components.js'
@@ -33,8 +32,7 @@ function NavBar(props) {
           <Search />
         </div>
       </div>
-    <MetypeScripts />
-    <MetypeFeedWidget />
+      <MetypeFeedWidget />
     </div>
 }
 

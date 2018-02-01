@@ -8,8 +8,10 @@ import { StoryPageCard } from "../story-page-components/story-page-card.js";
 import { DfpAd } from "../dfp-ads";
 import { MetypeWidget } from "../story-page-components/metype-component/metype-widget";
 import { breakpoint } from "../../../utils/breakpoint";
+import {MetypeConfig} from "../../../../config/metype-config";
 
 function BlankStoryTemplate(props) {
+
   return <article className="blank-story">
       <figure className="blank-story-hero-image qt-image-16x9">
         { breakpoint('tablet') ?
@@ -37,14 +39,23 @@ function BlankStoryTemplate(props) {
             <RelatedStories stories = {props.relatedStories}></RelatedStories>
           </div>
           <MetypeWidget
-            host={"http://metype.staging.quintype.com/"}
-            accountID={2}
-            pageURL={'http://metype.staging.quintype.com/'} />
+            host={MetypeConfig.host}
+            accountId={MetypeConfig.accountId}
+            pageURL={generateHostUrl(props.story)}
+          />
         </div>
       </div>
     </article>
 }
 
+
+
+function generateHostUrl(story = {}){
+  if(global.location){
+    console.log('blank', `${global.location.origin}/${story.slug}`);
+    return `${global.location.origin}/${story.slug}`;
+  }
+}
 
 
 function BlankStory(props) {
