@@ -9,9 +9,7 @@ class MetypeWidget extends React.Component {
   }
 
   componentDidMount() {
-    if (window.talktype && this.metypeWidget) {
-      window.talktype.commentWidgetIframe(this.metypeWidget);
-    }
+    this.initWidget();
   }
 
   metypeToggleButton(){
@@ -20,6 +18,12 @@ class MetypeWidget extends React.Component {
 
   metypeSlideToggleButton(){
     (!global && window.talktype) && window.talktype.slideButton();
+  }
+
+  initWidget(){
+    if (window.talktype && this.metypeWidget) {
+      window.talktype.commentWidgetIframe(this.metypeWidget);
+    }
   }
 
   render() {
@@ -38,7 +42,7 @@ class MetypeWidget extends React.Component {
            data-metype-window-height={!global ? window.screen.height : 700}
            data-metype-page-url={pageURL}>
       </div>
-      <MetypeScripts metypeContainer={`metype-container-${this.randomNumber}`} />
+      <MetypeScripts metypeContainer={`metype-container-${this.randomNumber}`} host={host} onLoadCallback={this.initWidget}/>
     </div>
   }
 }

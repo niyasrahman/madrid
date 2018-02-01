@@ -10,8 +10,11 @@ class MetypeFeedWidget extends React.Component {
 
   componentDidMount() {
     this.global = window;
-    if (window.talktype && this.metypeFeedWidget) {
-      window.talktype.feedWidgetIframe(this.metypeFeedWidget);
+  }
+
+  initFeed(){
+    if (window.talktype) {
+      window.talktype.feedWidgetIframe(document.getElementById('feed-metype-container'));
     }
   }
 
@@ -39,7 +42,7 @@ class MetypeFeedWidget extends React.Component {
         <div id='metype-clickthru' className='metype-clickthru' onClick={() => this.metypeToggleButton()}></div>
         <div className="metype-feed-slide-icon" id="metype-feed-slide-icon" onClick={() => this.metypeToggleButton()}></div>
       </div>
-      <MetypeScripts metypeContainer={`feed-metype-container`} />
+      <MetypeScripts metypeContainer={`feed-metype-container`} host={host} onLoadCallback={this.initFeed} />
     </div>
   }
 }
