@@ -30,8 +30,8 @@ class MetypeFeedWidget extends React.Component {
       <div id={`feed-metype-container`}
            ref={(el) => this.metypeFeedWidget = el }
            className='feed-iframe-container'
-           data-metype-account-id={accountId || 2}
-           data-metype-host={host || 'http://metype.staging.quintype.com'} //Change fallback to deployed domain name
+           data-metype-account-id={accountId}
+           data-metype-host={host}
            data-metype-publisher={publisher}
            data-metype-primary-color={primaryColor || '#4d086a'}
            data-metype-bg-color={secondaryColor || '#fff'}

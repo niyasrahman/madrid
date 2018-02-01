@@ -52,7 +52,6 @@ function BlankStoryTemplate(props) {
 
 function generateHostUrl(story = {}){
   if(global.location){
-    console.log('blank', `${global.location.origin}/${story.slug}`);
     return `${global.location.origin}/${story.slug}`;
   }
 }
