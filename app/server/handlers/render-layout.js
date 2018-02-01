@@ -1,5 +1,5 @@
 import _ from "lodash";
-import {assetPath} from "@quintype/framework/server/asset-helper";
+import {assetPath, readAsset} from "@quintype/framework/server/asset-helper";
 import {renderReduxComponent} from "@quintype/framework/server/render";
 
 import { NavigationComponent } from "../../isomorphic/components/navigation-component.js"
