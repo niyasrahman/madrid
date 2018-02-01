@@ -1,6 +1,6 @@
 const MetypeConfig = {
   accountId : 2,
-  host: 'https://www.metype.com',
+  host: 'http://metype.staging.quintype.com',
   primaryColor:'#4d086a',
   bgColor:'#fff',
   fontColor: '#0000',

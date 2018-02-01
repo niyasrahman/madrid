@@ -5,12 +5,8 @@ class MetypeFeedWidget extends React.Component {
 
   constructor(props) {
     super(props);
-    this.global = false;
   }
 
-  componentDidMount() {
-    this.global = window;
-  }
 
   initFeed(){
     if (window.talktype) {
@@ -19,11 +15,11 @@ class MetypeFeedWidget extends React.Component {
   }
 
   metypeToggleButton(){
-    (this.global && this.global.talktype) && window.talktype.toggleButton();
+    (global && global.talktype) && window.talktype.toggleButton();
   }
 
   metypeSlideToggleButton(){
-    (this.global && this.global.talktype) && window.talktype.slideButton();
+    (global && global.talktype) && window.talktype.slideButton();
   }
 
   render() {
