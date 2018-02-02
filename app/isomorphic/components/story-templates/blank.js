@@ -6,6 +6,8 @@ import { StoryTags } from "../story-page-components/story-tags.js";
 import { RelatedStories } from "../story-page-components/related-stories.js";
 import { StoryPageCard } from "../story-page-components/story-page-card.js";
 import { DfpAd } from "../dfp-ads";
+import { MetypeConfig } from "../../../../config/metype-config";
+import { MetypeWidget } from "@metype/components";
 import { breakpoint } from "../../../utils/breakpoint";
 
 function BlankStoryTemplate(props) {
@@ -35,10 +37,25 @@ function BlankStoryTemplate(props) {
             </div>
             <RelatedStories stories = {props.relatedStories}></RelatedStories>
           </div>
+          <MetypeWidget
+            host={MetypeConfig.host}
+            accountId={MetypeConfig.accountId}
+            pageURL={generateHostUrl(props.story)}
+            primaryColor={'#4d086a'}
+          />
         </div>
       </div>
     </article>
 }
+
+
+
+function generateHostUrl(story = {}){
+  if(global.location){
+    return `${global.location.origin}/${story.slug}`;
+  }
+}
+
 
 function BlankStory(props) {
   return <div className="story-grid">

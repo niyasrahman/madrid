@@ -22,7 +22,7 @@ class HomePage extends React.Component {
       'other': TwoCol,
       'lifestyle': LShapeOneWidget,
       'recent-stories': FullscreenMediaList
-    }
+    };
 
     function getTemplate(designTemplate){
       return templates[designTemplate] ? templates[designTemplate] : ThreeCol;
