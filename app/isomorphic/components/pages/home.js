@@ -8,6 +8,7 @@ import { ThreeCol } from "../layout/three-col.js";
 import { TwoCol } from "../layout/two-col.js";
 import { LShapeOneWidget } from "../layout/l-shape-one-widget.js";
 import { FullscreenMediaList } from "../layout/fullscreen-media-list.js";
+import _ from 'lodash';
 
 class HomePage extends React.Component {
 
@@ -33,7 +34,8 @@ class HomePage extends React.Component {
           const config = {
             'collection-name': collection.name,
             'collection-slug': collection.slug,
-            'collection-color': collection.color
+            'collection-color': collection.color,
+            'collection-section': _.get(collection,['metadata', 'section'], [])
           }
           return React.createElement(
             getTemplate(collection.slug),

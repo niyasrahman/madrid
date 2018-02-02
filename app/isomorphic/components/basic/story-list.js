@@ -28,7 +28,7 @@ function StoryListItem({story, config}) {
     <Link href={"/" + story.slug }>
       {
         config && config.section &&
-        <SectionName inlineStyle={inlineStyle} name={story.sections[0]['display-name'] || story.sections[0]['name']}/>
+        <SectionName hideLink={true} inlineStyle={inlineStyle} name={story.sections[0]['display-name'] || story.sections[0]['name']}/>
       }
       <h2 className="story-list__heading" dangerouslySetInnerHTML={ {__html: story.headline }} />
       <Author author={author}/>

@@ -40,7 +40,7 @@ function LinearGallerySlider(props) {
   return (
     <div className="linear-gallery-slider component-wrapper-fluid">
       <div className="linear-gallery-slider__heading">
-        <SectionName inlineStyle={inlineStyle} name={props.config['collection-name']} type="large"/>
+        <SectionName inlineStyle={inlineStyle} name={props.config['collection-name']} type="large" section={props.config['collection-section']} />
       </div>
       {canUseDom &&
       <Slider {...settings} className="linear-gallery-slider__slides">

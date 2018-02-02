@@ -19,7 +19,7 @@ function TwoCol(props) {
 
   return (
     <div className="two-col component-wrapper">
-      <SectionName inlineStyle={inlineStyle} name={props.config['collection-name']} type="large"/>
+      <SectionName inlineStyle={inlineStyle} name={props.config['collection-name']} type="large" section={props.config['collection-section']}/>
       <div className="two-col__media-list">
         <MediaObjectsList stories= {props.stories.slice(0,3)} />
       </div>

@@ -16,7 +16,7 @@ function CardGroup(props) {
   return (
     <div className="card-group">
       <div className="component-wrapper">
-        <SectionName inlineStyle={inlineStyle} name={props.config['collection-name']} type="large"/>
+        <SectionName inlineStyle={inlineStyle} name={props.config['collection-name']} type="large" section={props.config['collection-section']}/>
         <div className="col-8">
           <StoryCard story={props.stories[0]} config={majorStoryCardConfig}/>
         </div>

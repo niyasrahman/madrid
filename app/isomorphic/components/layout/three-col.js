@@ -19,7 +19,7 @@ function ThreeCol(props) {
 
   return (
     <div className="three-col component-wrapper">
-      <SectionName inlineStyle={inlineStyle} name={props.config['collection-name']} type="large"/>
+      <SectionName inlineStyle={inlineStyle} name={props.config['collection-name']} type="large" section={props.config['collection-section']} />
       <div className="three-col__items">
         <div className="three-col__item full-image">
           <StoryCard story={props.stories[0]} type="imageBackground" config={secondColFirstCardConfig}/>
@@ -30,7 +30,7 @@ function ThreeCol(props) {
         </div>
         <div className="three-col__item">
           <StoryList
-            stories={[props.stories[1], props.stories[2], props.stories[3], props.stories[4]]}>
+            stories={[props.stories[3], props.stories[4], props.stories[5], props.stories[6],props.stories[7]]}>
           </StoryList>
         </div>
       </div>

@@ -56,7 +56,7 @@ function StoryCardSimple(props) {
         </figure> }
       <div className={classNames('story-card__content', { 'story-card__content--transparent': props.config && props.config.transparent }) }>
         { props.config && props.config.section &&
-          <SectionName inlineStyle={inlineStyle} name={props.story.sections[0]['display-name'] || props.story.sections[0]['name']}/>
+          <SectionName hideLink={true} inlineStyle={inlineStyle} name={props.story.sections[0]['display-name'] || props.story.sections[0]['name']}/>
         }
         <h2 className="story-card__heading" dangerouslySetInnerHTML={ {__html: props.story.headline }} />
         { props.config && props.config.subheadline && <p className="story-card__description" dangerouslySetInnerHTML={ {__html: props.story.subheadline }} /> }
