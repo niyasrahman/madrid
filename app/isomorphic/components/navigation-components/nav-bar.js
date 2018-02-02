@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from 'classnames';
 import { Link } from "@quintype/components";
-import { MetypeConfig } from "../../../../config/metype-config";
+import { MetypeConfig } from "../../metype-config";
 import { MetypeFeedWidget } from "@metype/components";
 import { AppLogo } from './app-logo.js'
 import { MenuItem } from './helper-components.js'

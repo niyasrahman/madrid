@@ -6,7 +6,7 @@ import { StoryTags } from "../story-page-components/story-tags.js";
 import { RelatedStories } from "../story-page-components/related-stories.js";
 import { StoryPageCard } from "../story-page-components/story-page-card.js";
 import { DfpAd } from "../dfp-ads";
-import { MetypeConfig } from "../../../../config/metype-config";
+import { MetypeConfig } from "../../metype-config";
 import { MetypeWidget } from "@metype/components";
 import { breakpoint } from "../../../utils/breakpoint";
 
