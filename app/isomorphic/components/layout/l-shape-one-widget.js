@@ -4,8 +4,9 @@ import assetify from '@quintype/framework/assetify';
 import { StoryCard } from "../basic/story-card.js"
 import { NewsletterSub } from "../basic/newsletter-sub.js"
 import { SectionName } from "../basic/section-name.js";
-
+import { Polltype } from "../polltype";
 import ArrowImg from '../../../assets/icons/readmore_arrow.svg';
+
 
 function LShapeOneWidget(props) {
   const primarStoryCardConfig = {
@@ -27,20 +28,19 @@ function LShapeOneWidget(props) {
 
   return (
     <div className="l-shape-grid component-wrapper">
-      <SectionName inlineStyle={inlineStyle} name={props.config['collection-name']} type="large"/>
-      <div className="col-8">
-        <StoryCard story={props.stories[0]} config={primarStoryCardConfig} type="imageBackground"/>
-      </div>
-      <div className="l-shape-grid__last">
-        <div data-polltype-embed-id='391'
-          data-polltype-embed-width="100%"
-          data-polltype-embed-height="480px">
-          <script async src="//www.polltype.com/embed.js"></script>
+      <SectionName inlineStyle={inlineStyle} name={props.config['collection-name']} type="large" section={props.config['collection-section']}/>
+      <div className="l-shape-grid__first-row">
+        <div className="feature-story">
+          <StoryCard story={props.stories[0]} config={primarStoryCardConfig} type="imageBackground"/>
+        </div>
+        <div className="polltype-element">
+          <Polltype id="391" width="300px" height="480px" />
         </div>
       </div>
-      <div className="l-shape-grid__row">
+
+      <div className="l-shape-grid__second-row">
         {props.stories.slice(1,4).map((story) => {
-          return <div className="col-4" key={story.id}>
+          return <div className="l-shape-grid__story" key={story.id}>
             <StoryCard config={storyListConfig}
               story={story}/>
           </div>
