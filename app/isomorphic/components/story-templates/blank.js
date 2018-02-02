@@ -42,6 +42,7 @@ function BlankStoryTemplate(props) {
             host={MetypeConfig.host}
             accountId={MetypeConfig.accountId}
             pageURL={generateHostUrl(props.story)}
+            primaryColor={'#4d086a'}
           />
         </div>
       </div>

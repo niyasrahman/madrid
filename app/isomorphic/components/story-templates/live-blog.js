@@ -31,7 +31,8 @@ class LiveBlogTemplate extends React.Component {
     return (<MetypeWidget
       host={MetypeConfig.host}
       accountId={MetypeConfig.accountId}
-      pageURL={this.generateHostUrl(this.props.story)} />);
+      pageURL={this.generateHostUrl(this.props.story)}
+      primaryColor={'#4d086a'} />);
   }
 
   render(){

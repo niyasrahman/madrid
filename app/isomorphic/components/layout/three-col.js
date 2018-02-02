@@ -24,7 +24,7 @@ function ThreeCol(props) {
         <div className="three-col__item full-image">
           <StoryCard story={props.stories[0]} type="imageBackground" config={secondColFirstCardConfig}/>
         </div>
-        <div className="three-col__item">
+        <div className="three-col__item two-stories">
           <StoryCard story={props.stories[1]} config={secondColFirstCardConfig}/>
           <StoryCard story={props.stories[2]}/>
         </div>

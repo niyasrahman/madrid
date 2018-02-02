@@ -2,10 +2,6 @@
 <html>
   <head>
     <title><%= title %></title>
-    <%_ const cssPath = assetPath("app.css") _%>
-    <%_ if(cssPath) { _%>
-      <link rel="stylesheet" type="text/css" href="<%= cssPath %>" />
-    <%_ } _%>
     <link href="/manifest.json" rel="manifest">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="yes" name="apple-mobile-web-app-capable">
@@ -27,25 +23,12 @@
     <meta name="msapplication-TileColor" content="#2f73e4">
     <meta name="msapplication-TileImage" content="/favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#2f73e4">
-    <%# Loading Typekit font%>
-      <script>
-        WebFontConfig = {
-          google: {
-            families: ['Lora:400,400i,700,700i','Lato:400,400i,700,700i']
-          },
-          timeout: 2000 // Set the timeout to two seconds
-        };
-
-        (function(d) {
-          var wf = d.createElement('script'), s = d.scripts[0];
-          wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
-          wf.async = true;
-          s.parentNode.insertBefore(wf, s);
-        })(document);
-      </script>
-
     <%- metaTags -%>
-    <script type="text/javascript">var qtReady = qtReady || [];</script>
+    <%# curl -vH "User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0" 'https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i|Lato:400,400i,700,700i' %>
+    <style>
+      @font-face{font-family:Lato;font-style:italic;font-weight:400;src:local('Lato Italic'),local('Lato-Italic'),url(https://fonts.gstatic.com/s/lato/v14/oUan5VrEkpzIazlUe5ieaA.woff) format('woff')}@font-face{font-family:Lato;font-style:italic;font-weight:700;src:local('Lato Bold Italic'),local('Lato-BoldItalic'),url(https://fonts.gstatic.com/s/lato/v14/HkF_qI1x_noxlxhrhMQYED8E0i7KZn-EPnyo3HZu7kw.woff) format('woff')}@font-face{font-family:Lato;font-style:normal;font-weight:400;src:local('Lato Regular'),local('Lato-Regular'),url(https://fonts.gstatic.com/s/lato/v14/9k-RPmcnxYEPm8CNFsH2gg.woff) format('woff')}@font-face{font-family:Lato;font-style:normal;font-weight:700;src:local('Lato Bold'),local('Lato-Bold'),url(https://fonts.gstatic.com/s/lato/v14/wkfQbvfT_02e2IWO3yYueQ.woff) format('woff')}@font-face{font-family:Lora;font-style:italic;font-weight:400;src:local('Lora Italic'),local('Lora-Italic'),url(https://fonts.gstatic.com/s/lora/v12/wXeMvRh7Gui36p_I04Ex6g.woff) format('woff')}@font-face{font-family:Lora;font-style:italic;font-weight:700;src:local('Lora Bold Italic'),local('Lora-BoldItalic'),url(https://fonts.gstatic.com/s/lora/v12/_IxjUs2lbQSu0MyFEAfa7T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff')}@font-face{font-family:Lora;font-style:normal;font-weight:400;src:local('Lora Regular'),local('Lora-Regular'),url(https://fonts.gstatic.com/s/lora/v12/5-AYViExptypIdFoLKAxTA.woff) format('woff')}@font-face{font-family:Lora;font-style:normal;font-weight:700;src:local('Lora Bold'),local('Lora-Bold'),url(https://fonts.gstatic.com/s/lora/v12/XpaepWHcooQHSRnzoohUng.woff) format('woff')}
+      <%- cssContent %>
+    </style>
   </head>
 
   <body>
