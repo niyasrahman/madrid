@@ -23,13 +23,12 @@ class MetypeWidget extends React.Component {
 
   initWidget(randomNumber){
     if (window.talktype) {
-      console.log(`exex`);
       window.talktype.commentWidgetIframe(document.getElementById(`metype-container-${randomNumber}`));
     }
   }
 
   render() {
-    const {primaryColor, publisher, host, accountId, className, secondaryColor, fontColor, pageURL} = this.props;
+    const {primaryColor, publisher, host, accountId, className, secondaryColor, fontColor, pageURL, windowHeight, windowWidth} = this.props;
 
     return <div>
       <div id={`metype-container-${this.randomNumber}`}
@@ -37,11 +36,11 @@ class MetypeWidget extends React.Component {
            className={`iframe-container ${className}`}
            data-metype-account-id={accountId}
            data-metype-host={host} //Change fallback to deployed domain name
-           data-metype-primary-color={primaryColor || '#4d086a'}
-           data-metype-bg-color={secondaryColor || '#fff'}
-           data-metype-font-color={fontColor || '#000'}
-           data-metype-window-width={!global ? window.screen.width : 700}
-           data-metype-window-height={!global ? window.screen.height : 700}
+           data-metype-primary-color={primaryColor || '#3a9fdd'}
+           data-metype-bg-color={secondaryColor || 'transparent'}
+           data-metype-font-color={fontColor || '#4a4a4a'}
+           data-metype-window-width={windowWidth || (!global ? window.screen.width : 700)}
+           data-metype-window-height={windowHeight || (!global ? window.screen.height : 700)}
            data-metype-page-url={pageURL}>
       </div>
     </div>
