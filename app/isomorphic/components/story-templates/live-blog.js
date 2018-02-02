@@ -11,10 +11,7 @@ import { breakpoint } from "../../../utils/breakpoint";
 import { MetypeConfig } from "../../../../config/metype-config";
 
 class LiveBlogTemplate extends React.Component {
-  constructor(props){
-    super(props);
-  }
-
+  
   formatter(value, unit, suffix, date, defaultFormatter) {
     return DateTime.fromMillis(date).toFormat('dd LLL, hh:mm a');
   }

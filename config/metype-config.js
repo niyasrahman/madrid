@@ -8,4 +8,4 @@ const MetypeConfig = {
   windowHeight: 700
 };
 
-export { MetypeConfig };
+module.exports = { MetypeConfig };
