@@ -6,12 +6,11 @@ import { StoryTags } from "../story-page-components/story-tags.js";
 import { RelatedStories } from "../story-page-components/related-stories.js";
 import { StoryPageCard } from "../story-page-components/story-page-card.js";
 import { DfpAd } from "../dfp-ads";
-import { MetypeWidget } from "../story-page-components/metype-component/metype-widget";
+import { MetypeConfig } from "../../../../config/metype-config";
+import { MetypeWidget } from "@metype/components";
 import { breakpoint } from "../../../utils/breakpoint";
-import {MetypeConfig} from "../../../../config/metype-config";
 
 function BlankStoryTemplate(props) {
-
   return <article className="blank-story">
       <figure className="blank-story-hero-image qt-image-16x9">
         { breakpoint('tablet') ?

@@ -6,11 +6,9 @@ import { StoryPageCard } from "../story-page-components/story-page-card.js";
 import { LiveBlogKeyEvents } from "../story-page-components/live-blog-key-events.js";
 import TimeAgo from 'react-timeago';
 import { DateTime } from 'luxon';
-import {MetypeScripts} from "../story-page-components/metype-component/metype-script-loader";
-import {MetypeWidget} from "../story-page-components/metype-component/metype-widget";
-import {MetypeFeedWidget} from "../story-page-components/metype-component/metype-feed-widget";
+import { MetypeWidget } from "@metype/components";
 import { breakpoint } from "../../../utils/breakpoint";
-import {MetypeConfig} from "../../../../config/metype-config";
+import { MetypeConfig } from "../../../../config/metype-config";
 
 class LiveBlogTemplate extends React.Component {
   constructor(props){
