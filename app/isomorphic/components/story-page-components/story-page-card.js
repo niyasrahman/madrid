@@ -4,9 +4,12 @@ import { BlockquoteElement} from "../basic/blockquote-element.js";
 import { ImageGalleryElement } from "../basic/imagegallery-element";
 import { ImageSlideshowElement } from "../basic/image-slideshow-element";
 import { StoryElement } from "@quintype/components";
+import _ from "lodash";
 
 const StoryPageCard = props => {
-  return <div>
+  const cardAlignment = _.get(props.card.metadata.attributes, ['align'], '');
+
+  return <div className={`card card--align-${cardAlignment}`}>
     {props.card['story-elements'].map((element, index) => {
       switch (element.subtype) {
         case 'summary':
