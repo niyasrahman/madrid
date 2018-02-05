@@ -405,5 +405,16 @@
     &-element-image-slideshow {
       margin-bottom: 20px;
     }
+    &-element-text-question p, &-element-text-question p:last-child {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    &-element-text-answer p {
+      font-style: italic;
+      margin-bottom: 0;
+    }
+    &-element-text-answer p:last-child {
+      margin-bottom: 20px;
+    }
   }
 }
