@@ -52,7 +52,7 @@ isomorphicRoutes(app, {
     enableOgTags: true,
     enableNews: true,
     structuredData: STRUCTURED_DATA
-  })
+  }),
   preloadJs: true,
   preloadRouteData: true,
 });
