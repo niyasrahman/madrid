@@ -3,3 +3,13 @@ sketches_host: https://ace.staging.quintype.io
 host_to_automatic_api_host:
   - "-web"
   - ".malibu"
+publisher_theme:
+  ace:
+    logo: ""
+    primary_color: "#000"
+  quintype-demo:
+    logo: ""
+    primary_color: "#000"
+  network18:
+    logo: ""
+    primary_color: "#ccc"

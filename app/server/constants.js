@@ -10,4 +10,4 @@ export const PAGE_TYPE = Object.freeze({
   HOME_PREVIEW: 'home-preview-page'
 });
 
-export const WHITELIST_CONFIG_KEYS = ['cdn-image', 'sketches-host', 'polltype-host'];
+export const WHITELIST_CONFIG_KEYS = ['cdn-image', 'sketches-host', 'polltype-host', 'publisher-name'];

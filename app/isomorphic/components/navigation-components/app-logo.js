@@ -1,8 +1,15 @@
 import React from "react";
 import classNames from 'classnames';
 import { Link } from "@quintype/components";
+import { connect } from 'react-redux';
 
-function AppLogo(props) {
+function mapStateToProps(state) {
+  return {
+    publisherTheme: state.qt.config['publisher-theme'] || {},
+  };
+}
+
+function AppLogoBase(props) {
   return <div className="header__first">
     <div className="header__first__menu" onClick={props.openSidemenu}>
       <span className="menu-open"></span>
@@ -13,4 +20,5 @@ function AppLogo(props) {
   </div>
 }
 
-export { AppLogo }
+const AppLogo = connect(mapStateToProps, {})(AppLogoBase);
+export { AppLogo };
