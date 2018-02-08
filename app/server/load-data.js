@@ -36,7 +36,7 @@ function loadData(pageType, params, config, client) {
         httpStatusCode : 200,
         pageType: data.pageType || pageType,
         data: data,
-        config: Object.assign(_.pick(config.asJson(), WHITELIST_CONFIG_KEYS), { 'publisher-theme': publisher.publisher_theme[config['publisher-name']] })
+        config: Object.assign(_.pick(config.asJson(), WHITELIST_CONFIG_KEYS),{ 'publisher-theme': publisher.publisher_theme[config['publisher-name']]})
       };
     });
 }

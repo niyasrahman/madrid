@@ -25,16 +25,9 @@ body {
 
 .header{
   @include full;
-  padding: 17.5px 15px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
   float: none;
   position: relative;
-  @include breakpoint($tablet) {
-    padding: 17.5px 20px;
-  }
-  @include breakpoint($pc) {
-    padding: 17.5px 20px 0;
-  }
 }
 .loading{
   background: $white;
@@ -88,14 +81,17 @@ body {
 .header__container{
   @include container(1170px);
   padding: 0 15px;
+  display: flex;
 }
-.header__first{
-  width: 20%;
-  float: left;
+.app-logo{
   display: flex;
   align-items: center;
+  flex-basis: 250px;
+  @include breakpoint($tablet){
+    flex-basis: auto;
+  }
 }
-.header__first__menu{
+.app-logo__menu{
   float: left;
   height: 35px;
   width: 35px;
@@ -110,7 +106,7 @@ body {
     background-color: $black;
     display: block;
     position: relative;
-    top: 19px;
+    top: 17px;
   }
   span::before {
     content: ' ';
@@ -135,7 +131,7 @@ body {
   }
 }
 
-.header__first__logo{
+.app-logo__wrapper{
   a{
     display: block;
     font-family: var(--sansTypeface);
@@ -146,32 +142,34 @@ body {
       font-size: rem(32);
     }
   }
+  .app-logo__element {
+    max-width: 180px;
+    max-height: 55px;
+    object-fit: contain;
+  }
 }
 .header__middle{
-  width: 70%;
-  float: left;
   nav{
     font-family: var(--sansTypeface);
-    margin-top: 15px;
-    min-height: 50px;
     ul{
       list-style-type: none;
       margin: 0;
-      padding: 0;
+      padding: 0 30px;
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
-      justify-content: space-evenly;
       li{
         a, span{
           display: block;
           cursor: pointer;
           text-decoration: none;
           color: $darker-gray;
-          font-size: rem(16);
+          font-size: rem(14);
           letter-spacing: 2px;
           font-weight: $regular;
-          padding-bottom: 25px;
+          line-height: 90px;
           text-transform: uppercase;
+          margin-right: 15px;
           @include breakpoint(max-width 1038px){
             font-size: rem(16);
           }
@@ -195,12 +193,13 @@ body {
             box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.25);
             li{
               a{
-                font-size: rem(18);
+                font-size: rem(16);
                 color: $darker-gray;
                 letter-spacing: 1px;
                 border-bottom: solid 1px #ededed;
                 padding: 15px 0;
                 margin: 0;
+                line-height: 1.4;
               }
               &:first-child{
                 a{
@@ -216,7 +215,7 @@ body {
             ul{
               display: block;
               opacity: 1;
-              top: 51px;
+              top: 100%;
               background: $white;
               z-index: 3;
               li{
@@ -236,17 +235,14 @@ body {
   }
 }
 .header__last{
-  width: 10%;
-  float: right;
+  flex-basis: 100px;
   margin-top: 4px;
   display: flex;
   justify-content: flex-end;
+  flex-grow: 1;
   align-items: center;
   @include breakpoint(max-width 878px){
     width: 44%;
-  }
-  @include breakpoint($pc){
-    margin-top: 12px;
   }
   &__button {
     margin-right: 20px;

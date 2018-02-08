@@ -19,15 +19,12 @@ class Search extends React.Component {
     super(props);
     this.state = {
       isSearchFormOpen: false,
-      searchFormHeight: 0,
       initialized: false
     };
   }
 
   componentDidMount() {
-    const searchFormHeight = this.searchForm.clientHeight
     this.setState({
-      searchFormHeight: searchFormHeight,
       initialized: true
     })
   }
@@ -38,7 +35,7 @@ class Search extends React.Component {
 
   render() {
     let formStyle = {
-      height: this.state.isSearchFormOpen ? this.state.searchFormHeight : 0
+      height: this.state.isSearchFormOpen ? this.searchForm.clientHeight : 0
     }
     let initialStyle = {
       opacity: this.state.initialized ? 1 : 0

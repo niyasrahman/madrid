@@ -3,22 +3,17 @@ import classNames from 'classnames';
 import { Link } from "@quintype/components";
 import { connect } from 'react-redux';
 
-function mapStateToProps(state) {
-  return {
-    publisherTheme: state.qt.config['publisher-theme'] || {},
-  };
-}
-
-function AppLogoBase(props) {
-  return <div className="header__first">
-    <div className="header__first__menu" onClick={props.openSidemenu}>
+function AppLogo(props) {
+  const linkContent = props.publisherTheme.logo ?
+    <img className="app-logo__element" src={props.publisherTheme.logo} alt={props.title}/> : props.title;
+  return <div className="app-logo">
+    <div className="app-logo__menu" onClick={props.openSidemenu}>
       <span className="menu-open"></span>
     </div>
-    <div className="header__first__logo">
-      <Link href="/">{props.title}</Link>
+    <div className="app-logo__wrapper">
+      <Link href="/">{linkContent}</Link>
     </div>
   </div>
 }
 
-const AppLogo = connect(mapStateToProps, {})(AppLogoBase);
 export { AppLogo };

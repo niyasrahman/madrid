@@ -8,7 +8,7 @@ function FooterBase(props) {
   return <footer className="footer">
     <div className="footer__content">
       <div className="footer__content__first">
-        <img src={assetify(Logo)} alt="Logo"/>
+        <img className="app-logo__element" src={props.publisherTheme.monogram} alt={props.publisherName}/>
       </div>
       <div className="footer__content__last">
         <ul>
@@ -27,7 +27,9 @@ function FooterBase(props) {
 
 function mapStateToProps(state) {
   return {
-    links: STATIC_LINKS
+    links: STATIC_LINKS,
+    publisherTheme: state.qt.config['publisher-theme'] || {},
+    publisherName: state.qt.config['publisher-name'] || ''
   }
 }
 

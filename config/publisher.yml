@@ -5,11 +5,14 @@ host_to_automatic_api_host:
   - ".malibu"
 publisher_theme:
   ace:
-    logo: ""
+    monogram: https://fea.assettype.com/quintype/assets/logo-b6438210bc.svg
+    logo: https://svgshare.com/i/5Qv.svg
     primary_color: "#000"
   quintype-demo:
+    monogram: ""
     logo: ""
     primary_color: "#000"
   network18:
+    monogram: ""
     logo: ""
     primary_color: "#ccc"

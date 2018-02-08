@@ -23,13 +23,16 @@ class OffcanvasMenu extends React.Component {
     this.props.closeMenu();
   }
   render() {
+    const linkContent = this.props.publisherTheme.logo ?
+      <img className="app-logo__element" src={this.props.publisherTheme.logo} alt={this.props.title}/> : this.props.title;
     return <div>
       <div className={classNames('overlay', {'overlay--active': this.props.isOffcanvasOpen})} onClick={this.closeMenu}></div>
       <div className={classNames('sidebar', 'bg--white', {'open': this.props.isOffcanvasOpen})}>
         <nav className="sidebar__nav">
           <ul>
             <li className="sidebar__nav__logo" key={'nav-logo'}>
-              <Link href="/" className="logo logo--blue">{this.props.title}</Link>
+              <Link href="/" className="logo logo--blue">{linkContent}
+              </Link>
               <div className="close menu-close" onClick={this.closeMenu}>
                 <img src={assetify(CloseImg)} alt="Close Side Menu" />
               </div>
