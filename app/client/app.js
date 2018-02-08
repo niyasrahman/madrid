@@ -23,6 +23,7 @@ const CUSTOM_REDUCERS = {
 };
 
 require('whatwg-fetch');
+global.superagent = require("superagent-promise");
 startApp(renderApplication, CUSTOM_REDUCERS, {
   enableServiceWorker: process.env.NODE_ENV == 'production'
 }).then(enableHotReload);
