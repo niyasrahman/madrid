@@ -4,11 +4,11 @@ import { BlankStory } from "../story-templates/blank.js";
 import { LiveBlogStory } from "../story-templates/live-blog.js";
 import { InfiniteStoryBase } from "@quintype/components"
 
-export function StoryPageContent({story, index, relatedStories}) {
-  if(story['story-template'] == 'live-blog') {
-    return <LiveBlogStory story={story} />;
+export function StoryPageContent({story, relatedStories, index }, config) {
+  if(story['story-template'] === 'live-blog') {
+    return <LiveBlogStory story={story} config={config} />;
   } else {
-    return <BlankStory story={story} relatedStories={index == 0 ? relatedStories : []}/>
+    return <BlankStory story={story} config={config} relatedStories={index === 0 ? relatedStories : []}/>
   }
 }
 
@@ -29,7 +29,7 @@ export class StoryPage extends React.Component {
   }
   render() {
     return <InfiniteStoryBase {...this.props}
-              render={(storyProps) => StoryPageContent(storyProps, this.props.data.relatedStories)}
+              render={(storyProps) => StoryPageContent(storyProps, this.props.config)}
               loadItems={storyPageLoadItems}
               onItemFocus={(item) => console.log(`Story In View: ${item.story.headline}`)}
               onInitialItemFocus={(item) => console.log(`Do Analytics ${item.story.headline}`)} />

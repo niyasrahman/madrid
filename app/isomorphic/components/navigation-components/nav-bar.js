@@ -8,8 +8,17 @@ import { MenuItem } from './helper-components.js'
 import { Search } from "../basic/search.js";
 import { Button } from "../basic/button.js";
 import _ from "lodash";
+import { connect } from 'react-redux';
 
-function NavBar(props) {
+
+function mapStateToProps(state) {
+  return {
+    config: state.qt.config || {},
+  };
+}
+
+function NavBarBase(props) {
+  const metypeConfig = MetypeConfig(props.config['publisher-name']);
   return <div className="header bg--white">
       <div className="header__container">
         <AppLogo {...props} />
@@ -34,11 +43,13 @@ function NavBar(props) {
         </div>
       </div>
       <MetypeFeedWidget
-        host={MetypeConfig.host}
-        accountId={MetypeConfig.accountId}
-        publisher={'Demo'}
+        host={metypeConfig.host}
+        accountId={metypeConfig.accountId}
+        publisher={props.config['publisher-name']}
       />
     </div>
 }
+
+const NavBar = connect(mapStateToProps, {})(NavBarBase);
 
 export { NavBar }

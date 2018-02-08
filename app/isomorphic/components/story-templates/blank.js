@@ -6,11 +6,12 @@ import { StoryTags } from "../story-page-components/story-tags.js";
 import { RelatedStories } from "../story-page-components/related-stories.js";
 import { StoryPageCard } from "../story-page-components/story-page-card.js";
 import { DfpAd } from "../dfp-ads";
-import { MetypeConfig } from "../../metype-config";
+import { MetypeConfig } from '../../metype-config';
 import { MetypeWidget } from "@metype/components";
 import { breakpoint } from "../../../utils/breakpoint";
 
 function BlankStoryTemplate(props) {
+  const metypeConfig = MetypeConfig(props.config['publisher-name']);
   return <article className="blank-story">
       <figure className="blank-story-hero-image qt-image-16x9">
         { breakpoint('tablet') ?
@@ -38,10 +39,10 @@ function BlankStoryTemplate(props) {
             <RelatedStories stories = {props.relatedStories}></RelatedStories>
           </div>
           <MetypeWidget
-            host={MetypeConfig.host}
-            accountId={MetypeConfig.accountId}
+            host={metypeConfig.host}
+            accountId={metypeConfig.accountId}
             pageURL={generateHostUrl(props.story)}
-            primaryColor={'#4d086a'}
+            primaryColor={metypeConfig.primaryColor}
           />
         </div>
       </div>
