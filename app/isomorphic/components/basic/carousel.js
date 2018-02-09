@@ -73,7 +73,7 @@ function Slide(props) {
       <h2 className="carousel-slide__heading" dangerouslySetInnerHTML={ {__html: props.story.headline }} />
       <p className="carousel-slide__description" dangerouslySetInnerHTML={ {__html: props.story.subheadline }} />
       <Author author={{
-          "name": _.get(props.story['authors'][0], ['name'], props.story['author-name']),
+          "name":  _.get(props.story, ['authors', 0, 'name'], props.story['author-name']),
           "image": props.story['author-image'],
           "date": props.story['first-published-at']}} />
     </div>

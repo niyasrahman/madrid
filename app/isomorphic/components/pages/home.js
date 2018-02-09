@@ -14,14 +14,14 @@ class HomePage extends React.Component {
 
   render() {
     const templates = {
-      'featured-stories': FullscreenCarousel,
-      'main-stories': TwoColOneAd,
-      'must-read': FullscreenSimpleSlider,
-      'politics': ThreeCol,
-      'film': FullscreenLinearGallerySlider,
-      'other': TwoCol,
-      'lifestyle': LShapeOneWidget,
-      'recent-stories': FullscreenMediaList
+      'FullscreenCarousel': FullscreenCarousel,
+      'TwoColOneAd': TwoColOneAd,
+      'FullscreenSimpleSlider': FullscreenSimpleSlider,
+      'ThreeCol': ThreeCol,
+      'FullscreenLinearGallerySlider': FullscreenLinearGallerySlider,
+      'TwoCol': TwoCol,
+      'LShapeOneWidget': LShapeOneWidget,
+      'FullscreenMediaList': FullscreenMediaList
     };
 
     function getTemplate(designTemplate){
@@ -29,7 +29,7 @@ class HomePage extends React.Component {
     }
 
     return <div className="home-page">
-      {this.props.data.homeCollections.map((collection, index) => {
+      {this.props.data.orderedCollectionBulk.map((collection, index) => {
         if (collection) {
           const config = {
             'collection-name': collection.name,
@@ -38,7 +38,7 @@ class HomePage extends React.Component {
             'collection-section': _.get(collection,['metadata', 'section'], [])
           }
           return React.createElement(
-            getTemplate(collection.slug),
+            getTemplate(collection['associated-metadata']['layout']),
             {stories: collection.items, key: collection.id, config: config}
           );
         }

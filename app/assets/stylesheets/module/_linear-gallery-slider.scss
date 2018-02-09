@@ -47,6 +47,8 @@
     text-align: center;
     font-weight: 300;
     transition: all 0.3s;
+    @include aspect-ratio(4,3);
+
     @include breakpoint($tablet) {
       padding: 0 10px;
       font-size: rem(14);

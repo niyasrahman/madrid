@@ -3,24 +3,19 @@
 Madrid is the demo app using [Malibu](https://github.com/quintype/malibu) as a starting point.
 
 ## Initial Collection setup
-We need collections with the following slugs for publishers to work with Madrid theme:
-1. home
-2. featured-stories
-3. main-stories
-4. must-read
-5. politics
-6. film
-7. other
-8. lifestyle
-9. recent-stories
-
-The collection slug restriction is temporary. It'll be changed to accept any collection once the necessary change is made in Itsman.
-
-- The collections 2 through 9 has to be the children of `home` collection.
-- Only the stories in those collections will be considered in homepage, and any collection added will be ignored.
-- Even if collections with different slugs are added in the home collection, they should show up in a fallback layout. 
-- So as long as there is a collection called home with some collections in them which has stories, the homepage should load.
-
+- We need a home collection whose name can be anything, but the slug mandatorily has to be **home**.
+- This home collection will hold all the collections('child collections' in our nomenclature) that will appear on home page.
+- Only stories added to these child collections will be displayed in the home page. Any collections added within these child collections will be ignored.
+- The layout of each collection on homepage will be decided based on the associated metadata called **layout** set using the **manage** button against each collection. Right now, this option is a text field. This will be locked to a dropdown later. Until then, the text field can have only the following values:
+    - FullscreenCarousel
+    - TwoColOneAd
+    - FullscreenSimpleSlider
+    - ThreeCol
+    - FullscreenLinearGallerySlider
+    - TwoCol
+    - LShapeOneWidget
+    - FullscreenMediaList
+ - If the value of layout is anything other than the above mentioned values, it will fall back to **ThreeCol** layout.
 
 ## toddy-libs
 

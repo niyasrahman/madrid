@@ -19,14 +19,14 @@ function RelatedStoryCard(props){
       }
         <h2 dangerouslySetInnerHTML={ {__html: story.headline }} className={classname}/>
         <div className="author-title">
-          {_.get(story['authors'][0], ['name'], story['author-name'])}
+          {_.get(story, ['authors', 0, 'name'], story['author-name'])}
         </div>
     </a>
   </div>
 }
 
 function RelatedStories(props) {
-  return !props.stories.length ? null : <div className="related_stories">
+  return !props.stories || !props.stories.length ? null : <div className="related_stories">
       <h4 className="related_stories-heading"> Related Stories </h4>
       <RelatedStoryCard story={_.head(props.stories)} showImage={true}/>
       {_.drop(props.stories).map((story, index) => <RelatedStoryCard key={index} story={story} showImage={false} />)}

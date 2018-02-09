@@ -8,26 +8,32 @@ function concatAll(initial, arrays) {
 }
 
 export function loadHomePageData(client, config) {
-  let placeholderCollectionSlugs = [];
-  var homeCollection;
+  let placeholderCollectionSlugs, childCollectionsAssociatedMetadata, homeCollection;
+
   return Collection.getCollectionBySlug(client, 'home', {'item-type': 'collection'})
-    .then(rhomeCollection => {
-      homeCollection = rhomeCollection;
-      placeholderCollectionSlugs = childCollectionSlugsFromCollection(homeCollection);
+    .then(result => {
+      homeCollection = result;
+
+      const childCollectionProperties = getChildCollectionProperties(homeCollection);
+      placeholderCollectionSlugs = childCollectionProperties.childrenSlugs; //To create bulk request and to retain home order.
+      childCollectionsAssociatedMetadata = childCollectionProperties.associatedMetadata; //To selected home page layout for each child collection.
+
       return makeBulkRequest(client, placeholderCollectionSlugs);
     })
     .then(allCollections => {
       const structuredMenu = getNavigationMenuArray(config.layout.menu);
-      allCollections.processedResults = addParentSlugInStorySlugs(allCollections.results, config, config.layout.menu);
-      const structuredCollections = allCollections.placeholderCollectionSlugs.map((collectionSlug) => {
-      	return allCollections.processedResults[collectionSlug];
+      allCollections = setExtraProperties(allCollections, config.layout.menu, childCollectionsAssociatedMetadata);//Mutate all the collections and stories within to have associated colors.
+
+      const orderedCollectionBulk = placeholderCollectionSlugs.map((collectionSlug) => {
+      	return allCollections[collectionSlug];
       });
+
       return {
-        homeCollections: structuredCollections,
+        orderedCollectionBulk: orderedCollectionBulk,
         navigationMenu: structuredMenu,
         cacheKeys: concatAll(
           homeCollection.cacheKeys(config["publisher-id"]),
-          Object.values(allCollections["results"])
+          Object.values(orderedCollectionBulk)
                 .map(collection => Collection.build(collection).cacheKeys(config["publisher-id"])
                 .slice(0, 5))
         )
@@ -35,25 +41,32 @@ export function loadHomePageData(client, config) {
     });
 }
 
-function addParentSlugInStorySlugs(data, config, menu) {
+function setExtraProperties(data, menu, childCollectionsAssociatedMetadata) {
   _(data).forEach((collection)=>{
     const collectionMenuObject = _.find(menu, function(menuCollectionItem) { return menuCollectionItem['section-slug'] === collection.slug; });
-    // Setting the collection color which can be changed from platform settings. Fallback to one color if no
-    // menu color is set.
     collection.color = collectionMenuObject ? collectionMenuObject.data.color : '#6093f2';
+    collection['associated-metadata'] = childCollectionsAssociatedMetadata ? childCollectionsAssociatedMetadata[collection.slug] : [];
     collection.items.forEach(({story})=>{
       const menuObject = _.find(menu, function(menuItem) { return story && story.sections[0] && menuItem['section-slug'] === story.sections[0].slug; });
       story['section-color'] = menuObject ? menuObject.data.color : '#6093f2';
     })
-  })
+  });
+
   return data;
 }
 
-function childCollectionSlugsFromCollection(collection) {
-  return _(collection.items)
-    .filter(item => item.type === 'collection')
-    .map(item => item.slug)
-    .value();
+
+function getChildCollectionProperties(collection) {
+  var associatedMetadata = [];
+  var childrenSlugs = [];
+  _.forEach(collection.items, function(item) {
+    if (item.type === 'collection') {
+      associatedMetadata[item.slug] = item['associated-metadata'];
+      childrenSlugs.push(item.slug);
+    }
+  });
+
+  return {childrenSlugs, associatedMetadata}
 }
 
 function createCollectionBulkRequest(slugs) {
@@ -67,6 +80,6 @@ function makeBulkRequest(client, slugs) {
   var requestPayload = createCollectionBulkRequest(_.flatten(slugs));
   return client.getInBulk({requests: requestPayload})
   .then(bulkResponse => {
-    return {'results': bulkResponse.results, placeholderCollectionSlugs: slugs};
+    return bulkResponse.results;
   })
 }

@@ -13,7 +13,7 @@ function MediaObject({story, config}) {
     borderBottom: 'solid 2px ' + story['section-color']
   }
   const author = {
-    name: _.get(story['authors'][0], ['name'], story['author-name']),
+    name: _.get(story, ['authors', 0, 'name'], story['author-name']),
     date: config.storyTime && story['first-published-at']
   }
   return story &&
@@ -28,7 +28,7 @@ function MediaObject({story, config}) {
         </figure>
       </div>
       <div className={classNames('media__content', {'media__content--enlarged': config.enlarged})}>
-        { config.section && <SectionName inlineStyle={inlineStyle} name={story.sections[0]['display-name'] || story.sections[0]['name']}/>}
+        { config.section && <SectionName hideLink inlineStyle={inlineStyle} name={story.sections[0]['display-name'] || story.sections[0]['name']}/>}
         <h2 className={classNames('media-title', {'media__title--enlarged': config.enlarged})}
           dangerouslySetInnerHTML={ {__html: story.headline }} />
         <Author author={author}/>
