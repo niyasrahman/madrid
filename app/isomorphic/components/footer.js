@@ -5,7 +5,7 @@ import Logo from '../../assets/icons/quintype_logo.svg';
 import { STATIC_LINKS } from "./constants";
 
 function FooterBase(props) {
-  return <footer className="footer">
+  return <footer className="footer qt-theme__color--footerbg qt-theme__color--footer">
     <div className="footer__content">
       <div className="footer__content__first">
         <img className="app-logo__element" src={props.publisherTheme.monogram} alt={props.publisherName}/>

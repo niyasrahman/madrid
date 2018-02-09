@@ -48,7 +48,7 @@ class OffcanvasMenu extends React.Component {
               </li>
             })}
           </ul>
-          <ul className="sidebar__info">
+          <ul className="sidebar__info qt-theme__color--border">
             {this.props.links.map((item, index) => {
                 return <li key={index}>
                   <a href={item.url}>{item.content}</a>

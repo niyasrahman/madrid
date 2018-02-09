@@ -9,12 +9,12 @@ function NewsletterSub() {
       <div className="two-col-one-ad__last__first">
         <DfpAd adtype="Demo-Ad" />
       </div>
-      <div className="two-col-one-ad__last__second">
+      <div className="two-col-one-ad__last__second qt-theme__color--bg">
         <img src={assetify(newsletterImage)} alt="Newsletter" />
         <h2>Subscribe to Newsletter</h2>
         <form className="two-col-one-ad__email">
           <input type="email" name="email" value="" placeholder="Your email" />
-          <Button classNamesString="qt-button--secondary">Subscribe</Button>
+          <Button classNamesString="qt-button--secondary qt-theme__color--bg">Subscribe</Button>
         </form>
       </div>
     </div>

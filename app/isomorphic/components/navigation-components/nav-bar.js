@@ -10,7 +10,6 @@ import { Button } from "../basic/button.js";
 import _ from "lodash";
 import { connect } from 'react-redux';
 
-
 function mapStateToProps(state) {
   return {
     config: state.qt.config || {},
@@ -19,7 +18,7 @@ function mapStateToProps(state) {
 
 function NavBarBase(props) {
   const metypeConfig = MetypeConfig(props.config['publisher-name']);
-  return <div className="header bg--white">
+  return <div className="header qt-theme__color--headerbg qt-theme__color--header">
       <div className="header__container">
         <AppLogo {...props} />
         <div className="header__middle">

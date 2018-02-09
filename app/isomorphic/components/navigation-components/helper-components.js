@@ -24,7 +24,7 @@ function MenuItem(props) {
 
   return <li className="nav-item has--child">
     <Link href={ mainMenuSlug }>{props.item.title}</Link>
-    <ul style={listStyle}>
+    <ul style={listStyle} className="qt-theme__color--border">
       {props.item.children.map((child, index)=> {
         return <SubmenuItem item={child} key={child['section-slug'] + child['id']}/>
       })}

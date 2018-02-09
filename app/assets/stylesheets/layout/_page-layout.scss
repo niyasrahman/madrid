@@ -103,7 +103,7 @@ body {
     content: ' ';
     width: 30px;
     height: 2px;
-    background-color: $black;
+    background-color: inherit;
     display: block;
     position: relative;
     top: 17px;
@@ -112,7 +112,7 @@ body {
     content: ' ';
     width: 30px;
     height: 2px;
-    background-color: $black;
+    background-color: inherit;
     display: block;
     position: absolute;
     bottom: 9px;
@@ -121,7 +121,7 @@ body {
     content: ' ';
     width: 30px;
     height: 2px;
-    background-color: $black;
+    background-color: inherit;
     display: block;
     position: absolute;
     top: 9px
@@ -163,7 +163,7 @@ body {
           display: block;
           cursor: pointer;
           text-decoration: none;
-          color: $darker-gray;
+          color: inherit;
           font-size: rem(14);
           letter-spacing: 2px;
           font-weight: $regular;

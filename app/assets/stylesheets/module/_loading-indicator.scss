@@ -23,14 +23,12 @@
       bottom: 0;
       background-color: rgba($white,0.75);
     }
-    &:after {
-      content: '';
+    .qt-loading-circles {
       position: fixed;
       left: calc(50% - 50px);
       top: calc(50% - 25px);
       width: 100px;
       height: 50px;
-      background: url("../icons/loading.svg") no-repeat 5px center;
     }
   }
 }
