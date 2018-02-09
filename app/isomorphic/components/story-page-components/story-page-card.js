@@ -7,9 +7,9 @@ import { StoryElement } from "@quintype/components";
 import _ from "lodash";
 
 const StoryPageCard = props => {
-  const cardAlignment = _.get(props.card.metadata.attributes, ['align'], '');
+  const cardAlignment = _.get(props.card, ['metadata','attributes','cardalignment'], '');
 
-  return <div className={`card card--align-${cardAlignment}`}>
+  return <div className={`card card--${cardAlignment}`}>
     {props.card['story-elements'].map((element, index) => {
       switch (element.subtype) {
         case 'summary':
