@@ -3,8 +3,9 @@ export const MetypeConfig = (publisherName = 'demo') => {
     'demo' : {
       accountId : 2,
       host: 'https://www.metype.com',
-      primaryColor:'#4d086a',
+      primaryColor:'#2f81e4',
       bgColor:'#fff',
+      className:'',
       fontColor: '#000',
       windowWidth: 700,
       windowHeight: 700
@@ -14,6 +15,7 @@ export const MetypeConfig = (publisherName = 'demo') => {
       host: 'https://www.metype.com',
       primaryColor:'#4d086a',
       bgColor:'#fff',
+      className:'',
       fontColor: '#000',
       windowWidth: 700,
       windowHeight: 700

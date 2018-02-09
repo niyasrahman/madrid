@@ -7,7 +7,7 @@ import { RelatedStories } from "../story-page-components/related-stories.js";
 import { StoryPageCard } from "../story-page-components/story-page-card.js";
 import { DfpAd } from "../dfp-ads";
 import { MetypeConfig } from '../../metype-config';
-import { MetypeWidget } from "@metype/components";
+import { MetypeCommentingWidget } from "@metype/components";
 import { breakpoint } from "../../../utils/breakpoint";
 
 function BlankStoryTemplate(props) {
@@ -38,7 +38,7 @@ function BlankStoryTemplate(props) {
             </div>
             <RelatedStories stories = {props.relatedStories}></RelatedStories>
           </div>
-          <MetypeWidget
+          <MetypeCommentingWidget
             host={metypeConfig.host}
             accountId={metypeConfig.accountId}
             pageURL={generateHostUrl(props.story)}

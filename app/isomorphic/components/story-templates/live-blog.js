@@ -6,7 +6,7 @@ import { StoryPageCard } from "../story-page-components/story-page-card.js";
 import { LiveBlogKeyEvents } from "../story-page-components/live-blog-key-events.js";
 import TimeAgo from 'react-timeago';
 import { DateTime } from 'luxon';
-import { MetypeWidget } from "@metype/components";
+import { MetypeCommentingWidget } from "@metype/components";
 import { breakpoint } from "../../../utils/breakpoint";
 import { MetypeConfig } from '../../metype-config';
 
@@ -28,7 +28,7 @@ class LiveBlogTemplate extends React.Component {
   }
 
   loadWidget(){
-    return (<MetypeWidget
+    return (<MetypeCommentingWidget
       host={this.metypeConfig.host}
       accountId={this.metypeConfig.accountId}
       pageURL={this.generateHostUrl(this.props.story)}

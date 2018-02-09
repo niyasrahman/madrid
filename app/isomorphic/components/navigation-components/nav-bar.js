@@ -46,6 +46,10 @@ function NavBarBase(props) {
         host={metypeConfig.host}
         accountId={metypeConfig.accountId}
         publisher={props.config['publisher-name']}
+        primaryColor={metypeConfig.primaryColor}
+        className={metypeConfig.className || ''}
+        secondaryColor={metypeConfig.bgColor}
+        fontColor={metypeConfig.fontColor}
       />
     </div>
 }
