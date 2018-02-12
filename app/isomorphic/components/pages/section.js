@@ -13,14 +13,15 @@ class SectionPage extends React.Component {
       'collection-slug': this.props.data.collection.slug,
       'collection-color': this.props.data.collection.color
     }
+    const stories = this.props.data.collection.items;
     return <div>
-      <CardGroup stories={this.props.data.collection.items.slice(0,4)} config= {config}/>
-      <OneMainCardSlider stories={this.props.data.collection.items.slice(0,20)} config= {config}/>
-      <ThreeStoryCards stories={this.props.data.collection.items.slice(0,3)} config= {config}/>
-      <OneStoryCardSixStoryList stories={this.props.data.collection.items.slice(0,7)} config= {config}/>
+      <CardGroup stories={stories.slice(0,4)} config= {config}/>
+      <OneMainCardSlider stories={stories.slice(4,11)} config= {config}/>
+      <ThreeStoryCards stories={stories.slice(11,14)} config= {config}/>
+      <OneStoryCardSixStoryList stories={stories.slice(14,21)} config= {config}/>
       <FullscreenMediaList adsSlot={true}
-        HideSectionName={true}
-        stories={this.props.data.collection.items.slice(4)}
+        hideSectionName={true}
+        stories={stories.slice(21)}
         config= {config}
         hideLoadmore= {true} />
     </div>;

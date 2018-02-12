@@ -8,7 +8,7 @@ import { DfpAd } from "../dfp-ads";
 
 function FullscreenMediaList(props) {
   const mediaObjectConfig = {
-    section: !props.HideSectionName,
+    section: !props.hideSectionName,
     enlarged: true,
     noBackground: true,
     storyTime: true,
@@ -27,7 +27,7 @@ function FullscreenMediaList(props) {
   return <div className="fullscreen-media-list">
     <div className="fullscreen-media-list__content component-wrapper">
       {
-        !props.HideSectionName ?
+        !props.hideSectionName ?
         <SectionName inlineStyle={inlineStyle} name={props.config['collection-name']} type="large" section={props.config['collection-section']}/>
         : null
       }

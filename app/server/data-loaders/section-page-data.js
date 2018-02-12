@@ -8,7 +8,7 @@ export function loadSectionPageData(client, sectionId, config) {
   const section = _.find(config.sections, function(section) { return section.id === sectionId; });
   const sectionSlug = _.isNull(section.collection) ? null : section.collection.slug;
   if (sectionSlug) {
-    return Collection.getCollectionBySlug(client, sectionSlug, {'item-type': 'story'})
+    return Collection.getCollectionBySlug(client, sectionSlug, {'item-type': 'story', 'limit': 24})
       .then(response => {
         let collection = response.collection;
         const menu = config.layout.menu;
@@ -33,7 +33,7 @@ export function loadSectionPageData(client, sectionId, config) {
       });
   } else {
     const storyFields = 'headline,subheadline,summary,sections,tags,author-name,author-id,authors,updated-at,last-published-at,published-at,updated-at,first-published-at,hero-image-metadata,hero-image-s3-key,story-content-id,slug,id,seo,story-template';
-    return Story.getStories(client, 'top', {'section-id': section.id, 'fields': storyFields})
+    return Story.getStories(client, 'top', {'section-id': section.id, 'fields': storyFields, 'limit': 24})
       .then(stories => {
         const menu = config.layout.menu;
         const collectionMenuObject = _.find(menu, function(menuCollectionItem) { return menuCollectionItem['section-slug'] === section.slug; });
@@ -41,7 +41,6 @@ export function loadSectionPageData(client, sectionId, config) {
 
         let collection = {
           items: [],
-          type: 'story',
           name: section['display-name'] || section.name,
           slug: section.slug,
           color: collectionMenuObject ? collectionMenuObject.data.color : '#6093f2'
