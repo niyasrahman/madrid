@@ -11,6 +11,18 @@ import { breakpoint } from "../../../utils/breakpoint";
 
 function BlankStoryTemplate(props) {
   const metypeConfig = props.config['metype-config'];
+  const StoryCards = props.story.cards.map((card, index) => {
+    if(index === 0) {
+      return <div className="blank-story__card--with-ad">
+        <StoryPageCard key={card.id} card={card} story={props.story}/>
+        <div className="app-ad app-ad--story-horizontal">
+          <DfpAd adtype="Story-Bottom-Ad"/>
+        </div>
+      </div>
+    } else {
+        return <StoryPageCard key={card.id} card={card} story={props.story}/>
+    }
+  });
   return <article className="blank-story">
       <figure className="blank-story-hero-image qt-image-16x9">
         { breakpoint('tablet') ?
@@ -29,18 +41,7 @@ function BlankStoryTemplate(props) {
       <div className="blank-story--wrapper">
         <div className="blank-story--content">
           <StoryHeaderCard story={props.story}/>
-          {props.story.cards.map((card, index) => {
-            if(index === 0) {
-              return <div className="blank-story__card--with-ad">
-                <StoryPageCard key={card.id} card={card} story={props.story}/>
-                <div className="app-ad app-ad--story-horizontal">
-                  <DfpAd adtype="Story-Bottom-Ad"/>
-                </div>
-              </div>
-            } else {
-                return <StoryPageCard key={card.id} card={card} story={props.story}/>
-            }
-          })}
+          {StoryCards}
           <StoryTags tags={props.story.tags} />
           <div className="blank-story__aside">
             <div className="app-ad app-ad--story-mrec">

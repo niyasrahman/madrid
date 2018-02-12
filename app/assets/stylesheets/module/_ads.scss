@@ -1,5 +1,8 @@
 .app-ad{
   text-align: center;
+  &--vertical {
+    text-align: right;
+  }
   &--mrec .adBox {
     padding: 60px 0px;
   }

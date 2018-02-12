@@ -27,9 +27,7 @@ function FullscreenMediaList(props) {
   return <div className="fullscreen-media-list">
     <div className="fullscreen-media-list__content component-wrapper">
       {
-        !props.hideSectionName ?
-        <SectionName inlineStyle={inlineStyle} name={props.config['collection-name']} type="large" section={props.config['collection-section']}/>
-        : null
+        !props.HideSectionName && <SectionName inlineStyle={inlineStyle} name={props.config['collection-name']} type="large" section={props.config['collection-section']}/>
       }
       <div className="col-8">
         {props.stories.slice(0,limit)
@@ -53,11 +51,9 @@ function FullscreenMediaList(props) {
       </div>
       <div className="col-4">
         {
-          props.adSlot ?
-          <div className="app-ad app-ad--vertical">
+          props.adSlot && <div className="app-ad app-ad--vertical">
             <DfpAd adtype="Vertical-Ad"/>
           </div>
-          : null
         }
       </div>
     </div>
