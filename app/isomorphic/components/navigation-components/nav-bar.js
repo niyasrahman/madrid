@@ -1,7 +1,6 @@
 import React from "react";
 import classNames from 'classnames';
 import { Link } from "@quintype/components";
-import { MetypeConfig } from "../../metype-config";
 import { MetypeFeedWidget } from "@metype/components";
 import { AppLogo } from './app-logo.js'
 import { MenuItem } from './helper-components.js'
@@ -17,7 +16,7 @@ function mapStateToProps(state) {
 }
 
 function NavBarBase(props) {
-  const metypeConfig = MetypeConfig(props.config['publisher-name']);
+  const metypeConfig = props.config['metype-config'];
   return <div className="header qt-theme__color--headerbg qt-theme__color--header">
       <div className="header__container">
         <AppLogo {...props} />

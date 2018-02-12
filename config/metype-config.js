@@ -11,7 +11,7 @@ export const MetypeConfig = (publisherName = 'demo') => {
       windowHeight: 700
     },
     'samachara' : {
-      accountId : 2,
+      accountId : 47,
       host: 'https://www.metype.com',
       primaryColor:'#4d086a',
       bgColor:'#fff',
