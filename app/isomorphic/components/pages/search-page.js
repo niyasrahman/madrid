@@ -16,6 +16,16 @@ class SearchPage extends React.Component {
     }
     this.getMoreResults = this.getMoreResults.bind(this);
   }
+  componentWillReceiveProps(newProps) {
+    this.setState({
+      stories: newProps.data.stories,
+      totalNumberOfStories: newProps.data.total,
+      offset: newProps.data.stories.length,
+      query: newProps.data.query,
+      limit: 5,
+      hideLoadmore: newProps.data.stories.length >= newProps.data.total
+    })
+  }
   getMoreResults() {
     fetch('/api/v1/search?q=' + this.state.query + '&offset=' + this.state.offset + '&limit=' + this.state.limit)
       .then(function(response) {
