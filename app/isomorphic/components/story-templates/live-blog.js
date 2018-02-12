@@ -8,13 +8,12 @@ import TimeAgo from 'react-timeago';
 import { DateTime } from 'luxon';
 import { MetypeCommentingWidget } from "@metype/components";
 import { breakpoint } from "../../../utils/breakpoint";
-import { MetypeConfig } from '../../metype-config';
 
 class LiveBlogTemplate extends React.Component {
 
   constructor(props){
     super(props);
-    this.metypeConfig = MetypeConfig(this.props.config['publisher-name']);
+    this.metypeConfig = this.props.config['metype-config'];
   }
   
   formatter(value, unit, suffix, date, defaultFormatter) {

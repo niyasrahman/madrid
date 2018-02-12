@@ -10,6 +10,7 @@ import {loadStaticPageData} from "./data-loaders/static-page-data";
 import {loadErrorPageData} from "./data-loaders/error-page-data";
 import {PAGE_TYPE, WHITELIST_CONFIG_KEYS} from "./constants";
 import publisher from "@quintype/framework/server/publisher-config";
+import {MetypeConfig} from "../../config/metype-config";
 
 function loadErrorData(error, config) {
   return loadErrorPageData(error, config);
@@ -36,7 +37,9 @@ function loadData(pageType, params, config, client) {
         httpStatusCode : 200,
         pageType: data.pageType || pageType,
         data: data,
-        config: Object.assign(_.pick(config.asJson(), WHITELIST_CONFIG_KEYS),{ 'publisher-theme': publisher.publisher_theme[config['publisher-name']]})
+        config: Object.assign(_.pick(config.asJson(), WHITELIST_CONFIG_KEYS),
+          { 'publisher-theme': publisher.publisher_theme[config['publisher-name']] },
+          { 'metype-config': MetypeConfig(config['publisher-name']) })
       };
     });
 }
