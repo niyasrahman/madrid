@@ -31,7 +31,8 @@ function OneMainCardSlider(props) {
         }
       ]
     };
-  return !props.stories ? null : <div className="one-main-card-slider component-wrapper-fluid">
+
+  return !props.stories.length ? null : <div className="one-main-card-slider component-wrapper-fluid">
       <Slider {...settings} className="one-main-card-slider__slides component-wrapper">
         {props.stories.map((item) =>
           <div key={item.id} className="one-main-card-slider__slider-content">
