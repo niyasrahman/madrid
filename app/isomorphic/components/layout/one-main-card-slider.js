@@ -3,6 +3,7 @@ import Slider from "react-slick";
 
 import { Link, ResponsiveImage } from "@quintype/components";
 
+import { DfpAd } from "../dfp-ads"
 import classNames from 'classnames';
 
 function OneMainCardSlider(props) {
@@ -40,6 +41,9 @@ function OneMainCardSlider(props) {
           </div>
         )}
       </Slider>
+      <div className="app-ad app-ad--horizontal">
+        <DfpAd adtype="Horizontal-Ad"/>
+      </div>
     </div>
 }
 

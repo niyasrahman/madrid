@@ -7,6 +7,7 @@ import { STATIC_LINKS } from "./constants"
 
 import { OffcanvasMenu } from './navigation-components/offcanvas-menu'
 import { NavBar } from './navigation-components/nav-bar'
+import { DfpAd } from "./dfp-ads"
 
 class NavigationBase extends React.Component {
   constructor(props) {
@@ -32,6 +33,9 @@ class NavigationBase extends React.Component {
   }
   render() {
     return <div className="navbar">
+      <div className="app-ad app-ad--leaderboard">
+        <DfpAd adtype="Horizontal-Ad"/>
+      </div>
       <OffcanvasMenu {...this.props} isOffcanvasOpen={this.state.isOffcanvasOpen} closeMenu={this.closeSideMenu}/>
       <NavBar {...this.props} openSidemenu={this.openSidemenu}/>
     </div>

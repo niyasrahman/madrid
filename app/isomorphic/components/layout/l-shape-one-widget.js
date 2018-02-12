@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "@quintype/components";
 import assetify from '@quintype/framework/assetify';
 import { StoryCard } from "../basic/story-card.js"
-import { NewsletterSub } from "../basic/newsletter-sub.js"
 import { SectionName } from "../basic/section-name.js";
 import { Polltype } from "../polltype";
 import ArrowImg from '../../../assets/icons/readmore_arrow.svg';
+import { DfpAd } from "../dfp-ads"
 
 
 function LShapeOneWidget(props) {
@@ -33,8 +33,8 @@ function LShapeOneWidget(props) {
         <div className="feature-story">
           <StoryCard story={props.stories[0]} config={primarStoryCardConfig} type="imageBackground"/>
         </div>
-        <div className="polltype-element">
-          <Polltype id="391" width="300px" height="480px" />
+        <div className="app-ad app-ad--vertical">
+          <DfpAd adtype="Vertical-Ad"/>
         </div>
       </div>
 
@@ -50,6 +50,9 @@ function LShapeOneWidget(props) {
         Read more
         <img src={assetify(ArrowImg)} alt="Arrow"/>
       </Link>
+      <div className="app-ad app-ad--horizontal">
+        <DfpAd adtype="Horizontal-Ad"/>
+      </div>
     </div>
   )
 

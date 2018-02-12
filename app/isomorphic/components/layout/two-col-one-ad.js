@@ -2,7 +2,7 @@ import React from "react";
 
 import { StoryCard } from "../basic/story-card.js"
 import { StoryList } from "../basic/story-list.js"
-import { NewsletterSub } from "../basic/newsletter-sub.js"
+import { DfpAd } from "../dfp-ads";
 
 function TwoColOneAd(props) {
   const storyCardConfig = {
@@ -17,7 +17,7 @@ function TwoColOneAd(props) {
   if(props.stories.length < 1) {
     return <div></div>
   }
-  
+
   return (
     <div className="two-col-one-ad component-wrapper">
       <div className="col-4">
@@ -33,7 +33,13 @@ function TwoColOneAd(props) {
         </StoryList>
       </div>
       <div className="col-4">
-        <NewsletterSub></NewsletterSub>
+        <StoryList
+          stories={[props.stories[4]]}
+          config={storyListConfig}>
+        </StoryList>
+        <div className="app-ad app-ad--mrec">
+          <DfpAd adtype="Mrec"/>
+        </div>
       </div>
     </div>
   )

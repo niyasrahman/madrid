@@ -1,8 +1,18 @@
-.ads-320x250 {
-  max-width: 100%;
-  margin: 15px auto;
-  & > div {
-    margin: 0 auto;
-    text-align: center;
+.app-ad{
+  text-align: center;
+  &--mrec .adBox {
+    padding: 60px 0px;
+  }
+  &--story-mrec .adBox{
+    padding-bottom: 35px;
+  }
+  &--leaderboard .adBox {
+    padding: 8px;
+  }
+  &--horizontal .adBox {
+    padding-top: 30px;
+  }
+  &--three-story-cards {
+    grid-column: 1/4;
   }
 }
