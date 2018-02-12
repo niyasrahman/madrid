@@ -8,7 +8,7 @@ export function loadSectionPageData(client, sectionId, config) {
   const section = _.find(config.sections, function(section) { return section.id === sectionId; });
   const sectionSlug = _.isNull(section.collection) ? null : section.collection.slug;
   if (sectionSlug) {
-    return Collection.getCollectionBySlug(client, sectionSlug)
+    return Collection.getCollectionBySlug(client, sectionSlug, {'item-type': 'story'})
       .then(response => {
         let collection = response.collection;
         const menu = config.layout.menu;
