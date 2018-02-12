@@ -29,20 +29,35 @@ function BlankStoryTemplate(props) {
       <div className="blank-story--wrapper">
         <div className="blank-story--content">
           <StoryHeaderCard story={props.story}/>
-          {props.story.cards.map((card, index) => <StoryPageCard key={index} card={card} story={props.story}/>)}
+          {props.story.cards.map((card, index) => {
+            if(index === 0) {
+              return <div className="blank-story__card--with-ad">
+                <StoryPageCard key={card.id} card={card} story={props.story}/>
+                <div className="app-ad app-ad--story-horizontal">
+                  <DfpAd adtype="Story-Bottom-Ad"/>
+                </div>
+              </div>
+            } else {
+                return <StoryPageCard key={card.id} card={card} story={props.story}/>
+            }
+          })}
           <StoryTags tags={props.story.tags} />
           <div className="blank-story__aside">
-            <div className="ads-320x250">
-              <DfpAd adtype="Demo-Ad" />
+            <div className="app-ad app-ad--story-mrec">
+              <DfpAd adtype="Story-Mrec"/>
             </div>
             <RelatedStories stories = {props.relatedStories}></RelatedStories>
           </div>
+        </div>
+        <div className="app-ad app-ad--story-horizontal">
+          <DfpAd adtype="Story-Bottom-Ad"/>
+        </div>
+        <div className="blank-story--metype-widget">
           <MetypeCommentingWidget
             host={metypeConfig.host}
             accountId={metypeConfig.accountId}
             pageURL={generateHostUrl(props.story)}
-            primaryColor={metypeConfig.primaryColor}
-          />
+            primaryColor={metypeConfig.primaryColor}/>
         </div>
       </div>
     </article>

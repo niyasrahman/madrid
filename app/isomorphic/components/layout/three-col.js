@@ -3,6 +3,7 @@ import React from "react";
 import { StoryCard } from "../basic/story-card.js"
 import { StoryList } from "../basic/story-list.js"
 import { SectionName } from "../basic/section-name.js";
+import { DfpAd } from "../dfp-ads"
 
 function ThreeCol(props) {
   const secondColFirstCardConfig = {
@@ -33,6 +34,9 @@ function ThreeCol(props) {
             stories={[props.stories[3], props.stories[4], props.stories[5], props.stories[6],props.stories[7]]}>
           </StoryList>
         </div>
+      </div>
+      <div className="app-ad app-ad--horizontal">
+        <DfpAd adtype="Horizontal-Ad"/>
       </div>
     </div>
   )

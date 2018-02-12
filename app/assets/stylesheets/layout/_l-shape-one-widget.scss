@@ -11,6 +11,9 @@
       grid-column-gap: 20px;
       grid-template-columns: 2fr auto;
     }
+    @include breakpoint($pc) {
+      grid-template-columns: 800px auto;
+    }
   }
   .feature-story {
     @include breakpoint($tablet) {

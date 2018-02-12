@@ -45,7 +45,7 @@ function FullscreenMediaList(props) {
             {
               props.getMoreStories ? <a onClick={props.getMoreStories}>Load more</a> :
               <Link href={'/' + props.config['collection-slug']}>
-                Load more
+                Read more
               </Link>
             }
           </div>
@@ -53,9 +53,9 @@ function FullscreenMediaList(props) {
       </div>
       <div className="col-4">
         {
-          props.adsSlot ?
-          <div className="ads-320x250">
-            <DfpAd adtype="Demo-Ad" />
+          props.adSlot ?
+          <div className="app-ad app-ad--vertical">
+            <DfpAd adtype="Vertical-Ad"/>
           </div>
           : null
         }

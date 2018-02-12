@@ -18,7 +18,7 @@ class SectionPage extends React.Component {
       <OneMainCardSlider stories={this.props.data.collection.items.slice(0,20)} config= {config}/>
       <ThreeStoryCards stories={this.props.data.collection.items.slice(0,3)} config= {config}/>
       <OneStoryCardSixStoryList stories={this.props.data.collection.items.slice(0,7)} config= {config}/>
-      <FullscreenMediaList adsSlot={true}
+      <FullscreenMediaList adSlot={true}
         HideSectionName={true}
         stories={this.props.data.collection.items.slice(4)}
         config= {config}
