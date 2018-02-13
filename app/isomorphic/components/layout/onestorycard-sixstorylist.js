@@ -46,7 +46,7 @@ function OneStoryCardSixStoryList(props) {
         </StoryList>
       </div>
       <div className="app-ad app-ad--horizontal">
-        <DfpAd adtype="Horizontal-Ad" layoutName="OneStoryCardSixStoryList" collectionName={props.config['collection-name']}/>
+        <DfpAd adtype="Horizontal-Ad" layoutName="OneStoryCardSixStoryList" collectionSlug={props.config['collection-slug']}/>
       </div>
     </div>
   )

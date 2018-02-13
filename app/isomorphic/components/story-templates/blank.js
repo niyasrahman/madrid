@@ -16,7 +16,7 @@ function BlankStoryTemplate(props) {
       return <div className="blank-story__card--with-ad">
         <StoryPageCard key={card.id} card={card} story={props.story}/>
         <div className="app-ad app-ad--story-horizontal">
-          <DfpAd adtype="Story-Bottom-Ad"/>
+          <DfpAd adtype="Story-Middle-Ad"/>
         </div>
       </div>
     } else {

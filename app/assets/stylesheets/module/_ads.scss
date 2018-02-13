@@ -4,6 +4,7 @@
   overflow: hidden;
   &--vertical {
     text-align: right;
+    padding-bottom: 15px;
   }
   &--mrec .adBox {
     padding: 60px 0px;
@@ -17,7 +18,10 @@
   &--horizontal{
     clear: both;
     .adBox {
-      padding-bottom: 30px;
+      padding: 15px 0;
     }
+  }
+  &--story-horizontal .adBox {
+    padding-bottom: 25px;
   }
 }

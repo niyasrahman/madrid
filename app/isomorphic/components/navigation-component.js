@@ -34,7 +34,7 @@ class NavigationBase extends React.Component {
   render() {
     return <div className="navbar">
       <div className="app-ad app-ad--leaderboard">
-        <DfpAd adtype="Horizontal-Ad"/>
+        <DfpAd adtype="Horizontal-Ad" layoutName="Navigation"/>
       </div>
       <OffcanvasMenu {...this.props} isOffcanvasOpen={this.state.isOffcanvasOpen} closeMenu={this.closeSideMenu}/>
       <NavBar {...this.props} openSidemenu={this.openSidemenu}/>

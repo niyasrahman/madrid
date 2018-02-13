@@ -52,7 +52,7 @@ function FullscreenMediaList(props) {
       <div className="col-4">
         {
           props.adSlot && <div className="app-ad app-ad--vertical">
-            <DfpAd adtype="Vertical-Ad"/>
+            <DfpAd adtype="Vertical-Ad" layoutName="FullscreenMediaList" collectionSlug={props.config['collection-slug']}/>
           </div>
         }
       </div>
