@@ -13,6 +13,7 @@ publisher_theme:
     header_background_color: "#FFF"
     footer_text_color: "#FFF"
     footer_background_color: "#000"
+    dfp_network_id: '60988533'
   quintype-demo:
     monogram: ""
     logo: ""
@@ -22,6 +23,7 @@ publisher_theme:
     header_background_color: ""
     footer_text_color: ""
     footer_background_color: ""
+    dfp_network_id: '60988533'
   network18:
     monogram: ""
     logo: ""
@@ -31,3 +33,4 @@ publisher_theme:
     header_background_color: ""
     footer_text_color: ""
     footer_background_color: ""
+    dfp_network_id: '60988533'

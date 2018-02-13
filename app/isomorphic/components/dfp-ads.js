@@ -1,6 +1,7 @@
-import { createDfpAdComponent } from '@quintype/components';
 import _ from "lodash";
 import React from "react";
+import {connect} from "react-redux";
+import { createDfpAdComponent } from '@quintype/components';
 
 export const AD_CONFIG = {
   "Horizontal-Ad": { adUnit: "Madrid_Horizontal_Responsive", sizes: [[728, 90], [320, 50]] },
@@ -11,9 +12,10 @@ export const AD_CONFIG = {
   "Story-Bottom-Ad": { adUnit: "Madrid_Story_Bottom_Responsive", sizes: [[728, 90], [320, 50]] }
 }
 
-export function DfpAd(props) {
+function DfpAdBase(props) {
+  const networkId = _.get(props, ['publisherTheme','dfp_network_id'], "60988533");
   const DfpAdWrapper = createDfpAdComponent({
-    defaultNetworkID: "60988533",
+    defaultNetworkID: networkId,
     config: AD_CONFIG,
     targeting: function(state) {
       // Params that can be derived from state.
@@ -40,3 +42,11 @@ export function DfpAd(props) {
   });
   return <DfpAdWrapper {...props}/>
 }
+
+function mapStateToProps(state) {
+  return {
+    publisherTheme: state.qt.config['publisher-theme'] || {}
+  }
+}
+
+export const DfpAd = connect(mapStateToProps, () => ({}))(DfpAdBase);

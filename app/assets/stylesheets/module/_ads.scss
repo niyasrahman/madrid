@@ -3,8 +3,10 @@
   width: 100%;
   overflow: hidden;
   &--vertical {
-    text-align: right;
-    padding-bottom: 15px;
+    text-align: center;
+    @include breakpoint($tablet){
+      text-align: right;
+    }
   }
   &--mrec .adBox {
     padding: 60px 0px;
