@@ -19,7 +19,7 @@ class SectionPage extends React.Component {
       <OneMainCardSlider stories={stories.slice(4,11)} config= {config}/>
       <ThreeStoryCards stories={stories.slice(11,14)} config= {config}/>
       <OneStoryCardSixStoryList stories={stories.slice(14,21)} config= {config}/>
-      <FullscreenMediaList adsSlot={true}
+      <FullscreenMediaList adSlot={true}
         hideSectionName={true}
         stories={stories.slice(21)}
         config= {config}

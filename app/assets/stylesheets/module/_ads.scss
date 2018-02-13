@@ -12,10 +12,10 @@
   &--leaderboard .adBox {
     padding: 8px;
   }
-  &--horizontal .adBox {
-    padding-top: 30px;
-  }
-  &--three-story-cards {
-    grid-column: 1/4;
+  &--horizontal{
+    clear: both;
+    .adBox {
+      padding-bottom: 30px;
+    }
   }
 }

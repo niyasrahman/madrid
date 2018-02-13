@@ -3,6 +3,7 @@ import React from "react";
 import { StoryCard } from "../basic/story-card.js"
 import { StoryList } from "../basic/story-list.js"
 import { SectionName } from "../basic/section-name.js";
+import { DfpAd } from "../dfp-ads"
 
 function OneStoryCardSixStoryList(props) {
   const majorStoryCardWithSubheadlineConfig = {
@@ -36,13 +37,16 @@ function OneStoryCardSixStoryList(props) {
       </div>
       <div className="col-4">
         <StoryList
-          stories={[props.stories[1], props.stories[2], props.stories[3],props.stories[4], props.stories[5]]}>
+          stories={[props.stories[1], props.stories[2], props.stories[3]]}>
         </StoryList>
       </div>
       <div className="col-4">
         <StoryList
-          stories={[props.stories[6], props.stories[7], props.stories[8], props.stories[9], props.stories[10]]}>
+          stories={[props.stories[4], props.stories[5], props.stories[6]]}>
         </StoryList>
+      </div>
+      <div className="app-ad app-ad--horizontal">
+        <DfpAd adtype="Horizontal-Ad" layoutName="OneStoryCardSixStoryList" collectionName={props.config['collection-name']}/>
       </div>
     </div>
   )
