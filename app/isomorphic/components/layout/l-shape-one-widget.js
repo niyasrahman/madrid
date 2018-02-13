@@ -34,7 +34,7 @@ function LShapeOneWidget(props) {
           <StoryCard story={props.stories[0]} config={primarStoryCardConfig} type="imageBackground"/>
         </div>
         <div className="app-ad app-ad--vertical">
-          <DfpAd adtype="Vertical-Ad"/>
+          <DfpAd adtype="Vertical-Ad" layoutName="LShapeOneWidget" collectionSlug={props.config['collection-slug']}/>
         </div>
       </div>
 
@@ -51,7 +51,7 @@ function LShapeOneWidget(props) {
         <img src={assetify(ArrowImg)} alt="Arrow"/>
       </Link>
       <div className="app-ad app-ad--horizontal">
-        <DfpAd adtype="Horizontal-Ad"/>
+        <DfpAd adtype="Horizontal-Ad" layoutName="LShapeOneWidget" collectionSlug={props.config['collection-slug']}/>
       </div>
     </div>
   )

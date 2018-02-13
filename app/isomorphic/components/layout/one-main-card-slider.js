@@ -42,7 +42,7 @@ function OneMainCardSlider(props) {
         )}
       </Slider>
       <div className="app-ad app-ad--horizontal">
-        <DfpAd adtype="Horizontal-Ad"/>
+        <DfpAd adtype="Horizontal-Ad" layoutName="OneMainCardSlider" collectionSlug={props.config['collection-slug']}/>
       </div>
     </div>
 }

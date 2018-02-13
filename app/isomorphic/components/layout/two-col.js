@@ -28,7 +28,7 @@ function TwoCol(props) {
         <StoryCard story={props.stories[3]} config={storyCardConfig}/>
       </div>
       <div className="app-ad app-ad--horizontal">
-        <DfpAd adtype="Horizontal-Ad"/>
+        <DfpAd adtype="Horizontal-Ad" layoutName="TwoCol" collectionSlug={props.config['collection-slug']}/>
       </div>
     </div>
   )

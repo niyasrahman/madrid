@@ -10,6 +10,7 @@ import { CardGroup } from "../layout/card-group.js";
 class SectionPage extends React.Component {
   render() {
     const stories = this.props.data.collection.items;
+
     return <LoadMoreStories {...this.props} stories={stories} />
   }
 }
@@ -29,7 +30,7 @@ function LoadMoreStoriesTemplate(props) {
     <OneMainCardSlider stories={props.stories.slice(4,11)} config= {config}/>
     <ThreeStoryCards stories={props.stories.slice(11,14)} config= {config}/>
     <OneStoryCardSixStoryList stories={props.stories.slice(14,21)} config= {config}/>
-    <FullscreenStoryList
+    <FullscreenStoryList adSlot={true}
         config= {config}
         stories={props.stories.slice(21)}
         onLoadMore={props.onLoadMore}

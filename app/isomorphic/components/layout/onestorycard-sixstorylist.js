@@ -3,6 +3,7 @@ import React from "react";
 import { StoryCard } from "../basic/story-card.js"
 import { StoryList } from "../basic/story-list.js"
 import { SectionName } from "../basic/section-name.js";
+import { DfpAd } from "../dfp-ads"
 
 function OneStoryCardSixStoryList(props) {
   const majorStoryCardWithSubheadlineConfig = {
@@ -31,18 +32,15 @@ function OneStoryCardSixStoryList(props) {
 
   return (
     <div className="onestorycard-sixstorylist component-wrapper">
-      <div className="col-4">
-        <StoryCard story={props.stories[0]} config={majorStoryCardWithSubheadlineConfig}/>
-      </div>
-      <div className="col-4">
-        <StoryList
-          stories={[props.stories[1], props.stories[2], props.stories[3],props.stories[4], props.stories[5]]}>
-        </StoryList>
-      </div>
-      <div className="col-4">
-        <StoryList
-          stories={[props.stories[6], props.stories[7], props.stories[8], props.stories[9], props.stories[10]]}>
-        </StoryList>
+      <StoryCard story={props.stories[0]} config={majorStoryCardWithSubheadlineConfig}/>
+      <StoryList
+        stories={[props.stories[1], props.stories[2], props.stories[3]]}>
+      </StoryList>
+      <StoryList
+        stories={[props.stories[4], props.stories[5], props.stories[6]]}>
+      </StoryList>
+      <div className="app-ad app-ad--horizontal app-ad--grid-horizontal">
+        <DfpAd adtype="Horizontal-Ad" layoutName="OneStoryCardSixStoryList" collectionSlug={props.config['collection-slug']}/>
       </div>
     </div>
   )

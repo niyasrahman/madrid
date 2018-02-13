@@ -1,7 +1,12 @@
 .app-ad{
   text-align: center;
+  width: 100%;
+  overflow: hidden;
   &--vertical {
-    text-align: right;
+    text-align: center;
+    @include breakpoint($tablet){
+      text-align: right;
+    }
   }
   &--mrec .adBox {
     padding: 60px 0px;
@@ -12,10 +17,16 @@
   &--leaderboard .adBox {
     padding: 8px;
   }
-  &--horizontal .adBox {
-    padding-top: 30px;
+  &--horizontal{
+    clear: both;
+    .adBox {
+      padding: 15px 0;
+    }
   }
-  &--three-story-cards {
+  &--story-horizontal .adBox {
+    padding-bottom: 25px;
+  }
+  &--grid-horizontal{
     grid-column: 1/4;
   }
 }

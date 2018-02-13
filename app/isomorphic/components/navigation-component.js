@@ -34,7 +34,7 @@ class NavigationBase extends React.Component {
   render() {
     return <div className="navbar">
       <div className="app-ad app-ad--leaderboard">
-        <DfpAd adtype="Horizontal-Ad"/>
+        <DfpAd adtype="Horizontal-Ad" layoutName="Navigation"/>
       </div>
       <OffcanvasMenu {...this.props} isOffcanvasOpen={this.state.isOffcanvasOpen} closeMenu={this.closeSideMenu}/>
       <NavBar {...this.props} openSidemenu={this.openSidemenu}/>
@@ -45,7 +45,7 @@ class NavigationBase extends React.Component {
 function mapStateToProps(state) {
   // Showing the first 5 menu items only to keep up with design.
   return {
-    title: 'Madrid',
+    title: _.get(state.qt.config['publisher-settings'], ['title'], 'Madrid'),
     menu: _.get(state, ["qt", "data", "navigationMenu"], []),
     publisherTheme: state.qt.config['publisher-theme'] || {},
     links: STATIC_LINKS,

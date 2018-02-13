@@ -1,0 +1,9 @@
+.onestorycard-sixstorylist {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  .story-list {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
