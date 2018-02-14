@@ -6,16 +6,21 @@ import {getNavigationMenuArray} from "./menu-data";
 
 export function loadTagPageData(client, tagSlug, config) {
   const storyFields = 'slug,story-content-id,id,headline,hero-image-s3-key,hero-image-metadata,sections,tags,author-name,author-id,authors,created-at,first-published-at,published-at,last-published-at';
-  return Story.getStories(client, 'top', {'tag': tagSlug, 'fields': storyFields, 'limit': '20'})
+  return Story.getStories(client, 'top', {'tag-slugs': tagSlug, 'fields': storyFields, 'limit': '20'})
     .then(stories => {
       const menu = config.layout.menu;
       const navigationMenu = getNavigationMenuArray(menu);
-      return {
-        tag: tagSlug,
-        stories: getProcessedStories(stories, menu, config.sections),
-        navigationMenu: navigationMenu,
-        cacheKeys: stories.map(story => storyToCacheKey(config["publisher-id"], story))
-      }
+      // TODO: Using client directly is not a good way to go.
+      return client.getTags(tagSlug)
+        .then(({tags}) => {
+          const tagName = _.get(tags, [0,'name'], tagSlug);
+          return {
+            tagName: tagName,
+            stories: getProcessedStories(stories, menu, config.sections),
+            navigationMenu: navigationMenu,
+            cacheKeys: stories.map(story => storyToCacheKey(config["publisher-id"], story))
+          }
+        })
     });
 }
 
