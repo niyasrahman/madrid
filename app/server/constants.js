@@ -2,6 +2,7 @@ export const PAGE_TYPE = Object.freeze({
   HOME_PAGE : "home-page",
   SECTION_PAGE : "section-page",
   TAG_PAGE : "tag-page",
+  AUTHOR_PAGE : "author-page",
   SEARCH_PAGE : "search-page",
   STORY_PAGE : "story-page",
   STORY_PUBLIC_PREVIEW_PAGE : "story-public-preview-page",

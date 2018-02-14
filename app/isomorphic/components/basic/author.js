@@ -1,6 +1,7 @@
 import React from "react";
 import TimeAgo from 'react-timeago';
 import { DateTime } from 'luxon';
+import { Link } from "@quintype/components";
 
 function Author(props) {
   function formatter(value, unit, suffix, date, defaultFormatter) {
@@ -11,7 +12,7 @@ function Author(props) {
       <img src={props.author.image} alt="author-image" />
     </div>}
     <div className="author__content">
-      <h3 className="author__name">{props.author.name}</h3>
+      <h3 className="author__name"><Link href={'/author/' + props.author.slug}>{props.author.name} </Link></h3>
       {props.author.date && <p className="author__published-date">
         Posted <TimeAgo date={props.author.date} formatter={formatter}/>
       </p>}

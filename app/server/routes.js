@@ -15,6 +15,7 @@ const ISOMORPHIC_ROUTES = [
   {path: "/", pageType: "home-page", exact: true},
   {path: "/preview/story/:encryptedKey", pageType: "story-public-preview-page", exact: true},
   {path: "/topic/:tagSlug", pageType: "tag-page", exact: true, skipPWA: true},
+  {path: "/author/:authorId", pageType: "author-page", exact: true, skipPWA: true},
   {path: "/search", pageType: "search-page", exact: true, skipPWA: true},
 ];
 
