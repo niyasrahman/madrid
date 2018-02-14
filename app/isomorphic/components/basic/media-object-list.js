@@ -14,8 +14,7 @@ function MediaObject({story, config}) {
   }
   const author = {
     name: _.get(story, ['authors', 0, 'name'], story['author-name']),
-    date: config.storyTime && story['first-published-at'],
-    "slug": _.get(story, ['authors' , 0, 'id'] , story['author-id'])
+    date: config.storyTime && story['first-published-at']
   }
   return story &&
     <Link href={"/" + story.slug}

@@ -75,9 +75,7 @@ function Slide(props) {
       <Author author={{
           "name":  _.get(props.story, ['authors', 0, 'name'], props.story['author-name']),
           "image": props.story['author-image'],
-          "date": props.story['first-published-at'],
-          "slug": _.get(props.story, ['authors', 0 ,'id'], '')
-        }} />
+          "date": props.story['first-published-at']}} />
     </div>
   </div>
 

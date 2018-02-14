@@ -7,7 +7,6 @@ import {StoryPagePreview} from "./components/pages/story-preview.js";
 import {StoryPublicPagePreview} from "./components/pages/story-public-preview.js";
 import {HomePagePreview} from "./components/pages/home-preview.js";
 import {NotFoundPage} from "./components/pages/not-found.js";
-import {AuthorPage} from "./components/pages/author-page.js";
 
 function pickComponent(pageType) {
   switch (pageType) {
@@ -19,7 +18,6 @@ function pickComponent(pageType) {
     case 'story-preview-page': return StoryPagePreview ;
     case 'story-public-preview-page': return StoryPublicPagePreview ;
     case 'home-preview-page': return HomePagePreview ;
-    case 'author-page': return AuthorPage ;
     default: return NotFoundPage;
   }
 }

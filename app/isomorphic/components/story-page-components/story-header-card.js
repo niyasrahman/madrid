@@ -86,9 +86,7 @@ class StoryHeaderCard extends React.Component {
           <Author author={{
               "name": _.get(this.state.story, ['authors', 0, 'name'], this.state.story['author-name']),
               "image": this.state.story['author-image'],
-              "date": this.state.story['first-published-at'],
-              "slug": _.get(this.state.story, ['authors', 0, 'author-id'], this.state.story['author-id'])
-            }} />
+              "date": this.state.story['first-published-at']}} />
         </div>
         <div className="story-byline__social-share">
           <SocialShare url={this.state.story.slug}
