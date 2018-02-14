@@ -1,9 +1,13 @@
 .onestorycard-sixstorylist {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px;
-  .story-list {
+  @include breakpoint($tablet) {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+  }
+  .story-list {
+    @include breakpoint($tablet) {
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+    }
   }
 }
