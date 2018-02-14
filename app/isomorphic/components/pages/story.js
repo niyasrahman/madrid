@@ -14,7 +14,7 @@ export function StoryPageContent({story, relatedStories, index }, config) {
 
 const FIELDS = "id,headline,slug,url,hero-image-s3-key,hero-image-metadata,first-published-at,last-published-at,alternative,published-at,author-name,author-id,sections,story-template,cards,tags,authors";
 function storyPageLoadItems(pageNumber) {
-  return fetch(`/api/v1/stories?fields=${FIELDS}&limit=5&offset${5 * pageNumber}`)
+  return fetch(`/api/v1/stories?fields=${FIELDS}&limit=5&offset=${5 * pageNumber}`)
            .then(response => {
              return response.json();
            })
