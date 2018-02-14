@@ -8,7 +8,7 @@ publisher_theme:
     monogram: https://fea.assettype.com/quintype/assets/logo-b6438210bc.svg
     logo: https://svgshare.com/i/5Qv.svg
     primary_color: "#2f73e4"
-    secondary_color: ""
+    secondary_color: "#a3a3a3"
     header_text_color: "#404040"
     header_background_color: "#FFF"
     footer_text_color: "#FFF"
