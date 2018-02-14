@@ -126,16 +126,14 @@ img{
         li{
           display: inline-block;
           a{
-            display: block;
+            display: flex;
             font-size: rem(16);
           }
           a::after {
             content: "|";
-            float: right;
             padding: 0 5px;
-            @include breakpoint($pc) {
-              content: "";
-            }
+            display: flex;
+            align-items: center;
           }
         }
         li:last-of-type a::after {
