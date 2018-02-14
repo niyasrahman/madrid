@@ -3,13 +3,27 @@ import React from "react";
 import {connect} from "react-redux";
 import { createDfpAdComponent } from '@quintype/components';
 
+const viewPortSizeMappingHorizontal_728to320 = [ {viewport: [980, 90], sizes:[[728, 90]]},
+                              {viewport: [320, 0], sizes:[[320, 50]]},
+                              {viewport: [0, 0], sizes:[[320, 50]]}]
+const viewPortSizeMappingVertical_600to250 = [ {viewport: [980, 90], sizes:[[300, 600]]},
+                              {viewport: [320, 0], sizes:[[300, 250]]},
+                              {viewport: [0, 0], sizes:[[300, 250]]}]
 export const AD_CONFIG = {
-  "Horizontal-Ad": { adUnit: "Madrid_Horizontal_Responsive", sizes: [[728, 90], [320, 50]] },
+  "Horizontal-Ad": { adUnit: "Madrid_Horizontal_Responsive", sizes: [[728, 90], [320, 50]],
+    viewPortSizeMapping: viewPortSizeMappingHorizontal_728to320
+  },
   "Mrec": { adUnit: "Madrid_Mrec", sizes: [[300,250]] },
-  "Vertical-Ad": { adUnit: "Madrid_Vertical_Responsive", sizes: [[300, 600], [300, 250]] },
+  "Vertical-Ad": { adUnit: "Madrid_Vertical_Responsive", sizes: [[300, 600], [300, 250]],
+    viewPortSizeMapping: viewPortSizeMappingVertical_600to250
+  },
   "Story-Mrec": { adUnit: "Madrid_Story_Mrec", sizes: [[300,250]] },
-  "Story-Middle-Ad": { adUnit: "Madrid_Story_Middle_Responsive", sizes: [[728, 90], [320, 50]] },
-  "Story-Bottom-Ad": { adUnit: "Madrid_Story_Bottom_Responsive", sizes: [[728, 90], [320, 50]] }
+  "Story-Middle-Ad": { adUnit: "Madrid_Story_Middle_Responsive", sizes: [[728, 90], [320, 50]],
+    viewPortSizeMapping: viewPortSizeMappingHorizontal_728to320
+  },
+  "Story-Bottom-Ad": { adUnit: "Madrid_Story_Bottom_Responsive", sizes: [[728, 90], [320, 50]],
+    viewPortSizeMapping: viewPortSizeMappingHorizontal_728to320
+  }
 }
 
 function DfpAdBase(props) {
