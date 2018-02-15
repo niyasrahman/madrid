@@ -4,6 +4,7 @@ import _ from "lodash";
 import { Link, ResponsiveImage} from "@quintype/components";
 
 import { Author } from "./author.js";
+import { ImageFallback } from "./image-fallback.js";
 import { SectionName } from "./section-name.js";
 
 function Carousel(props) {
@@ -61,12 +62,15 @@ function Slide(props) {
 
   return <div className="carousel-slide">
     <div className="carousel-slide__image">
-      <figure>
-        <ResponsiveImage slug={props.story["hero-image-s3-key"]} metadata={props.story["hero-image-metadata"]}
-          aspectRatio={[4,3]}
-          defaultWidth={480} widths={[250,480,640]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 23%"
-          imgParams={{auto:['format', 'compress'], fit:'max'}}/>
-      </figure>
+      { props.story["hero-image-s3-key"] ?
+        <figure>
+          <ResponsiveImage slug={props.story["hero-image-s3-key"]} metadata={props.story["hero-image-metadata"]}
+            aspectRatio={[4,3]}
+            defaultWidth={480} widths={[250,480,640]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 23%"
+            imgParams={{auto:['format', 'compress'], fit:'max'}}/>
+        </figure> :
+        <ImageFallback />
+      }
     </div>
     <div className="carousel-slide__content">
       <SectionName hideLink={true} inlineStyle={inlineStyle} name={props.story.sections[0]['display-name'] || props.story.sections[0]['name']}/>

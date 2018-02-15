@@ -4,6 +4,7 @@ import _ from "lodash";
 import { Link, ResponsiveImage } from "@quintype/components";
 
 import { Author } from "./author.js";
+import { ImageFallback } from "./image-fallback.js";
 import { SectionName } from "./section-name.js";
 
 function StoryCard(props) {
@@ -23,13 +24,16 @@ function StoryCardBgImage(props) {
     slug: _.get(props.story, ['authors' , 0, 'id'] , props.story['author-id'])
   }
   return <div className="story-card">
-    <figure className="story-card__image story-card__image--cover">
-      <ResponsiveImage slug={props.story["hero-image-s3-key"]} metadata={props.story["hero-image-metadata"]}
-        aspectRatio={props.aspectRatio ? props.aspectRatio : '[4:3]'}
-        defaultWidth={480}
-        widths={[250,480,640]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 23%"
-        imgParams={{auto:['format', 'compress'], fit:'max'}}/>
-    </figure>
+    { props.story["hero-image-s3-key"] ?
+      <figure className="story-card__image story-card__image--cover">
+        <ResponsiveImage slug={props.story["hero-image-s3-key"]} metadata={props.story["hero-image-metadata"]}
+          aspectRatio={props.aspectRatio ? props.aspectRatio : '[4:3]'}
+          defaultWidth={480}
+          widths={[250,480,640]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 23%"
+          imgParams={{auto:['format', 'compress'], fit:'max'}}/>
+      </figure> :
+      <ImageFallback className="story-card__image story-card__image--cover"/>
+    }
     <div className="story-card__content story-card__content--over-image">
       <h2 className="story-card__heading" dangerouslySetInnerHTML={ {__html: props.story.headline }} />
       <Author author={author} />
@@ -49,13 +53,7 @@ function StoryCardSimple(props) {
   // We can enable Image, Subheadline and Section name if the config values are true.
   // By default we'll hide all.
   return <div className={classNames('story-card', { 'story-card--transparent': props.config && props.config.transparent }) }>
-      { props.config && props.config.image &&
-        <figure className="story-card__image story-card__image--16x9">
-          <ResponsiveImage slug={props.story["hero-image-s3-key"]} metadata={props.story["hero-image-metadata"]}
-            aspectRatio={[4,3]}
-            defaultWidth={480} widths={[250,480,640]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 23%"
-            imgParams={{auto:['format', 'compress'], fit:'max'}}/>
-        </figure> }
+      { props.config && props.config.image && <ImageRenderComponent {...props} /> }
       <div className={classNames('story-card__content', { 'story-card__content--transparent': props.config && props.config.transparent }) }>
         { props.config && props.config.section &&
           <SectionName hideLink={true} inlineStyle={inlineStyle} name={props.story.sections[0]['display-name'] || props.story.sections[0]['name']}/>
@@ -65,6 +63,17 @@ function StoryCardSimple(props) {
         <Author author={author} />
       </div>
     </div>
+}
+
+function ImageRenderComponent(props) {
+  return props.story["hero-image-s3-key"] ?
+    <figure className="story-card__image story-card__image--16x9">
+      <ResponsiveImage slug={props.story["hero-image-s3-key"]} metadata={props.story["hero-image-metadata"]}
+        aspectRatio={[4,3]}
+        defaultWidth={480} widths={[250,480,640]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 23%"
+        imgParams={{auto:['format', 'compress'], fit:'max'}}/>
+    </figure> :
+    <ImageFallback className="story-card__image story-card__image--16x9"/>;
 }
 
 export { StoryCard };

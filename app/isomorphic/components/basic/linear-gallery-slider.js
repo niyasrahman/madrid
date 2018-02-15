@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import { Link, ResponsiveImage } from "@quintype/components";
 import canUseDom from "../../../utils/can-use-dom";
 import { SectionName } from "./section-name.js";
-
+import { ImageFallback } from "./image-fallback.js";
 
 function LinearGallerySlider(props) {
   const settings = {
@@ -60,12 +60,15 @@ function SliderItem(props) {
   const story = props.item.type === 'story' && props.item.story ? props.item.story : props.item;
   return (
     <Link href={"/" + story.slug }>
+    { story["hero-image-s3-key"] ?
       <figure>
         <ResponsiveImage slug={story["hero-image-s3-key"]} metadata={story["hero-image-metadata"]}
           aspectRatio={[4,3]}
           defaultWidth={320} widths={[250,480,640]}
           imgParams={{auto:['format', 'compress'], fit:'max'}}/>
-      </figure>
+      </figure> :
+      <ImageFallback />
+    }
       <p className="linear-gallery-slider__item-title" dangerouslySetInnerHTML={ {__html: story.headline }} />
     </Link>
   )

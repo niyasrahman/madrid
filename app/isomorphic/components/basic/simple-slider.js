@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 
 import { Link, ResponsiveImage } from "@quintype/components";
-
+import { ImageFallback } from "./image-fallback.js";
 
 function SimpleSlider(props) {
   const settings = {
@@ -30,12 +30,14 @@ function SliderItem(props) {
 
   return (
     <div className="simple-slider__item">
+      { story["hero-image-s3-key"] ?
       <figure>
         <ResponsiveImage slug={story["hero-image-s3-key"]} metadata={story["hero-image-metadata"]}
           aspectRatio={[9,3]}
           defaultWidth={480} widths={[250,480,640]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 23%"
           imgParams={{auto:['format', 'compress'], fit:'max'}}/>
-      </figure>
+      </figure> :
+      <ImageFallback bgColor='#adc1d6'/> }
       <div className="simple-slider__content">
         <p className="simple-slider__section-name">Must Reads</p>
         <h2 className="simple-slider__story-heading">{story.headline}</h2>
