@@ -16,13 +16,15 @@ class StoryPagePreview extends React.Component {
       if (event.data.story) {
         this.setState({
           story: event.data.story,
-          relatedStories: Array(4).fill(event.data.story)
+          relatedStories: Array(4).fill(event.data.story),
+          preview: true
         });
       }
     });
   }
 
   render() {
+    console.log(this.state);
     if (!this.state.story) return <div></div>;
     return <StoryPageContent index={0} {...this.state}/>
   }
