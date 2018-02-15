@@ -43,12 +43,14 @@ function ThemeBase(props) {
         border-color: ${props.publisherTheme.primary_color} !important;
       }
       ::-moz-selection {
-             background-color: rgba(${props.publisherTheme.primary_color}, 0.5);
+             background-color: ${props.publisherTheme.primary_color};
              color: #FFF;
+             opacity: 0.5;
       }
       ::selection {
-             background-color: rgba(${props.publisherTheme.primary_color}, 0.5);
+             background-color: ${props.publisherTheme.primary_color};
              color: #FFF;
+             opacity: 0.5;
       }`
 
 }
