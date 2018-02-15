@@ -78,7 +78,7 @@ class StoryHeaderCard extends React.Component {
       </Link>
       <div>
         { (this.state.story['story-template'] === "live-blog") && <span className="live-story" style={liveDisplayStyles}>live</span> }
-        <h3 className="story-headline" dangerouslySetInnerHTML={ {__html: this.state.story.headline }} />
+        <h1 className="story-headline" dangerouslySetInnerHTML={ {__html: this.state.story.headline }} />
       </div>
       <p className="story-summary" dangerouslySetInnerHTML={ {__html: this.state.story.subheadline }} />
       <div className="story-byline">

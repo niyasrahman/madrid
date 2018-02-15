@@ -29,6 +29,8 @@ class HomePage extends React.Component {
     }
 
     return <div className="home-page">
+      { /* Don't want to show it user but need it for SEO reasons🙄 */ }
+      <h1 style={{display: 'none'}}>{_.get(this.props.config, ['publisher-settings', 'title'], this.props['publisher-name'])}</h1>
       {this.props.data.orderedCollectionBulk.map((collection, index) => {
         if (collection) {
           const config = {

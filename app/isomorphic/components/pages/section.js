@@ -26,6 +26,7 @@ function getCollectionConfig(collection) {
 function LoadMoreStoriesTemplate(props) {
   const config = getCollectionConfig(props.collection);
   return <div>
+    <h1 style={{display: 'none'}}>{_.get(props.collection, ['name'], '')}</h1>
     <CardGroup stories={props.stories.slice(0,4)} config= {config}/>
     <OneMainCardSlider stories={props.stories.slice(4,11)} config= {config}/>
     <ThreeStoryCards stories={props.stories.slice(11,14)} config= {config}/>
