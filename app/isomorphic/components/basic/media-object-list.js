@@ -40,8 +40,10 @@ function MediaObject({story, config}) {
 function MediaObjectsList(props) {
   return (
     <div>
-      {props.stories.slice(0,3).map(storyObj =>
-        <MediaObject story={storyObj.story} key={storyObj.id}/>
+      {props.stories.slice(0,3).map(storyObj =>{
+          const story = storyObj && storyObj.story ? storyObj.story : storyObj;
+          return <MediaObject story={story} key={story.id}/>
+        }
       )}
     </div>
   )
