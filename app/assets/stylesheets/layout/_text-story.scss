@@ -32,6 +32,15 @@
       padding-top: 33%;
     }
   }
+  &-hero-image__fallback-placeholder {
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+    @include breakpoint($tablet) {
+      padding-top: 110px;
+    }
+  }
   &__aside {
     display: none;
     @include breakpoint($pc) {

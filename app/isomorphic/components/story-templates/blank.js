@@ -23,21 +23,24 @@ function BlankStoryTemplate(props) {
         return <StoryPageCard key={card.id} card={card} story={props.story}/>
     }
   });
+  const imageElement = breakpoint('tablet') ?
+    <ResponsiveImage slug={props.story["hero-image-s3-key"]} metadata={props.story["hero-image-metadata"]}
+    aspectRatio={[9,3]}
+    defaultWidth={480} widths={[250,480,640,960,1200]} sizes="(max-width: 500px) 98%"
+    imgParams={{auto:['format', 'compress'], fit:'max'}} /> :
+    <ResponsiveImage slug={props.story["hero-image-s3-key"]} metadata={props.story["hero-image-metadata"]}
+    aspectRatio={[16,9]}
+    defaultWidth={480} widths={[250,480,640]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 98%"
+    imgParams={{auto:['format', 'compress'], fit:'max'}} />;
   return <article className="blank-story">
-      <figure className="blank-story-hero-image qt-image-16x9">
-        { breakpoint('tablet') ?
-            <ResponsiveImage slug={props.story["hero-image-s3-key"]} metadata={props.story["hero-image-metadata"]}
-            aspectRatio={[9,3]}
-            defaultWidth={480} widths={[250,480,640,960,1200]} sizes="(max-width: 500px) 98%"
-            imgParams={{auto:['format', 'compress'], fit:'max'}} />
-            :
-            <ResponsiveImage slug={props.story["hero-image-s3-key"]} metadata={props.story["hero-image-metadata"]}
-            aspectRatio={[16,9]}
-            defaultWidth={480} widths={[250,480,640]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 98%"
-            imgParams={{auto:['format', 'compress'], fit:'max'}} />
+        {
+          props.story["hero-image-s3-key"] ?
+          <figure className="blank-story-hero-image qt-image-16x9">
+            {imageElement}
+          </figure>:
+          <div className="blank-story-hero-image__fallback-placeholder">
+          </div>
         }
-
-      </figure>
       <div className="blank-story--wrapper">
         <div className="blank-story--content">
           <StoryHeaderCard story={props.story}/>
