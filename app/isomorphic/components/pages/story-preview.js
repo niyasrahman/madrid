@@ -24,7 +24,6 @@ class StoryPagePreview extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     if (!this.state.story) return <div></div>;
     return <StoryPageContent index={0} {...this.state}/>
   }
