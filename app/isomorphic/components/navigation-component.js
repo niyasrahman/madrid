@@ -48,6 +48,7 @@ function mapStateToProps(state) {
     title: _.get(state.qt.config['publisher-settings'], ['title'], 'Madrid'),
     menu: _.get(state, ["qt", "data", "navigationMenu"], []),
     publisherTheme: state.qt.config['publisher-theme'] || {},
+    publisherName: state.qt.config['publisher-name'], 
     links: STATIC_LINKS,
     showOffcanvasMenu: state.offcanvasMenu
   };
