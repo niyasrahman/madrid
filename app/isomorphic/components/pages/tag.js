@@ -17,7 +17,7 @@ class TagPage extends React.Component {
         this.props.data.stories.length ?
         <FullscreenMediaList stories={this.props.data.stories} config={config} /> :
         <div className="component-wrapper">
-          <p>No stories found for tag <strong>{this.props.data.tagName}</strong>.</p>
+          <p>No stories found for tag '<strong>{this.props.data.tagName}</strong>'.</p>
         </div>
       }
     </div>;

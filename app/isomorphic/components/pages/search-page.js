@@ -54,7 +54,7 @@ class SearchPage extends React.Component {
           hideLoadmore={this.state.hideLoadmore}
           getMoreStories={this.getMoreResults}/> :
         <div className="component-wrapper">
-          <p>No stories found for tag <strong>{this.props.data.tag}</strong>.</p>
+          <p>No stories found for '<strong>{this.props.data.query}</strong>'.</p>
         </div>
       }
     </div>;
