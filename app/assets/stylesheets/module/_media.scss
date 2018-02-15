@@ -2,7 +2,7 @@
   clear: both;
   overflow: hidden;
   margin-bottom: 30px;
-  display: block;
+  display: flex;
   &:last-child {
     margin-bottom: 0;
   }
@@ -13,28 +13,27 @@
     box-shadow: 0 2px 10px 0 rgba($black, 0.1);
   }
   &__img {
-    width: 37%;
-    float: left;
+    flex: 1 1 50%;
     @include aspect-ratio(4,3);
 
     @include breakpoint($tablet) {
-      width: 46%;
+      flex: 1 1 46%;
     }
     figure {
       margin: 0;
     }
   }
   &__content {
-    float: right;
-    width: 63%;
+    flex: 1 1 50%;
     padding: 9px 10px;
     @include breakpoint($tablet) {
-      width: 54%;
+      flex: 1 1 54%;
     }
     .media-title {
       font-size: rem(16);
       padding: 0;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
+      line-height: 1.5;
       @include breakpoint($tablet) {
         font-size: rem(22);
         margin-bottom: 40px;
