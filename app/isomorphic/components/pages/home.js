@@ -33,7 +33,7 @@ class HomePage extends React.Component {
         if (collection) {
           const config = {
             'collection-name': collection.name,
-            'collection-slug': collection.slug,
+            'collection-slug': collection['slug-with-parent'] ? collection['slug-with-parent'] : collection.slug,
             'collection-color': collection.color,
             'collection-section': _.get(collection,['metadata', 'section'], [])
           }

@@ -43,6 +43,13 @@ export function loadHomePageData(client, config) {
 
 function setExtraProperties(data, menu, childCollectionsAssociatedMetadata) {
   _(data).forEach((collection)=>{
+    const collectionSectionObject = _.find(menu, function(menuItem) {
+      return menuItem['section-slug'] == collection.slug
+    });
+    if(collectionSectionObject && collectionSectionObject['parent-id']) {
+       const parentSectionObject = _.find(menu, function(menuItem) { return menuItem.id ==collectionSectionObject['parent-id'] });
+       collection['slug-with-parent'] = parentSectionObject['section-slug'] + '/' + collection.slug;
+    }
     const collectionMenuObject = _.find(menu, function(menuCollectionItem) { return menuCollectionItem['section-slug'] === collection.slug; });
     collection.color = collectionMenuObject ? collectionMenuObject.data.color : '#6093f2';
     collection['associated-metadata'] = childCollectionsAssociatedMetadata ? childCollectionsAssociatedMetadata[collection.slug] : [];
