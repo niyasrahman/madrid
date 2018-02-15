@@ -15,7 +15,8 @@ class HomePagePreview extends React.Component {
     super(props);
     this.state = {
       started: false,
-      data: props.data
+      data: props.data,
+      preview: true
     };
   }
 
