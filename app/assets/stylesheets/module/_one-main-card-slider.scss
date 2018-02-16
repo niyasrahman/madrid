@@ -5,7 +5,9 @@
   	padding-top: 50px;
   	padding-bottom: 50px;
   }
-
+  .component-wrapper {
+    padding: 15px 0 0;
+  }
   .slick-prev,
   .slick-next {
     width: 40px;
@@ -20,6 +22,12 @@
     	width: 95px;
       height: 130px;
     }
+  }
+  .slick-prev {
+    margin-left: 0;
+  }
+  .slick-next {
+    margin-right: 0;
   }
   .slick-active {
   	.overlay-story-card__heading {

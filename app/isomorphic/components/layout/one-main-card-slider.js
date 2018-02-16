@@ -27,7 +27,7 @@ function OneMainCardSlider(props) {
         {
           breakpoint: 480,
           settings: {
-            centerPadding: '80px',
+            centerPadding: '20px',
             slidesToShow: 1
           }
         }
@@ -35,13 +35,15 @@ function OneMainCardSlider(props) {
     };
 
   return !props.stories.length ? null : <div className="one-main-card-slider component-wrapper-fluid">
-      <Slider {...settings} className="one-main-card-slider__slides component-wrapper">
+      <div className="component-wrapper">
+      <Slider {...settings} className="one-main-card-slider__slides">
         {props.stories.map((item) =>
           <div key={item.id} className="one-main-card-slider__slider-content">
             <SliderItem item={item} />
           </div>
         )}
       </Slider>
+      </div>
       <div className="app-ad app-ad--horizontal">
         <DfpAd adtype="Horizontal-Ad" layoutName="OneMainCardSlider" collectionSlug={props.config['collection-slug']}/>
       </div>

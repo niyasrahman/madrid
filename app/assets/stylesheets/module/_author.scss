@@ -33,6 +33,7 @@
   &__name {
     font-size: rem(12);
     font-weight: 300;
+    color: $gray-light;
     @include breakpoint($tablet) {
       font-size: rem(16);
     }
