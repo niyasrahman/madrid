@@ -2,7 +2,7 @@ const MetypeConfig = (publisherName = 'demo') => {
   const _MetypeConfig =  {
     'demo' : {
       accountId : 2,
-      host: 'https://www.metype.com',
+      host: 'http://localhost:5000',
       primaryColor:'#2f81e4',
       bgColor:'#fff',
       className:'',

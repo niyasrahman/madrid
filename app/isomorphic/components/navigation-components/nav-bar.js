@@ -6,6 +6,7 @@ import { AppLogo } from './app-logo.js'
 import { MenuItem } from './helper-components.js'
 import { Search } from "../basic/search.js";
 import { Button } from "../basic/button.js";
+import { Login } from "./login.js";
 import _ from "lodash";
 import { connect } from 'react-redux';
 
@@ -37,6 +38,7 @@ function NavBarBase(props) {
           </nav>
         </div>
         <div className="header__last">
+             <Login host={metypeConfig.host}/>
           <Search />
         </div>
       </div>
