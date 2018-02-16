@@ -4,11 +4,11 @@ import { BlankStory } from "../story-templates/blank.js";
 import { LiveBlogStory } from "../story-templates/live-blog.js";
 import { InfiniteStoryBase } from "@quintype/components"
 
-export function StoryPageContent({story, relatedStories, index }, config) {
+export function StoryPageContent({story, relatedStories, index, preview = false }, config) {
   if(story['story-template'] === 'live-blog') {
     return <LiveBlogStory story={story} config={config} />;
   } else {
-    return <BlankStory story={story} config={config} relatedStories={index === 0 ? relatedStories : []}/>
+    return <BlankStory story={story} config={config} preview={preview} relatedStories={index === 0 ? relatedStories : []}/>
   }
 }
 

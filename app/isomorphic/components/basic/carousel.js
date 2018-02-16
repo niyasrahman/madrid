@@ -20,10 +20,12 @@ function Carousel(props) {
   return !props.stories ? null : <div className="carousel-wrapper">
       <div className="carousel">
         <Slider {...settings}>
-          {props.stories.slice(0, limit).map((storyObj) =>
-            <div key={storyObj.id}>
-              <CarouselItem story={storyObj.story}/>
-            </div>
+          {props.stories.slice(0, limit).map((storyObj) => {
+              const story = storyObj && storyObj.story ? storyObj.story : storyObj;
+              return <div key={story.id}>
+                <CarouselItem story={story}/>
+              </div>
+            }
           )}
         </Slider>
       </div>

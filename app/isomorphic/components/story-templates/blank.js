@@ -13,7 +13,7 @@ function BlankStoryTemplate(props) {
   const metypeConfig = props.config['metype-config'];
   const StoryCards = props.story.cards.map((card, index) => {
     if(index === 0) {
-      return <div className="blank-story__card--with-ad">
+      return <div key={card.id} className="blank-story__card--with-ad">
         <StoryPageCard key={card.id} card={card} story={props.story}/>
         <div className="app-ad app-ad--story-horizontal">
           <DfpAd adtype="Story-Middle-Ad"/>
@@ -53,16 +53,19 @@ function BlankStoryTemplate(props) {
             <RelatedStories stories = {props.relatedStories}></RelatedStories>
           </div>
         </div>
-        <div className="app-ad app-ad--story-horizontal">
-          <DfpAd adtype="Story-Bottom-Ad"/>
-        </div>
-        <div className="blank-story--metype-widget">
-          <MetypeCommentingWidget
-            host={metypeConfig.host}
-            accountId={metypeConfig.accountId}
-            pageURL={generateHostUrl(props.story)}
-            primaryColor={metypeConfig.primaryColor}/>
-        </div>
+        { !props.preview && <div>
+            <div className="app-ad app-ad--story-horizontal">
+              <DfpAd adtype="Story-Bottom-Ad"/>
+            </div>
+            <div className="blank-story--metype-widget">
+              <MetypeCommentingWidget
+                host={metypeConfig.host}
+                accountId={metypeConfig.accountId}
+                pageURL={generateHostUrl(props.story)}
+                primaryColor={metypeConfig.primaryColor}/>
+            </div>
+          </div>
+        }
       </div>
     </article>
 }

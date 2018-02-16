@@ -1,3 +1,3 @@
-<script type="text/javascript">
-  var staticPageStoreContent = <%- JSON.stringify(store.getState()) -%>;
+<script type="application/json" id="static-page">
+  <%- JSON.stringify(store.getState()) -%>
 </script>

@@ -1,13 +1,13 @@
 import React from "react";
 import { HomePage } from "./home.js";
 
-function randomStoryId(story) {
+function randomStoryProperties(story) {
   const storyId = Math.random();
-  return Object.assign({}, story, {id: storyId, "story-content-id": storyId})
+  return Object.assign({}, story, {id: storyId, "story-content-id": storyId, 'section-color': '#ccc'})
 }
 
-function updateHomeCollections(homeCollections, story) {
-  return homeCollections.map(value => Object.assign({}, value, {items: Array(value.items.length).fill(story).map(randomStoryId)}))
+function updateHomeCollections(orderedCollectionBulk, story) {
+  return orderedCollectionBulk.map(value => Object.assign({}, value, {items: Array(value.items.length).fill(story).map(randomStoryProperties)}))
 }
 
 class HomePagePreview extends React.Component {
@@ -15,7 +15,8 @@ class HomePagePreview extends React.Component {
     super(props);
     this.state = {
       started: false,
-      data: props.data
+      data: props.data,
+      preview: true
     };
   }
 
@@ -28,7 +29,7 @@ class HomePagePreview extends React.Component {
       if (event.data.story) {
         this.setState({
           started: true,
-          data: Object.assign({}, this.props.data, {homeCollections: updateHomeCollections(this.props.data.homeCollections, event.data.story)})
+          data: Object.assign({}, this.props.data, {orderedCollectionBulk: updateHomeCollections(this.props.data.orderedCollectionBulk, event.data.story)})
         })
       }
     });
