@@ -5,6 +5,6 @@ export function loadStaticPageData(config) {
   return Promise.resolve({
     navigationMenu: getNavigationMenuArray(config.layout.menu),
     cacheKeys: ["static"],
-    staticPageHTML: staticPageHTML(),
+    staticPageHTML: staticPageHTML(config['publisher-name']),
   });
 }
