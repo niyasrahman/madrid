@@ -59,9 +59,8 @@ $ npm run compile && npm start # restart this if you change the service worker
 
 
 ### Note:
-We should change the configuration in production black knight as below to enable mapping to 
+1. We should change the configuration in production black knight as below to enable mapping to
 different publishers to their own itsman.
-
 ```
 asset_host: https://fea.quintype.com
 host_to_api_host:
@@ -71,4 +70,21 @@ host_to_automatic_api_host:
   - "-web"
   - ".madrid"
 sketches_host: http://quintype-demo.internal.quintype.io
+```
+2. Google Analytics ID and GTM ID should be served from the config ( *publisher.yml* file ) from appropriate publisher object, like all other values.
+```
+...
+samachara:
+    monogram: <monogram_url>
+    logo: <logo_url>
+    primary_color: "#2f73e4"
+    secondary_color: "#a3a3a3"
+    header_text_color: "#404040"
+    header_background_color: "#FFF"
+    footer_text_color: "#FFF"
+    footer_background_color: "#000"
+    dfp_network_id: '60988533'
+    gtm_id: 'GTM-M7935QR'
+    google_analytics_id: 'UA-72244642-1'
+...
 ```

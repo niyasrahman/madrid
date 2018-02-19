@@ -6,6 +6,7 @@ import { NavigationComponent } from "../../isomorphic/components/navigation-comp
 import { Footer } from "../../isomorphic/components/footer.js"
 import { Theme } from "../../isomorphic/components/theme.js";
 import { GTMIdProvider } from "../../isomorphic/components/gtm_id.js";
+import { GAIdProvider } from "../../isomorphic/components/ga_id.js";
 
 const cssContent = assetPath("app.css") ? readAsset("app.css") : "";
 
@@ -18,7 +19,8 @@ export function renderLayout(res, params){
     navbar: renderReduxComponent(NavigationComponent, params.store),
     footer: renderReduxComponent(Footer, params.store),
     title: "Madrid",
-    gtmTag: renderReduxComponent(GTMIdProvider, params.store),
+    gtmID: renderReduxComponent(GTMIdProvider, params.store),
+    googleAnalyticsID: renderReduxComponent(GAIdProvider, params.store),
     themeCSS: renderReduxComponent(Theme, params.store),
     metaTags: params.seoTags ? params.seoTags.toString() : "",
     disableAjaxNavigation: false,
