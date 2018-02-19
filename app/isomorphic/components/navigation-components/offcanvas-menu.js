@@ -4,10 +4,11 @@ import { Link } from "@quintype/components";
 import assetify from '@quintype/framework/assetify';
 import { SideMenuItem } from './helper-components';
 import CloseImg from '../../../assets/icons/close.svg';
-import FacebookImg from '../../../assets/icons/facebook.svg';
-import LinkedinImg from '../../../assets/icons/linkedin.svg';
-import TwitterImg from '../../../assets/icons/twitter.svg';
-import GoogleImg from '../../../assets/icons/google.svg';
+import FacebookImg from '../../../assets/icons/social/facebook-rounded.svg';
+import LinkedinImg from '../../../assets/icons/social/linkedin-rounded.svg';
+import TwitterImg from '../../../assets/icons/social/twitter-rounded.svg';
+import GoogleImg from '../../../assets/icons/social/google-rounded.svg';
+import InstagramImg from '../../../assets/icons/social/instagram-rounded.svg';
 
 class OffcanvasMenu extends React.Component {
   constructor(props) {
@@ -55,12 +56,25 @@ class OffcanvasMenu extends React.Component {
                 </li>
             })}
           </ul>
-          <ul className="sidebar__social">
-            <li><a href="https://www.facebook.com/QuintypeInc/" target="_blank"><img src={assetify(FacebookImg)} alt="Facebook"/></a></li>
-            <li><a href="https://www.linkedin.com/company/4788674/" target="_blank"><img src={assetify(LinkedinImg)} alt="Linkedin"/></a></li>
-            <li><a href="https://twitter.com/quintype_inc" target="_blank"><img src={assetify(TwitterImg)} alt="Twitter"/></a></li>
-            <li><a href="https://plus.google.com/" target="_blank"><img src={assetify(GoogleImg)} alt="Google"/></a></li>
-          </ul>
+          {
+            this.props.socialLinks && <ul className="sidebar__social">
+              {this.props.socialLinks['facebook-url'] &&
+                <li><a href={this.props.socialLinks['facebook-url']} target="_blank"><img src={assetify(FacebookImg)} alt="Facebook"/></a></li>
+              }
+              { this.props.socialLinks['google-plus-url'] &&
+                <li><a href={this.props.socialLinks['google-plus-url']} target="_blank"><img src={assetify(GoogleImg)} alt="Google"/></a></li>
+              }
+              { this.props.socialLinks['twitter-url'] &&
+                <li><a href={this.props.socialLinks['twitter-url']} target="_blank"><img src={assetify(TwitterImg)} alt="Twitter"/></a></li>
+              }
+              { this.props.socialLinks['linkedin-url'] &&
+                <li><a href={this.props.socialLinks['linkedin-url']} target="_blank"><img src={assetify(LinkedinImg)} alt="Linkedin"/></a></li>
+              }
+              { this.props.socialLinks['instagram-url'] &&
+                <li><a href={this.props.socialLinks['instagram-url']} target="_blank"><img src={assetify(InstagramImg)} alt="Google"/></a></li>
+              }
+            </ul>
+          }
         </nav>
       </div>
     </div>
