@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 
 function GTMIdProviderBase(props) {
   // We will show the GTM code, only if an ID is present
-  return props.publisherTheme && props.publisherTheme.gtm_id;
+  return props.publisherTheme && props.publisherTheme.gtm_id ? props.publisherTheme.gtm_id : null;
 }
 
 function mapStateToProps(state) {
