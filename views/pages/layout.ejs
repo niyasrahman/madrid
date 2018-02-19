@@ -62,5 +62,7 @@
       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- End Google Tag Manager (noscript) -->
     <%_ } _%>
+
+    <script type="application/json" id="initial-page"><%- JSON.stringify({config: store.getState().qt.config}) -%></script>
    </body>
 </html>
