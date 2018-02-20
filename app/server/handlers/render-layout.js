@@ -10,6 +10,13 @@ import { GAIdProvider } from "../../isomorphic/components/ga_id.js";
 
 const cssContent = assetPath("app.css") ? readAsset("app.css") : "";
 
+function themeParams(config, {primary_color = '#2f73e4'}) {
+  return {
+    appName: _.get(config, ["publisher-settings", "title"], "Madrid"),
+    primaryColor: primary_color,
+  };
+}
+
 export function renderLayout(res, params){
   res.render("pages/layout", _.extend({
     assetPath: assetPath,
@@ -18,11 +25,11 @@ export function renderLayout(res, params){
     cssContent: cssContent,
     navbar: renderReduxComponent(NavigationComponent, params.store),
     footer: renderReduxComponent(Footer, params.store),
-    title: "Madrid",
+    title: _.get(params.config, ["publisher-settings", "title"], "Madrid"),
     gtmID: renderReduxComponent(GTMIdProvider, params.store),
     googleAnalyticsID: renderReduxComponent(GAIdProvider, params.store),
     themeCSS: renderReduxComponent(Theme, params.store),
     metaTags: params.seoTags ? params.seoTags.toString() : "",
     disableAjaxNavigation: false,
-  }, params))
+  }, themeParams(params.config, params.store.getState().qt.config["publisher-theme"] || {}), params))
 }

@@ -7,6 +7,7 @@ import {upstreamQuintypeRoutes, isomorphicRoutes, staticRoutes} from "@quintype/
 import {generateRoutes, STATIC_ROUTES} from './routes';
 import {renderLayout} from "./handlers/render-layout";
 import {loadData, loadErrorData} from "./load-data";
+import {manifestFn} from "./manifest-fn";
 import {pickComponent} from "../isomorphic/pick-component";
 import {SEO} from "@quintype/seo";
 
@@ -58,4 +59,5 @@ isomorphicRoutes(app, {
   }),
   preloadJs: true,
   preloadRouteData: true,
+  manifestFn: manifestFn
 });
