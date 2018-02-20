@@ -88,3 +88,4 @@ samachara:
     google_analytics_id: 'UA-72244642-1'
 ...
 ```
+3. To show a static page, you have to add a value (say `AboutUs`) in the `static_pages` array of the publisher in `publisher_theme`. And you have to add an object in *static-page-html.js* file in the Black Knight config with the same key (`AboutUs` in this case) mapped to corresponding HTML content. (Check the *isomorphic/components/constants.js* file if you want to support a new static page altogether. (NOTE: All these should change once **itsman** starts supporting static pages. Until then... :( )

@@ -121,7 +121,7 @@ img{
         justify-content: center;
 
         @include breakpoint($pc){
-          float: right;
+          justify-content: flex-end;
         }
         li{
           display: inline-block;

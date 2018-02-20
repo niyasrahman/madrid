@@ -1,5 +1,7 @@
 import React from 'react';
 import {connect} from "react-redux";
+import filter from "lodash/filter";
+import indexOf from "lodash/indexOf";
 import assetify from '@quintype/framework/assetify';
 import Logo from '../../assets/icons/quintype_logo.svg';
 import { STATIC_LINKS } from "./constants";
@@ -26,8 +28,12 @@ function FooterBase(props) {
 }
 
 function mapStateToProps(state) {
+  const validStaticPages = state.qt.config['publisher-theme']['static_pages'];
+  const updatedStaticLinks = filter(STATIC_LINKS, (link) => {
+    return indexOf(validStaticPages, link.templateKey) > -1;
+  });
   return {
-    links: STATIC_LINKS,
+    links: updatedStaticLinks,
     publisherTheme: state.qt.config['publisher-theme'] || {},
     publisherName: state.qt.config['publisher-name'] || ''
   }

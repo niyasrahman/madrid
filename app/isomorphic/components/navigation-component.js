@@ -1,6 +1,8 @@
 import React from "react";
 import classNames from 'classnames';
-import _ from "lodash"
+import filter from "lodash/filter";
+import indexOf from "lodash/indexOf";
+import get from "lodash/get";
 import {connect} from "react-redux";
 
 import { STATIC_LINKS } from "./constants"
@@ -43,13 +45,16 @@ class NavigationBase extends React.Component {
 }
 
 function mapStateToProps(state) {
-  // Showing the first 5 menu items only to keep up with design.
+  const validStaticPages = state.qt.config['publisher-theme']['static_pages'];
+  const updatedStaticLinks = filter(STATIC_LINKS, (link) => {
+    return indexOf(validStaticPages, link.templateKey) > -1;
+  });
   return {
-    title: _.get(state.qt.config['publisher-settings'], ['title'], 'Madrid'),
-    menu: _.get(state, ["qt", "data", "navigationMenu"], []),
+    title: get(state.qt.config['publisher-settings'], ['title'], 'Madrid'),
+    menu: get(state, ["qt", "data", "navigationMenu"], []),
     publisherTheme: state.qt.config['publisher-theme'] || {},
     publisherName: state.qt.config['publisher-name'],
-    links: STATIC_LINKS,
+    links: updatedStaticLinks,
     socialLinks: state.qt.config['social-links'],
     showOffcanvasMenu: state.offcanvasMenu
   };

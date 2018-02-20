@@ -7,6 +7,7 @@ export const STATIC_ROUTES = [
   { path: "/about-us", pageType: PAGE_TYPE.STATIC_PAGE, renderParams: { contentTemplate: "./about-us" } },
   { path: "/terms-and-conditions", pageType: PAGE_TYPE.STATIC_PAGE, renderParams: { contentTemplate: "./terms-and-conditions" } },
   { path: "/privacy-policy", pageType: PAGE_TYPE.STATIC_PAGE, renderParams: { contentTemplate: "./privacy-policy" } },
+  { path: "/contact-us", pageType: PAGE_TYPE.STATIC_PAGE, renderParams: { contentTemplate: "./contact-us" } },
   { path: "/preview/story", pageType: PAGE_TYPE.STORY_PREVIEW, exact: true, renderParams: { contentTemplate: "./story-preview" }, disableIsomorphicComponent: false },
   { path: "/preview/home", pageType: PAGE_TYPE.HOME_PREVIEW, exact: true, renderParams: { contentTemplate: "./story-preview" }, disableIsomorphicComponent: false },
 ];
