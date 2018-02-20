@@ -1,8 +1,7 @@
 asset_host: http://localhost:8080
-sketches_host: https://ace.staging.quintype.io
+sketches_host: https://quintype-demo.quintype.io
 host_to_automatic_api_host:
-  - "-web"
-  - ".malibu"
+  - ".lvh.me"
 publisher_theme:
   ace:
     monogram: https://fea.assettype.com/quintype/assets/logo-b6438210bc.svg
@@ -24,25 +23,3 @@ publisher_theme:
     footer_text_color: ""
     footer_background_color: ""
     dfp_network_id: '60988533'
-  network18:
-    monogram: ""
-    logo: ""
-    primary_color: "#ccc"
-    secondary_color: ""
-    header_text_color: ""
-    header_background_color: ""
-    footer_text_color: ""
-    footer_background_color: ""
-    dfp_network_id: '60988533'
-  samachara:
-    monogram: https://fea.assettype.com/quintype/assets/logo-b6438210bc.svg
-    logo: https://svgshare.com/i/5Qv.svg
-    primary_color: "#2f73e4"
-    secondary_color: "#a3a3a3"
-    header_text_color: "#404040"
-    header_background_color: "#FFF"
-    footer_text_color: "#FFF"
-    footer_background_color: "#000"
-    dfp_network_id: '60988533'
-    gtm_id: 'GTM-M7935QR'
-    google_analytics_id: 'UA-72244642-1'
