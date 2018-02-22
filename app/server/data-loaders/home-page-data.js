@@ -68,7 +68,7 @@ function getChildCollectionProperties(collection) {
   var childrenSlugs = [];
   _.forEach(collection.items, function(item) {
     if (item.type === 'collection') {
-      associatedMetadata[item.slug] = item['associated-metadata'];
+      associatedMetadata[item.slug] = item['associated-metadata'] || [];
       childrenSlugs.push(item.slug);
     }
   });
