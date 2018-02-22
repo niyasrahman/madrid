@@ -8,6 +8,7 @@ import { StoryPageCard } from "../story-page-components/story-page-card.js";
 import { DfpAd } from "../dfp-ads";
 import { MetypeCommentingWidget } from "@metype/components";
 import { breakpoint } from "../../../utils/breakpoint";
+import { addTargetBlankToExtLinks } from "../../../utils/add-target-blank-to-extlinks";
 
 function BlankStoryTemplate(props) {
   const metypeConfig = props.config['metype-config'];
@@ -79,10 +80,15 @@ function generateHostUrl(story = {}){
 }
 
 
-function BlankStory(props) {
-  return <div className="story-grid">
-    <BlankStoryTemplate {...props}></BlankStoryTemplate>
-  </div>
+class BlankStory extends React.Component {
+  componentDidMount() {
+    addTargetBlankToExtLinks(this.storyWrapperElement);
+  }
+  render() {
+    return <div className="story-grid" ref={(el) => this.storyWrapperElement = el}>
+      <BlankStoryTemplate {...this.props}></BlankStoryTemplate>
+    </div>
+  }
 }
 
 export { BlankStory };

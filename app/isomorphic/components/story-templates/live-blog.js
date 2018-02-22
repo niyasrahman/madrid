@@ -8,6 +8,7 @@ import TimeAgo from 'react-timeago';
 import { DateTime } from 'luxon';
 import { MetypeCommentingWidget } from "@metype/components";
 import { breakpoint } from "../../../utils/breakpoint";
+import { addTargetBlankToExtLinks } from "../../../utils/add-target-blank-to-extlinks";
 
 class LiveBlogTemplate extends React.Component {
 
@@ -15,7 +16,7 @@ class LiveBlogTemplate extends React.Component {
     super(props);
     this.metypeConfig = this.props.config['metype-config'];
   }
-  
+
   formatter(value, unit, suffix, date, defaultFormatter) {
     return DateTime.fromMillis(date).toFormat('dd LLL, hh:mm a');
   }
@@ -70,8 +71,11 @@ class LiveBlogTemplate extends React.Component {
 }
 
 class LiveBlogStory extends React.Component {
+  componentDidMount() {
+    addTargetBlankToExtLinks(this.storyWrapperElement)
+  }
   render() {
-    return <div className="story-grid">
+    return <div className="story-grid" ref={(el) => this.storyWrapperElement = el}>
       <LiveBlogTemplate {...this.props}></LiveBlogTemplate>
     </div>
   }
