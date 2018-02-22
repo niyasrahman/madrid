@@ -56,6 +56,8 @@
     display: inline-block;
   }
   .card-added-at {
+    display: inline-block;
+    margin: 0 0 10px 0;
     font-size: rem(14);
     text-align: left;
     color: $dark-gray;
@@ -64,7 +66,7 @@
     background-color: $gray-white;
     @include breakpoint($pc) {
       font-size: rem(16);
-      margin: 0 0 0 -30px;
+      margin: 10px 0 10px -30px;
     }
   }
   .card-updated-at {

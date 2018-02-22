@@ -1,5 +1,6 @@
 import React from "react";
 import TimeAgo from 'react-timeago';
+import filter from "lodash/filter";
 
 const FetchEventTitle = props => {
   return <div>
@@ -11,21 +12,30 @@ const FetchEventTitle = props => {
 
 function KeyEvent(props) {
   return <article className="key-event">
-  { props.card.metadata.attributes['key-event'] && <div>
+   <div>
     <TimeAgo date={props.card['card-added-at']}  className="card-added-at"/>
     <a href={`/${props.slug}#${props.card.id}`}>
       <FetchEventTitle element={props.card['story-elements']} />
     </a>
-  </div> }
+  </div>
   </article>
 }
 
 function LiveBlogKeyEvents(props) {
-  return <div className="key-events">
-  <h3 className="key-events__heading"> key events</h3>
-  { props.story.cards.map((card, index)=>
-    card.metadata.attributes && <KeyEvent card={card} key={index} slug={props.story.slug}/>) }
-  </div>
+
+  const cardsWithKeyEvents = filter(props.story.cards, card => card.metadata.attributes['key-event']);
+
+  if(cardsWithKeyEvents.length < 1) {
+     return null
+  }
+
+  const keyEvents = cardsWithKeyEvents.map(card => <KeyEvent card={card} key={card.id} slug={props.story.slug} />)
+
+  return (
+     <div className="key-events">
+       <h3 className="key-events__heading"> key events</h3>
+       {keyEvents}
+     </div> );
 }
 
 export { LiveBlogKeyEvents };
