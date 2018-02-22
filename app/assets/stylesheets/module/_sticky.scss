@@ -1,0 +1,14 @@
+.sticky-element {
+  z-index: $zIndex-10;
+  position: relative;
+  &__wrapper {
+    will-change: position;
+    transform: translateZ(0);
+    top: 0;
+    left: 0;
+    right: 0;
+    &--fixed {
+      position: fixed;
+    }
+  }
+}

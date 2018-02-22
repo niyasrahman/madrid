@@ -8,7 +8,7 @@ import { Search } from "../basic/search.js";
 import { Button } from "../basic/button.js";
 import _ from "lodash";
 import { connect } from 'react-redux';
-
+import { Sticky } from '../basic/sticky'
 function mapStateToProps(state) {
   return {
     config: state.qt.config || {},
@@ -17,7 +17,8 @@ function mapStateToProps(state) {
 
 function NavBarBase(props) {
   const metypeConfig = props.config['metype-config'];
-  return <div className="header qt-theme__color--headerbg qt-theme__color--header">
+  return <Sticky>
+    <div className="header qt-theme__color--headerbg qt-theme__color--header">
       <div className="header__container">
         <AppLogo {...props} />
         <div className="header__middle">
@@ -50,6 +51,7 @@ function NavBarBase(props) {
         fontColor={metypeConfig.fontColor}
       />
     </div>
+  </Sticky>
 }
 
 const NavBar = connect(mapStateToProps, {})(NavBarBase);
