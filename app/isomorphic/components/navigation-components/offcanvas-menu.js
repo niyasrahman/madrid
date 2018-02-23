@@ -44,7 +44,7 @@ class OffcanvasMenu extends React.Component {
                   <SideMenuItem item={item} key={item['id'] + index}/>
                 )
               }
-              return <SubmenuItem item={item} key={item['id'] + index} onClick={this.closeMenu}/>
+              return <li key={item['id'] + index} onClick={this.closeMenu}><SubmenuItem item={item}/></li>
             })}
           </ul>
           <ul className="sidebar__info qt-theme__color--border">
