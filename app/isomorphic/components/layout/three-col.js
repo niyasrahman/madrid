@@ -20,7 +20,7 @@ function ThreeCol(props) {
 
   return (
     <div className="three-col component-wrapper">
-      <SectionName inlineStyle={inlineStyle} name={props.config['collection-name']} type="large" section={props.config['collection-section']} />
+      <SectionName hideLink={true} inlineStyle={inlineStyle} name={props.config['collection-name']} type="large" section={props.config['collection-section']} />
       <div className="three-col__items">
         <div className="three-col__item full-image">
           <StoryCard story={props.stories[0]} type="imageBackground" config={secondColFirstCardConfig}/>

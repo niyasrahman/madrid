@@ -24,7 +24,7 @@ function FullscreenStoryList(props) {
 
   return <div className="fullscreen-media-list">
     <div className="fullscreen-media-list__content component-wrapper">
-      <SectionName inlineStyle={inlineStyle} name={props.config['collection-name']} type="large" section={props.config['collection-section']}/>
+      <SectionName hideLink={true} inlineStyle={inlineStyle} name={props.config['collection-name']} type="large" section={props.config['collection-section']}/>
       <div className="col-8">
         {props.stories.map(storyObj => {
             const story = storyObj && storyObj.story ? storyObj.story : storyObj;

@@ -5,9 +5,9 @@ import _ from "lodash";
 
 function SectionName(props) {
   if(props.hideLink) {
-    return <div className={classNames("section-name", "qt-theme__color--border", {"section-name--large": props.type === 'large'})} style={props.inlineStyle}>
+    return <div><div className={classNames("section-name", "qt-theme__color--border", {"section-name--large": props.type === 'large'})} style={props.inlineStyle}>
       {props.name}
-    </div>
+    </div></div>
   }
 
   const sectionLink = `/${_.get(props.section, [0 , 'name'])}`.toLowerCase();

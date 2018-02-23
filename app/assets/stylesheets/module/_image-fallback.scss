@@ -1,5 +1,4 @@
 .image-fallback {
-  height: 100%;
   position: relative;
   svg {
     object-fit: cover;
@@ -11,4 +10,8 @@
     transform: translateX(-50%);
     height: 100%;
   }
+}
+
+.full-image .image-fallback {
+  height: 100%;
 }
