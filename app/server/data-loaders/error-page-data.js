@@ -9,7 +9,7 @@ export function loadErrorPageData(error, config) {
   const errorComponents = { 404 : "not-found", 500: "not-found" };
   const statusCode = error.httpStatusCode || 500;
   return {
-    data: { navigationMenu: getNavigationMenuArray(config.layout.menu) },
+    data: { navigationMenu: getNavigationMenuArray(config.layout.menu, config.sections) },
     config: Object.assign(_.pick(config, WHITELIST_CONFIG_KEYS),
             { 'publisher-theme': publisher.publisher_theme[config['publisher-name']] },
             { 'metype-config': MetypeConfig(config['publisher-name']) }),

@@ -21,7 +21,7 @@ export function loadHomePageData(client, config) {
       return makeBulkRequest(client, placeholderCollectionSlugs);
     })
     .then(allCollections => {
-      const structuredMenu = getNavigationMenuArray(config.layout.menu);
+      const structuredMenu = getNavigationMenuArray(config.layout.menu, config.sections);
       allCollections = setExtraProperties(allCollections, config.layout.menu, childCollectionsAssociatedMetadata);//Mutate all the collections and stories within to have associated colors.
 
       const orderedCollectionBulk = placeholderCollectionSlugs.map((collectionSlug) => {

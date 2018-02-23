@@ -9,7 +9,7 @@ export function loadSearchPageData(client, query, config) {
   return Story.getSearch(client, {'q': query, 'fields': storyFields, 'limit': '10'})
     .then(result => {
       const menu = config.layout.menu;
-      const navigationMenu = getNavigationMenuArray(menu);
+      const navigationMenu = getNavigationMenuArray(menu, config.sections);
       return {
         stories: getProcessedStories(result.stories, menu, config.sections),
         total: result.total,

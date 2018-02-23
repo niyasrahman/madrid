@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { Link } from "@quintype/components";
 import { MetypeFeedWidget } from "@metype/components";
 import { AppLogo } from './app-logo.js'
-import { MenuItem } from './helper-components.js'
+import { MenuItem, SubmenuItem } from './helper-components.js'
 import { Search } from "../basic/search.js";
 import { Button } from "../basic/button.js";
 import _ from "lodash";
@@ -30,9 +30,7 @@ function NavBarBase(props) {
                     <MenuItem item={item} key={index}/>
                   )
                 }
-                return <li key={index} className="nav-item">
-                  <Link href={ '/'+ item['section-slug']}>{item.title}</Link>
-                </li>
+                return <SubmenuItem item={item} key={index}/>
               })}
             </ul>
           </nav>

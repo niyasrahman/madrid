@@ -21,7 +21,7 @@ export function loadStoryPageData(client, params, config){
       return storyResponse.getRelatedStories(client)
     })
     .then(relatedStories => {
-      const structuredMenu = getNavigationMenuArray(config.layout.menu);
+      const structuredMenu = getNavigationMenuArray(config.layout.menu, config.sections);
       return{
         story: story,
         relatedStories,
