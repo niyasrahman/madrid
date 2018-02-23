@@ -11,7 +11,7 @@ function MenuItem(props) {
     <Link href={ props.item.completeUrl }>{props.item.title}</Link>
     <ul style={listStyle} className="qt-theme__color--border">
       {props.item.children.map((child, index)=> {
-        return <SubmenuItem item={child} key={child['section-slug'] + child['id']}/>
+        return <SubmenuItem item={child} key={child['id']}/>
       })}
     </ul>
   </li>
@@ -47,7 +47,7 @@ class SideMenuItem extends React.Component {
       <span>{this.props.item.title}</span>
       <ul className={classNames('submenu', {'submenu--show': this.state.openDownMenu})}>
         {this.props.item.children.map((child, index) => {
-          return <SubmenuItem item={child} key={child['section-slug'] + child['id'] }/>
+          return <SubmenuItem item={child} key={child['id']}/>
         })}
       </ul>
     </li>

@@ -41,10 +41,10 @@ class OffcanvasMenu extends React.Component {
             {this.props.menu.map((item, index)=> {
               if(item.children.length) {
                 return (
-                  <SideMenuItem item={item} key={item['item-id'] + index}/>
+                  <SideMenuItem item={item} key={item['id'] + index}/>
                 )
               }
-              return <SubmenuItem item={item} key={item['item-id'] + index} onClick={this.closeMenu}/>
+              return <SubmenuItem item={item} key={item['id'] + index} onClick={this.closeMenu}/>
             })}
           </ul>
           <ul className="sidebar__info qt-theme__color--border">

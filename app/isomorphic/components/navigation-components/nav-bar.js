@@ -27,10 +27,10 @@ function NavBarBase(props) {
               {_.take(props.menu, 6).map((item, index) => {
                 if(item.children.length) {
                   return (
-                    <MenuItem item={item} key={index}/>
+                    <MenuItem item={item} key={item.id + index}/>
                   )
                 }
-                return <SubmenuItem item={item} key={index}/>
+                return <SubmenuItem item={item} key={item.id + index}/>
               })}
             </ul>
           </nav>
