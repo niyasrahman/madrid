@@ -218,7 +218,7 @@ body {
               opacity: 1;
               top: 100%;
               background: $white;
-              z-index: 3;
+              z-index: $zIndex-header;
               li{
                 display: block;
               }
