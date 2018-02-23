@@ -1,6 +1,7 @@
 import React from "react";
 import TimeAgo from 'react-timeago';
 import filter from "lodash/filter";
+import get from "lodash/get";
 
 const FetchEventTitle = props => {
   return <div>
@@ -23,7 +24,7 @@ function KeyEvent(props) {
 
 function LiveBlogKeyEvents(props) {
 
-  const cardsWithKeyEvents = filter(props.story.cards, card => card.metadata.attributes['key-event']);
+  const cardsWithKeyEvents = filter(props.story.cards, card => get(card.metadata, ['attributes','key-event']));
 
   if(cardsWithKeyEvents.length < 1) {
      return null
