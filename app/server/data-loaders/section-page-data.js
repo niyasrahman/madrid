@@ -12,7 +12,7 @@ export function loadSectionPageData(client, sectionId, config) {
       .then(response => {
         let collection = response.collection;
         const menu = config.layout.menu;
-        const structuredMenu = getNavigationMenuArray(menu);
+        const structuredMenu = getNavigationMenuArray(menu, config.sections);
         const collectionMenuObject = _.find(menu, function(menuCollectionItem) { return menuCollectionItem['section-slug'] === collection.slug; });
         // Setting the collection color which can be changed from platform settings. Fallback to one color if no
         // menu color is set.
@@ -53,7 +53,7 @@ export function loadSectionPageData(client, sectionId, config) {
         return {
           section: section,
           collection: collection,
-          navigationMenu: getNavigationMenuArray(menu),
+          navigationMenu: getNavigationMenuArray(menu, config.sections),
           cacheKeys: [sorterToCacheKey(config["publisher-id"], "top", sectionId)].concat(stories.map(story => storyToCacheKey(config["publisher-id"], story)))
         }
       })

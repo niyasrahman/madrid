@@ -13,8 +13,7 @@ export function loadAuthorPageData(client, authorId, config) {
       return Story.getSearch(client, params)
     })
     .then(storyResponse => {
-      const menu = config.layout.menu;
-      const navigationMenu = getNavigationMenuArray(menu);
+      const navigationMenu = getNavigationMenuArray(config.layout.menu, config.sections);
       return {
         author: authorData,
         stories: storyResponse.stories,

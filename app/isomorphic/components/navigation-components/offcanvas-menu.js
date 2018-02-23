@@ -2,7 +2,7 @@ import React from "react";
 import classNames from 'classnames';
 import { Link } from "@quintype/components";
 import assetify from '@quintype/framework/assetify';
-import { SideMenuItem } from './helper-components';
+import { SideMenuItem, SubmenuItem } from './helper-components';
 import CloseImg from '../../../assets/icons/close.svg';
 import FacebookImg from '../../../assets/icons/social/facebook-rounded.svg';
 import LinkedinImg from '../../../assets/icons/social/linkedin-rounded.svg';
@@ -41,12 +41,10 @@ class OffcanvasMenu extends React.Component {
             {this.props.menu.map((item, index)=> {
               if(item.children.length) {
                 return (
-                  <SideMenuItem item={item} key={item['item-id'] + index}/>
+                  <SideMenuItem item={item} key={item['id'] + index}/>
                 )
               }
-              return <li key={item['item-id']}>
-                <Link href={ '/'+ item['section-slug']} onClick={this.closeMenu}>{item.title}</Link>
-              </li>
+              return <SubmenuItem item={item} key={item['id'] + index} onClick={this.closeMenu}/>
             })}
           </ul>
           <ul className="sidebar__info qt-theme__color--border">

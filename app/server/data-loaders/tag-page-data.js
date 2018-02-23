@@ -9,7 +9,7 @@ export function loadTagPageData(client, tagSlug, config) {
   return Story.getStories(client, 'top', {'tag-slugs': tagSlug, 'fields': storyFields, 'limit': '20'})
     .then(stories => {
       const menu = config.layout.menu;
-      const navigationMenu = getNavigationMenuArray(menu);
+      const navigationMenu = getNavigationMenuArray(menu, config.sections);
       // TODO: Using client directly is not a good way to go.
       return client.getTags(tagSlug)
         .then(({tags}) => {
