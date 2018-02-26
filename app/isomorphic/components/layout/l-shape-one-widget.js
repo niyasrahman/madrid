@@ -28,7 +28,7 @@ function LShapeOneWidget(props) {
 
   return (
     <div className="l-shape-grid component-wrapper">
-      <SectionName inlineStyle={inlineStyle} name={props.config['collection-name']} type="large" section={props.config['collection-section']}/>
+      <SectionName hideLink={true} inlineStyle={inlineStyle} name={props.config['collection-name']} type="large" section={props.config['collection-section']}/>
       <div className="l-shape-grid__first-row">
         <div className="feature-story">
           <StoryCard story={props.stories[0]} config={primarStoryCardConfig} type="imageBackground"/>

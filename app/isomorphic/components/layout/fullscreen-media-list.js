@@ -27,7 +27,7 @@ function FullscreenMediaList(props) {
   return <div className="fullscreen-media-list">
     <div className="fullscreen-media-list__content component-wrapper">
       {
-        !props.HideSectionName && <SectionName inlineStyle={inlineStyle} name={props.config['collection-name']} type="large" section={props.config['collection-section']}/>
+        !props.HideSectionName && <SectionName hideLink={true} inlineStyle={inlineStyle} name={props.config['collection-name']} type="large" section={props.config['collection-section']}/>
       }
       <div className="col-8">
         {props.stories.slice(0,limit)

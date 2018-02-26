@@ -8,6 +8,7 @@ import fbIcon from '../../../assets/icons/social/fb-share.svg';
 import twitterIcon from '../../../assets/icons/social/twitter-share.svg';
 import linkedinIcon from '../../../assets/icons/social/linkedin-share.svg';
 import gplusIcon from '../../../assets/icons/social/gplus-share.svg';
+import whatsappIcon from '../../../assets/icons/social/whatsapp-share.svg';
 import assetify from '@quintype/framework/assetify';
 
 class StoryHeaderCard extends React.Component {
@@ -29,7 +30,7 @@ class StoryHeaderCard extends React.Component {
      });
   }
 
-  getSocialCardsTemplate({fbUrl, twitterUrl, gplusUrl, linkedinUrl}) {
+  getSocialCardsTemplate({fbUrl, twitterUrl, gplusUrl, linkedinUrl, whatsappUrl}) {
     return <ul className="social-share-icons">
       <li className="social-share-icon">
         <a href={fbUrl} target="_blank">
@@ -49,6 +50,11 @@ class StoryHeaderCard extends React.Component {
       <li className="social-share-icon">
         <a href={linkedinUrl} target="_blank">
           <img src={assetify(linkedinIcon)} alt="linkedin icon"/>
+        </a>
+      </li>
+      <li className="social-share-icon">
+        <a href={whatsappUrl} target="_blank">
+          <img src={assetify(whatsappIcon)} alt="whatsapp share"/>
         </a>
       </li>
     </ul>;

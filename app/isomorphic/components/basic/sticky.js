@@ -10,11 +10,15 @@ export class Sticky extends React.Component {
     const options = {
       threshold: [0,1]
     }
-    this.observer = new IntersectionObserver(this.makeSticky, options);
-    const observerElement = this.props.observerElement || 'observerElement';
-    // Instead of targeting the children, we are targeting the observer el which is a hidden `div` above the children of `Sticky`.
-    const target = document.querySelector('#' + observerElement);
-    this.observer.observe(target);
+    if ('IntersectionObserver' in window &&
+    'IntersectionObserverEntry' in window &&
+    'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
+      this.observer = new IntersectionObserver(this.makeSticky, options);
+      const observerElement = this.props.observerElement || 'observerElement';
+      // Instead of targeting the children, we are targeting the observer el which is a hidden `div` above the children of `Sticky`.
+      const target = document.querySelector('#' + observerElement);
+      this.observer.observe(target);
+    }
   }
 
   makeSticky(entries, observer) {
@@ -32,7 +36,7 @@ export class Sticky extends React.Component {
   }
 
   componentWillUnmount() {
-    this.observer.disconnect();
+    this.observer && this.observer.disconnect();
   }
 
   render() {
