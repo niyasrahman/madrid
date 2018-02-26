@@ -1,7 +1,6 @@
 import React from "react";
 import classNames from 'classnames';
 import { Link } from "@quintype/components";
-import { MetypeFeedWidget } from "@metype/components";
 import { AppLogo } from './app-logo.js'
 import { MenuItem, SubmenuItem } from './helper-components.js'
 import { Search } from "../basic/search.js";
@@ -16,7 +15,6 @@ function mapStateToProps(state) {
 }
 
 function NavBarBase(props) {
-  const metypeConfig = props.config['metype-config'];
   return <Sticky>
     <div className="header qt-theme__color--headerbg qt-theme__color--header">
       <div className="header__container">
@@ -26,11 +24,11 @@ function NavBarBase(props) {
             <ul>
               {_.take(props.menu, 6).map((item, index) => {
                 if(item.children.length) {
-                  return <li className="nav-item has--child" key={item.id + index}>
+                  return <li className="nav-item has--child" key={`${item['id']}${index}`}>
                     <MenuItem item={item}/>
                   </li>
                 }
-                return <li key={item.id + index}><SubmenuItem item={item}/></li>
+                return <li key={`${item['id']}${index}`}><SubmenuItem item={item}/></li>
               })}
             </ul>
           </nav>
@@ -39,15 +37,6 @@ function NavBarBase(props) {
           <Search />
         </div>
       </div>
-      <MetypeFeedWidget
-        host={metypeConfig.host}
-        accountId={metypeConfig.accountId}
-        publisher={props.config['publisher-name']}
-        primaryColor={metypeConfig.primaryColor}
-        className={metypeConfig.className || ''}
-        secondaryColor={metypeConfig.bgColor}
-        fontColor={metypeConfig.fontColor}
-      />
     </div>
   </Sticky>
 }
