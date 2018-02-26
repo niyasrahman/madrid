@@ -21,12 +21,15 @@ function TwoCol(props) {
   return (
     <div className="two-col component-wrapper">
       <SectionName hideLink={true} inlineStyle={inlineStyle} name={props.config['collection-name']} type="large" section={props.config['collection-section']}/>
-      <div className="two-col__media-list">
-        <MediaObjectsList stories= {props.stories.slice(0,3)} />
+      <div className="two-col__items">
+        <div className="two-col__item">
+          <MediaObjectsList stories= {props.stories.slice(0,3)} />
+        </div>
+        <div className="two-col__item full-card">
+          <StoryCard story={props.stories[3]} config={storyCardConfig}/>
+        </div>
       </div>
-      <div className="two-col__last">
-        <StoryCard story={props.stories[3]} config={storyCardConfig}/>
-      </div>
+      
       <div className="app-ad app-ad--horizontal">
         <DfpAd adtype="Horizontal-Ad" layoutName="TwoCol" collectionSlug={props.config['collection-slug']}/>
       </div>
