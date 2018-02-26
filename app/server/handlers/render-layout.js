@@ -3,6 +3,7 @@ import {assetPath, readAsset} from "@quintype/framework/server/asset-helper";
 import {renderReduxComponent} from "@quintype/framework/server/render";
 
 import { NavigationComponent } from "../../isomorphic/components/navigation-component.js"
+import { Metype } from "../../isomorphic/components/metype.js";
 import { Footer } from "../../isomorphic/components/footer.js"
 import { Theme } from "../../isomorphic/components/theme.js";
 import { GTMIdProvider } from "../../isomorphic/components/gtm_id.js";
@@ -24,6 +25,7 @@ export function renderLayout(res, params){
     contentTemplate: null,
     cssContent: cssContent,
     navbar: renderReduxComponent(NavigationComponent, params.store),
+    meType: renderReduxComponent(Metype, params.store),
     footer: renderReduxComponent(Footer, params.store),
     title: _.get(params.config, ["publisher-settings", "title"], "Madrid"),
     gtmID: renderReduxComponent(GTMIdProvider, params.store),
