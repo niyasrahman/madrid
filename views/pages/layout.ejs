@@ -16,6 +16,51 @@
       <%- cssContent %>
       <%- themeCSS %>
     </style>
+    <script type='text/javascript'>
+      const eventMethod = window.addEventListener
+        ? 'addEventListener'
+        : 'attachEvent';
+      const eventer = window[eventMethod];
+      const messageEvent = eventMethod === 'attachEvent' ? 'onmessage' : 'message';
+
+      const resizeIframe = data => {
+        const iframesList = document.querySelectorAll(`[id*="${data.iframe}"]`);
+        const iframeContainer = iframesList[iframesList.length - 1];
+        const iframeParent = iframeContainer.parentNode;
+
+        iframeParent.style.width = data.dimensions[0];
+        iframeParent.style.height = data.dimensions[1];
+
+        iframeContainer.setAttribute('width', data.dimensions[0]);
+        iframeContainer.setAttribute('height', data.dimensions[1]);
+      };
+
+      const replaceAdContent = data => {
+        const adUnitsList = document.querySelectorAll(`div[id*="${data.adUnit}"]`);
+        const adUnitContainer = adUnitsList[adUnitsList.length - 1];
+        adUnitContainer.innerHTML = data.content;
+
+        const scriptTag = document.createElement('script');
+        scriptTag.innerHTML = data.script;
+        adUnitContainer.appendChild(scriptTag);
+      };
+
+      // Listen to message from child window
+      eventer(
+        messageEvent,
+        e => {
+          const { data } = e;
+          const eventName = data.message;
+
+          if (eventName === 'adContentAvailable') {
+            replaceAdContent(data);
+          } else if (eventName === 'resizeIframe') {
+            resizeIframe(data);
+          }
+        },
+        false
+      );
+    </script>
     <%_ if(gtmID) { _%>
       <!-- Google Tag Manager -->
       <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push(
