@@ -1,5 +1,11 @@
 .story-list {
   clear: both;
+  padding: 0 5px;
+
+  @include breakpoint($tablet) {
+    padding: 0;
+  }
+  
   a {
     display: block;
     padding: 15px 0 10px 0;
