@@ -24,11 +24,11 @@ function NavBarBase(props) {
             <ul>
               {_.take(props.menu, 6).map((item, index) => {
                 if(item.children.length) {
-                  return <li className="nav-item has--child" key={item.id + index}>
+                  return <li className="nav-item has--child" key={`${item['id']}${index}`}>
                     <MenuItem item={item}/>
                   </li>
                 }
-                return <li key={item.id + index}><SubmenuItem item={item}/></li>
+                return <li key={`${item['id']}${index}`}><SubmenuItem item={item}/></li>
               })}
             </ul>
           </nav>

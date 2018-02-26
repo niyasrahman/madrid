@@ -11,7 +11,7 @@ function MenuItem(props) {
     <Link href={ props.item.completeUrl }>{props.item.title}</Link>
     <ul style={listStyle} className="qt-theme__color--border">
       {props.item.children.map((child, index)=> {
-        return <li key={child['id'] + index}><SubmenuItem item={child}/></li>
+        return <li key={`${child['id']}${index}`}><SubmenuItem item={child}/></li>
       })}
     </ul>
   </React.Fragment>
