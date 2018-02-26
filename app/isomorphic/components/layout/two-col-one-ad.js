@@ -37,9 +37,9 @@ function TwoColOneAd(props) {
           stories={[props.stories[4]]}
           config={storyListConfig}>
         </StoryList>
-        <div className="app-ad app-ad--mrec">
+        { !props.preview && <div className="app-ad app-ad--mrec">
           <DfpAd adtype="Mrec" layoutName="TwoColOneAd" collectionSlug={props.config['collection-slug']}/>
-        </div>
+        </div> }
       </div>
     </div>
   )

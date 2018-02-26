@@ -35,9 +35,9 @@ function ThreeCol(props) {
           </StoryList>
         </div>
       </div>
-      <div className="app-ad app-ad--horizontal">
+      { !props.preview && <div className="app-ad app-ad--horizontal">
         <DfpAd adtype="Horizontal-Ad" layoutName="ThreeCol" collectionSlug={props.config['collection-slug']}/>
-      </div>
+      </div> }
     </div>
   )
 
