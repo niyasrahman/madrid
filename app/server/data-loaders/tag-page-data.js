@@ -16,6 +16,7 @@ export function loadTagPageData(client, tagSlug, config) {
           const tagName = _.get(tags, [0,'name'], tagSlug);
           return {
             tagName: tagName,
+            tagSlug: tagSlug,
             stories: getProcessedStories(stories, menu, config.sections),
             navigationMenu: navigationMenu,
             cacheKeys: stories.map(story => storyToCacheKey(config["publisher-id"], story))
