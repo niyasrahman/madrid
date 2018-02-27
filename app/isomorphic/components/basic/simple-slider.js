@@ -16,7 +16,7 @@ function SimpleSlider(props) {
       <Slider {...settings}>
         {props.stories.map((item) =>
           <div key={item.id}>
-            <SliderItem item={item} />
+            <SliderItem item={item} heading={props.heading} />
           </div>
         )}
       </Slider>
@@ -39,7 +39,7 @@ function SliderItem(props) {
       </figure> :
       <ImageFallback bgColor='#adc1d6'/> }
       <div className="simple-slider__content">
-        <p className="simple-slider__section-name">Must Reads</p>
+        <p className="simple-slider__section-name">{props.heading}</p>
         <h2 className="simple-slider__story-heading">{story.headline}</h2>
         <Link href={"/" + story.slug } className="simple-slider__link" >
           read story

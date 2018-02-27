@@ -50,6 +50,9 @@
     text-align: center;
     color: $white;
     font-weight: $bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     @include breakpoint($pc) {
       font-size: rem(34);
     }

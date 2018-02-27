@@ -39,7 +39,7 @@ class HomePage extends React.Component {
             'collection-color': collection.color,
             'collection-section': _.get(collection,['metadata', 'section'], [])
           }
-          const componentProps = {stories: collection.items, key: collection.id, config: config}
+          const componentProps = {stories: collection.items, heading: collection.name, key: collection.id, config: config}
           if(collection['associated-metadata']['layout'] === 'FullscreenMediaList') {
             componentProps.adSlot= true
           }

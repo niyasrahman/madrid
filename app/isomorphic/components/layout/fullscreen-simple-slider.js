@@ -5,7 +5,7 @@ import { SimpleSlider } from '../basic/simple-slider.js'
 
 function FullscreenSimpleSlider(props) {
   const storiesToRender = canUseDom ? props.stories : _.take(props.stories, 1);
-  return <SimpleSlider stories={storiesToRender} />;
+  return <SimpleSlider stories={storiesToRender} heading={props.heading} />;
 }
 
 export { FullscreenSimpleSlider };
