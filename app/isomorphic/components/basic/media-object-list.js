@@ -8,10 +8,10 @@ import { Author } from "./author.js";
 import { ImageFallback } from "./image-fallback.js";
 import { SectionName } from "./section-name.js";
 
-function MediaObject({story, config}) {
+function MediaObject({story, config, sectionColor}) {
   config = config || {};
   const inlineStyle = {
-    borderBottom: 'solid 2px ' + story['section-color']
+    borderBottom: `solid 2px ${sectionColor}`
   }
   const author = {
     name: _.get(story, ['authors', 0, 'name'], story['author-name']),

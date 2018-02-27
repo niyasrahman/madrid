@@ -23,7 +23,7 @@ function TwoCol(props) {
       <SectionName hideLink={true} inlineStyle={inlineStyle} name={props.config['collection-name']} type="large" section={props.config['collection-section']}/>
       <div className="two-col__items">
         <div className="two-col__item">
-          <MediaObjectsList stories= {props.stories.slice(0,3)} />
+          <MediaObjectsList stories= {props.stories.slice(0,3)} sectionColor={props.config['collection-color']} />
         </div>
         <div className="two-col__item full-card">
           <StoryCard story={props.stories[3]} config={storyCardConfig}/>

@@ -29,7 +29,7 @@ function FullscreenStoryList(props) {
         {props.stories.map(storyObj => {
             const story = storyObj && storyObj.story ? storyObj.story : storyObj;
             return <div className="fullscreen-media-list__object" key={story.id}>
-              <MediaObject story={story} config={mediaObjectConfig}/>
+              <MediaObject story={story} config={mediaObjectConfig} sectionColor={props.config['collection-color']}/>
             </div>
           }
         )}
