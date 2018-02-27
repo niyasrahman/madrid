@@ -17,7 +17,7 @@
   }
   &__heading {
     font-size: 18px;
-    line-height: 1.0;
+    line-height: var(--headlineLineHeight);
     letter-spacing: 0.4px;
     padding: 20px 15px;
     border-right: 1px solid;
@@ -26,7 +26,6 @@
       display: table;
       min-height: 73px;
       font-size: 20px;
-      line-height: 1.6;
       letter-spacing: 0.5px;
       background-color: $base-blue;
       border: 0;
@@ -37,12 +36,11 @@
   }
   &__story {
     font-size: 14px;
-    line-height: 1.29;
+    line-height: var(--bodyLineHeight);
     font-weight: 300;
 
     @include breakpoint($pc) {
       font-size: 22px;
-      line-height: 1.45;
       font-weight: $regular;
       color: $black;
     }

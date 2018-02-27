@@ -78,24 +78,22 @@
     &-headline {
       font-family: var(--sansTypeface);
       font-size: rem(28);
-      line-height: 1.21;
+      line-height: var(--headlineLineHeight);
       margin: 10px 0;
       font-weight: $bold;
       color: $darkest-gray;
       @include breakpoint($tablet) {
         font-size: rem(26);
-        line-height: 1.15;
       }
       @include breakpoint($pc) {
         font-size: rem(44);
-        line-height: 1.14;
       }
     }
     &-summary {
       font-family: var(--serifTypeface);
       font-size: rem(16);
       font-style: italic;
-      line-height: 1.5;
+      line-height: var(--bodyLineHeight);
       text-align: left;
       color: $gray;
       @include breakpoint($tablet) {
@@ -103,7 +101,6 @@
       }
       @include breakpoint($pc) {
         font-size: rem(20);
-        line-height: 1.4;
       }
     }
     &-byline {
@@ -198,7 +195,7 @@
       }
       h3 {
         font-size: rem(20);
-        line-height: 1.5;
+        line-height: var(--headlineLineHeight);
         @include breakpoint($tablet) {
           font-size: rem(24);
         }

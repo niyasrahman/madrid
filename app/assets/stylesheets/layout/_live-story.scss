@@ -81,7 +81,7 @@
   .story-element-title h2 {
     font-size: rem(22);
     font-weight: bold;
-    line-height: 1.36;
+    line-height: var(--headlineLineHeight);
     text-align: left;
     color: $dark-gray;
     margin: 10px 0;
@@ -144,7 +144,7 @@
   }
   .event-title {
     font-size: rem(20);
-    line-height: 1.25;
+    line-height: var(--headlineLineHeight);
     color: $dark-gray;
     margin-left: 15px;
     border-left: 1px solid $gray-lightest;
