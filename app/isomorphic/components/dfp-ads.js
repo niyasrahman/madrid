@@ -27,6 +27,9 @@ export const AD_CONFIG = {
 }
 
 function DfpAdBase(props) {
+  if(props.disableAds) {
+    return null;
+  }
   const networkId = _.get(props, ['publisherTheme','dfp_network_id'], "60988533");
   const DfpAdWrapper = createDfpAdComponent({
     defaultNetworkID: networkId,
@@ -59,7 +62,8 @@ function DfpAdBase(props) {
 
 function mapStateToProps(state) {
   return {
-    publisherTheme: state.qt.config['publisher-theme'] || {}
+    publisherTheme: state.qt.config['publisher-theme'] || {},
+    disableAds: state.qt.config['disable-ads']
   }
 }
 

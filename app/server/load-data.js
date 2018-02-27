@@ -40,10 +40,15 @@ function loadData(pageType, params, config, client) {
         pageType: data.pageType || pageType,
         data: data,
         config: Object.assign(_.pick(config.asJson(), WHITELIST_CONFIG_KEYS),
+          { 'disable-ads': shouldDisableAds(data.pageType || pageType) },
           { 'publisher-theme': publisher.publisher_theme[config['publisher-name']] },
           { 'metype-config': MetypeConfig(config['publisher-name']) })
       };
     });
+}
+
+function shouldDisableAds(pageType) {
+  return pageType === 'story-preview-page' || pageType === 'home-preview-page';
 }
 
 export { loadData, loadErrorData };
