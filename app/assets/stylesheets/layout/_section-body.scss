@@ -20,7 +20,7 @@
       font-size: rem(38);
       font-weight: $bold;
       margin-top: 20px;
-      line-height: 1.26;
+      line-height: var(--headlineLineHeight);
     }
   }
   }
@@ -53,7 +53,7 @@
       position: absolute;
       bottom: 0;
       left: 0;
-      line-height: 1.21;
+      line-height: var(--bodyLineHeight);
       padding: 0 30px 30px;
       font-weight: $bold;
     }

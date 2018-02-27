@@ -41,7 +41,7 @@
     margin-top: 10px;
     font-size: rem(18);
     color: $white;
-    line-height: 1.3;
+    line-height: var(--headlineLineHeight);
     font-weight: 300;
     padding: 0 21px;
     text-align: center;

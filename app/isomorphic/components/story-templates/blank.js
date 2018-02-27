@@ -16,9 +16,9 @@ function BlankStoryTemplate(props) {
     if(index === 0) {
       return <div key={card.id} className="blank-story__card--with-ad">
         <StoryPageCard key={card.id} card={card} story={props.story}/>
-        { !props.preview && <div className="app-ad app-ad--story-horizontal">
+        <div className="app-ad app-ad--story-horizontal">
           <DfpAd adtype="Story-Middle-Ad"/>
-        </div> }
+        </div>
       </div>
     } else {
         return <StoryPageCard key={card.id} card={card} story={props.story}/>
@@ -48,9 +48,9 @@ function BlankStoryTemplate(props) {
           {StoryCards}
           <StoryTags tags={props.story.tags} />
           <div className="blank-story__aside">
-            { !props.preview && <div className="app-ad app-ad--story-mrec">
+            <div className="app-ad app-ad--story-mrec">
               <DfpAd adtype="Story-Mrec"/>
-            </div> }
+            </div>
             <RelatedStories stories = {props.relatedStories}></RelatedStories>
           </div>
         </div>

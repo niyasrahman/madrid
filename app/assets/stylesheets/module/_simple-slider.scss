@@ -37,7 +37,7 @@
     margin: auto;
     color: $white;
     width: 70%;
-    line-height: 1.32;
+    line-height: var(--bodyLineHeight);
     text-align: center;
     transform: translateY(-50%);
     @include breakpoint($tablet) {
@@ -64,7 +64,7 @@
     padding: 0;
     @include breakpoint($pc) {
       font-size: rem(38);
-      line-height: 1.32;
+      line-height: var(--headlineLineHeight);
     }
   }
 

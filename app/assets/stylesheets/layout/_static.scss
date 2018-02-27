@@ -22,7 +22,7 @@
   &__headline {
     font-family: var(--sansTypeface);
     font-size: rem(28);
-    line-height: 1.21;
+    line-height: var(--headlineLineHeight);
     margin: 10px 0;
     font-weight: $bold;
     color: $darkest-gray;
@@ -30,12 +30,10 @@
     text-transform: capitalize;
     @include breakpoint($tablet) {
       font-size: rem(26);
-      line-height: 1.15;
       margin-bottom: 30px;
     }
     @include breakpoint($pc) {
       font-size: rem(44);
-      line-height: 1.14;
     }
   }
   &__sub-headline {

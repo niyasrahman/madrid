@@ -9,13 +9,13 @@
     .story-card__description {
       font-size: rem(14);
       color: $gray;
-      line-height: 1.57;
+      line-height: var(--bodyLineHeight);
       margin-bottom: 20px;
     }
     .story-card__heading {
       font-size: rem(26);
       color: $darkest-gray;
-      line-height: 1.31;
+      line-height: var(--headlineLineHeight);
       font-weight: $regular;
       margin: 10px 0;
       padding: 0;
@@ -37,11 +37,11 @@
     @include breakpoint($pc) {
       .story-card__heading {
         font-size: rem(26);
-        line-height: 1.31;
+        line-height: var(--headlineLineHeight);
       }
       .story-card__description {
         font-size: rem(14);
-        line-height: 1.57;
+        line-height: var(--bodyLineHeight);
         margin-bottom: 27px;
         min-height: 150px;
       }
@@ -54,7 +54,7 @@
       .story-card__heading {
         font-size: rem(34);
         color: $white;
-        line-height: 1.18;
+        line-height: var(--headlineLineHeight);
         @include breakpoint($tablet) {
           font-size: rem(32);
         }

@@ -21,7 +21,7 @@
   }
   &__heading {
     font-weight: $bold;
-    line-height: 1.3;
+    line-height: var(--headlineLineHeight);
     margin-bottom: 10px;
     font-size: rem(24);
     padding: 0;

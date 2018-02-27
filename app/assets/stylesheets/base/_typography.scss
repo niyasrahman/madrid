@@ -48,7 +48,7 @@ body {
     font-family: var(--sansTypeface);
     font-weight: 400;
     font-size: rem($base);
-    line-height: $line;
+    line-height: var(--bodyLineHeight);
     text-rendering: auto;
 }
 
@@ -98,5 +98,5 @@ h6 {
 p {
     font-family: var(--sansTypeface);
     font-size: rem($fontsize-base);
-    line-height: 1.6;
+    line-height: var(--bodyLineHeight);
 }

@@ -33,7 +33,7 @@
   }
   &__heading {
     font-size: rem(26);
-    line-height: 1.31;
+    line-height: var(--headlineLineHeight);
     text-align: left;
     color: $darkest-gray;
     margin-top: 5px;

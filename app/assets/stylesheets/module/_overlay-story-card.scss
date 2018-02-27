@@ -25,7 +25,7 @@
   &__heading {
   	position: absolute;
     font-size: rem(18);
-    line-height: 1.2em;
+    line-height: var(--headlineLineHeight);
     margin: 10px 15px;
     color: $white;
     bottom: 0;
