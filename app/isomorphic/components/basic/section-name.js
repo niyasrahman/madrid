@@ -10,10 +10,10 @@ function SectionName(props) {
     </div></div>
   }
 
-  const sectionLink = `/${_.get(props.section, [0 , 'name'])}`.toLowerCase();
+  const sectionLink = _.get(props.section, ['slug'], "#");
   return (
     <div>
-    <Link href={sectionLink} className={classNames("section-name", "qt-theme__color--border", {"section-name--large": props.type === 'large'})} style={props.inlineStyle}>
+    <Link href={`/${sectionLink}`} className={classNames("section-name", "qt-theme__color--border", {"section-name--large": props.type === 'large'})} style={props.inlineStyle}>
       {props.name}
     </Link>
   </div>
