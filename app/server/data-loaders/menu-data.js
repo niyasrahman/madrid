@@ -5,7 +5,7 @@ exports.getNavigationMenuArray = function(menuList, sectionList) {
     menutItem.children = _(menuList).filter(item=>item['parent-id'] == menutItem.id).value();
     switch(menutItem['item-type']) {
       case 'tag':
-        menutItem.completeUrl = '/#';
+        menutItem.completeUrl = menutItem['tag-slug'] ? `/topic/${menutItem['tag-slug']}` : '/#';
         break;
       case 'link':
         menutItem.completeUrl = _.get(menutItem, ['data','link']) ||  '/#';
@@ -15,7 +15,7 @@ exports.getNavigationMenuArray = function(menuList, sectionList) {
         menutItem.completeUrl = findCompleteUrl(menutItem, sectionList);
         break;
       default:
-        menutItem.completeUrl = '#';
+        menutItem.completeUrl = '/#';
         break;
     }
   });
@@ -25,7 +25,7 @@ exports.getNavigationMenuArray = function(menuList, sectionList) {
 function findCompleteUrl(menutItem, sectionList) {
   const sectionObject = _.find(sectionList, function(item) { return item.id == menutItem['item-id'] });
   if(!sectionObject){
-    return '#';
+    return '/#';
   }
   if(sectionObject['parent-id']) {
     const parentSectionObj = _.find(sectionList, function(item) { return sectionObject['parent-id'] == item.id });
