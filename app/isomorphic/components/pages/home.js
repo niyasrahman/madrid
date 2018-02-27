@@ -35,11 +35,16 @@ class HomePage extends React.Component {
         if (collection) {
           const config = {
             'collection-name': collection.name,
-            'collection-slug': collection['slug-with-parent'] ? collection['slug-with-parent'] : collection.slug,
+            'collection-slug': collection['section-page-slug'] || "#",
             'collection-color': collection.color,
-            'collection-section': _.get(collection,['metadata', 'section'], [])
+            'collection-section': collection.section
           }
-          const componentProps = {stories: collection.items, heading: collection.name, key: collection.id, config: config}
+          const componentProps = {
+            stories: collection.items,
+            heading: collection.name,
+            key: collection.id,
+            config: config
+          }
           if(collection['associated-metadata']['layout'] === 'FullscreenMediaList') {
             componentProps.adSlot= true
           }
