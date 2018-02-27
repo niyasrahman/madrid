@@ -37,7 +37,7 @@ class HomePagePreview extends React.Component {
 
   render() {
     if(!this.state.started) return <div/>;
-    return <HomePage data={this.state.data} preview={true}/>
+    return <HomePage data={this.state.data}/>
   }
 }
 

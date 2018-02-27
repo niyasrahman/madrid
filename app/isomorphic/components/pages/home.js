@@ -43,7 +43,6 @@ class HomePage extends React.Component {
           if(collection['associated-metadata']['layout'] === 'FullscreenMediaList') {
             componentProps.adSlot= true
           }
-          componentProps.preview = this.props.preview || false;
           return React.createElement(
             getTemplate(collection['associated-metadata']['layout']),
             componentProps
