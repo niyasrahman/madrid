@@ -10,6 +10,10 @@
     display: block;
     padding: 15px 0 10px 0;
     border-bottom: 1px solid #d8d8d8;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
     @include breakpoint($pc) {
       &:first-child {
         padding-top: 0;

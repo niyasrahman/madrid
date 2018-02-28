@@ -25,14 +25,23 @@
   }
   &__content {
     flex: 1 1 50%;
-    padding: 9px 10px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+
     @include breakpoint($tablet) {
       flex: 1 1 54%;
     }
+
+    .authors {
+      justify-self: flex-end;
+    }
+
     .media-title {
       font-size: rem(16);
       padding: 0;
       margin-bottom: 10px;
+      flex-grow: 1;
       line-height: var(--headlineLineHeight);
       @include breakpoint($tablet) {
         font-size: rem(22);
