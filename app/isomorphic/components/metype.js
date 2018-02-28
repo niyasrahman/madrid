@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { MetypeFeedWidget } from "@metype/components";
 
 function MetypeBase(props) {
-  const metypeConfig = props.config['metype-config'];
+  const metypeConfig = props.config ? props.config['metype-config'] : {};
   return <MetypeFeedWidget
           host={metypeConfig.host}
           accountId={metypeConfig.accountId}

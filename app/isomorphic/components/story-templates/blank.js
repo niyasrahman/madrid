@@ -11,7 +11,7 @@ import { breakpoint } from "../../../utils/breakpoint";
 import { addTargetBlankToExtLinks } from "../../../utils/add-target-blank-to-extlinks";
 
 function BlankStoryTemplate(props) {
-  const metypeConfig = props.config['metype-config'];
+  const metypeConfig = props.config ? props.config['metype-config'] : {};
   const StoryCards = props.story.cards.map((card, index) => {
     if(index === 0) {
       return <div key={card.id} className="blank-story__card--with-ad">

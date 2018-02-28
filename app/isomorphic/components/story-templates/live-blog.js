@@ -14,7 +14,7 @@ class LiveBlogTemplate extends React.Component {
 
   constructor(props){
     super(props);
-    this.metypeConfig = this.props.config['metype-config'];
+    this.metypeConfig = this.props.config ? this.props.config['metype-config'] : {};
   }
 
   formatter(value, unit, suffix, date, defaultFormatter) {
