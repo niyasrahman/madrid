@@ -1,12 +1,15 @@
 import React from 'react';
 import {connect} from "react-redux";
 import filter from "lodash/filter";
+import get from "lodash/get";
 import indexOf from "lodash/indexOf";
 import assetify from '@quintype/framework/assetify';
 import Logo from '../../assets/icons/quintype_logo.svg';
 import { STATIC_LINKS } from "./constants";
 
 function FooterBase(props) {
+  const copyrightText = get(props.publisherSettings, ['copyright'], '');
+
   return <footer className="footer qt-theme__color--footerbg qt-theme__color--footer">
     <div className="footer__content">
       <div className="footer__content__first">
@@ -19,7 +22,7 @@ function FooterBase(props) {
           })}
         </ul>
         <div className="copy--right">
-          <div>copyright 2018</div>
+          <div>{copyrightText}</div>
           <a href="https://www.quintype.com/"><strong>Powered by quintype</strong></a>
         </div>
       </div>
@@ -35,6 +38,7 @@ function mapStateToProps(state) {
   return {
     links: updatedStaticLinks,
     publisherTheme: state.qt.config['publisher-theme'] || {},
+    publisherSettings: state.qt.config['publisher-settings'] || {},
     publisherName: state.qt.config['publisher-name'] || ''
   }
 }
