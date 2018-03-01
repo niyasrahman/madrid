@@ -8,6 +8,8 @@ import { ThreeCol } from "../layout/three-col.js";
 import { TwoCol } from "../layout/two-col.js";
 import { LShapeOneWidget } from "../layout/l-shape-one-widget.js";
 import { FullscreenMediaList } from "../layout/fullscreen-media-list.js";
+import { ThreeColMain } from "../layout/three-col-main.js";
+
 import _ from 'lodash';
 
 class HomePage extends React.Component {
@@ -21,7 +23,8 @@ class HomePage extends React.Component {
       'FullscreenLinearGallerySlider': FullscreenLinearGallerySlider,
       'TwoCol': TwoCol,
       'LShapeOneWidget': LShapeOneWidget,
-      'FullscreenMediaList': FullscreenMediaList
+      'FullscreenMediaList': FullscreenMediaList,
+      'ThreeColMain': ThreeColMain
     };
 
     function getTemplate(designTemplate){

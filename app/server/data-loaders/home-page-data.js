@@ -99,7 +99,7 @@ function getChildCollectionProperties(collection) {
 
 function createCollectionBulkRequest(slugs) {
   return _.reduce(slugs, function(acc, slug) {
-    acc[slug] = {"_type": "collection", "slug": slug, "limit": "8", "item-type": "story"}
+    acc[slug] = {"_type": "collection", "slug": slug, "limit": "15", "item-type": "story"}
     return acc
   }, {});
 }

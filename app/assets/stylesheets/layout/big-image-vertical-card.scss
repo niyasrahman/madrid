@@ -1,0 +1,42 @@
+
+.big-image-vertical-card{
+   .content-wrapper{
+    position: relative;
+    background-color: $white;
+    box-shadow: 1.5px 1.5px 1.5px 1.5px lighten( $black, 90 );
+   } 
+   .section-name{
+    position: absolute;
+    top: 0;
+    left:0;
+    background-color: $red;
+    color: $white;
+    padding: 8px 5px;
+    text-transform: uppercase;
+   }
+    .image-wrapper{
+     margin: 0;
+   }
+    .card-heading{
+     font-size: 1.2em;
+     line-height: 1;
+     padding: 1.25em;
+   }
+ }
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

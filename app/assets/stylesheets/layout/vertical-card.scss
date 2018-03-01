@@ -1,0 +1,19 @@
+.vertical-card{
+    .section-name{
+      font-weight: normal;
+      position: absolute;
+      background-color: $red;
+      color: $white;
+      padding: 8px 5px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      }
+    .image-wrapper{
+      margin: 0px;
+    }
+    .card-heading{
+       font-size: 1em;
+       line-height: 1;
+       padding: 10px 0px;
+    }
+ }
