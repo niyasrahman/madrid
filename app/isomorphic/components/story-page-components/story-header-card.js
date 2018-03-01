@@ -90,12 +90,7 @@ class StoryHeaderCard extends React.Component {
       <p className="story-summary" dangerouslySetInnerHTML={ {__html: this.state.story.subheadline }} />
       <div className="story-byline">
         <div className="story-byline__author_time">
-          <Author author={{
-              "name": get(this.state.story, ['authors', 0, 'name'], this.state.story['author-name']),
-              "image": this.state.story['author-image'],
-              "date": this.state.story['first-published-at'],
-              "slug": get(this.state.story, ['authors', 0, 'author-id'], this.state.story['author-id'])
-            }} isLink/>
+        <Author authors={get(this.state.story, ['authors'], [])} isLink showDateOnly date={this.state.story['first-published-at']}/>
         </div>
         <div className="story-byline__social-share">
           <SocialShare url={this.state.story.slug}
