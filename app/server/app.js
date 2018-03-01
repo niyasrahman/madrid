@@ -59,5 +59,6 @@ isomorphicRoutes(app, {
   }),
   preloadJs: true,
   preloadRouteData: true,
-  manifestFn: manifestFn
+  manifestFn: manifestFn,
+  redirectRootLevelStories: true
 });
