@@ -15,9 +15,9 @@ function MediaObject({story, config, sectionColor}) {
   }
   const author = {
     name: _.get(story, ['authors', 0, 'name'], story['author-name']),
-    date: config.storyTime && story['first-published-at'],
     "slug": _.get(story, ['authors' , 0, 'id'] , story['author-id'])
   }
+  const date = config.storyTime && story['first-published-at'];
   return story &&
     <Link href={"/" + story.slug}
       className={classNames('media', {'media--bg-white': !config.noBackground, 'media--with-shadow': !config.noBackground})}>
@@ -35,7 +35,7 @@ function MediaObject({story, config, sectionColor}) {
         { config.section && <SectionName hideLink inlineStyle={inlineStyle} name={story.sections[0]['display-name'] || story.sections[0]['name']}/>}
         <h2 className={classNames('media-title', {'media__title--enlarged': config.enlarged})}
           dangerouslySetInnerHTML={ {__html: story.headline }} />
-        <Author author={author}/>
+        <Author author={author} date={date}/>
       </div>
     </Link>
 }

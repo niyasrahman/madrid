@@ -1,7 +1,7 @@
 import React from "react";
-import _ from "lodash";
 import { Link } from "@quintype/components";
-
+import get from "lodash/get";
+import isEmpty from "lodash/isEmpty";
 import { Author } from "../basic/author.js";
 import { SocialShare } from "@quintype/components";
 import fbIcon from '../../../assets/icons/social/fb-share.svg';
@@ -72,6 +72,7 @@ class StoryHeaderCard extends React.Component {
       return acc;
     }, [])
     const stringifiedTagsArray = tagsArray.toString();
+    const socialShareMessage = !isEmpty(this.state.story.summary) ? this.state.story.summary : this.state.story.headline;
 
     return <header className="story-header">
       <Link className="story-section"
@@ -90,15 +91,15 @@ class StoryHeaderCard extends React.Component {
       <div className="story-byline">
         <div className="story-byline__author_time">
           <Author author={{
-              "name": _.get(this.state.story, ['authors', 0, 'name'], this.state.story['author-name']),
+              "name": get(this.state.story, ['authors', 0, 'name'], this.state.story['author-name']),
               "image": this.state.story['author-image'],
               "date": this.state.story['first-published-at'],
-              "slug": _.get(this.state.story, ['authors', 0, 'author-id'], this.state.story['author-id'])
+              "slug": get(this.state.story, ['authors', 0, 'author-id'], this.state.story['author-id'])
             }} isLink/>
         </div>
         <div className="story-byline__social-share">
           <SocialShare url={this.state.story.slug}
-            title={this.state.story.headline}
+            title={socialShareMessage}
             template={this.getSocialCardsTemplate}
             hashtags={stringifiedTagsArray} />
         </div>
