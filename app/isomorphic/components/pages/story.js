@@ -24,15 +24,23 @@ function storyPageLoadItems(pageNumber) {
 export class StoryPage extends React.Component {
   constructor(props) {
     super(props);
+    this.doAnalytics = this.doAnalytics.bind(this);
   }
   componentDidMount() {
     window.scrollTo(0, 0)
   }
+
+  doAnalytics(id){
+    global.qlitics('track', 'story-view', {
+     'story-content-id': id
+   });
+  }
+
   render() {
     return <InfiniteStoryBase {...this.props}
               render={(storyProps) => StoryPageContent(storyProps, this.props.config)}
               loadItems={storyPageLoadItems}
               onItemFocus={(item) => console.log(`Story In View: ${item.story.headline}`)}
-              onInitialItemFocus={(item) => console.log(`Do Analytics ${item.story.headline}`)} />
+              onInitialItemFocus={(item) => this.doAnalytics(item.story.id)} />
   }
 }
