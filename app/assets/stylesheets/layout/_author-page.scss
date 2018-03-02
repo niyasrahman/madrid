@@ -95,6 +95,9 @@
    }
    &__avatar {
      @include aspect-ratio(16,9);
+     figure {
+       margin: 0;
+     }
    }
    &-image {
      margin: 0;

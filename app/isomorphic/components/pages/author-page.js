@@ -5,6 +5,7 @@ import { DateTime } from 'luxon';
 import { DfpAd } from "../dfp-ads";
 import { TwitterIcon } from "../basic/twitter-icon";
 import { LoadMoreStoriesBase } from '@quintype/components';
+import { ImageFallback } from "../basic/image-fallback";
 
 function formatter(value, unit, suffix, date, defaultFormatter) {
 	    return DateTime.fromMillis(date).toFormat("dd LLL, yyyy 'at' hh:mm a");
@@ -42,12 +43,14 @@ const AuthorMainStories = (props) => {
 		          <div className="author-main-stories__story" key={story.id}>
 		            <Link href={"/" + story.slug} className="author-main-stories__story__link">
 		            <div className="author-main-stories__story__avatar">
+								{ story["hero-image-s3-key"] ?
 		              <figure className="author-main-stories__story-image">
 						        <ResponsiveImage slug={story["hero-image-s3-key"]} metadata={story["hero-image-metadata"]}
 						          aspectRatio={[9,3]}
 						          defaultWidth={480} widths={[300,400,500]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 23%"
 						          imgParams={{auto:['format', 'compress'], fit:'max'}}/>
 						      </figure>
+									: <ImageFallback /> }
 		            </div>
 					      <div className="author-main-stories__story__content">
 					      	<h3 className="author-main-stories__story-headline">{story.headline}</h3>
@@ -75,12 +78,14 @@ const AuthorStories = ({section, stories, loading, onLoadMore, noMoreStories}) =
           <div className="author-loadmore-stories__story" key={story.id}>
             <Link href={"/" + story.slug} className="author-loadmore-stories__story__link">
             <div className="author-loadmore-stories__story__avatar">
+						{ story["hero-image-s3-key"] ?
               <figure className="author-loadmore-stories__story-image">
 				      <ResponsiveImage slug={story["hero-image-s3-key"]} metadata={story["hero-image-metadata"]}
 				          aspectRatio={[4,3]}
 				          defaultWidth={480} widths={[300,400,500]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 23%"
 				          imgParams={{auto:['format', 'compress'], fit:'max'}}/>
 				      </figure>
+							: <ImageFallback /> }
 			      </div>
 			      <div className="author-loadmore-stories__story__content">
           	  <h3 className="author-loadmore-stories__story-heading">{story.headline}</h3>
