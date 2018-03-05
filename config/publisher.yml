@@ -34,6 +34,9 @@ publisher_theme:
     footer_background_color: "#000"
     dfp_network_id: '60988533'
     static_pages: ['aboutUs', 'privacyPolicy', 'contactUs']
+    amp_logo:
+      src: https://images.assettype.com/samachara/2018-03/a9131129-1db7-462c-8b42-cc960d30ed50/74258cd2-9246-4d11-8b46-da4227ffa05e.jpg
+      type: image/jpeg
   abpnews:
     monogram: https://fea.assettype.com/quintype/assets/logo-b6438210bc.svg
     logo: https://svgshare.com/i/5Qv.svg
