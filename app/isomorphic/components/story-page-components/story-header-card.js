@@ -73,7 +73,12 @@ class StoryHeaderCard extends React.Component {
     }, [])
     const stringifiedTagsArray = tagsArray.toString();
     const socialShareMessage = !isEmpty(this.state.story.summary) ? this.state.story.summary : this.state.story.headline;
-
+    const authorsArray = get(this.state.story, ['authors'])
+                          ? get(this.state.story, ['authors'])
+                          : [{
+                            name: this.state.story['author-name'],
+                            id: this.state.story['author-id']
+                          }];
     return <header className="story-header">
       <Link className="story-section"
         href={"/" +
@@ -90,7 +95,7 @@ class StoryHeaderCard extends React.Component {
       <p className="story-summary" dangerouslySetInnerHTML={ {__html: this.state.story.subheadline }} />
       <div className="story-byline">
         <div className="story-byline__author_time">
-        <Author authors={get(this.state.story, ['authors'], [])} isLink showDateOnly date={this.state.story['first-published-at']}/>
+        <Author authors={authorsArray} isLink showDateOnly date={this.state.story['first-published-at']}/>
         </div>
         <div className="story-byline__social-share">
           <SocialShare url={this.state.story.slug}

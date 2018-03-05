@@ -21,7 +21,7 @@ function StoryCard(props) {
 function StoryCardBgImage(props) {
   const author = {
     name: _.get(props.story, ['authors', 0, 'name'], props.story['author-name']),
-    slug: _.get(props.story, ['authors' , 0, 'id'] , props.story['author-id'])
+    id: _.get(props.story, ['authors' , 0, 'id'] , props.story['author-id'])
   }
   return <div className="story-card">
     { props.story["hero-image-s3-key"] ?
@@ -47,7 +47,7 @@ function StoryCardSimple(props) {
   }
   const author = {
     name: _.get(props.story, ['authors', 0, 'name'], props.story['author-name']),
-    "slug": _.get(props.story, ['authors' , 0, 'id'] , props.story['author-id'])
+    id: _.get(props.story, ['authors' , 0, 'id'] , props.story['author-id'])
   }
   // We can customize this component by passing down a config
   // We can enable Image, Subheadline and Section name if the config values are true.

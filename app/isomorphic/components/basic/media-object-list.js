@@ -15,7 +15,7 @@ function MediaObject({story, config, sectionColor}) {
   }
   const author = {
     name: _.get(story, ['authors', 0, 'name'], story['author-name']),
-    "slug": _.get(story, ['authors' , 0, 'id'] , story['author-id'])
+    id: _.get(story, ['authors' , 0, 'id'] , story['author-id'])
   }
   const date = config.storyTime && story['first-published-at'];
   return story &&

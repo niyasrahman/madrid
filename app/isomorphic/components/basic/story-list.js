@@ -23,7 +23,7 @@ function StoryListItem({story, config}) {
   }
   const author = {
     name: _.get(story, ['authors', 0, 'name'], story['author-name']),
-    "slug": _.get(story, ['authors' , 0, 'id'] , story['author-id'])
+    id: _.get(story, ['authors' , 0, 'id'] , story['author-id'])
   }
   return (
     <Link href={"/" + story.slug }>

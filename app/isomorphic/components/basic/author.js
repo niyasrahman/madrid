@@ -4,13 +4,13 @@ import { DateTime } from 'luxon';
 import { Link } from "@quintype/components";
 // Author component can accept these params.
 // isLink : Basically changes the component clickable in any scenario.
-// author : An author object which will have name, slug, date & image.
+// author : An author object which will have name, id, date & image.
 // authors: An array of authors which will come from story API itself. If the authors array is present we'll ignore the author object.
 // showDateOnly: Will hide the `Posted` string infront of every date.
 // date   : pass the date value from story object
 function Author(props) {
   // If there's only one author.
-  if(props.author && !props.authors || props.authors.length === 1) {
+  if((props.author && !props.authors) || (props.authors && props.authors.length === 1)) {
     const author = props.authors ? props.authors[0] : props.author;
     return props.isLink ? <Link href={'/author/' + author.id}>
       <SingleAuthorTemplate author={author} {...props} />
@@ -20,14 +20,14 @@ function Author(props) {
   if(props.authors && props.authors.length !== 1) {
     return <MultipleAuthorTemplate {...props}/>
   }
+  // fallback
+  return null;
 }
 
 const SingleAuthorTemplate = ({author, date, showDateOnly = false}) => {
-  const authorImage = author['avatar-url'] || author.image;
+  const authorImage = author['avatar-url'] || author.image ;
   return <div className="author">
-    { authorImage && <div className="author__avatar">
-      <img src={authorImage} alt={author.name} />
-    </div>}
+    <AuthorImage image={authorImage} name={author.name} />
     <div className="author__content">
       <h3 className="author__name">{author.name}</h3>
       {date && <p className="author__published-date">
@@ -44,9 +44,9 @@ const MultipleAuthorTemplate = (props) => {
     { props.authors.map(author => {
         return props.isLink
           ? <Link href={'/author/' + author.id} key={author.id} className="author__avatar-wrapper--is-link">
-            <AuthorImage author={author}/>
+            <AuthorImage image={author['avatar-url']} name={author['name']}/>
           </Link>
-          : <AuthorImage author={author} key={author.id}/>
+          : <AuthorImage image={author['avatar-url']} name={author['name']} key={author.id}/>
       }) }
     </div>
     <div className="author__content">
@@ -70,10 +70,15 @@ const AuthorName = ({author, index, authorsLength, isLink}) => {
     </h3>
 };
 
-const AuthorImage = ({author}) => {
-  return author['avatar-url'] && <div className="author__avatar">
-    <img src={author['avatar-url']} alt={author['name']} />
-  </div>
+const AuthorImage = ({image, name}) => {
+  return image ? <div className="author__avatar">
+      <img src={image} alt={name} />
+  </div> : null;
+}
+
+const FallbackAuthorImage = () => {
+  // TODO: replace with a fallback image. and use it in AuthorImage component.
+  return null;
 }
 
 function formatter(value, unit, suffix, date, defaultFormatter) {
