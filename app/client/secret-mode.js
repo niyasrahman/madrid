@@ -20,10 +20,7 @@ export function startSecretMode(store) {
   const secretMode = global.document.createElement("div");
   global.document.body.appendChild(secretMode);
   ReactDom.render(<Provider store={store}><SecretModeDialog /></Provider>, secretMode);
-
-  const styleSecret = global.document.createElement("style");
-  global.document.body.appendChild(styleSecret);
-  ReactDom.render(<Provider store={store}><Theme /></Provider>, styleSecret);
+  ReactDom.render(<Provider store={store}><Theme /></Provider>, document.getElementById("theme-css"));
 }
 
 function SecretModeDialogBase({publisherTheme, updatePublisherTheme}) {

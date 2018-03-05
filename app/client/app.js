@@ -1,4 +1,4 @@
-import css from '../../app/assets/stylesheets/application.scss';
+import '../../app/assets/stylesheets/application.scss';
 
 import { renderApplication } from './render'
 import { startApp } from '@quintype/framework/client/start'
