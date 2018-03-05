@@ -2,7 +2,7 @@ import React from "react";
 
 import { BlankStory } from "../story-templates/blank.js";
 import { LiveBlogStory } from "../story-templates/live-blog.js";
-import { InfiniteStoryBase } from "@quintype/components"
+import { InfiniteStoryBase } from "@quintype/components";
 
 export function StoryPageContent({story, relatedStories, index, preview = false }, config) {
   if(story['story-template'] === 'live-blog') {
@@ -24,16 +24,14 @@ function storyPageLoadItems(pageNumber) {
 export class StoryPage extends React.Component {
   constructor(props) {
     super(props);
-    this.doAnalytics = this.doAnalytics.bind(this);
   }
   componentDidMount() {
     window.scrollTo(0, 0)
   }
 
-  doAnalytics(id){
-    global.qlitics('track', 'story-view', {
-     'story-content-id': id
-   });
+  doAnalytics(story) {
+    const { registerPageView } = require("@quintype/framework/client/analytics");
+    registerPageView({type: "story-page", story: story})
   }
 
   render() {
@@ -41,6 +39,6 @@ export class StoryPage extends React.Component {
               render={(storyProps) => StoryPageContent(storyProps, this.props.config)}
               loadItems={storyPageLoadItems}
               onItemFocus={(item) => console.log(`Story In View: ${item.story.headline}`)}
-              onInitialItemFocus={(item) => this.doAnalytics(item.story.id)} />
+              onInitialItemFocus={(item) => this.doAnalytics(item.story)} />
   }
 }
