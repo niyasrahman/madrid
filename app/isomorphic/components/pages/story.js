@@ -31,7 +31,7 @@ export class StoryPage extends React.Component {
 
   doAnalytics(story) {
     const { registerPageView } = require("@quintype/framework/client/analytics");
-    registerPageView({type: "story-page", story: story})
+    registerPageView({type: "story-page", story: story}, `/${story.slug}`);
   }
 
   render() {
