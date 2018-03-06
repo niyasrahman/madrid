@@ -14,11 +14,11 @@ export function StoryPageContent({story, relatedStories, index, preview = false 
 
 const FIELDS = "id,headline,slug,url,hero-image-s3-key,hero-image-metadata,first-published-at,last-published-at,alternative,published-at,author-name,author-id,sections,story-template,cards,tags,authors";
 function storyPageLoadItems(pageNumber) {
-  return fetch(`/api/v1/stories?fields=${FIELDS}&limit=5&offset=${5 * pageNumber}`)
+  return fetch(`/api/v1/collections/curated-story-list?item-type=story&item-fields=${FIELDS}&limit=5&offset=${5 * pageNumber}`)
            .then(response => {
              return response.json();
            })
-           .then(response => response.stories.map(story => ({story: story, relatedStories: []})));
+           .then(response => response.items.map(item => ({story: item.story, relatedStories: []})));
 }
 
 export class StoryPage extends React.Component {
