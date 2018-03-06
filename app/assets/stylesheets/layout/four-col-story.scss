@@ -1,0 +1,15 @@
+.four-col-main{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 30px; 
+    padding: 15px 15px 0;
+    max-width: 1172px;
+    margin-left: auto;
+    margin-right: auto; 
+
+    @include breakpoint($tablet) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-gap: 30px;
+    }
+
+}

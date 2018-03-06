@@ -1,0 +1,41 @@
+.story-card-main{
+   background-color: $gray-lightest;
+ 
+    .section-name{
+      font-weight: normal;
+      background-color: $red;
+      color: $white;
+      line-height: 2;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-align: center;
+      width: 100%;
+      margin: 0;
+      }
+      .content-wrapper{
+        height: 100%;
+        background-color: $gray-lightest;
+        position: relative;
+
+      }
+     .image-wrapper{
+      margin: 0;
+      }
+     .card-author-name{
+      text-align: center;
+      font-size: 1em;
+      line-height: 1;
+      padding: 10px;
+      border-top: 1px solid lighten( $black, 64 );
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+       
+     }
+     .card-heading{
+       font-size: 1em;
+       padding: 10px;
+       margin-bottom: 70px;
+     }
+ }
+   

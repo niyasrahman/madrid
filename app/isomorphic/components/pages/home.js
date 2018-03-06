@@ -9,7 +9,9 @@ import { TwoCol } from "../layout/two-col.js";
 import { LShapeOneWidget } from "../layout/l-shape-one-widget.js";
 import { FullscreenMediaList } from "../layout/fullscreen-media-list.js";
 import { ThreeColMain } from "../layout/three-col-main.js";
-
+import { FourCol } from "../layout/four-col-story.js";
+import { TwoColOneVerticalAd } from "../layout/two-col-one-vertical-ad.js";
+import { ThreeColMovie } from "../layout/three-col-movie.js";
 import _ from 'lodash';
 
 class HomePage extends React.Component {
@@ -24,7 +26,10 @@ class HomePage extends React.Component {
       'TwoCol': TwoCol,
       'LShapeOneWidget': LShapeOneWidget,
       'FullscreenMediaList': FullscreenMediaList,
-      'ThreeColMain': ThreeColMain
+      'ThreeColMain': ThreeColMain,
+      'FourCol' : FourCol,
+      'TwoColOneVerticalAd' : TwoColOneVerticalAd,
+      'ThreeColMovie': ThreeColMovie
     };
 
     function getTemplate(designTemplate){
