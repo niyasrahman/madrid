@@ -1,21 +1,20 @@
 import React from "react";
-
 import { RedHeaderVerticalCard } from "./red-header-vertical-card.js";
-import { Link, ResponsiveImage } from "@quintype/components";
+import _ from "lodash";
 
-function FourCol(props) {
 
-  if(props.stories.length < 1) {
+function FourCol({stories}) {
+
+  if(stories.length < 1) {
     return <div></div>
   }
+  const children = _.take(stories,4).map(story => <RedHeaderVerticalCard key={story.id} story={story} />
+);
 
   return(
 
-  <div className='four-col-main'>
-    <RedHeaderVerticalCard story={props.stories[5]}/>
-    <RedHeaderVerticalCard story={props.stories[2]}/>
-    <RedHeaderVerticalCard story={props.stories[3]}/>
-    <RedHeaderVerticalCard story={props.stories[4]}/>
+  <div className='four-col-main container'>
+   {children}
   </div>
   );
 }
