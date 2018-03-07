@@ -1,5 +1,5 @@
 import React from "react";
-import { RedHeaderVerticalCard } from "./red-header-vertical-card.js";
+import { VerticalCardWithBanner } from "./vertical-card-with-banner.js";
 import _ from "lodash";
 
 
@@ -8,7 +8,7 @@ function FourCol({stories}) {
   if(stories.length < 1) {
     return <div></div>
   }
-  const children = _.take(stories,4).map(story => <RedHeaderVerticalCard key={story.id} story={story} />
+  const children = _.take(stories,4).map(story => <VerticalCardWithBanner key={story.id} story={story} />
 );
 
   return(

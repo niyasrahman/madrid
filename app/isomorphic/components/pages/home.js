@@ -17,7 +17,7 @@ class HomePage extends React.Component {
     };
 
     function getTemplate(designTemplate){
-      return templates[designTemplate] ? templates[designTemplate] : ThreeColMain;
+      return templates[designTemplate] ? templates[designTemplate] : ThreeColMovie;
     }
 
     return <div className="home-page">
