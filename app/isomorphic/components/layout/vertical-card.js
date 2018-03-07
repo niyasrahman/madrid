@@ -7,7 +7,7 @@ function VerticalCard(props){
   const story = get(props.story, ['story']) ? get(props.story, ['story']) : props.story;
   const sectionName = get(story, ['sections', 0, 'name']) ? get(story, ['sections', 0, 'name']) : null;
   return(
-         <Link href={story.slug} className='vertical-card'>
+         <Link href={`/${story.slug}`} className='vertical-card'>
           <div className='content-wrapper'>
            <h5 className='section-name'>{sectionName}</h5>
              <div className='card-content-wrapper'>

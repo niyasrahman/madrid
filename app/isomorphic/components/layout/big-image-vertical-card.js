@@ -7,7 +7,7 @@ function BigImageVerticalCard(props){
   const sectionName = get(story, ['sections', 0, 'name']) ? get(story, ['sections', 0, 'name']) : null;
 
   return(
-         <Link href={story.slug} className='big-image-vertical-card'>
+         <Link href={`/${story.slug}`} className='big-image-vertical-card'>
           <div className='content-wrapper'>
            <h5 className='section-name'>{sectionName}</h5>
              <div className='card-content-wrapper'>

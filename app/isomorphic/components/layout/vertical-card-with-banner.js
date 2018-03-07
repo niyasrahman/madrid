@@ -5,14 +5,14 @@ import { Link, ResponsiveImage } from "@quintype/components";
 import get from "lodash/get";
 
 function VerticalCardWithBanner(props){
-  const SectionName = get(props.story.story, ['sections', 0]) ? props.story.story.sections[0].name : null;
-  const AuthorName = get(props.story.story,['authors',0]) ? props.story.story.authors[0].name : null;
+  const SectionName = get(story, ['sections', 0]) ? story.sections[0].name : null;
+  const AuthorName = get(story,['authors',0]) ? story.authors[0].name : null;
   const story = get(props.story, ['story']) ? get(props.story, ['story']) : props.story;
   const sectionStoryName = get(story, ['sections', 0, 'name']) ? get(story, ['sections', 0, 'name']) : null
   const storyAuthorName = get(story, ['authors', 0, 'name']) ? get(story, ['authors', 0, 'name']) : null
 
   return(
-        <Link href={story.slug} className='story-card-main'>
+        <Link href={`/${story.slug}`} className='story-card-main'>
           <div className='content-wrapper'>
            <h5 className='section-name'>{sectionStoryName}</h5>
              <div className='card-content-wrapper'>
@@ -20,7 +20,7 @@ function VerticalCardWithBanner(props){
                 <ResponsiveImage slug={story["hero-image-s3-key"]} metadata={props.story.story["hero-image-metadata"]}
                      aspectRatio={props.aspectRatio ? props.aspectRatio : [4,3]}
                      defaultWidth={480}
-                     widths={[250,480,640]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 23%"
+                     widths={[250,480,640]} sizes="(max-width: 500px) 98%, (max-width: 768px) 48%, 50%"
                      imgParams={{auto:['format', 'compress'], fit:'max'}}/>
              </figure>
                  <h3 className='card-heading'>{story.headline}</h3>
