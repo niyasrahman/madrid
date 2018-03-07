@@ -7,12 +7,12 @@ export function manifestFn(config) {
     "theme_color": theme.primary_color || "#2f73e4"
   };
 
-  if(theme['amp_logo']) {
+  if(theme['manifest_logo']) {
     manifest.icons = [
       Object.assign({
         type: "image/png",
         sizes: "512x512"
-      }, theme['amp_logo'])
+      }, theme['manifest_logo'])
     ];
   }
 
