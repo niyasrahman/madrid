@@ -1,13 +1,5 @@
 import React from "react";
 
-import { TwoColOneAd } from "../layout/two-col-one-ad.js";
-import { FullscreenCarousel } from "../layout/fullscreen-carousel.js";
-import { FullscreenSimpleSlider } from "../layout/fullscreen-simple-slider.js";
-import { FullscreenLinearGallerySlider } from "../layout/fullscreen-linear-gallery-slider.js";
-import { ThreeCol } from "../layout/three-col.js";
-import { TwoCol } from "../layout/two-col.js";
-import { LShapeOneWidget } from "../layout/l-shape-one-widget.js";
-import { FullscreenMediaList } from "../layout/fullscreen-media-list.js";
 import { ThreeColMain } from "../layout/three-col-main.js";
 import { FourCol } from "../layout/four-col-story.js";
 import { TwoColOneVerticalAd } from "../layout/two-col-one-vertical-ad.js";
@@ -18,14 +10,6 @@ class HomePage extends React.Component {
 
   render() {
     const templates = {
-      'FullscreenCarousel': FullscreenCarousel,
-      'TwoColOneAd': TwoColOneAd,
-      'FullscreenSimpleSlider': FullscreenSimpleSlider,
-      'ThreeCol': ThreeCol,
-      'FullscreenLinearGallerySlider': FullscreenLinearGallerySlider,
-      'TwoCol': TwoCol,
-      'LShapeOneWidget': LShapeOneWidget,
-      'FullscreenMediaList': FullscreenMediaList,
       'ThreeColMain': ThreeColMain,
       'FourCol' : FourCol,
       'TwoColOneVerticalAd' : TwoColOneVerticalAd,
@@ -33,7 +17,7 @@ class HomePage extends React.Component {
     };
 
     function getTemplate(designTemplate){
-      return templates[designTemplate] ? templates[designTemplate] : ThreeCol;
+      return templates[designTemplate] ? templates[designTemplate] : ThreeColMain;
     }
 
     return <div className="home-page">

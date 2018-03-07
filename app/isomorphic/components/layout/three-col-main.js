@@ -3,34 +3,32 @@ import React from "react";
 import { BigImageVerticalCard } from "./big-image-vertical-card.js";
 import { VerticalCard } from "./vertical-card.js";   
 import { MediaOneCard } from "./media-one.js";
-import { Link, ResponsiveImage } from "@quintype/components";
+import _ from "lodash";
 
-function ThreeColMain(props) {
+function ThreeColMain({stories}) {
 
-  if(props.stories.length < 1) {
+  if(stories.length < 1) {
     return <div></div>
   }
 
+  const columnOneStories = _.take(_.drop(stories,1),2).map(story => <MediaOneCard key={story.id} story={story} showSectionName={true} showImage= {true}/>
+);
+  const columnTwoStories = _.take(_.drop(stories, 3), 3).map(story => <VerticalCard key={story.id} story={story} />); 
+  const columnThreeStories = _.take(_.drop(stories, 6),6).map(story => <MediaOneCard key={story.id} story={story} showSectionName={true} showImage= {true}/>
+);
+
   return(
 
-  <div className='three-col-main'>
+  <div className='three-col-main container'>
       <div className='three-col-main__item'>
-        <BigImageVerticalCard story={props.stories[0]}/>
-        <MediaOneCard story={props.stories[1]} showSectionName={true} showImage= {true}/>
-        <MediaOneCard story={props.stories[2]} showSectionName={true} showImage= {true}/>
+        <BigImageVerticalCard story={_.first(stories)}/>
+        {columnOneStories}
       </div>
        <div className='three-col-main__item'>
-        <VerticalCard story={props.stories[3]} />
-        <VerticalCard story={props.stories[4]} />
-        <VerticalCard story={props.stories[5]} />
+        {columnTwoStories}
        </div>
        <div className='three-col-main__item'>
-        <MediaOneCard story={props.stories[6]} showSectionName={true} showImage= {true}/>
-        <MediaOneCard story={props.stories[7]} showSectionName={true} showImage= {true}/>
-        <MediaOneCard story={props.stories[8]} showSectionName={true} showImage= {true}/>
-        <MediaOneCard story={props.stories[9]} showSectionName={true} showImage= {true}/>
-        <MediaOneCard story={props.stories[10]} showSectionName={true} showImage= {true}/>
-        <MediaOneCard story={props.stories[11]} showSectionName={true} showImage= {true}/>
+        {columnThreeStories}
       </div>
   </div>
   );

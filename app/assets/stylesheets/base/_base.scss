@@ -1,10 +1,10 @@
-@import "~susy/sass/susy";
 @import '~breakpoint-sass/stylesheets/breakpoint';
-@import 'vendor/susy-settings';
 @import "vendor/normalize";
 
-@import 'mixins';
 @import 'colors';
 @import 'typography';
-@import 'z-index';
-@import 'grid';
+
+
+*{
+  box-sizing: border-box;
+}

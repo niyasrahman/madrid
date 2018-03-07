@@ -16,7 +16,7 @@ function mapStateToProps(state) {
 
 function NavBarBase(props) {
   return <Sticky>
-    <div className="header qt-theme__color--headerbg qt-theme__color--header">
+    { /* <div className="header qt-theme__color--headerbg qt-theme__color--header">
       <div className="header__container">
         <AppLogo {...props} />
         <div className="header__middle">
@@ -37,7 +37,7 @@ function NavBarBase(props) {
           <Search />
         </div>
       </div>
-    </div>
+    </div> */}
   </Sticky>
 }
 

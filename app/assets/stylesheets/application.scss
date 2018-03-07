@@ -1,12 +1,16 @@
 @import "~slick-carousel/slick/slick.css";
-@import "vendor/react-table";
+
+$tablet : 768px;
+$pc: 1100px;
 
 @import "base/base";
-@import "module/module";
+// @import "module/module";
 @import "layout/layout";
 
 // Library Customizations
 @import "vendor/slick";
 
 //Breaking-news Customizations
-@import "basic/breaking-news";
+// @import "basic/breaking-news";
+
+@import "shame";

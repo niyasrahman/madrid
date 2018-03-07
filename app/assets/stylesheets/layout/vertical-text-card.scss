@@ -1,0 +1,17 @@
+   .three-col-movie{
+        display: block;
+        .media-one-card__item{
+          display: block;
+          border-bottom: 1px solid lighten( $black, 64 );
+          padding: 10px 0;
+          margin: 10px 0; 
+          .card-content-wrapper{
+            display: block;
+          }  
+        }
+    
+        .content-wrapper{
+          display: block;
+        }
+      }
+   
