@@ -1,0 +1,19 @@
+
+.two-col-one-featured-dark {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+
+
+  &__item--first {
+    grid-column: span 2;
+  }
+
+  &__item {
+    background-color: black;
+  }
+  
+  .section-title {
+    grid-column: span 2;
+  }
+}

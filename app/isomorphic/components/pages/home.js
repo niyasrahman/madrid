@@ -4,6 +4,7 @@ import { ThreeColMain } from "../layout/three-col-main.js";
 import { FourCol } from "../layout/four-col-story.js";
 import { TwoColOneVerticalAd } from "../layout/two-col-one-vertical-ad.js";
 import { ThreeColMovie } from "../layout/three-col-movie.js";
+import { TwoColDarkBackgroundCard } from "../layout/two-col-dark-background-card.js";
 import _ from 'lodash';
 
 class HomePage extends React.Component {
@@ -13,7 +14,9 @@ class HomePage extends React.Component {
       'ThreeColMain': ThreeColMain,
       'FourCol' : FourCol,
       'TwoColOneVerticalAd' : TwoColOneVerticalAd,
-      'ThreeColMovie': ThreeColMovie
+      'TwoColDarkBackgroundCard' : TwoColDarkBackgroundCard,
+      'ThreeColMovie': ThreeColMovie,
+
     };
 
     function getTemplate(designTemplate){

@@ -1,0 +1,30 @@
+.dark-background-card {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+
+
+  &.is-horizontal {
+    flex-direction: row;
+    align-items: center;
+    padding: 15px 15px;
+    overflow: auto;
+
+    .image-wrapper {
+      flex-basis: 60%;
+    }
+    .card-heading {
+      flex-basis: 40%;
+      font-size: 18px;
+      padding: 10px 40px;
+    }
+  }
+
+  .card-heading {
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 30px;
+  }
+
+ }
