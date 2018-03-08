@@ -1,0 +1,21 @@
+.story-element-text-also-read {
+  font-size: inherit;
+  font-family: var(--sansTypeface);
+  margin-bottom: 30px;
+  h3 {
+    @include breakpoint($tablet){
+      display: flex;
+    }
+  }
+  &__label {
+    font-size: rem(18);
+    line-height: rem(28);
+    flex-shrink: 0;
+    padding-right: 15px;
+    color: $dark-gray;
+  }
+  &__link {
+    font-size: rem(20);
+    line-height: rem(28);
+  }
+}
