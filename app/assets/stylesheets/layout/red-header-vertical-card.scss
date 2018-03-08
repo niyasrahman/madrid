@@ -14,7 +14,7 @@
       }
       .content-wrapper{
         height: 100%;
-        background-color: $gray-lightest;
+        background-color: var(--lighterGray);
         position: relative;
 
       }
@@ -26,7 +26,7 @@
       font-size: 1em;
       line-height: 1;
       padding: 10px;
-      border-top: 1px solid lighten( $black, 64 );
+      border-top: 1px solid var(--black);
       position: absolute;
       width: 100%;
       bottom: 0;

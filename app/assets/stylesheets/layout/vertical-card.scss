@@ -2,8 +2,8 @@
     .section-name{
       font-weight: normal;
       position: absolute;
-      background-color: $red;
-      color: $white;
+      background-color: var(--brandPrimary);
+      color: var(--white);
       padding: 8px 5px;
       text-transform: uppercase;
       letter-spacing: 1px;

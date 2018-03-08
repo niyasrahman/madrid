@@ -2,16 +2,16 @@
 .big-image-vertical-card{
    .content-wrapper{
     position: relative;
-    background-color: $white;
-    box-shadow: 1.5px 1.5px 1.5px 1.5px lighten( $black, 90 );
+    background-color: var(--white);
+    box-shadow: 1.5px 1.5px 1.5px 1.5px  var(--graywhite);
     margin-bottom: 30px;
    } 
    .section-name{
     position: absolute;
     top: 0;
     left:0;
-    background-color: $red;
-    color: $white;
+    background-color: var(--brandPrimary);
+    color: var(--white);
     padding: 8px 5px;
     text-transform: uppercase;
    }
