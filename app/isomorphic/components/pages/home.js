@@ -5,6 +5,7 @@ import { FourCol } from "../layout/four-col-story.js";
 import { TwoColOneVerticalAd } from "../layout/two-col-one-vertical-ad.js";
 import { ThreeColMovie } from "../layout/three-col-movie.js";
 import { TwoColDarkBackgroundCard } from "../layout/two-col-dark-background-card.js";
+import { ThreeColWithBanner } from "../layout/three-col-with-banner.js";
 import _ from 'lodash';
 
 class HomePage extends React.Component {
@@ -16,6 +17,7 @@ class HomePage extends React.Component {
       'TwoColOneVerticalAd' : TwoColOneVerticalAd,
       'TwoColDarkBackgroundCard' : TwoColDarkBackgroundCard,
       'ThreeColMovie': ThreeColMovie,
+      'ThreeColWithBanner': ThreeColWithBanner,
 
     };
 
