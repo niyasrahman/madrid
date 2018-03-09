@@ -8,9 +8,7 @@
      } 
 
    .card-content-wrapper{
-    display: grid;
-    grid-template-columns: 2fr auto;
-    grid-gap: 30px;
+    display: flex;
     padding: 10px;
    }
    .media-one-card__item{
@@ -31,9 +29,12 @@
    .image-wrapper{
       margin: 0;
       width: 150px;
+      flex-basis:40%;
    }
     .card-heading{
       font-size: 1em;
+      flex-basis:60%;
+      padding-left: 30px;
     }
   }
 }

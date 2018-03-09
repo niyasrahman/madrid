@@ -1,4 +1,8 @@
 .vertical-card{
+  .content-wrapper{
+    display: flex;
+    flex-direction:column;
+  }
     .section-name{
       font-weight: normal;
       position: absolute;

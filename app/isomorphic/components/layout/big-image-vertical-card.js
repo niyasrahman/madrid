@@ -9,7 +9,7 @@ function BigImageVerticalCard(props){
   return(
          <Link href={`/${story.slug}`} className='big-image-vertical-card'>
           <div className='content-wrapper'>
-           <h5 className='section-name'>{sectionName}</h5>
+           {props.sectionName &&<h5 className='section-name'>{sectionName}</h5>}
              <div className='card-content-wrapper'>
                 <figure className='image-wrapper'>
                     <ResponsiveImage slug={story["hero-image-s3-key"]} metadata={story["hero-image-metadata"]}

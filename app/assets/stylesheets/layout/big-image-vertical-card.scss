@@ -1,5 +1,9 @@
 
 .big-image-vertical-card{
+  .card-content-wrapper{
+    display: flex;
+    flex-direction:column;
+  }
    .content-wrapper{
     position: relative;
     background-color: var(--white);

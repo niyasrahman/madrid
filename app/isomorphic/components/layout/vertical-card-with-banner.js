@@ -5,9 +5,9 @@ import { Link, ResponsiveImage } from "@quintype/components";
 import get from "lodash/get";
 
 function VerticalCardWithBanner(props){
-  const SectionName = get(story, ['sections', 0]) ? story.sections[0].name : null;
-  const AuthorName = get(story,['authors',0]) ? story.authors[0].name : null;
   const story = get(props.story, ['story']) ? get(props.story, ['story']) : props.story;
+  const SectionName = get(story, ['sections', 0]) ? story.sections[0].name : null;
+  const authorName = get(story,['authors',0]) ? story.authors[0].name : null;
   const sectionStoryName = get(story, ['sections', 0, 'name']) ? get(story, ['sections', 0, 'name']) : null
   const storyAuthorName = get(story, ['authors', 0, 'name']) ? get(story, ['authors', 0, 'name']) : null
 
@@ -24,7 +24,7 @@ function VerticalCardWithBanner(props){
                      imgParams={{auto:['format', 'compress'], fit:'max'}}/>
              </figure>
                  <h3 className='card-heading'>{story.headline}</h3>
-                 <h3 className='card-author-name'>{storyAuthorName}</h3>
+                 {props.authorName && <h3 className='card-author-name'>{storyAuthorName}</h3>}
                                
             </div>
           </div>
