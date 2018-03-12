@@ -12,23 +12,6 @@ import whatsappIcon from '../../../assets/icons/social/whatsapp-share.svg';
 import assetify from '@quintype/framework/assetify';
 
 class StoryHeaderCard extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = props;
-  }
-
-  componentDidMount() {
-    const currentStory = this.state.story;
-    fetch('/api/v1/authors/' + this.state.story['author-id'])
-     .then(function(response) {
-       return response.json();
-     }).then(authorDetails => {
-       currentStory['author-image'] = authorDetails.author['avatar-url'];
-       this.setState({
-         story: currentStory
-       });
-     });
-  }
 
   getSocialCardsTemplate({fbUrl, twitterUrl, gplusUrl, linkedinUrl, whatsappUrl}) {
     return <ul className="social-share-icons">
@@ -62,43 +45,43 @@ class StoryHeaderCard extends React.Component {
 
   render() {
     const sectionColor = {
-      borderBottomColor: this.state.story['section-color']
+      borderBottomColor: this.props.story['section-color']
     };
     const liveDisplayStyles = {
-      backgroundColor : this.state.story['section-color']
+      backgroundColor : this.props.story['section-color']
     }
-    const tagsArray = this.state.story.tags.reduce((acc, item) => {
+    const tagsArray = this.props.story.tags.reduce((acc, item) => {
       acc.push(item.name)
       return acc;
     }, [])
     const stringifiedTagsArray = tagsArray.toString();
-    const socialShareMessage = !isEmpty(this.state.story.summary) ? this.state.story.summary : this.state.story.headline;
-    const authorsArray = get(this.state.story, ['authors'])
-                          ? get(this.state.story, ['authors'])
+    const socialShareMessage = !isEmpty(this.props.story.summary) ? this.props.story.summary : this.props.story.headline;
+    const authorsArray = get(this.props.story, ['authors'])
+                          ? get(this.props.story, ['authors'])
                           : [{
-                            name: this.state.story['author-name'],
-                            id: this.state.story['author-id']
+                            name: this.props.story['author-name'],
+                            id: this.props.story['author-id']
                           }];
     return <header className="story-header">
       <Link className="story-section"
         href={"/" +
-          (this.state.story['parent-section'] ?
-            this.state.story['parent-section'].slug + '/' + this.state.story.sections[0].slug :
-            this.state.story.sections[0].slug)}
+          (this.props.story['parent-section'] ?
+            this.props.story['parent-section'].slug + '/' + this.props.story.sections[0].slug :
+            this.props.story.sections[0].slug)}
         style={sectionColor}>
-        {this.state.story.sections[0]['display-name'] || this.state.story.sections[0]['name'] }
+        {this.props.story.sections[0]['display-name'] || this.props.story.sections[0]['name'] }
       </Link>
       <div>
-        { (this.state.story['story-template'] === "live-blog") && <span className="live-story" style={liveDisplayStyles}>live</span> }
-        <h1 className="story-headline" dangerouslySetInnerHTML={ {__html: this.state.story.headline }} />
+        { (this.props.story['story-template'] === "live-blog") && <span className="live-story" style={liveDisplayStyles}>live</span> }
+        <h1 className="story-headline" dangerouslySetInnerHTML={ {__html: this.props.story.headline }} />
       </div>
-      <p className="story-summary" dangerouslySetInnerHTML={ {__html: this.state.story.subheadline }} />
+      <p className="story-summary" dangerouslySetInnerHTML={ {__html: this.props.story.subheadline }} />
       <div className="story-byline">
         <div className="story-byline__author_time">
-        <Author authors={authorsArray} isLink showDateOnly date={this.state.story['first-published-at']}/>
+        <Author authors={authorsArray} isLink showDateOnly date={this.props.story['first-published-at']}/>
         </div>
         <div className="story-byline__social-share">
-          <SocialShare url={this.state.story.slug}
+          <SocialShare url={this.props.story.slug}
             title={socialShareMessage}
             template={this.getSocialCardsTemplate}
             hashtags={stringifiedTagsArray} />
