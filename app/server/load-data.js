@@ -41,7 +41,11 @@ function loadData(pageType, params, config, client) {
         data: data,
         config: Object.assign(_.pick(config.asJson(), WHITELIST_CONFIG_KEYS),
           { 'disable-ads': shouldDisableAds(data.pageType || pageType) },
+
+          // Left for historical reasons, remove in a few weeks after 3/12/2018
           { 'publisher-theme': _.merge(config['theme-attributes'], publisher.publisher_theme[config['publisher-name']]) },
+
+          { 'theme-attributes': _.merge(config['theme-attributes'], publisher.publisher_theme[config['publisher-name']]) },
           { 'metype-config': MetypeConfig(config['publisher-name']) })
       };
     });

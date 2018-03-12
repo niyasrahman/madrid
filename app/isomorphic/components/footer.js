@@ -31,13 +31,13 @@ function FooterBase(props) {
 }
 
 function mapStateToProps(state) {
-  const validStaticPages = state.qt.config['publisher-theme']['static_pages'];
+  const validStaticPages = state.qt.config['theme-attributes']['static_pages'];
   const updatedStaticLinks = filter(STATIC_LINKS, (link) => {
     return indexOf(validStaticPages, link.templateKey) > -1;
   });
   return {
     links: updatedStaticLinks,
-    publisherTheme: state.qt.config['publisher-theme'] || {},
+    publisherTheme: state.qt.config['theme-attributes'] || {},
     publisherSettings: state.qt.config['publisher-settings'] || {},
     publisherName: state.qt.config['publisher-name'] || ''
   }

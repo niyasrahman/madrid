@@ -11,7 +11,7 @@ export function loadErrorPageData(error, config) {
   return {
     data: { navigationMenu: getNavigationMenuArray(config.layout.menu, config.sections) },
     config: Object.assign(_.pick(config, WHITELIST_CONFIG_KEYS),
-            { 'publisher-theme': _.merge(config['theme-attributes'], publisher.publisher_theme[config['publisher-name']]) },
+            { 'theme-attributes': _.merge(config['theme-attributes'], publisher.publisher_theme[config['publisher-name']]) },
             { 'metype-config': MetypeConfig(config['publisher-name']) }),
     pageType: errorComponents[statusCode],
     httpStatusCode: statusCode

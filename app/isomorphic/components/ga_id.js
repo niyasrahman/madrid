@@ -8,7 +8,7 @@ function GAIdProviderBase(props) {
 
 function mapStateToProps(state) {
   return {
-    publisherTheme: state.qt.config['publisher-theme'] || {}
+    publisherTheme: state.qt.config['theme-attributes'] || {}
   }
 }
 

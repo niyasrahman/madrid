@@ -33,5 +33,5 @@ export function renderLayout(res, params){
     themeCSS: renderReduxComponent(Theme, params.store),
     metaTags: params.seoTags ? params.seoTags.toString() : "",
     disableAjaxNavigation: false,
-  }, themeParams(params.config, params.store.getState().qt.config["publisher-theme"] || {}), params))
+  }, themeParams(params.config, params.store.getState().qt.config["theme-attributes"] || {}), params))
 }
