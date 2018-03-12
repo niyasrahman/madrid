@@ -25,5 +25,6 @@ const CUSTOM_REDUCERS = {
 require('whatwg-fetch');
 global.superagent = require('superagent-promise')(require('superagent'), Promise);
 startApp(renderApplication, CUSTOM_REDUCERS, {
+  appVersion: require("../isomorphic/app-version"),
   enableServiceWorker: process.env.NODE_ENV == 'production'
 }).then(enableHotReload);

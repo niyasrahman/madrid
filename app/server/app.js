@@ -43,6 +43,7 @@ const STRUCTURED_DATA = {
 }
 
 isomorphicRoutes(app, {
+  appVersion: require("../isomorphic/app-version"),
   logError: (error) => logger.error(error),
   generateRoutes: generateRoutes,
   loadData: loadData,
