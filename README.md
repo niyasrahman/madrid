@@ -16,6 +16,9 @@ Madrid is the demo app using [Malibu](https://github.com/quintype/malibu) as a s
     - LShapeOneWidget
     - FullscreenMediaList
  - If the value of layout is anything other than the above mentioned values, it will fall back to **ThreeCol** layout.
+ 
+## Infinite Scroll on story pages.
+The infinite scroll on story pages are driven through a collection with the slug *curated-story-list*. The name could be anything. This collection could either be manual or automated. The infinite scroll will behave as per the nature of the collection.
 
 ## toddy-libs
 
