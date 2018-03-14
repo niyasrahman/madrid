@@ -6,10 +6,10 @@ import indexOf from "lodash/indexOf";
 import assetify from '@quintype/framework/assetify';
 import Logo from '../../assets/icons/quintype_logo.svg';
 import { STATIC_LINKS } from "./constants";
-import { FbIcon } from "./layout/social/facebook-icons.js";
-import { TwitterIcon }  from "./layout/social/twitter-icon.js";
-import { YoutubeIcon } from "./layout/social/youtube.js";
-import { GooglePlus } from "./layout/social/google-plus.js";
+import { FbIcon } from "./layout/icon/facebook-icons.js";
+import { TwitterIcon }  from "./layout/icon/twitter-icon.js";
+import { YoutubeIcon } from "./layout/icon/youtube.js";
+import { GooglePlus } from "./layout/icon/google-plus.js";
 
 function FooterBase(props) {
   const copyrightText = get(props.publisherSettings, ['copyright'], '');
@@ -49,7 +49,7 @@ return(
        </ul>
     </div>
     <div className="copyright">
-      <a href="https://www.quintype.com/" target="_blank"><strong>&copy Powered by quintype</strong></a>
+      <a href="https://www.quintype.com/" target="_blank"><strong>&copy; Powered by quintype</strong></a>
     </div>
     </div>
 
