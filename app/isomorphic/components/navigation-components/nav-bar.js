@@ -4,6 +4,7 @@ import { Link } from "@quintype/components";
 import { AppLogo } from './app-logo.js'
 import { MenuItem, SubmenuItem } from './helper-components.js'
 import { Search } from "../basic/search.js";
+import { FireIcon } from "../layout/icon/fire-icon.js";
 import { Button } from "../basic/button.js";
 import _ from "lodash";
 import { connect } from 'react-redux';
@@ -15,7 +16,43 @@ function mapStateToProps(state) {
 }
 
 function NavBarBase(props) {
-  return <Sticky>
+  return <Sticky className='header'>
+  <div className="header-logo">
+  <h1 className='logo'>QUIN<span className='logo-styling'>TYPE</span></h1>
+  </div>
+
+<nav className="nav-bar header__middle__nav">
+  <ul className="menu">
+    {_.take(props.menu, 9).map((item, index) => {
+            return <li className="nav-item has--child dropdown-menu" key={`${item['id']}${index}`}>
+                    <MenuItem item={item}/>
+                  </li>
+                })}
+
+
+    <li className="dropdown-menu">
+      <a href="#" className="dropdown-menu__link"><FireIcon/>trending</a>
+    </li>
+
+    <li className="dropdown-menu">
+      <span><Search/></span>
+    </li>
+ </ul>
+</nav>
+ </Sticky>
+}
+
+const NavBar = connect(mapStateToProps, {})(NavBarBase);
+
+export { NavBar }
+
+
+
+
+
+
+
+  
     { /* <div className="header qt-theme__color--headerbg qt-theme__color--header">
       <div className="header__container">
         <AppLogo {...props} />
@@ -38,9 +75,4 @@ function NavBarBase(props) {
         </div>
       </div>
     </div> */}
-  </Sticky>
-}
-
-const NavBar = connect(mapStateToProps, {})(NavBarBase);
-
-export { NavBar }
+ 

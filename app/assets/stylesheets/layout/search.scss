@@ -1,0 +1,13 @@
+.search-icon{
+  position: relative;
+}
+.search-text{
+    line-height: 3;
+    text-align: center;
+    position: absolute;
+    left: -60px;
+    z-index: 10;
+    min-width: 230px;
+    max-width: 230px;
+
+}

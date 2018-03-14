@@ -9,9 +9,9 @@ function MenuItem(props) {
 
   return <React.Fragment>
     <Link href={ props.item.completeUrl }>{props.item.title}</Link>
-    <ul style={listStyle} className="qt-theme__color--border">
+    <ul style={listStyle} className="qt-theme__color--border ">
       {props.item.children.map((child, index)=> {
-        return <li key={`${child['id']}${index}`}><SubmenuItem item={child}/></li>
+        return <li className="is-open" key={`${child['id']}${index}`}><SubmenuItem item={child}/></li>
       })}
     </ul>
   </React.Fragment>
