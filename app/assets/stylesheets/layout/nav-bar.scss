@@ -47,21 +47,10 @@
   padding-left: 15px;
   text-transform: uppercase;
   font-size: 12px;
-  position: relative;
 }
 
-.dropdown-menu:nth-last-child(2) {
+.last-list-item-styling{
   color: var(--brandPrimary);
-}
-
-
-.dropdown-menu {
-  list-style: none;
-  display: inline-block;
-  padding-left: 15px;
-  text-transform: uppercase;
-  font-size: 12px;
-  position: relative;
 }
 
 .is-open {

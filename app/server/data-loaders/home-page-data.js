@@ -1,6 +1,7 @@
 import _ from "lodash";
 // TODO: menu should be a common Component. now accessing this from every pages. (home, story etc)
 import {getNavigationMenuArray} from "./menu-data";
+import {getTrendingStories} from "./trending-data";
 import {Collection} from "@quintype/framework/server/api-client";
 
 function concatAll(initial, arrays) {
@@ -27,18 +28,25 @@ export function loadHomePageData(client, config) {
       const orderedCollectionBulk = placeholderCollectionSlugs.map((collectionSlug) => {
       	return allCollections[collectionSlug];
       });
+      
+      let trendingStories;
+      return getTrendingStories(client).then( items => {
+        trendingStories = items;
+          return {
+          orderedCollectionBulk: orderedCollectionBulk,
+          navigationMenu: structuredMenu,
+          trendingStories: trendingStories,
+          cacheKeys: concatAll(
+            homeCollection.cacheKeys(config["publisher-id"]),
+            Object.values(orderedCollectionBulk)
+                  .map(collection => Collection.build(collection).cacheKeys(config["publisher-id"])
+                  .slice(0, 5))
+          )
+        };
 
-      return {
-        orderedCollectionBulk: orderedCollectionBulk,
-        navigationMenu: structuredMenu,
-        cacheKeys: concatAll(
-          homeCollection.cacheKeys(config["publisher-id"]),
-          Object.values(orderedCollectionBulk)
-                .map(collection => Collection.build(collection).cacheKeys(config["publisher-id"])
-                .slice(0, 5))
-        )
-      };
+      });
     });
+
 }
 
 function setExtraProperties(data, menu, sections, childCollectionsAssociatedMetadata) {

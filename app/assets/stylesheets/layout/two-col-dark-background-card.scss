@@ -1,7 +1,6 @@
-
 .two-col-one-featured-dark {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 30px;
 
 
@@ -12,8 +11,12 @@
   &__item {
     background-color: black;
   }
-  
+
   .section-title {
     grid-column: span 2;
+  }
+  @include breakpoint($tablet) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
   }
 }

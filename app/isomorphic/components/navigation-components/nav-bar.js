@@ -5,6 +5,7 @@ import { AppLogo } from './app-logo.js'
 import { MenuItem, SubmenuItem } from './helper-components.js'
 import { Search } from "../basic/search.js";
 import { FireIcon } from "../layout/icon/fire-icon.js";
+import { Trending } from "../layout/trending.js";
 import { Button } from "../basic/button.js";
 import _ from "lodash";
 import { connect } from 'react-redux';
@@ -16,6 +17,7 @@ function mapStateToProps(state) {
 }
 
 function NavBarBase(props) {
+
   return <Sticky className='header'>
   <div className="header-logo">
   <h1 className='logo'>QUIN<span className='logo-styling'>TYPE</span></h1>
@@ -28,15 +30,17 @@ function NavBarBase(props) {
                     <MenuItem item={item}/>
                   </li>
                 })}
-
-
-    <li className="dropdown-menu">
-      <a href="#" className="dropdown-menu__link"><FireIcon/>trending</a>
-    </li>
-
-    <li className="dropdown-menu">
-      <span><Search/></span>
-    </li>
+   <li className="nav-item has--child dropdown-menu last-list-item-styling">
+        <a href="#"><FireIcon/>trending</a>
+        <ul className="trending-wrapper">
+          <li>
+            <Trending trending = {props}/>
+          </li>
+        </ul>
+  </li>
+  <li className="nav-item has--child dropdown-menu last-list-item-styling">
+    <Search/>
+  </li>
  </ul>
 </nav>
  </Sticky>
